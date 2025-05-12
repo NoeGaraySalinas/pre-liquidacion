@@ -36,10 +36,15 @@ ipcMain.handle('get-clientes', () => {
 
 ipcMain.handle('get-servicios', async () => {
   try {
-    const data = await fs.promises.readFile(path.join(__dirname, 'servicios.json'));
-    return JSON.parse(data);
+    const data = await fs.promises.readFile(
+      path.join(__dirname, 'servicios.json'), 
+      'utf-8'
+    );
+    const servicios = JSON.parse(data);
+    console.log("Servicios cargados en main process:", servicios.length);
+    return servicios;
   } catch (error) {
-    console.error("Error leyendo servicios.json:", error);
+    console.error("Error en get-servicios:", error);
     return [];
   }
 });

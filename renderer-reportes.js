@@ -514,13 +514,23 @@ console.log("Facturaciones recibidas:", facturaciones.map(f => f.cliente));
 console.log("Clientes disponibles:", clientes.map(c => c.nombre));
 
 function normalizarTexto(texto) {
+  if (!texto) return '';
   return texto
-    .normalize("NFD") // elimina acentos
-    .replace(/[\u0300-\u036f]/g, "") // caracteres diacríticos
-    .replace(/\s+/g, " ") // espacios múltiples a uno solo
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/-/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim()
     .toLowerCase();
 }
+
+console.log("Ejemplo de búsqueda - Servicio 'Dycsa':", {
+  existe: servicios.some(s => s.nombre === 'Dycsa'),
+  serviciosSimilares: servicios.filter(s => 
+    s.nombre.toLowerCase().includes('dycsa')
+  )
+});
 
 const periodoSeleccionado = filtro.periodo;
 mostrarGastosInternosPorPeriodo(periodoSeleccionado);
@@ -552,20 +562,30 @@ async function cargarDatosIniciales() {
 }
 
 async function generarTablaPorPeriodo(facturaciones, periodo) {
-  console.log("Servicios disponibles:", servicios); // Diagnóstico
-  
-  const rows = await Promise.all(facturaciones.map(async (fact) => {
-    // Diagnóstico para cada facturación
-    console.log(`Buscando servicio: ${fact.servicio}`, {
-      enFactura: fact.servicio,
-      serviciosDisponibles: servicios.map(s => s.nombre)
-    });
+  // 1. Asegurar que los servicios estén cargados
+  if (servicios.length === 0) {
+    try {
+      servicios = await ipcRenderer.invoke('get-servicios');
+      console.log("Servicios cargados:", servicios.length);
+    } catch (error) {
+      console.error("Error cargando servicios:", error);
+      servicios = [];
+    }
+  }
 
+  // 2. Generar filas de la tabla
+  const rows = await Promise.all(facturaciones.map(async (fact) => {
+    // Buscar el servicio correspondiente (comparación insensible a mayúsculas/acentos)
     const servicio = servicios.find(s => 
-      s.nombre.trim().toLowerCase() === fact.servicio.trim().toLowerCase()
+      normalizarTexto(s.nombre) === normalizarTexto(fact.servicio)
     );
 
-    console.log("Servicio encontrado:", servicio); // Diagnóstico
+    // Diagnóstico (puedes remover esto después)
+    if (!servicio) {
+      console.warn(`Servicio no encontrado: "${fact.servicio}"`, {
+        serviciosDisponibles: servicios.map(s => s.nombre)
+      });
+    }
 
     const cuit = await buscarCuitPorNombre(fact.cliente);
     
@@ -583,9 +603,10 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
     `;
   }));
 
-  // Calcular totales
+  // 3. Calcular totales
   const totalFacturado = facturaciones.reduce((sum, f) => sum + (f.valores?.total || 0), 0);
 
+  // 4. Generar la tabla HTML
   return `
     <h3>Reporte del período: ${formatMonth(periodo)}</h3>
     <table class="reporte-table">
@@ -601,13 +622,13 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
           <th>Total</th>
         </tr>
       </thead>
-      <tbody>
-        ${rows.join('')}
+      <tbody>${rows.join('')}</tbody>
+      <tfoot>
         <tr class="total-row">
           <td colspan="7">TOTAL FACTURADO</td>
           <td class="currency">${formatoMonetario(totalFacturado)}</td>
         </tr>
-      </tbody>
+      </tfoot>
     </table>
   `;
 }
