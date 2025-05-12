@@ -1,0 +1,6511 @@
+[
+  {
+    "id": 1744833265531,
+    "periodo": "2025-03",
+    "cliente": "DYCSA DISEÑO Y CONSTRUCCION SA",
+    "servicio": "Dycsa",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 84,
+      "liquidadas": 80,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 6828.36,
+      "aumento": 5.52,
+      "neto": 576423.2,
+      "iva": 121048.87,
+      "total": 697472.07
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1724"
+    },
+    "fechaRegistro": "2025-04-16T19:54:25.334Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1744904531251,
+    "periodo": "2025-03",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "servicio": "Ama Hogar - Sarmiento",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 28,
+      "mes": 28,
+      "liquidadas": 32,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 13858.6,
+      "aumento": 5.52,
+      "neto": 467954.88,
+      "iva": 98270.52,
+      "total": 566225.4
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1718"
+    },
+    "fechaRegistro": "2025-04-17T15:42:11.244Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1744904685039,
+    "periodo": "2025-03",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "servicio": "Ama Hogar - Santa Rosa",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 13858.6,
+      "aumento": 5.52,
+      "neto": 175483.08,
+      "iva": 36851.45,
+      "total": 212334.53
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1718"
+    },
+    "fechaRegistro": "2025-04-17T15:44:45.032Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745857700643,
+    "periodo": "2025-03",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "servicio": "Ama Hogar - Oncativo",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 5.5,
+      "mes": 8,
+      "liquidadas": 5.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 13858.6,
+      "aumento": 5.52,
+      "neto": 80429.74,
+      "iva": 16890.25,
+      "total": 97319.99
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1718"
+    },
+    "fechaRegistro": "2025-04-28T16:28:20.644Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745857850746,
+    "periodo": "2025-03",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "servicio": "Ama Hogar - Alvear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 13858.6,
+      "aumento": 5.52,
+      "neto": 175483.08,
+      "iva": 36851.45,
+      "total": 212334.53
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1718"
+    },
+    "fechaRegistro": "2025-04-28T16:30:50.746Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745859483924,
+    "periodo": "2025-03",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (9)",
+    "servicio": "Ama Hogar - Musicos del Centro (Olmos 230)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 2,
+      "mes": 4,
+      "liquidadas": 4,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 13858.6,
+      "aumento": 5.52,
+      "neto": 58494.36,
+      "iva": 12283.82,
+      "total": 70778.18
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1718"
+    },
+    "fechaRegistro": "2025-04-28T16:58:03.924Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745859598025,
+    "periodo": "2025-03",
+    "cliente": "AM CORDOBA S.A.",
+    "servicio": "AMCO",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 144,
+      "mes": 168,
+      "liquidadas": 160,
+      "adeudadas": 16
+    },
+    "valores": {
+      "hora": 11181.97,
+      "aumento": 5.52,
+      "neto": 1887873.6,
+      "iva": 396453.46,
+      "total": 2284327.06
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1719"
+    },
+    "fechaRegistro": "2025-04-28T16:59:58.025Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745859796963,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO CASEROS Y R GARCIA MARTINEZ",
+    "servicio": "Arcos del Cerro - Limpieza",
+    "facturante": "Sandra Cordoba",
+    "horas": {
+      "trabajadas": 195,
+      "mes": 204,
+      "liquidadas": 206,
+      "adeudadas": 11
+    },
+    "valores": {
+      "hora": 8370.32,
+      "aumento": 5.52,
+      "neto": 1819396.12,
+      "iva": 0,
+      "total": 1819396.12
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "4-576"
+    },
+    "fechaRegistro": "2025-04-28T17:03:16.964Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745859950441,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO CASEROS Y R GARCIA MARTINEZ",
+    "servicio": "Arcos del Cerro - Jardineria",
+    "facturante": "Sandra Cordoba",
+    "horas": {
+      "trabajadas": 18,
+      "mes": 72,
+      "liquidadas": 24,
+      "adeudadas": 6
+    },
+    "valores": {
+      "hora": 8370.32,
+      "aumento": 5.52,
+      "neto": 211976.64,
+      "iva": 0,
+      "total": 211976.64
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "4-576"
+    },
+    "fechaRegistro": "2025-04-28T17:05:50.441Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745860064112,
+    "periodo": "2025-03",
+    "cliente": "BOIXADOS INDUSTRIAL S.A.",
+    "servicio": "Boixados",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 28,
+      "mes": 32,
+      "liquidadas": 32,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 9169,
+      "aumento": 5.52,
+      "neto": 309604.16,
+      "iva": 65016.87,
+      "total": 374621.03
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1720"
+    },
+    "fechaRegistro": "2025-04-28T17:07:44.113Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745863411278,
+    "periodo": "2025-03",
+    "cliente": "COBERTURA DE SALUD S.A. (La Rioja)",
+    "servicio": "Boreal (La Rioja)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 144,
+      "mes": 168,
+      "liquidadas": 160,
+      "adeudadas": 16
+    },
+    "valores": {
+      "hora": 12171.53,
+      "aumento": 5.52,
+      "neto": 2054944,
+      "iva": 431538.24,
+      "total": 2486482.24
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "FCE 1-40"
+    },
+    "fechaRegistro": "2025-04-28T18:03:31.278Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745864074421,
+    "periodo": "2025-03",
+    "cliente": "COBERTURA DE SALUD S.A. (La Rioja)",
+    "servicio": "Boreal (Chilecito)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 42,
+      "liquidadas": 40,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 12171.53,
+      "aumento": 5.52,
+      "neto": 513736,
+      "iva": 107884.56,
+      "total": 621620.56
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1721"
+    },
+    "fechaRegistro": "2025-04-28T18:14:34.421Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745864182903,
+    "periodo": "2025-03",
+    "cliente": "COBERTURA DE SALUD S.A. (Córdoba)",
+    "servicio": "Boreal (Cordoba)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 144,
+      "mes": 168,
+      "liquidadas": 160,
+      "adeudadas": 16
+    },
+    "valores": {
+      "hora": 9371.2,
+      "aumento": 5.52,
+      "neto": 1582158.4,
+      "iva": 332253.26,
+      "total": 1914411.66
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "FCE 1-41"
+    },
+    "fechaRegistro": "2025-04-28T18:16:22.904Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745864269237,
+    "periodo": "2025-03",
+    "cliente": "COBERTURA DE SALUD S.A. (Córdoba)",
+    "servicio": "Boreal (Corte de Cesped)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 7.5,
+      "mes": 7.5,
+      "liquidadas": 7.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9371.2,
+      "aumento": 5.52,
+      "neto": 74163.68,
+      "iva": 15574.37,
+      "total": 89738.05
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "FCE 1-41"
+    },
+    "fechaRegistro": "2025-04-28T18:17:49.237Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745865432433,
+    "periodo": "2025-03",
+    "cliente": "BRAMED S.R.L",
+    "servicio": "Bramed",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 84,
+      "liquidadas": 72,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 13175.22,
+      "aumento": 10,
+      "neto": 1043477.28,
+      "iva": 219130.23,
+      "total": 1262607.51
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1722"
+    },
+    "fechaRegistro": "2025-04-28T18:37:12.433Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745865835099,
+    "periodo": "2025-03",
+    "cliente": "CIRCULO ODONTOLOGICO REGIONAL RIO TERCERO",
+    "servicio": "Circulo Odontologico Rio III",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 22,
+      "mes": 26,
+      "liquidadas": 22,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9518.78,
+      "aumento": 5.52,
+      "neto": 220972.84,
+      "iva": 46404.3,
+      "total": 267377.14
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-483"
+    },
+    "fechaRegistro": "2025-04-28T18:43:55.100Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745865946755,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO PROPIETARIOS EDIFICIO ARRUABARRENA 66",
+    "servicio": "Consorcio Arruabarrena",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 27,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9724.57,
+      "aumento": 5.52,
+      "neto": 246272.88,
+      "iva": 0,
+      "total": 246272.88
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-29"
+    },
+    "fechaRegistro": "2025-04-28T18:45:46.755Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745866113305,
+    "periodo": "2025-03",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "servicio": "Cooperativa Caroya - Adm",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 76,
+      "mes": 84,
+      "liquidadas": 80,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 16224.82,
+      "aumento": 5.52,
+      "neto": 1369634.4,
+      "iva": 287623.22,
+      "total": 1657257.62
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1723"
+    },
+    "fechaRegistro": "2025-04-28T18:48:33.305Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745866400262,
+    "periodo": "2025-03",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "servicio": "Cooperativa Caroya - Banco de Sangre",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 42,
+      "liquidadas": 40,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 16224.82,
+      "aumento": 5.52,
+      "neto": 684817.2,
+      "iva": 143811.61,
+      "total": 828628.81
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1723"
+    },
+    "fechaRegistro": "2025-04-28T18:53:20.262Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745866518460,
+    "periodo": "2025-03",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "servicio": "Cooperativa Caroya - Nº 22",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 42,
+      "liquidadas": 40,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 16224.82,
+      "aumento": 5.52,
+      "neto": 684817.2,
+      "iva": 143811.61,
+      "total": 828628.81
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1723"
+    },
+    "fechaRegistro": "2025-04-28T18:55:18.460Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745866687867,
+    "periodo": "2025-03",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "servicio": "Cooperativa Caroya - N°34",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 42,
+      "liquidadas": 40,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 16224.82,
+      "aumento": 5.52,
+      "neto": 684817.2,
+      "iva": 143811.61,
+      "total": 828628.81
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1723"
+    },
+    "fechaRegistro": "2025-04-28T18:58:07.867Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745866849615,
+    "periodo": "2025-03",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "servicio": "Cooperativa Caroya - Ruta 9",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 70,
+      "mes": 168,
+      "liquidadas": 80,
+      "adeudadas": 10
+    },
+    "valores": {
+      "hora": 16224.82,
+      "aumento": 5.52,
+      "neto": 1369634.4,
+      "iva": 287623.22,
+      "total": 1657257.62
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1723"
+    },
+    "fechaRegistro": "2025-04-28T19:00:49.615Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745867049204,
+    "periodo": "2025-03",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "servicio": "Cooperativa Caroya - Sinsacate",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 14,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 16224.82,
+      "aumento": 5.52,
+      "neto": 273926.88,
+      "iva": 57524.64,
+      "total": 331451.52
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1723"
+    },
+    "fechaRegistro": "2025-04-28T19:04:09.204Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745867412636,
+    "periodo": "2025-03",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "servicio": "Cooperativa Caroya - TV",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 38,
+      "mes": 42,
+      "liquidadas": 40,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 16224.82,
+      "aumento": 5.52,
+      "neto": 684817.2,
+      "iva": 143811.61,
+      "total": 828628.81
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1723"
+    },
+    "fechaRegistro": "2025-04-28T19:10:12.636Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745867793075,
+    "periodo": "2025-03",
+    "cliente": "INSTITUTO HIJA DE MARIA SANTISIMA DEL HUERTO",
+    "servicio": "Colegio El Huerto",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 68.5,
+      "mes": 84,
+      "liquidadas": 80,
+      "adeudadas": 11.5
+    },
+    "valores": {
+      "hora": 10503.28,
+      "aumento": 5.52,
+      "neto": 886644.8,
+      "iva": 0,
+      "total": 886644.8
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-30"
+    },
+    "fechaRegistro": "2025-04-28T19:16:33.076Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745867913444,
+    "periodo": "2025-03",
+    "cliente": "FARIERE MARTA NELIDA",
+    "servicio": "Edificio Avellaneda",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 11140.21,
+      "aumento": 5.52,
+      "neto": 282123.6,
+      "iva": 0,
+      "total": 282123.6
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-31"
+    },
+    "fechaRegistro": "2025-04-28T19:18:33.444Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745868055194,
+    "periodo": "2025-03",
+    "cliente": "CONSUMIDOR FINAL",
+    "servicio": "Edificio Av. Patria",
+    "facturante": "Sandra Cordoba",
+    "horas": {
+      "trabajadas": 26,
+      "mes": 26,
+      "liquidadas": 28,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 10802.72,
+      "aumento": 5.52,
+      "neto": 319172.84,
+      "iva": 0,
+      "total": 319172.84
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "4-577 Y 4-578"
+    },
+    "fechaRegistro": "2025-04-28T19:20:55.194Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745868157809,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO DE PROPIETARIOS AV. COLON ESQ SUCRE",
+    "servicio": "Edificio Av. Colon",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 39,
+      "mes": 39,
+      "liquidadas": 42,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 10802.72,
+      "aumento": 5.52,
+      "neto": 478759.26,
+      "iva": 0,
+      "total": 478759.26
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-29"
+    },
+    "fechaRegistro": "2025-04-28T19:22:37.809Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745868977552,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Gran Portico",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 78,
+      "mes": 78,
+      "liquidadas": 81,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 602094.06,
+      "iva": 0,
+      "total": 602094.06
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-325"
+    },
+    "fechaRegistro": "2025-04-28T19:36:17.552Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745869136640,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Gran Portico (Adicionales)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 11,
+      "mes": 11,
+      "liquidadas": 15,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 111498.9,
+      "iva": 0,
+      "total": 111498.9
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-325"
+    },
+    "fechaRegistro": "2025-04-28T19:38:56.640Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745869241392,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Gran Portico (Domingos)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 2,
+      "mes": 2,
+      "liquidadas": 2,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 14866.52,
+      "iva": 0,
+      "total": 14866.52
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-325"
+    },
+    "fechaRegistro": "2025-04-28T19:40:41.392Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745869356689,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Gran Portico (Vidrios)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 3,
+      "mes": 3,
+      "liquidadas": 3,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 22299.78,
+      "iva": 0,
+      "total": 22299.78
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-325"
+    },
+    "fechaRegistro": "2025-04-28T19:42:36.690Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745869476394,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Florida Park",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 78,
+      "mes": 78,
+      "liquidadas": 81,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 602094.06,
+      "iva": 0,
+      "total": 602094.06
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-326"
+    },
+    "fechaRegistro": "2025-04-28T19:44:36.394Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745869728033,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Florida Park (Adicionales)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 8,
+      "mes": 8,
+      "liquidadas": 8,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 59466.08,
+      "iva": 0,
+      "total": 59466.08
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-326"
+    },
+    "fechaRegistro": "2025-04-28T19:48:48.033Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745869830256,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Florida Park (Vidrios)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 2,
+      "mes": 2,
+      "liquidadas": 2,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 14866.52,
+      "iva": 0,
+      "total": 14866.52
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-326"
+    },
+    "fechaRegistro": "2025-04-28T19:50:30.256Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745870073416,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio Florida Park (Domingos)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 2,
+      "mes": 2,
+      "liquidadas": 2,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 14866.52,
+      "iva": 0,
+      "total": 14866.52
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-326"
+    },
+    "fechaRegistro": "2025-04-28T19:54:33.416Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745870154891,
+    "periodo": "2025-03",
+    "cliente": "FIDUCIAM SRL",
+    "servicio": "Edificio José Ingenieros",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 78,
+      "mes": 78,
+      "liquidadas": 81,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 7044.41,
+      "aumento": 5.52,
+      "neto": 602094.06,
+      "iva": 0,
+      "total": 602094.06
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-327"
+    },
+    "fechaRegistro": "2025-04-28T19:55:54.892Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745870269232,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO EDIFICIO LAS LAJAS",
+    "servicio": "Edificio Las Lajas",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 161.5,
+      "mes": 184,
+      "liquidadas": 176,
+      "adeudadas": 14.5
+    },
+    "valores": {
+      "hora": 8412.16,
+      "aumento": 5.52,
+      "neto": 1562265.76,
+      "iva": 328075.81,
+      "total": 1890341.57
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-484"
+    },
+    "fechaRegistro": "2025-04-28T19:57:49.233Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745870599820,
+    "periodo": "2025-03",
+    "cliente": "FOXMA SAS",
+    "servicio": "Edificio Rincón",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 40,
+      "liquidadas": 40,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 10110.66,
+      "aumento": 5.52,
+      "neto": 426750.8,
+      "iva": 0,
+      "total": 426750.8
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-32"
+    },
+    "fechaRegistro": "2025-04-28T20:03:19.820Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745871165263,
+    "periodo": "2025-03",
+    "cliente": "FARIERE MARTA NELIDA",
+    "servicio": "Edificio El Fenix",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 11938.71,
+      "aumento": 5.52,
+      "neto": 201563.68,
+      "iva": 0,
+      "total": 201563.68
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "013-35"
+    },
+    "fechaRegistro": "2025-04-28T20:12:45.263Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745871282159,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO DE PROPIETARIOS EDIFICIO TORRE EIFFEL",
+    "servicio": "Edificio Eiffel",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 112.5,
+      "mes": 125,
+      "liquidadas": 116,
+      "adeudadas": 3.5
+    },
+    "valores": {
+      "hora": 8155.16,
+      "aumento": 5.52,
+      "neto": 998217.12,
+      "iva": 209625.6,
+      "total": 1207842.72
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-485"
+    },
+    "fechaRegistro": "2025-04-28T20:14:42.159Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745871523818,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO LISANDRO SOCIEDAD CIVIL",
+    "servicio": "Edificio Lisandro",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 36,
+      "liquidadas": 32,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 6759.03,
+      "aumento": 5.52,
+      "neto": 228228.16,
+      "iva": 0,
+      "total": 228228.16
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-30"
+    },
+    "fechaRegistro": "2025-04-28T20:18:43.819Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745871660110,
+    "periodo": "2025-03",
+    "cliente": "CONSUMIDOR FINAL",
+    "servicio": "Edificio Lisandro (Nuevo)",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 6759.03,
+      "aumento": 5.52,
+      "neto": 171171.12,
+      "iva": 0,
+      "total": 171171.12
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-36"
+    },
+    "fechaRegistro": "2025-04-28T20:21:00.111Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745871838383,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO DE PROPIETARIOS EDIFICIO TORRE SERENA",
+    "servicio": "Edificio Torre Serena",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 48,
+      "mes": 52,
+      "liquidadas": 48,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 6759.03,
+      "aumento": 5.52,
+      "neto": 342342.24,
+      "iva": 0,
+      "total": 342342.24
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-31"
+    },
+    "fechaRegistro": "2025-04-28T20:23:58.383Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745928713615,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO ATLANTIS II",
+    "servicio": "Edificio Atlantis",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 13,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 6228.64,
+      "aumento": 5.52,
+      "neto": 105159.36,
+      "iva": 0,
+      "total": 105159.36
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-32"
+    },
+    "fechaRegistro": "2025-04-29T12:11:53.616Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745928968548,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO DE PROPIETARIOS DENOMINADO EDIFICIO GAGARIN",
+    "servicio": "Edificio Gagarin",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7331.97,
+      "aumento": 5.52,
+      "neto": 123787.04,
+      "iva": 0,
+      "total": 123787.04
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-33"
+    },
+    "fechaRegistro": "2025-04-29T12:16:08.548Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745929482482,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO PROPIETARIOS CONSTANTINO III",
+    "servicio": "Edificio Constantino",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 90,
+      "mes": 92,
+      "liquidadas": 93,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 4727,
+      "aumento": 5.52,
+      "neto": 463877.49,
+      "iva": 0,
+      "total": 463877.49
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-35"
+    },
+    "fechaRegistro": "2025-04-29T12:24:42.482Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745929638919,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO EDIFICIO 9 DE JULIO 1680",
+    "servicio": "Edificio Pilar",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 10,
+      "mes": 8,
+      "liquidadas": 10,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 10954.73,
+      "aumento": 5.52,
+      "neto": 115594.3,
+      "iva": 0,
+      "total": 115594.3
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-486"
+    },
+    "fechaRegistro": "2025-04-29T12:27:18.919Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745929738041,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO EL MIRADOR DE JUAN STABIO",
+    "servicio": "Edificio Stabio- Jornada Completa",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 58,
+      "mes": 184,
+      "liquidadas": 66,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 535545.12,
+      "iva": 112464.48,
+      "total": 648009.6
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-487"
+    },
+    "fechaRegistro": "2025-04-29T12:28:58.042Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745930236177,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO VALENTINA",
+    "servicio": "Edificio Valentina I",
+    "facturante": "Sandra Cordoba",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 15,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 10110.66,
+      "aumento": 5.52,
+      "neto": 160031.55,
+      "iva": 0,
+      "total": 160031.55
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": null
+    },
+    "fechaRegistro": "2025-04-29T12:37:16.177Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745930519304,
+    "periodo": "2025-03",
+    "cliente": "VIVERO ALEJANDRO",
+    "servicio": "Estetica Santo Cuore",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 28,
+      "mes": 34,
+      "liquidadas": 28,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 11417.22,
+      "aumento": 5.52,
+      "neto": 337328.6,
+      "iva": 0,
+      "total": 337328.6
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-33"
+    },
+    "fechaRegistro": "2025-04-29T12:41:59.305Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745930698889,
+    "periodo": "2025-03",
+    "cliente": "COMPAÑÍA ARGENTINA DE DISEÑO SA",
+    "servicio": "Etiqueta Negra",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 42,
+      "mes": 42,
+      "liquidadas": 46,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 10808.66,
+      "aumento": 5.52,
+      "neto": 524643.8,
+      "iva": 110175.2,
+      "total": 634819
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1725"
+    },
+    "fechaRegistro": "2025-04-29T12:44:58.890Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745930872408,
+    "periodo": "2025-03",
+    "cliente": "FIUMICCINO III",
+    "servicio": "Fiumiccino III",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 85,
+      "mes": 104,
+      "liquidadas": 96,
+      "adeudadas": 11
+    },
+    "valores": {
+      "hora": 7380.76,
+      "aumento": 5.52,
+      "neto": 747665.28,
+      "iva": 0,
+      "total": 747665.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-237"
+    },
+    "fechaRegistro": "2025-04-29T12:47:52.409Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745931036634,
+    "periodo": "2025-03",
+    "cliente": "FIUMICCINO IV",
+    "servicio": "Fiumiccino IV",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 88.5,
+      "mes": 104,
+      "liquidadas": 96,
+      "adeudadas": 7.5
+    },
+    "valores": {
+      "hora": 7380.76,
+      "aumento": 5.52,
+      "neto": 747665.28,
+      "iva": 0,
+      "total": 747665.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-238"
+    },
+    "fechaRegistro": "2025-04-29T12:50:36.634Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745931505400,
+    "periodo": "2025-03",
+    "cliente": "SISCADAT S.A.S.",
+    "servicio": "Global",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 36,
+      "liquidadas": 36,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7439.77,
+      "aumento": 5.52,
+      "neto": 282616.2,
+      "iva": 59349.4,
+      "total": 341965.6
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1746 y 2-1747"
+    },
+    "fechaRegistro": "2025-04-29T12:58:25.400Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745931597879,
+    "periodo": "2025-03",
+    "cliente": "GRANJAS CARNAVE SA",
+    "servicio": "Granjas Carnave",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 11508.83,
+      "aumento": 5.52,
+      "neto": 194297.44,
+      "iva": 40802.46,
+      "total": 235099.9
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1727"
+    },
+    "fechaRegistro": "2025-04-29T12:59:57.879Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745931866016,
+    "periodo": "2025-03",
+    "cliente": "GRUPO PILAR SA",
+    "servicio": "Grupo Pilar JM",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 14,
+      "mes": 16,
+      "liquidadas": 14,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9737.54,
+      "aumento": 5.52,
+      "neto": 143850.7,
+      "iva": 30208.65,
+      "total": 174059.35
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1728"
+    },
+    "fechaRegistro": "2025-04-29T13:04:26.016Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745932098296,
+    "periodo": "2025-03",
+    "cliente": "INSTITUTO DE ESTADISTICA Y REGISTRO DE LA INDUSTRIA",
+    "servicio": "IERIC - LA RIOJA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 10.5,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 1.5
+    },
+    "valores": {
+      "hora": 10822.33,
+      "aumento": 5.52,
+      "neto": 137036.64,
+      "iva": 28777.69,
+      "total": 165814.33
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-488"
+    },
+    "fechaRegistro": "2025-04-29T13:08:18.296Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745932263792,
+    "periodo": "2025-03",
+    "cliente": "INSTITUTO DE ESTADISTICA Y REGISTRO DE LA INDUSTRIA",
+    "servicio": "IERIC - CATAMARCA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 16,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 11036.19,
+      "aumento": 5.52,
+      "neto": 139744.68,
+      "iva": 29346.38,
+      "total": 169091.06
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-489"
+    },
+    "fechaRegistro": "2025-04-29T13:11:03.792Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745932413513,
+    "periodo": "2025-03",
+    "cliente": "VTV CORDOBA SA",
+    "servicio": "ITV - Av. Japon",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 128,
+      "mes": 142,
+      "liquidadas": 136,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 7327.1,
+      "aumento": 5.52,
+      "neto": 1051492.16,
+      "iva": 220813.35,
+      "total": 1272305.51
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1729"
+    },
+    "fechaRegistro": "2025-04-29T13:13:33.514Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745932509712,
+    "periodo": "2025-03",
+    "cliente": "VTV CORDOBA SA",
+    "servicio": "ITV - Carcano",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 128,
+      "mes": 142,
+      "liquidadas": 136,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 7327.1,
+      "aumento": 5.52,
+      "neto": 1051492.16,
+      "iva": 220813.35,
+      "total": 1272305.51
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-04-29T13:15:09.712Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745932581784,
+    "periodo": "2025-03",
+    "cliente": "VTV CORDOBA SA",
+    "servicio": "ITV - Zona Sur",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 128,
+      "mes": 142,
+      "liquidadas": 136,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 7327.1,
+      "aumento": 5.52,
+      "neto": 1051492.16,
+      "iva": 220813.35,
+      "total": 1272305.51
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1729"
+    },
+    "fechaRegistro": "2025-04-29T13:16:21.784Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745932905823,
+    "periodo": "2025-03",
+    "cliente": "LUIS A CARRIZO Y CIA SRL",
+    "servicio": "LAC",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 84,
+      "liquidadas": 80,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 9857.34,
+      "aumento": 5.52,
+      "neto": 832117.6,
+      "iva": 174744.7,
+      "total": 1006862.3
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1730"
+    },
+    "fechaRegistro": "2025-04-29T13:21:45.823Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745932981977,
+    "periodo": "2025-03",
+    "cliente": "JOFIEL SAS",
+    "servicio": "Tru Motos - Suc Olmos",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 34,
+      "liquidadas": 34,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 9653.36,
+      "aumento": 5.52,
+      "neto": 346331.82,
+      "iva": 72729.68,
+      "total": 419061.5
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1731"
+    },
+    "fechaRegistro": "2025-04-29T13:23:01.977Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933050680,
+    "periodo": "2025-03",
+    "cliente": "JOFIEL SAS",
+    "servicio": "Tru Motos - Suc Heras",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 20,
+      "mes": 18,
+      "liquidadas": 20,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9653.36,
+      "aumento": 5.52,
+      "neto": 203724.6,
+      "iva": 42782.17,
+      "total": 246506.77
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-04-29T13:24:10.680Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933157527,
+    "periodo": "2025-03",
+    "cliente": "JOFIEL SAS",
+    "servicio": "Tru Motos - Suc Rivera",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 67,
+      "mes": 78,
+      "liquidadas": 70,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 9653.36,
+      "aumento": 5.52,
+      "neto": 713036.1,
+      "iva": 149737.58,
+      "total": 862773.68
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-04-29T13:25:57.527Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933272815,
+    "periodo": "2025-03",
+    "cliente": "JOFIEL SAS",
+    "servicio": "Tru Motos - Suc Sarmiento",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 13.5,
+      "mes": 16,
+      "liquidadas": 18,
+      "adeudadas": 4.5
+    },
+    "valores": {
+      "hora": 9653.36,
+      "aumento": 5.52,
+      "neto": 183352.14,
+      "iva": 38503.95,
+      "total": 221856.09
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1731"
+    },
+    "fechaRegistro": "2025-04-29T13:27:52.816Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933349499,
+    "periodo": "2025-03",
+    "cliente": "KWS ARGENTINA SA",
+    "servicio": "KWS Argentina",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 10,
+      "mes": 16,
+      "liquidadas": 10,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7468.81,
+      "aumento": 5.52,
+      "neto": 78810.9,
+      "iva": 16550.29,
+      "total": 95361.19
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1750"
+    },
+    "fechaRegistro": "2025-04-29T13:29:09.499Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933439511,
+    "periodo": "2025-03",
+    "cliente": "KWS ARGENTINA SA",
+    "servicio": "KWS - Tulumba",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 8,
+      "mes": 16,
+      "liquidadas": 8,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7468.81,
+      "aumento": 5.52,
+      "neto": 63048.72,
+      "iva": 13240.23,
+      "total": 76288.95
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1751"
+    },
+    "fechaRegistro": "2025-04-29T13:30:39.511Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933573502,
+    "periodo": "2025-03",
+    "cliente": "LH PARKING SRL",
+    "servicio": "LH Parking",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24.5,
+      "mes": 25,
+      "liquidadas": 24,
+      "adeudadas": 0.5
+    },
+    "valores": {
+      "hora": 7723.6,
+      "aumento": 5.52,
+      "neto": 195598.56,
+      "iva": 41075.7,
+      "total": 236674.26
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "1-246"
+    },
+    "fechaRegistro": "2025-04-29T13:32:53.503Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933663054,
+    "periodo": "2025-03",
+    "cliente": "NACION SEGUROS SA",
+    "servicio": "Nacion Seguros",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 22,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 9627.26,
+      "aumento": 5.52,
+      "neto": 243808.32,
+      "iva": 51199.75,
+      "total": 295008.07
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1732"
+    },
+    "fechaRegistro": "2025-04-29T13:34:23.054Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745933745503,
+    "periodo": "2025-03",
+    "cliente": "MARIANI NELIDA BEATRIZ",
+    "servicio": "Panaderia Alsina",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 96,
+      "mes": 104,
+      "liquidadas": 104,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 9107.11,
+      "aumento": 5.52,
+      "neto": 999421.28,
+      "iva": 0,
+      "total": 999421.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-239"
+    },
+    "fechaRegistro": "2025-04-29T13:35:45.503Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934098606,
+    "periodo": "2025-03",
+    "cliente": "PANHEL SRL",
+    "servicio": "Panhel Av Sabattini",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 84,
+      "liquidadas": 72,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 8969.62,
+      "aumento": 5.52,
+      "neto": 681461.28,
+      "iva": 143106.87,
+      "total": 824568.15
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1733"
+    },
+    "fechaRegistro": "2025-04-29T13:41:38.607Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934169299,
+    "periodo": "2025-03",
+    "cliente": "PANHEL SRL",
+    "servicio": "Panhel Lopez y Planes",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 44,
+      "mes": 52,
+      "liquidadas": 44,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 8969.62,
+      "aumento": 5.52,
+      "neto": 416448.56,
+      "iva": 87454.2,
+      "total": 503902.76
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1733"
+    },
+    "fechaRegistro": "2025-04-29T13:42:49.299Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934248254,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Capitalinas (Garat)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 34,
+      "mes": 42,
+      "liquidadas": 34,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 275886.88,
+      "iva": 57936.24,
+      "total": 333823.12
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1734"
+    },
+    "fechaRegistro": "2025-04-29T13:44:08.254Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934351941,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Depósito",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 7.5,
+      "mes": 7.5,
+      "liquidadas": 7.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 60857.4,
+      "iva": 12780.05,
+      "total": 73637.45
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1734"
+    },
+    "fechaRegistro": "2025-04-29T13:45:51.942Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934425157,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Depósito LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 5,
+      "mes": 5,
+      "liquidadas": 5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 40571.6,
+      "iva": 8520.04,
+      "total": 49091.64
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1734"
+    },
+    "fechaRegistro": "2025-04-29T13:47:05.158Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934501213,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Maipu 410",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 87,
+      "mes": 94,
+      "liquidadas": 95,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 770775.85,
+      "iva": 161862.93,
+      "total": 932638.78
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1734"
+    },
+    "fechaRegistro": "2025-04-29T13:48:21.213Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934592270,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Maipu 410 LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 7.5,
+      "mes": 7.5,
+      "liquidadas": 7.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 60857.4,
+      "iva": 12780.05,
+      "total": 73637.45
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1734"
+    },
+    "fechaRegistro": "2025-04-29T13:49:52.270Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745934987958,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Rivera Indarte 529",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 20,
+      "mes": 26,
+      "liquidadas": 22,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 178515.04,
+      "iva": 37488.16,
+      "total": 216003.2
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1734"
+    },
+    "fechaRegistro": "2025-04-29T13:56:27.958Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745935577685,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Rivera Indarte 563 (FO)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 97371.84,
+      "iva": 20448.09,
+      "total": 117819.93
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1752"
+    },
+    "fechaRegistro": "2025-04-29T14:06:17.686Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745935739798,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM Republica 737",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 15,
+      "mes": 20,
+      "liquidadas": 15,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 121714.8,
+      "iva": 25560.11,
+      "total": 147274.91
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1735"
+    },
+    "fechaRegistro": "2025-04-29T14:08:59.798Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745935943358,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM San Luis Mitre 727",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 37,
+      "mes": 38,
+      "liquidadas": 41,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 332687.12,
+      "iva": 69864.3,
+      "total": 402551.42
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1736"
+    },
+    "fechaRegistro": "2025-04-29T14:12:23.358Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745936070470,
+    "periodo": "2025-03",
+    "cliente": "PLAZA BBIKE SAS",
+    "servicio": "PM San Luis Buenos Aires esq General Paz",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 18,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 146057.76,
+      "iva": 30672.13,
+      "total": 176729.89
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1736"
+    },
+    "fechaRegistro": "2025-04-29T14:14:30.471Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745936281910,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 2 MZA 19 PARCELA 3",
+    "servicio": "Sector 2 MZA 19 L3 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 4,
+      "mes": 9,
+      "liquidadas": 8,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 68772,
+      "iva": 14442.12,
+      "total": 83214.12
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1717"
+    },
+    "fechaRegistro": "2025-04-29T14:18:01.910Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745936470205,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 8 MZA 46 TORRE 1",
+    "servicio": "Sector 8 MZA 46 T1 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36.5,
+      "mes": 52,
+      "liquidadas": 48,
+      "adeudadas": 11.5
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 412632,
+      "iva": 86652.72,
+      "total": 499284.72
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-476"
+    },
+    "fechaRegistro": "2025-04-29T14:21:10.205Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745936936307,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 3 MZA 20 PARCELA 1",
+    "servicio": "Sector 3 MZA 20 L1 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 37,
+      "mes": 37,
+      "liquidadas": 36,
+      "adeudadas": 1
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 309474,
+      "iva": 64989.54,
+      "total": 374463.54
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-477"
+    },
+    "fechaRegistro": "2025-04-29T14:28:56.307Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745937047733,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 3 MZA 32 PARCELA 1",
+    "servicio": "Sector 3 MZA 32 L1 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 36,
+      "liquidadas": 36,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 309474,
+      "iva": 64989.54,
+      "total": 374463.54
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-478"
+    },
+    "fechaRegistro": "2025-04-29T14:30:47.733Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745937157348,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 2 MZA 19 PARCELA 1",
+    "servicio": "Sector 2 MZA 19 L1 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 7.5,
+      "mes": 8,
+      "liquidadas": 8,
+      "adeudadas": 0.5
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 68772,
+      "iva": 14442.12,
+      "total": 83214.12
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-04-29T14:32:37.348Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745937276510,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 2 MZA 19 PARCELA 2",
+    "servicio": "Sector 2 MZA 19 L2 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 2,
+      "mes": 4,
+      "liquidadas": 4,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 34386,
+      "iva": 7221.06,
+      "total": 41607.06
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-480"
+    },
+    "fechaRegistro": "2025-04-29T14:34:36.511Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745937705854,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 12 MZA 69 PARCELA 1",
+    "servicio": "Sector 12 MZA 69 L11 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 4,
+      "mes": 4,
+      "liquidadas": 4,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 34386,
+      "iva": 7221.06,
+      "total": 41607.06
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-481"
+    },
+    "fechaRegistro": "2025-04-29T14:41:45.855Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938000484,
+    "periodo": "2025-03",
+    "cliente": "FIDEICOMISO BARRIO LICEO SECTOR 4 MZA 38 TORRE 1",
+    "servicio": "Sector 4 MZA 38 - Procrear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 90.5,
+      "mes": 90.5,
+      "liquidadas": 100,
+      "adeudadas": 9.5
+    },
+    "valores": {
+      "hora": 8146.8,
+      "aumento": 5.52,
+      "neto": 859650,
+      "iva": 180526.5,
+      "total": 1040176.5
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-482"
+    },
+    "fechaRegistro": "2025-04-29T14:46:40.485Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938142237,
+    "periodo": "2025-03",
+    "cliente": "SILICA NETWORKS ARGENTINA SA",
+    "servicio": "Quadra 54",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 8,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": 16344.93,
+      "aumento": 5.52,
+      "neto": 275954.72,
+      "iva": 57950.49,
+      "total": 333905.21
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1737"
+    },
+    "fechaRegistro": "2025-04-29T14:49:02.237Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938260779,
+    "periodo": "2025-03",
+    "cliente": "QUO COMUNICACIÓN SAS",
+    "servicio": "Quo Estrategia",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 45,
+      "mes": 45,
+      "liquidadas": 45,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9628,
+      "aumento": 0,
+      "neto": 433260,
+      "iva": 90984.6,
+      "total": 524244.6
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1748"
+    },
+    "fechaRegistro": "2025-04-29T14:51:00.779Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938372307,
+    "periodo": "2025-03",
+    "cliente": "CHILEAR UNION SA",
+    "servicio": "Reeferline (Contenedores)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 20,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 10850.25,
+      "aumento": 5.52,
+      "neto": 274780.32,
+      "iva": 57703.87,
+      "total": 332484.19
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1738"
+    },
+    "fechaRegistro": "2025-04-29T14:52:52.307Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938570476,
+    "periodo": "2025-03",
+    "cliente": "DEL MUNDO A TUS MANOS SAS",
+    "servicio": "Roller Show - Malagueño",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 32,
+      "liquidadas": 32,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9359.63,
+      "aumento": 5.52,
+      "neto": 316040.96,
+      "iva": 66368.6,
+      "total": 382409.56
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1739"
+    },
+    "fechaRegistro": "2025-04-29T14:56:10.477Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938690899,
+    "periodo": "2025-03",
+    "cliente": "SILICA NETWORKS ARGENTINA SA",
+    "servicio": "Silica Networks",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 19695.66,
+      "aumento": 5.52,
+      "neto": 249394.32,
+      "iva": 52372.81,
+      "total": 301767.13
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1740"
+    },
+    "fechaRegistro": "2025-04-29T14:58:10.899Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938757917,
+    "periodo": "2025-03",
+    "cliente": "SMART GROUP SRL",
+    "servicio": "Smart Tienda Tecno",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 21,
+      "mes": 24,
+      "liquidadas": 24,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": 8370.32,
+      "aumento": 5.52,
+      "neto": 211977.6,
+      "iva": 44515.3,
+      "total": 256492.9
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1741"
+    },
+    "fechaRegistro": "2025-04-29T14:59:17.918Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745938987863,
+    "periodo": "2025-03",
+    "cliente": "CONSUMIDOR FINAL",
+    "servicio": "Torres del Marques",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 15,
+      "mes": 15,
+      "liquidadas": 15,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 13025.13,
+      "aumento": 5.52,
+      "neto": 206161.8,
+      "iva": 0,
+      "total": 206161.8
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-34"
+    },
+    "fechaRegistro": "2025-04-29T15:03:07.863Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745939080314,
+    "periodo": "2025-03",
+    "cliente": "UTHGRA",
+    "servicio": "UTHGRA (Cordoba)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 162,
+      "mes": 189,
+      "liquidadas": 180,
+      "adeudadas": 18
+    },
+    "valores": {
+      "hora": 7044.42,
+      "aumento": 5.52,
+      "neto": 1337988.6,
+      "iva": 280977.61,
+      "total": 1618966.21
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-04-29T15:04:40.314Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745939225762,
+    "periodo": "2025-03",
+    "cliente": "UTHGRA",
+    "servicio": "UTHGRA (Rio Ceballos)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 44,
+      "mes": 52,
+      "liquidadas": 48,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 7044.42,
+      "aumento": 5.52,
+      "neto": 356796.96,
+      "iva": 74927.36,
+      "total": 431724.32
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1742"
+    },
+    "fechaRegistro": "2025-04-29T15:07:05.762Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745939328823,
+    "periodo": "2025-03",
+    "cliente": "UTHGRA",
+    "servicio": "UTHGRA (VCP)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 44,
+      "mes": 52,
+      "liquidadas": 48,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 7118.88,
+      "aumento": 5.52,
+      "neto": 360568.32,
+      "iva": 75719.35,
+      "total": 436287.67
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1743"
+    },
+    "fechaRegistro": "2025-04-29T15:08:48.823Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745939455084,
+    "periodo": "2025-03",
+    "cliente": "VITSA SOLUCIONES AMBIENTALES S.A.",
+    "servicio": "VITSA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 22,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 9610.33,
+      "aumento": 5.52,
+      "neto": 243379.68,
+      "iva": 51109.73,
+      "total": 294489.41
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1744"
+    },
+    "fechaRegistro": "2025-04-29T15:10:55.084Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745939622122,
+    "periodo": "2025-03",
+    "cliente": "ZAMPONI ASESORES DE EMPRESAS SRL",
+    "servicio": "Zamponi Asesores",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 14,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 11262.69,
+      "aumento": 5.52,
+      "neto": 190150.24,
+      "iva": 39931.55,
+      "total": 230081.79
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1745"
+    },
+    "fechaRegistro": "2025-04-29T15:13:42.123Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745950411105,
+    "periodo": "2025-03",
+    "cliente": "FUNDACION ENSEÑANZA INTEGRAL GASTRONOMICA CELIA",
+    "servicio": "Celia (Limpieza Especial)",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 57,
+      "mes": 57,
+      "liquidadas": 57,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7804.39,
+      "aumento": 0,
+      "neto": 444850.23,
+      "iva": 0,
+      "total": 444850.23
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": null
+    },
+    "fechaRegistro": "2025-04-29T18:13:31.105Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1745951421136,
+    "periodo": "2025-03",
+    "cliente": "INSTITUTO NACIONAL DE TECNOLOGIA AGROPECUARIA",
+    "servicio": "INTA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 14,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": 8172.46,
+      "aumento": 0,
+      "neto": 130759.36,
+      "iva": 27459.47,
+      "total": 158218.83
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-493"
+    },
+    "fechaRegistro": "2025-04-29T18:30:21.136Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746016808384,
+    "periodo": "2025-03",
+    "cliente": "INDUSTRIAS JED S.R.L.",
+    "cuit": "N/A",
+    "servicio": "Rhino 4x4",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 158.4,
+      "mes": 184.8,
+      "liquidadas": 176,
+      "adeudadas": 17.6
+    },
+    "valores": {
+      "hora": 7511.2,
+      "aumento": 5.52,
+      "neto": 1394944.32,
+      "iva": 292938.31,
+      "total": 1687882.63
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1764"
+    },
+    "fechaRegistro": "2025-04-30T12:40:08.384Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746459726539,
+    "periodo": "2025-03",
+    "cliente": "FOXMA SAS",
+    "cuit": "N/A",
+    "servicio": "Edificio Rincón (corte de cesped)",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 6.25,
+      "mes": 6.25,
+      "liquidadas": 6.25,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 10110.66,
+      "aumento": 5.52,
+      "neto": 66679.81,
+      "iva": 0,
+      "total": 66679.81
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-32"
+    },
+    "fechaRegistro": "2025-05-05T15:42:06.540Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746470358036,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO DE COPROPIETARIOS EDIFICIO TALA",
+    "cuit": "N/A",
+    "servicio": "Edificio El Tala",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 25,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 1
+    },
+    "valores": {
+      "hora": 6228.64,
+      "aumento": 5.52,
+      "neto": 157739.04,
+      "iva": 0,
+      "total": 157739.04
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-33"
+    },
+    "fechaRegistro": "2025-05-05T18:39:18.036Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746470687650,
+    "periodo": "2025-03",
+    "cliente": "CONSORCIO EL MIRADOR DE JUAN STABIO",
+    "cuit": "N/A",
+    "servicio": "Edificio Stabio- Limpieza",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 228,
+      "mes": 146,
+      "liquidadas": 246,
+      "adeudadas": 18
+    },
+    "valores": {
+      "hora": 7689.84,
+      "aumento": 5.52,
+      "neto": 1996122.72,
+      "iva": 419185.77,
+      "total": 2415308.49
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-487"
+    },
+    "fechaRegistro": "2025-05-05T18:44:47.650Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746472545002,
+    "periodo": "2025-03",
+    "cliente": "VISUM S.A.",
+    "cuit": "N/A",
+    "servicio": "Global",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7439.77,
+      "aumento": 5.52,
+      "neto": 125607.2,
+      "iva": 26377.51,
+      "total": 151984.71
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1726 y 2-1747"
+    },
+    "fechaRegistro": "2025-05-05T19:15:45.008Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746472785737,
+    "periodo": "2025-03",
+    "cliente": "SISCADAT S.A.S.",
+    "cuit": "N/A",
+    "servicio": "Global (Siscadat S.A.S)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 7439.77,
+      "aumento": 5.52,
+      "neto": 125607.2,
+      "iva": 26377.51,
+      "total": 151984.71
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1746"
+    },
+    "fechaRegistro": "2025-05-05T19:19:45.737Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746534267801,
+    "periodo": "2025-03",
+    "cliente": "APARTS DE LA VILLA SA",
+    "cuit": "N/A",
+    "servicio": "Apart Hotel (FO)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 19,
+      "mes": 19,
+      "liquidadas": 12,
+      "adeudadas": 7
+    },
+    "valores": {
+      "hora": 20000,
+      "aumento": 5.52,
+      "neto": 253248,
+      "iva": 53182.08,
+      "total": 306430.08
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1754"
+    },
+    "fechaRegistro": "2025-05-06T12:24:27.802Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746534717726,
+    "periodo": "2025-03",
+    "cliente": "RED DE SEGURO MEDICO SRL",
+    "cuit": "N/A",
+    "servicio": "RED SEGUROS (FO)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 25,
+      "mes": 25,
+      "liquidadas": 25,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 25920,
+      "aumento": 0,
+      "neto": 648000,
+      "iva": 136080,
+      "total": 784080
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1706 (17/03/2025)"
+    },
+    "fechaRegistro": "2025-05-06T12:31:57.727Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746534919706,
+    "periodo": "2025-03",
+    "cliente": "REHABILITA SRL",
+    "cuit": "N/A",
+    "servicio": "Cubano (FO corte de cesped)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 21,
+      "mes": 21,
+      "liquidadas": 21,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 15404.76,
+      "aumento": 0,
+      "neto": 323499.96,
+      "iva": 67934.99,
+      "total": 391434.95
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1707 (17/03/2025)"
+    },
+    "fechaRegistro": "2025-05-06T12:35:19.706Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746535074510,
+    "periodo": "2025-03",
+    "cliente": "Consorcio Pablo I",
+    "cuit": "N/A",
+    "servicio": "Edificio Pablo 1",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 40,
+      "liquidadas": 44,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": 8114.32,
+      "aumento": 0,
+      "neto": 357030.08,
+      "iva": 74976.32,
+      "total": 432006.4
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-490"
+    },
+    "fechaRegistro": "2025-05-06T12:37:54.510Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746535284077,
+    "periodo": "2025-03",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "Casa Jorge Newbery(FO)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 32.5,
+      "mes": 32.5,
+      "liquidadas": 32.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 13995.69,
+      "aumento": 0,
+      "neto": 454859.92,
+      "iva": 0,
+      "total": 454859.92
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-323/ 1-324 (19/03/2025)"
+    },
+    "fechaRegistro": "2025-05-06T12:41:24.077Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746535701138,
+    "periodo": "2025-03",
+    "cliente": "CARLA ANDREA ISAIA",
+    "cuit": "N/A",
+    "servicio": "Pasteleria (FO)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 30,
+      "mes": 30,
+      "liquidadas": 30,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 9783.33,
+      "aumento": 0,
+      "neto": 293499.9,
+      "iva": 61634.98,
+      "total": 355134.88
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1701 (06/03/2025)"
+    },
+    "fechaRegistro": "2025-05-06T12:48:21.139Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746535918568,
+    "periodo": "2025-03",
+    "cliente": "FERROFRAN SA",
+    "cuit": "N/A",
+    "servicio": "VCP Gilda (FO)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 124,
+      "mes": 124,
+      "liquidadas": 124,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 5763.7,
+      "aumento": 0,
+      "neto": 714700.04,
+      "iva": 150087.01,
+      "total": 864787.05
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1716 (28/03/2025)"
+    },
+    "fechaRegistro": "2025-05-06T12:51:58.568Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746545945974,
+    "periodo": "2025-03",
+    "cliente": "Rafca SRL",
+    "cuit": "N/A",
+    "servicio": "Nave (Corte de Cesped) FO",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 80,
+      "mes": 80,
+      "liquidadas": 80,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 6270.49,
+      "aumento": 0,
+      "neto": 501639.2,
+      "iva": 105344.23,
+      "total": 606983.43
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1803"
+    },
+    "fechaRegistro": "2025-05-06T15:39:05.974Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746547116858,
+    "periodo": "2025-03",
+    "cliente": "Alberto Méndez e Hijos SA (7)",
+    "cuit": "N/A",
+    "servicio": "Local Alvear 615",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 2.75,
+      "mes": 2.75,
+      "liquidadas": 2.75,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 14623.59,
+      "aumento": 0,
+      "neto": 40214.87,
+      "iva": 8445.12,
+      "total": 48659.99
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1757"
+    },
+    "fechaRegistro": "2025-05-06T15:58:36.858Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746548962104,
+    "periodo": "2025-03",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "Oncativo(FO)",
+    "facturante": "Sin Factura",
+    "horas": {
+      "trabajadas": 127.5,
+      "mes": 127.5,
+      "liquidadas": 127.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 10125.09,
+      "aumento": 0,
+      "neto": 1290950.25,
+      "iva": 0,
+      "total": 1290950.25
+    },
+    "factura": {
+      "tipo": "noSeFactura",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-06T16:29:22.104Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746549387517,
+    "periodo": "2025-03",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "Rafael Nuñez",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 50.66,
+      "mes": 50.66,
+      "liquidadas": 50.66,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 8487.95,
+      "aumento": 0,
+      "neto": 430000.05,
+      "iva": 0,
+      "total": 430000.05
+    },
+    "factura": {
+      "tipo": "noSeFactura",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-06T16:36:27.517Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746549521260,
+    "periodo": "2025-03",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "Terreno La Madrid(FO)",
+    "facturante": "Sin Factura",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 36,
+      "liquidadas": 36,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": 10694.44,
+      "aumento": 0,
+      "neto": 385000.2,
+      "iva": 0,
+      "total": 385000.2
+    },
+    "factura": {
+      "tipo": "noSeFactura",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-06T16:38:41.260Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746628880938,
+    "periodo": "2025-03",
+    "cliente": "SUPERMERCADOS MAYORISTAS YAGUAR S.A.",
+    "cuit": "N/A",
+    "servicio": "Yaguar",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 314.33,
+      "mes": 312,
+      "liquidadas": 348,
+      "adeudadas": 33.7
+    },
+    "valores": {
+      "hora": "8000.52",
+      "aumento": "5.52",
+      "neto": 2937867.75,
+      "iva": 616952.23,
+      "total": 3554819.98
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "1 - 043"
+    },
+    "fechaRegistro": "2025-05-07T14:41:20.939Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746630160096,
+    "periodo": "2025-03",
+    "cliente": "SUPERMERCADOS MAYORISTAS YAGUAR S.A.",
+    "cuit": "N/A",
+    "servicio": "Yaguar (Corte de Cesped)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 124,
+      "mes": 124,
+      "liquidadas": 124,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8000.52",
+      "aumento": "5.52",
+      "neto": 1046826.44,
+      "iva": 219833.55,
+      "total": 1266659.99
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "1 - 043"
+    },
+    "fechaRegistro": "2025-05-07T15:02:40.096Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746643983610,
+    "periodo": "2025-04",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "cuit": "N/A",
+    "servicio": "Ama Hogar - Sarmiento",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 32,
+      "liquidadas": 32,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13858.60",
+      "aumento": "8.39",
+      "neto": 480682.88,
+      "iva": 100943.4,
+      "total": 581626.28
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-07T18:53:03.611Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746644132574,
+    "periodo": "2025-04",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "cuit": "N/A",
+    "servicio": "Ama Hogar - Santa Rosa",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13858.60",
+      "aumento": "8.39",
+      "neto": 180256.08,
+      "iva": 37853.78,
+      "total": 218109.86
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1765"
+    },
+    "fechaRegistro": "2025-05-07T18:55:32.574Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746644263894,
+    "periodo": "2025-04",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "cuit": "N/A",
+    "servicio": "Ama Hogar - Oncativo",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 7.5,
+      "mes": 7.5,
+      "liquidadas": 7.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13858.60",
+      "aumento": "8.39",
+      "neto": 112660.05,
+      "iva": 23658.61,
+      "total": 136318.66
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1765"
+    },
+    "fechaRegistro": "2025-05-07T18:57:43.894Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746644646085,
+    "periodo": "2025-04",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (6)",
+    "cuit": "N/A",
+    "servicio": "Ama Hogar - Alvear",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 15,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13858.60",
+      "aumento": "8.39",
+      "neto": 180256.08,
+      "iva": 37853.78,
+      "total": 218109.86
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1765"
+    },
+    "fechaRegistro": "2025-05-07T19:04:06.085Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746644773534,
+    "periodo": "2025-04",
+    "cliente": "ALBERTO MENDEZ E HIJOS SA (9)",
+    "cuit": "N/A",
+    "servicio": "Ama Hogar - Musicos del Centro (Olmos 230)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 4,
+      "mes": 4,
+      "liquidadas": 4,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13858.60",
+      "aumento": "8.39",
+      "neto": 60085.36,
+      "iva": 12617.93,
+      "total": 72703.29
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1765"
+    },
+    "fechaRegistro": "2025-05-07T19:06:13.535Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746644908900,
+    "periodo": "2025-04",
+    "cliente": "AM CORDOBA S.A.",
+    "cuit": "N/A",
+    "servicio": "AMCO",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 160,
+      "mes": 176,
+      "liquidadas": 160,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "11181.97",
+      "aumento": "8.39",
+      "neto": 1939222.4,
+      "iva": 407236.7,
+      "total": 2346459.1
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1765"
+    },
+    "fechaRegistro": "2025-05-07T19:08:28.900Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746645032440,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO CASEROS Y R GARCIA MARTINEZ",
+    "cuit": "N/A",
+    "servicio": "Arcos del Cerro - Limpieza",
+    "facturante": "Sandra Cordoba",
+    "horas": {
+      "trabajadas": 192,
+      "mes": 212,
+      "liquidadas": 192,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8370.32",
+      "aumento": "8.39",
+      "neto": 1741937.28,
+      "iva": 0,
+      "total": 1741937.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "4-581"
+    },
+    "fechaRegistro": "2025-05-07T19:10:32.440Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746645112178,
+    "periodo": "2025-04",
+    "cliente": "BOIXADOS INDUSTRIAL S.A.",
+    "cuit": "N/A",
+    "servicio": "Boixados",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 36,
+      "liquidadas": 36,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "9169.00",
+      "aumento": "8.39",
+      "neto": 357778.08,
+      "iva": 75133.4,
+      "total": 432911.48
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1767"
+    },
+    "fechaRegistro": "2025-05-07T19:11:52.178Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746645177832,
+    "periodo": "2025-04",
+    "cliente": "COBERTURA DE SALUD S.A. (La Rioja)",
+    "cuit": "N/A",
+    "servicio": "Boreal (La Rioja)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 160,
+      "mes": 176,
+      "liquidadas": 160,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "12171.53",
+      "aumento": "8.39",
+      "neto": 2110835.2,
+      "iva": 443275.39,
+      "total": 2554110.59
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1800"
+    },
+    "fechaRegistro": "2025-05-07T19:12:57.832Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746645311151,
+    "periodo": "2025-04",
+    "cliente": "COBERTURA DE SALUD S.A. (La Rioja)",
+    "cuit": "N/A",
+    "servicio": "Boreal (Chilecito)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 44,
+      "liquidadas": 40,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "12171.53",
+      "aumento": "8.39",
+      "neto": 527708.8,
+      "iva": 110818.85,
+      "total": 638527.65
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1768"
+    },
+    "fechaRegistro": "2025-05-07T19:15:11.152Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746646086755,
+    "periodo": "2025-04",
+    "cliente": "COBERTURA DE SALUD S.A. (Córdoba)",
+    "cuit": "N/A",
+    "servicio": "Boreal (Cordoba)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 160,
+      "mes": 176,
+      "liquidadas": 160,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "9371.20",
+      "aumento": "8.39",
+      "neto": 1625190.4,
+      "iva": 341289.98,
+      "total": 1966480.38
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1801"
+    },
+    "fechaRegistro": "2025-05-07T19:28:06.755Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746646205401,
+    "periodo": "2025-04",
+    "cliente": "BRAMED S.R.L",
+    "cuit": "N/A",
+    "servicio": "Bramed",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 77,
+      "mes": 88,
+      "liquidadas": 80,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": "13175.22",
+      "aumento": "10",
+      "neto": 1159419.2,
+      "iva": 243478.03,
+      "total": 1402897.23
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1769"
+    },
+    "fechaRegistro": "2025-05-07T19:30:05.402Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746646724017,
+    "periodo": "2025-04",
+    "cliente": "FUNDACION ENSEÑANZA INTEGRAL GASTRONOMICA CELIA",
+    "cuit": "N/A",
+    "servicio": "Celia",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 328,
+      "mes": 352,
+      "liquidadas": 328,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7396.12",
+      "aumento": "8.39",
+      "neto": 2629461.2,
+      "iva": 0,
+      "total": 2629461.2
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-241"
+    },
+    "fechaRegistro": "2025-05-07T19:38:44.018Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746646832910,
+    "periodo": "2025-04",
+    "cliente": "CIRCULO ODONTOLOGICO REGIONAL RIO TERCERO",
+    "cuit": "N/A",
+    "servicio": "Circulo Odontologico Rio III",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "9518.78",
+      "aumento": "8.39",
+      "neto": 247617.84,
+      "iva": 51999.75,
+      "total": 299617.59
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-494"
+    },
+    "fechaRegistro": "2025-05-07T19:40:32.910Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746646907422,
+    "periodo": "2025-04",
+    "cliente": "INSTITUTO HIJA DE MARIA SANTISIMA DEL HUERTO",
+    "cuit": "N/A",
+    "servicio": "Colegio El Huerto",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 76,
+      "mes": 88,
+      "liquidadas": 80,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "10503.28",
+      "aumento": "8.39",
+      "neto": 910760.8,
+      "iva": 0,
+      "total": 910760.8
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-40"
+    },
+    "fechaRegistro": "2025-05-07T19:41:47.423Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746647168588,
+    "periodo": "2025-04",
+    "cliente": "INSTITUTO HIJA DE MARIA SANTISIMA DEL HUERTO",
+    "cuit": "N/A",
+    "servicio": "Colegio El Huerto (Adicional)",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 6.5,
+      "mes": 6.5,
+      "liquidadas": 6.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10503.28",
+      "aumento": "8.39",
+      "neto": 73999.32,
+      "iva": 0,
+      "total": 73999.32
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-40"
+    },
+    "fechaRegistro": "2025-05-07T19:46:08.588Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746647259540,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO PROPIETARIOS EDIFICIO ARRUABARRENA 66",
+    "cuit": "N/A",
+    "servicio": "Consorcio Arruabarrena",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 27,
+      "liquidadas": 27,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": "9724.57",
+      "aumento": "8.39",
+      "neto": 284592.42,
+      "iva": 0,
+      "total": 284592.42
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-41"
+    },
+    "fechaRegistro": "2025-05-07T19:47:39.540Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746647879927,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - Adm",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 92,
+      "mes": 88,
+      "liquidadas": 80,
+      "adeudadas": 12
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 1406886.4,
+      "iva": 295446.14,
+      "total": 1702332.54
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T19:57:59.928Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648002752,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - Adm (Adicional)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 3,
+      "mes": 3,
+      "liquidadas": 3,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 52758.24,
+      "iva": 11079.23,
+      "total": 63837.47
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T20:00:02.752Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648073090,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - Banco de Sangre",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 38,
+      "mes": 44,
+      "liquidadas": 40,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 703443.2,
+      "iva": 147723.07,
+      "total": 851166.27
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T20:01:13.090Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648149357,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - Nº 22",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 44,
+      "liquidadas": 40,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 703443.2,
+      "iva": 147723.07,
+      "total": 851166.27
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T20:02:29.357Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648363118,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - N°34",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 44,
+      "liquidadas": 40,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 703443.2,
+      "iva": 147723.07,
+      "total": 851166.27
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T20:06:03.118Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648443261,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - Ruta 9",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 78,
+      "mes": 88,
+      "liquidadas": 80,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 1406886.4,
+      "iva": 295446.14,
+      "total": 1702332.54
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T20:07:23.261Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648518705,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - Sinsacate",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 281377.28,
+      "iva": 59089.23,
+      "total": 340466.51
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T20:08:38.705Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648617390,
+    "periodo": "2025-04",
+    "cliente": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Cooperativa Caroya - TV",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 44,
+      "liquidadas": 40,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "16224.82",
+      "aumento": "8.39",
+      "neto": 703443.2,
+      "iva": 147723.07,
+      "total": 851166.27
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1770"
+    },
+    "fechaRegistro": "2025-05-07T20:10:17.390Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648684654,
+    "periodo": "2025-04",
+    "cliente": "DYCSA DISEÑO Y CONSTRUCCION SA",
+    "cuit": "N/A",
+    "servicio": "Dycsa",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 80,
+      "mes": 88,
+      "liquidadas": 80,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "6828.36",
+      "aumento": "8.39",
+      "neto": 592100.8,
+      "iva": 124341.17,
+      "total": 716441.97
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1771"
+    },
+    "fechaRegistro": "2025-05-07T20:11:24.654Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648767332,
+    "periodo": "2025-04",
+    "cliente": "FARIERE MARTA NELIDA",
+    "cuit": "N/A",
+    "servicio": "Edificio Avellaneda",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "11140.21",
+      "aumento": "8.39",
+      "neto": 193197.92,
+      "iva": 0,
+      "total": 193197.92
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-42"
+    },
+    "fechaRegistro": "2025-05-07T20:12:47.333Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648857349,
+    "periodo": "2025-04",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "Edificio Av. Patria",
+    "facturante": "Sandra Cordoba",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 28,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "10802.72",
+      "aumento": "8.39",
+      "neto": 327853.96,
+      "iva": 0,
+      "total": 327853.96
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "4-582 y 4-583"
+    },
+    "fechaRegistro": "2025-05-07T20:14:17.349Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746648943195,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO DE PROPIETARIOS AV. COLON ESQ SUCRE",
+    "cuit": "N/A",
+    "servicio": "Edificio Av. Colon",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 39,
+      "liquidadas": 42,
+      "adeudadas": 6
+    },
+    "valores": {
+      "hora": "10802.72",
+      "aumento": "8.39",
+      "neto": 491780.94,
+      "iva": 0,
+      "total": 491780.94
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-37"
+    },
+    "fechaRegistro": "2025-05-07T20:15:43.195Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746649018327,
+    "periodo": "2025-04",
+    "cliente": "FIDUCIAM SRL",
+    "cuit": "N/A",
+    "servicio": "Edificio Gran Portico",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 78,
+      "liquidadas": 77,
+      "adeudadas": 5
+    },
+    "valores": {
+      "hora": "7044.41",
+      "aumento": "8.39",
+      "neto": 587928.88,
+      "iva": 0,
+      "total": 587928.88
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-328"
+    },
+    "fechaRegistro": "2025-05-07T20:16:58.328Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746649105748,
+    "periodo": "2025-04",
+    "cliente": "FIDUCIAM SRL",
+    "cuit": "N/A",
+    "servicio": "Edificio Gran Portico (Adicionales)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 78,
+      "liquidadas": 77,
+      "adeudadas": 5
+    },
+    "valores": {
+      "hora": "7044.4",
+      "aumento": "8.39",
+      "neto": 587928.11,
+      "iva": 0,
+      "total": 587928.11
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-328"
+    },
+    "fechaRegistro": "2025-05-07T20:18:25.748Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746649223105,
+    "periodo": "2025-04",
+    "cliente": "FIDUCIAM SRL",
+    "cuit": "N/A",
+    "servicio": "Edificio Florida Park",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 78,
+      "liquidadas": 78,
+      "adeudadas": 6
+    },
+    "valores": {
+      "hora": "7044.41",
+      "aumento": "8.39",
+      "neto": 595564.32,
+      "iva": 0,
+      "total": 595564.32
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-329"
+    },
+    "fechaRegistro": "2025-05-07T20:20:23.105Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746649303996,
+    "periodo": "2025-04",
+    "cliente": "FIDUCIAM SRL",
+    "cuit": "N/A",
+    "servicio": "Edificio Florida Park (Adicionales)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 2,
+      "mes": 2,
+      "liquidadas": 2,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7044.41",
+      "aumento": "8.39",
+      "neto": 15270.88,
+      "iva": 0,
+      "total": 15270.88
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-329"
+    },
+    "fechaRegistro": "2025-05-07T20:21:43.996Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746708174568,
+    "periodo": "2025-04",
+    "cliente": "FIDUCIAM SRL",
+    "cuit": "N/A",
+    "servicio": "Edificio José Ingenieros",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 78,
+      "liquidadas": 77,
+      "adeudadas": 5
+    },
+    "valores": {
+      "hora": "7044.41",
+      "aumento": "8.39",
+      "neto": 587928.88,
+      "iva": 0,
+      "total": 587928.88
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-330"
+    },
+    "fechaRegistro": "2025-05-08T12:42:54.569Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746708300745,
+    "periodo": "2025-04",
+    "cliente": "FIDUCIAM SRL",
+    "cuit": "N/A",
+    "servicio": "Edificio José Ingenieros (Adicional)",
+    "facturante": "Aylen Nogales",
+    "horas": {
+      "trabajadas": 3,
+      "mes": 3,
+      "liquidadas": 3,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7044.41",
+      "aumento": "8.39",
+      "neto": 22906.32,
+      "iva": 0,
+      "total": 22906.32
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "1-330"
+    },
+    "fechaRegistro": "2025-05-08T12:45:00.745Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746708392561,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO EDIFICIO LAS LAJAS",
+    "cuit": "N/A",
+    "servicio": "Edificio Las Lajas",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 174,
+      "mes": 192,
+      "liquidadas": 184,
+      "adeudadas": 10
+    },
+    "valores": {
+      "hora": "6952.20",
+      "aumento": "8.39",
+      "neto": 1386530.16,
+      "iva": 291171.33,
+      "total": 1677701.49
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-495"
+    },
+    "fechaRegistro": "2025-05-08T12:46:32.561Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746708461113,
+    "periodo": "2025-04",
+    "cliente": "FOXMA SAS",
+    "cuit": "N/A",
+    "servicio": "Edificio Rincón",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 43,
+      "liquidadas": 40,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10110.66",
+      "aumento": "8.39",
+      "neto": 438357.6,
+      "iva": 0,
+      "total": 438357.6
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-43"
+    },
+    "fechaRegistro": "2025-05-08T12:47:41.114Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746708719670,
+    "periodo": "2025-04",
+    "cliente": "FOXMA SAS",
+    "cuit": "N/A",
+    "servicio": "Edificio Rincón (corte de cesped)",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 4,
+      "mes": 4,
+      "liquidadas": 4,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10110.66",
+      "aumento": "8.39",
+      "neto": 43835.76,
+      "iva": 0,
+      "total": 43835.76
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-43"
+    },
+    "fechaRegistro": "2025-05-08T12:51:59.670Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746708783101,
+    "periodo": "2025-04",
+    "cliente": "FARIERE MARTA NELIDA",
+    "cuit": "N/A",
+    "servicio": "Edificio El Fenix",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "11938.71",
+      "aumento": "8.39",
+      "neto": 207045.92,
+      "iva": 0,
+      "total": 207045.92
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-44"
+    },
+    "fechaRegistro": "2025-05-08T12:53:03.101Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746708879901,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO DE PROPIETARIOS EDIFICIO TORRE EIFFEL",
+    "cuit": "N/A",
+    "servicio": "Edificio Eiffel",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 116,
+      "mes": 126,
+      "liquidadas": 116,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8155.16",
+      "aumento": "8.39",
+      "neto": 1025368.08,
+      "iva": 215327.3,
+      "total": 1240695.38
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-496"
+    },
+    "fechaRegistro": "2025-05-08T12:54:39.902Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709274954,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO LISANDRO SOCIEDAD CIVIL",
+    "cuit": "N/A",
+    "servicio": "Edificio Lisandro",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 36,
+      "liquidadas": 32,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "6759.03",
+      "aumento": "8.39",
+      "neto": 234435.52,
+      "iva": 0,
+      "total": 234435.52
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-38"
+    },
+    "fechaRegistro": "2025-05-08T13:01:14.954Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709426225,
+    "periodo": "2025-04",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "Edificio Lisandro (Nuevo)",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 23,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 1
+    },
+    "valores": {
+      "hora": "6759.03",
+      "aumento": "8.39",
+      "neto": 175826.64,
+      "iva": 0,
+      "total": 175826.64
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-044"
+    },
+    "fechaRegistro": "2025-05-08T13:03:46.225Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709510602,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO DE PROPIETARIOS EDIFICIO TORRE SERENA",
+    "cuit": "N/A",
+    "servicio": "Edificio Torre Serena",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 48,
+      "mes": 52,
+      "liquidadas": 48,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "6759.03",
+      "aumento": "8.39",
+      "neto": 351653.28,
+      "iva": 0,
+      "total": 351653.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-39"
+    },
+    "fechaRegistro": "2025-05-08T13:05:10.603Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709595927,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO ATLANTIS II",
+    "cuit": "N/A",
+    "servicio": "Edificio Atlantis",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "6228.64",
+      "aumento": "8.39",
+      "neto": 108019.52,
+      "iva": 22684.1,
+      "total": 130703.62
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "11-40"
+    },
+    "fechaRegistro": "2025-05-08T13:06:35.927Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709653576,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO DE COPROPIETARIOS EDIFICIO TALA",
+    "cuit": "N/A",
+    "servicio": "Edificio El Tala",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "6228.64",
+      "aumento": "8.39",
+      "neto": 162029.28,
+      "iva": 0,
+      "total": 162029.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-41"
+    },
+    "fechaRegistro": "2025-05-08T13:07:33.576Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709711055,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO DE PROPIETARIOS DENOMINADO EDIFICIO GAGARIN",
+    "cuit": "N/A",
+    "servicio": "Edificio Gagarin",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7331.97",
+      "aumento": "8.39",
+      "neto": 127153.92,
+      "iva": 0,
+      "total": 127153.92
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-42"
+    },
+    "fechaRegistro": "2025-05-08T13:08:31.056Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709814623,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO DE PROPIETARIOS DENOMINADO EDIFICIO GAGARIN",
+    "cuit": "N/A",
+    "servicio": "Edificio Gagarin",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 1,
+      "mes": 1,
+      "liquidadas": 1,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7331.97",
+      "aumento": "8.39",
+      "neto": 7947.12,
+      "iva": 0,
+      "total": 7947.12
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "11-42"
+    },
+    "fechaRegistro": "2025-05-08T13:10:14.623Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746709923430,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO PROPIETARIOS CONSTANTINO III",
+    "cuit": "N/A",
+    "servicio": "Edificio Constantino",
+    "facturante": "Omar",
+    "horas": {
+      "trabajadas": 84,
+      "mes": 90,
+      "liquidadas": 84,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "4727",
+      "aumento": "8.39",
+      "neto": 430382.4,
+      "iva": 90380.3,
+      "total": 520762.7
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "11-43"
+    },
+    "fechaRegistro": "2025-05-08T13:12:03.430Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746710010262,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO EDIFICIO 9 DE JULIO 1680",
+    "cuit": "N/A",
+    "servicio": "Edificio Pilar",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 8,
+      "mes": 8,
+      "liquidadas": 8,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10954.73",
+      "aumento": "8.39",
+      "neto": 94990.64,
+      "iva": 19948.03,
+      "total": 114938.67
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-497"
+    },
+    "fechaRegistro": "2025-05-08T13:13:30.268Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746710748947,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO EL MIRADOR DE JUAN STABIO",
+    "cuit": "N/A",
+    "servicio": "Edificio Stabio- Limpieza",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 272,
+      "mes": 296,
+      "liquidadas": 272,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 2267125.44,
+      "iva": 476096.34,
+      "total": 2743221.78
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-498"
+    },
+    "fechaRegistro": "2025-05-08T13:25:48.947Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746710824113,
+    "periodo": "2025-04",
+    "cliente": "CONSORCIO VALENTINA",
+    "cuit": "N/A",
+    "servicio": "Edificio Valentina I",
+    "facturante": "Sandra Cordoba",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 15,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10110.66",
+      "aumento": "8.39",
+      "neto": 131507.28,
+      "iva": 0,
+      "total": 131507.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "4-584"
+    },
+    "fechaRegistro": "2025-05-08T13:27:04.113Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746710898530,
+    "periodo": "2025-04",
+    "cliente": "VIVERO ALEJANDRO",
+    "cuit": "N/A",
+    "servicio": "Estetica Santo Cuore",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 34,
+      "liquidadas": 34,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "11417.22",
+      "aumento": "8.39",
+      "neto": 420754.08,
+      "iva": 0,
+      "total": 420754.08
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-45"
+    },
+    "fechaRegistro": "2025-05-08T13:28:18.530Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746710970367,
+    "periodo": "2025-04",
+    "cliente": "COMPAÑÍA ARGENTINA DE DISEÑO SA",
+    "cuit": "N/A",
+    "servicio": "Etiqueta Negra",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 44,
+      "liquidadas": 42,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "10808.66",
+      "aumento": "8.39",
+      "neto": 492051.42,
+      "iva": 103330.8,
+      "total": 595382.22
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1772"
+    },
+    "fechaRegistro": "2025-05-08T13:29:30.367Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711041462,
+    "periodo": "2025-04",
+    "cliente": "FIUMICCINO III",
+    "cuit": "N/A",
+    "servicio": "Fiumiccino III",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 85.75,
+      "mes": 104,
+      "liquidadas": 96,
+      "adeudadas": 10.3
+    },
+    "valores": {
+      "hora": "7380.76",
+      "aumento": "8.39",
+      "neto": 768000.96,
+      "iva": 0,
+      "total": 768000.96
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-242"
+    },
+    "fechaRegistro": "2025-05-08T13:30:41.462Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711104751,
+    "periodo": "2025-04",
+    "cliente": "FIUMICCINO IV",
+    "cuit": "N/A",
+    "servicio": "Fiumiccino IV",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 93,
+      "mes": 104,
+      "liquidadas": 96,
+      "adeudadas": 3
+    },
+    "valores": {
+      "hora": "7380.76",
+      "aumento": "8.39",
+      "neto": 768000.96,
+      "iva": 0,
+      "total": 768000.96
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-243"
+    },
+    "fechaRegistro": "2025-05-08T13:31:44.752Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711218967,
+    "periodo": "2025-04",
+    "cliente": "VISUM S.A.",
+    "cuit": "N/A",
+    "servicio": "Global",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 19.75,
+      "mes": 32,
+      "liquidadas": 32,
+      "adeudadas": 12.3
+    },
+    "valores": {
+      "hora": "7439.77",
+      "aumento": "8.39",
+      "neto": 258047.04,
+      "iva": 54189.88,
+      "total": 312236.92
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1773 y 2-1774"
+    },
+    "fechaRegistro": "2025-05-08T13:33:38.967Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711287662,
+    "periodo": "2025-04",
+    "cliente": "SISCADAT S.A.S.",
+    "cuit": "N/A",
+    "servicio": "Global (Adicional)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7439.77",
+      "aumento": "8.39",
+      "neto": 96767.64,
+      "iva": 20321.2,
+      "total": 117088.84
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1775 y 2-1776"
+    },
+    "fechaRegistro": "2025-05-08T13:34:47.662Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711340394,
+    "periodo": "2025-04",
+    "cliente": "GRANJAS CARNAVE SA",
+    "cuit": "N/A",
+    "servicio": "Granjas Carnave",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "11508.33",
+      "aumento": "8.39",
+      "neto": 199582.08,
+      "iva": 41912.24,
+      "total": 241494.32
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1777"
+    },
+    "fechaRegistro": "2025-05-08T13:35:40.394Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711410600,
+    "periodo": "2025-04",
+    "cliente": "GRUPO PILAR SA",
+    "cuit": "N/A",
+    "servicio": "Grupo Pilar JM",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 13.5,
+      "liquidadas": 16,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "9737.54",
+      "aumento": "8.39",
+      "neto": 168872.32,
+      "iva": 35463.19,
+      "total": 204335.51
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1778"
+    },
+    "fechaRegistro": "2025-05-08T13:36:50.600Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711489512,
+    "periodo": "2025-04",
+    "cliente": "INSTITUTO DE ESTADISTICA Y REGISTRO DE LA INDUSTRIA",
+    "cuit": "N/A",
+    "servicio": "IERIC - LA RIOJA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 13.5,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10822.33",
+      "aumento": "8.39",
+      "neto": 140763.84,
+      "iva": 29560.41,
+      "total": 170324.25
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-499"
+    },
+    "fechaRegistro": "2025-05-08T13:38:09.513Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711712844,
+    "periodo": "2025-04",
+    "cliente": "INSTITUTO DE ESTADISTICA Y REGISTRO DE LA INDUSTRIA",
+    "cuit": "N/A",
+    "servicio": "IERIC - CATAMARCA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "11036.19",
+      "aumento": "8.39",
+      "neto": 191394.08,
+      "iva": 40192.76,
+      "total": 231586.84
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-500"
+    },
+    "fechaRegistro": "2025-05-08T13:41:52.844Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746711775221,
+    "periodo": "2025-04",
+    "cliente": "INSTITUTO NACIONAL DE TECNOLOGIA AGROPECUARIA",
+    "cuit": "N/A",
+    "servicio": "INTA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7744.94",
+      "aumento": "8.39",
+      "neto": 134315.84,
+      "iva": 28206.33,
+      "total": 162522.17
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "2-501"
+    },
+    "fechaRegistro": "2025-05-08T13:42:55.221Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746713444259,
+    "periodo": "2025-04",
+    "cliente": "KWS ARGENTINA SA",
+    "cuit": "N/A",
+    "servicio": "KWS - Sinsacate",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 10,
+      "mes": 18,
+      "liquidadas": 16,
+      "adeudadas": 6
+    },
+    "valores": {
+      "hora": "7468.81",
+      "aumento": "8.39",
+      "neto": 129527.04,
+      "iva": 27200.68,
+      "total": 156727.72
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1780"
+    },
+    "fechaRegistro": "2025-05-08T14:10:44.259Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746713586713,
+    "periodo": "2025-04",
+    "cliente": "LUIS A CARRIZO Y CIA SRL",
+    "cuit": "N/A",
+    "servicio": "LAC",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 80,
+      "mes": 88,
+      "liquidadas": 80,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "9857.34",
+      "aumento": "8.39",
+      "neto": 854749.6,
+      "iva": 179497.42,
+      "total": 1034247.02
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1781"
+    },
+    "fechaRegistro": "2025-05-08T14:13:06.714Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746713649855,
+    "periodo": "2025-04",
+    "cliente": "LH PARKING SRL",
+    "cuit": "N/A",
+    "servicio": "LH Parking",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 25,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7723.60",
+      "aumento": "8.39",
+      "neto": 200918.64,
+      "iva": 42192.91,
+      "total": 243111.55
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "1-249"
+    },
+    "fechaRegistro": "2025-05-08T14:14:09.856Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746714580147,
+    "periodo": "2025-04",
+    "cliente": "NACION SEGUROS SA",
+    "cuit": "N/A",
+    "servicio": "Nacion Seguros",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10614.05",
+      "aumento": "",
+      "neto": 254737.2,
+      "iva": 53494.81,
+      "total": 308232.01
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1782"
+    },
+    "fechaRegistro": "2025-05-08T14:29:40.148Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746714662112,
+    "periodo": "2025-04",
+    "cliente": "MARIANI NELIDA BEATRIZ",
+    "cuit": "N/A",
+    "servicio": "Panaderia Alsina",
+    "facturante": "Felipe Nogales",
+    "horas": {
+      "trabajadas": 96,
+      "mes": 104,
+      "liquidadas": 112,
+      "adeudadas": 16
+    },
+    "valores": {
+      "hora": "9107.11",
+      "aumento": "8.39",
+      "neto": 1105574.4,
+      "iva": 0,
+      "total": 1105574.4
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "2-244"
+    },
+    "fechaRegistro": "2025-05-08T14:31:02.113Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746714735555,
+    "periodo": "2025-04",
+    "cliente": "PANHEL SRL",
+    "cuit": "N/A",
+    "servicio": "Panhel Av Sabattini",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 80,
+      "mes": 88,
+      "liquidadas": 80,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8969.62",
+      "aumento": "8.39",
+      "neto": 777773.6,
+      "iva": 163332.46,
+      "total": 941106.06
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1783"
+    },
+    "fechaRegistro": "2025-05-08T14:32:15.555Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746714843428,
+    "periodo": "2025-04",
+    "cliente": "PANHEL SRL",
+    "cuit": "N/A",
+    "servicio": "Panhel Av Sabattini (Adicionales)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 4,
+      "mes": 4,
+      "liquidadas": 4,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8969.62",
+      "aumento": "8.39",
+      "neto": 38888.68,
+      "iva": 8166.62,
+      "total": 47055.3
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1783"
+    },
+    "fechaRegistro": "2025-05-08T14:34:03.428Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746714961418,
+    "periodo": "2025-04",
+    "cliente": "PANHEL SRL",
+    "cuit": "N/A",
+    "servicio": "Panhel Lopez y Planes",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 52,
+      "liquidadas": 40,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8969.62",
+      "aumento": "8.39",
+      "neto": 388886.8,
+      "iva": 81666.23,
+      "total": 470553.03
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1783"
+    },
+    "fechaRegistro": "2025-05-08T14:36:01.418Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715058641,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Capitalinas (Garat)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 40,
+      "mes": 44,
+      "liquidadas": 44,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 366740.88,
+      "iva": 77015.58,
+      "total": 443756.46
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1784"
+    },
+    "fechaRegistro": "2025-05-08T14:37:38.641Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715193825,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Maipu 410",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 88,
+      "mes": 96,
+      "liquidadas": 96,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 800161.92,
+      "iva": 168034,
+      "total": 968195.92
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1784"
+    },
+    "fechaRegistro": "2025-05-08T14:39:53.826Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715260314,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Maipu 410 LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 4.5,
+      "mes": 4.5,
+      "liquidadas": 4.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 37507.59,
+      "iva": 7876.59,
+      "total": 45384.18
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1784"
+    },
+    "fechaRegistro": "2025-05-08T14:41:00.314Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715328564,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Rivera Indarte 529",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 26,
+      "mes": 26,
+      "liquidadas": 30,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 250050.6,
+      "iva": 52510.63,
+      "total": 302561.23
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1784"
+    },
+    "fechaRegistro": "2025-05-08T14:42:08.565Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715449304,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Rivera Indarte 529 LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 3.51,
+      "mes": 3.51,
+      "liquidadas": 3.51,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 29255.92,
+      "iva": 6143.74,
+      "total": 35399.66
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-08T14:44:09.304Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715645654,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Rivera Indarte 563",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 17,
+      "mes": 26,
+      "liquidadas": 19,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 158365.38,
+      "iva": 33256.73,
+      "total": 191622.11
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-08T14:47:25.654Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715763375,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Rivera Indarte 563 LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 2.25,
+      "mes": 2.25,
+      "liquidadas": 2.25,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 18753.8,
+      "iva": 3938.3,
+      "total": 22692.1
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1784"
+    },
+    "fechaRegistro": "2025-05-08T14:49:23.375Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715900836,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Republica 737",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 22,
+      "mes": 22,
+      "liquidadas": 22,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 183370.44,
+      "iva": 38507.79,
+      "total": 221878.23
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1785"
+    },
+    "fechaRegistro": "2025-05-08T14:51:40.837Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746715987132,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM Republica 737 LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 1,
+      "mes": 1,
+      "liquidadas": 1,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 8335.02,
+      "iva": 1750.35,
+      "total": 10085.37
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1785"
+    },
+    "fechaRegistro": "2025-05-08T14:53:07.134Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746716059372,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM San Luis Mitre 727",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36,
+      "mes": 38,
+      "liquidadas": 45,
+      "adeudadas": 9
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 375075.9,
+      "iva": 78765.94,
+      "total": 453841.84
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1786"
+    },
+    "fechaRegistro": "2025-05-08T14:54:19.372Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746716157910,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM San Luis Mitre 727 LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 1,
+      "mes": 1,
+      "liquidadas": 1,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 8335.02,
+      "iva": 1750.35,
+      "total": 10085.37
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1786"
+    },
+    "fechaRegistro": "2025-05-08T14:55:57.910Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746716240600,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM San Luis Buenos Aires esq General Paz",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 18,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 150030.36,
+      "iva": 31506.38,
+      "total": 181536.74
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1786"
+    },
+    "fechaRegistro": "2025-05-08T14:57:20.600Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746716314475,
+    "periodo": "2025-04",
+    "cliente": "PLAZA BBIKE SAS",
+    "cuit": "N/A",
+    "servicio": "PM San Luis Buenos Aires esq General Paz LE",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 1,
+      "mes": 1,
+      "liquidadas": 1,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7689.84",
+      "aumento": "8.39",
+      "neto": 8335.02,
+      "iva": 1750.35,
+      "total": 10085.37
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1786"
+    },
+    "fechaRegistro": "2025-05-08T14:58:34.475Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746716402575,
+    "periodo": "2025-04",
+    "cliente": "SILICA NETWORKS ARGENTINA SA",
+    "cuit": "N/A",
+    "servicio": "Quadra 54",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 18,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "16344.93",
+      "aumento": "8.39",
+      "neto": 318892.86,
+      "iva": 66967.5,
+      "total": 385860.36
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1787"
+    },
+    "fechaRegistro": "2025-05-08T15:00:02.575Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746716839161,
+    "periodo": "2025-04",
+    "cliente": "QUO COMUNICACIÓN SAS",
+    "cuit": "N/A",
+    "servicio": "Quo Estrategia",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 60,
+      "mes": 60,
+      "liquidadas": 60,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "9628",
+      "aumento": "8.39",
+      "neto": 626147.4,
+      "iva": 131490.95,
+      "total": 757638.35
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1788"
+    },
+    "fechaRegistro": "2025-05-08T15:07:19.162Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746717008662,
+    "periodo": "2025-04",
+    "cliente": "CHILEAR UNION SA",
+    "cuit": "N/A",
+    "servicio": "Reeferline (Contenedores)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10850.25",
+      "aumento": "8.39",
+      "neto": 282254.16,
+      "iva": 59273.37,
+      "total": 341527.53
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1789"
+    },
+    "fechaRegistro": "2025-05-08T15:10:08.662Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746717088328,
+    "periodo": "2025-04",
+    "cliente": "INDUSTRIAS JED S.R.L.",
+    "cuit": "N/A",
+    "servicio": "Rhino 4x4",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 174,
+      "mes": 193,
+      "liquidadas": 176,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "7511.20",
+      "aumento": "8.39",
+      "neto": 1432884.64,
+      "iva": 300905.77,
+      "total": 1733790.41
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1790"
+    },
+    "fechaRegistro": "2025-05-08T15:11:28.329Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746717164337,
+    "periodo": "2025-04",
+    "cliente": "DEL MUNDO A TUS MANOS SAS",
+    "cuit": "N/A",
+    "servicio": "Roller Show - Malagueño",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 48,
+      "mes": 52,
+      "liquidadas": 52,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "9359.63",
+      "aumento": "8.39",
+      "neto": 527534.8,
+      "iva": 110782.31,
+      "total": 638317.11
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1791"
+    },
+    "fechaRegistro": "2025-05-08T15:12:44.337Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746717233509,
+    "periodo": "2025-04",
+    "cliente": "SILICA NETWORKS ARGENTINA SA",
+    "cuit": "N/A",
+    "servicio": "Silica Networks",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "19695.66",
+      "aumento": "8.39",
+      "neto": 256177.56,
+      "iva": 53797.29,
+      "total": 309974.85
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1792"
+    },
+    "fechaRegistro": "2025-05-08T15:13:53.509Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746717313062,
+    "periodo": "2025-04",
+    "cliente": "SMART GROUP SRL",
+    "cuit": "N/A",
+    "servicio": "Smart Tienda Tecno",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 27,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8370.32",
+      "aumento": "8.39",
+      "neto": 217742.16,
+      "iva": 45725.85,
+      "total": 263468.01
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1793"
+    },
+    "fechaRegistro": "2025-05-08T15:15:13.062Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746717998586,
+    "periodo": "2025-04",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "Torres del Marques",
+    "facturante": "Maximiliano Nogales",
+    "horas": {
+      "trabajadas": 12,
+      "mes": 12,
+      "liquidadas": 12,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13025.13",
+      "aumento": "8.39",
+      "neto": 169415.28,
+      "iva": 0,
+      "total": 169415.28
+    },
+    "factura": {
+      "tipo": "C",
+      "numero": "13-46"
+    },
+    "fechaRegistro": "2025-05-08T15:26:38.587Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746718076728,
+    "periodo": "2025-04",
+    "cliente": "JOFIEL SAS",
+    "cuit": "N/A",
+    "servicio": "Tru Motos - Suc Olmos",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 32,
+      "mes": 34,
+      "liquidadas": 36,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "9653.36",
+      "aumento": "8.39",
+      "neto": 376678.08,
+      "iva": 79102.4,
+      "total": 455780.48
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1794"
+    },
+    "fechaRegistro": "2025-05-08T15:27:56.728Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746718149315,
+    "periodo": "2025-04",
+    "cliente": "JOFIEL SAS",
+    "cuit": "N/A",
+    "servicio": "Tru Motos - Suc Heras",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 32,
+      "adeudadas": 8
+    },
+    "valores": {
+      "hora": "9653.36",
+      "aumento": "8.39",
+      "neto": 334824.96,
+      "iva": 70313.24,
+      "total": 405138.2
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1794"
+    },
+    "fechaRegistro": "2025-05-08T15:29:09.317Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746718225961,
+    "periodo": "2025-04",
+    "cliente": "JOFIEL SAS",
+    "cuit": "N/A",
+    "servicio": "Tru Motos - Suc Rivera",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 72,
+      "mes": 78,
+      "liquidadas": 84,
+      "adeudadas": 12
+    },
+    "valores": {
+      "hora": "9653.36",
+      "aumento": "8.39",
+      "neto": 878915.52,
+      "iva": 184572.26,
+      "total": 1063487.78
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1794"
+    },
+    "fechaRegistro": "2025-05-08T15:30:25.961Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746718296320,
+    "periodo": "2025-04",
+    "cliente": "JOFIEL SAS",
+    "cuit": "N/A",
+    "servicio": "Tru Motos - Suc Sarmiento",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 20,
+      "adeudadas": 4
+    },
+    "valores": {
+      "hora": "9653.36",
+      "aumento": "8.39",
+      "neto": 209265.6,
+      "iva": 43945.78,
+      "total": 253211.38
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1794"
+    },
+    "fechaRegistro": "2025-05-08T15:31:36.320Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746718454585,
+    "periodo": "2025-04",
+    "cliente": "JOFIEL SAS",
+    "cuit": "N/A",
+    "servicio": "Tru Motos (Limpieza de Vidrios)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 10,
+      "mes": 10,
+      "liquidadas": 10,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "9653.36",
+      "aumento": "8.39",
+      "neto": 104632.8,
+      "iva": 21972.89,
+      "total": 126605.69
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1794"
+    },
+    "fechaRegistro": "2025-05-08T15:34:14.586Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746719204381,
+    "periodo": "2025-04",
+    "cliente": "UTHGRA",
+    "cuit": "N/A",
+    "servicio": "UTHGRA (Cordoba)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 180,
+      "mes": 198,
+      "liquidadas": 180,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7044.42",
+      "aumento": "8.39",
+      "neto": 1374381,
+      "iva": 288620.01,
+      "total": 1663001.01
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1802"
+    },
+    "fechaRegistro": "2025-05-08T15:46:44.381Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746719266828,
+    "periodo": "2025-04",
+    "cliente": "UTHGRA",
+    "cuit": "N/A",
+    "servicio": "UTHGRA (Rio Ceballos)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 48,
+      "mes": 52,
+      "liquidadas": 48,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7044.42",
+      "aumento": "8.39",
+      "neto": 366501.6,
+      "iva": 76965.34,
+      "total": 443466.94
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1795"
+    },
+    "fechaRegistro": "2025-05-08T15:47:46.828Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746719348578,
+    "periodo": "2025-04",
+    "cliente": "UTHGRA",
+    "cuit": "N/A",
+    "servicio": "UTHGRA (VCP)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 48,
+      "mes": 52,
+      "liquidadas": 48,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7118.88",
+      "aumento": "8.39",
+      "neto": 370375.2,
+      "iva": 77778.79,
+      "total": 448153.99
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1796"
+    },
+    "fechaRegistro": "2025-05-08T15:49:08.578Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746719404562,
+    "periodo": "2025-04",
+    "cliente": "VITSA SOLUCIONES AMBIENTALES S.A.",
+    "cuit": "N/A",
+    "servicio": "VITSA",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 24,
+      "mes": 26,
+      "liquidadas": 24,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "9610.33",
+      "aumento": "8.39",
+      "neto": 249999.36,
+      "iva": 52499.87,
+      "total": 302499.23
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1797"
+    },
+    "fechaRegistro": "2025-05-08T15:50:04.563Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746719977766,
+    "periodo": "2025-04",
+    "cliente": "ZAMPONI ASESORES DE EMPRESAS SRL",
+    "cuit": "N/A",
+    "servicio": "Zamponi Asesores",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 18,
+      "liquidadas": 18,
+      "adeudadas": 2
+    },
+    "valores": {
+      "hora": "11262.69",
+      "aumento": "8.39",
+      "neto": 219737.34,
+      "iva": 46144.84,
+      "total": 265882.18
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1798"
+    },
+    "fechaRegistro": "2025-05-08T15:59:37.766Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746720177565,
+    "periodo": "2025-04",
+    "cliente": "APARTS DE LA VILLA SA",
+    "cuit": "N/A",
+    "servicio": "Apart Hotel (FO)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 1,
+      "mes": 1,
+      "liquidadas": 1,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "226780",
+      "aumento": "0",
+      "neto": 226780,
+      "iva": 47623.8,
+      "total": 274403.8
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1759/ 2-1762"
+    },
+    "fechaRegistro": "2025-05-08T16:02:57.566Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746720337581,
+    "periodo": "2025-04",
+    "cliente": "CIS GROUP LATINOAMERICA SA",
+    "cuit": "N/A",
+    "servicio": "Cis Group (eventual)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 30,
+      "mes": 30,
+      "liquidadas": 30,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "12720",
+      "aumento": "0",
+      "neto": 381600,
+      "iva": 80136,
+      "total": 461736
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1804"
+    },
+    "fechaRegistro": "2025-05-08T16:05:37.581Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746720481465,
+    "periodo": "2025-04",
+    "cliente": "SOCIEDAD RURAL DE JESUS MARIA",
+    "cuit": "N/A",
+    "servicio": "Sociedad Rural JM",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 16,
+      "mes": 16,
+      "liquidadas": 16,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "12373.84",
+      "aumento": "0",
+      "neto": 197981.44,
+      "iva": 41576.1,
+      "total": 239557.54
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1799"
+    },
+    "fechaRegistro": "2025-05-08T16:08:01.465Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746721183698,
+    "periodo": "2025-04",
+    "cliente": "MURILLO GUILLERMO LUIS",
+    "cuit": "N/A",
+    "servicio": "FO Altos de Velez Sarfield",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 42.5,
+      "mes": 42.5,
+      "liquidadas": 42.5,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "9228.24",
+      "aumento": "0",
+      "neto": 392200.2,
+      "iva": 82362.04,
+      "total": 474562.24
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1761"
+    },
+    "fechaRegistro": "2025-05-08T16:19:43.698Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746721341218,
+    "periodo": "2025-04",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "FO Pilar (poda y desmalezado)",
+    "facturante": "Sin Factura",
+    "horas": {
+      "trabajadas": 35,
+      "mes": 35,
+      "liquidadas": 35,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13714.29",
+      "aumento": "0",
+      "neto": 480000.15,
+      "iva": 0,
+      "total": 480000.15
+    },
+    "factura": {
+      "tipo": "noSeFactura",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-08T16:22:21.219Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746721917633,
+    "periodo": "2025-04",
+    "cliente": "REHABILITA SRL",
+    "cuit": "N/A",
+    "servicio": "Cubano (FO corte de cesped)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 36.5,
+      "mes": 36.5,
+      "liquidadas": 29.5,
+      "adeudadas": 7
+    },
+    "valores": {
+      "hora": "15404.76",
+      "aumento": "0",
+      "neto": 454440.42,
+      "iva": 95432.49,
+      "total": 549872.91
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1805"
+    },
+    "fechaRegistro": "2025-05-08T16:31:57.633Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746722748373,
+    "periodo": "2025-04",
+    "cliente": "JOFIEL SAS",
+    "cuit": "N/A",
+    "servicio": "FO Deposito Tru Motos",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 126.75,
+      "mes": 126.75,
+      "liquidadas": 126.75,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10215.39",
+      "aumento": "0",
+      "neto": 1294800.68,
+      "iva": 271908.14,
+      "total": 1566708.82
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1763"
+    },
+    "fechaRegistro": "2025-05-08T16:45:48.375Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746722859051,
+    "periodo": "2025-04",
+    "cliente": "CONSUMIDOR FINAL",
+    "cuit": "N/A",
+    "servicio": "FO Dpto Chacabuco 386",
+    "facturante": "Sin Factura",
+    "horas": {
+      "trabajadas": 6,
+      "mes": 6,
+      "liquidadas": 6,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "10600",
+      "aumento": "0",
+      "neto": 63600,
+      "iva": 0,
+      "total": 63600
+    },
+    "factura": {
+      "tipo": "noSeFactura",
+      "numero": null
+    },
+    "fechaRegistro": "2025-05-08T16:47:39.052Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746723205943,
+    "periodo": "2025-04",
+    "cliente": "PROYECTO, TECNOLOGIA Y CAPACITACION SRL",
+    "cuit": "N/A",
+    "servicio": "FO Maipu 164",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 92.75,
+      "mes": 92.75,
+      "liquidadas": 92.75,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "6171.43",
+      "aumento": "0",
+      "neto": 572400.13,
+      "iva": 120204.03,
+      "total": 692604.16
+    },
+    "factura": {
+      "tipo": "B",
+      "numero": "1-248"
+    },
+    "fechaRegistro": "2025-05-08T16:53:25.943Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746723325670,
+    "periodo": "2025-04",
+    "cliente": "Rafca SRL",
+    "cuit": "N/A",
+    "servicio": "Nave (Corte de Cesped) FO",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 70.3,
+      "mes": 70.3,
+      "liquidadas": 70.3,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "8634.20",
+      "aumento": "0",
+      "neto": 606984.26,
+      "iva": 127466.69,
+      "total": 734450.95
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1803"
+    },
+    "fechaRegistro": "2025-05-08T16:55:25.670Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746727626394,
+    "periodo": "2025-04",
+    "cliente": "VTV CORDOBA SA",
+    "cuit": "N/A",
+    "servicio": "ITV - Av. Japon",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 136,
+      "mes": 148,
+      "liquidadas": 136,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7327.10",
+      "aumento": "8.39",
+      "neto": 1080090.24,
+      "iva": 226818.95,
+      "total": 1306909.19
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1779"
+    },
+    "fechaRegistro": "2025-05-08T18:07:06.395Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746727724914,
+    "periodo": "2025-04",
+    "cliente": "VTV CORDOBA SA",
+    "cuit": "N/A",
+    "servicio": "ITV - Carcano",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 136,
+      "mes": 148,
+      "liquidadas": 136,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "7327.10",
+      "aumento": "8.39",
+      "neto": 1080090.24,
+      "iva": 226818.95,
+      "total": 1306909.19
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1779"
+    },
+    "fechaRegistro": "2025-05-08T18:08:44.914Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746727814618,
+    "periodo": "2025-04",
+    "cliente": "VTV CORDOBA SA",
+    "cuit": "N/A",
+    "servicio": "ITV - Zona Sur",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 133.5,
+      "mes": 148,
+      "liquidadas": 136,
+      "adeudadas": 2.5
+    },
+    "valores": {
+      "hora": "7327.10",
+      "aumento": "8.39",
+      "neto": 1080090.24,
+      "iva": 226818.95,
+      "total": 1306909.19
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1779"
+    },
+    "fechaRegistro": "2025-05-08T18:10:14.618Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746730225564,
+    "periodo": "2025-03",
+    "cliente": "COBERTURA DE SALUD S.A. (Córdoba)",
+    "cuit": "N/A",
+    "servicio": "Boreal - Córdoba (vigilancia)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 180,
+      "mes": 180,
+      "liquidadas": 180,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13262.64",
+      "aumento": "0",
+      "neto": 2387275.2,
+      "iva": 501327.79,
+      "total": 2888602.99
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "3- 015"
+    },
+    "fechaRegistro": "2025-05-08T18:50:25.564Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746730646958,
+    "periodo": "2025-03",
+    "cliente": "Cosas Ricas SA",
+    "cuit": "N/A",
+    "servicio": "Panaderia Del Pilar (vigilancia)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 370,
+      "mes": 370,
+      "liquidadas": 370,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "11139.80",
+      "aumento": "0",
+      "neto": 4121726,
+      "iva": 865562.46,
+      "total": 4987288.46
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1755"
+    },
+    "fechaRegistro": "2025-05-08T18:57:26.959Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746731077520,
+    "periodo": "2025-04",
+    "cliente": "FERROFRAN SA",
+    "cuit": "N/A",
+    "servicio": "VCP Gilda (FO)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 1,
+      "mes": 1,
+      "liquidadas": 1,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "690973.72",
+      "aumento": "0",
+      "neto": 690973.72,
+      "iva": 145104.48,
+      "total": 836078.2
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1811"
+    },
+    "fechaRegistro": "2025-05-08T19:04:37.520Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746732272345,
+    "periodo": "2025-04",
+    "cliente": "COBERTURA DE SALUD S.A. (Córdoba)",
+    "cuit": "N/A",
+    "servicio": "Boreal (Cordoba)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 180,
+      "mes": 180,
+      "liquidadas": 180,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "13852.83",
+      "aumento": "0",
+      "neto": 2493509.4,
+      "iva": 523636.97,
+      "total": 3017146.37
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1807"
+    },
+    "fechaRegistro": "2025-05-08T19:24:32.345Z",
+    "estado": "pendiente"
+  },
+  {
+    "id": 1746732346152,
+    "periodo": "2025-04",
+    "cliente": "Cosas Ricas SA",
+    "cuit": "N/A",
+    "servicio": "Panaderia Del Pilar (vigilancia)",
+    "facturante": "SAS",
+    "horas": {
+      "trabajadas": 340,
+      "mes": 340,
+      "liquidadas": 340,
+      "adeudadas": 0
+    },
+    "valores": {
+      "hora": "11635.52",
+      "aumento": "0",
+      "neto": 3956076.8,
+      "iva": 830776.13,
+      "total": 4786852.93
+    },
+    "factura": {
+      "tipo": "A",
+      "numero": "2-1808"
+    },
+    "fechaRegistro": "2025-05-08T19:25:46.152Z",
+    "estado": "pendiente"
+  }
+]

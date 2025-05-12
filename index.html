@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre liquidación - PLUS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div style="display: flex; align-items: center; gap: 200px; padding: 10px 0; border-bottom: 2px solid #a7a4a4;">
+    <img src="assets/Logo-fondotransparente.png" alt="logo" style="width: 150px; height: auto; margin: 20px;">
+    <h1 style="font-size: 28px; font-family: 'Arial', sans-serif; font-weight: 600; color: #2c3e50;">PRE LIQUIDACION -
+      PLUS</h1>
+  </div>
+
+  <div class="parent">
+    <div class="div1">
+      <button id="gestionarClientesBtn">Gestionar clientes</button>
+      <button id="gestionarServiciosBtn">Gestionar servicios</button>
+      <button id="facturantes">Responsables de facturación</button>
+      <button id="gestionarFacturacion">Gestionar facturación</button>
+      <button id="reporteGeneral">Generar reporte general</button>
+      <button id="btnGastosInternos" class="menu-btn">Gastos Internos</button>
+      <button id="verHistorialBtn">Ver Historial</button>
+    </div>
+
+    <div class="div2">
+      <button id="btnRentabilidad">Análisis de rentabilidad</button>
+      <button id="btnEvolucion">Evolución mensual (ingresos + gastos)</button>
+      <button id="btnClientesImpacto">Clientes con mayor impacto económico</button>
+      <button id="btnComparativaServicios">Comparativa de servicios</button>
+    </div>
+
+    <div class="div3" id="div3">
+      <p>¡Bienvenido/a! 🎉</p>
+      <p>Para comenzar a usar la aplicación, simplemente elegí una de las secciones del menú en el margen izquierdo.</p>
+      <p>Desde ahí, podés gestionar toda la información de manera fácil y rápida.</p>
+
+      <p><strong>📁 Gestionar Clientes:</strong> Agregá, editá y eliminá clientes. Mantené un registro organizado con
+        toda la información necesaria.</p>
+
+      <p><strong>🛠️ Gestionar Servicios:</strong> Cargá y administrá los servicios brindados a cada cliente, incluyendo
+        costos, insumos y personal asignado.</p>
+
+      <p><strong>🧾 Responsables de Facturación:</strong> Registrá a quienes emiten las facturas, asegurándote de tener
+        toda la información organizada.</p>
+
+      <p><strong>💰 Gestionar Facturación:</strong> Generá y administrá las facturaciones de los servicios, calculando
+        automáticamente montos y totales.
+        El sistema realiza los cálculos en base a las horas liquidadas y el valor hora, aplicando aumentos en porcentaje
+        si corresponde.
+        El neto, IVA y total se calculan automáticamente, y el redondeo de montos considera hasta dos decimales,
+        redondeando hacia arriba si el tercer decimal es 5 o más.</p>
+
+      <p><strong>📊 Gastos Internos:</strong> Cargá y visualizá los gastos internos de cada servicio, como sueldos,
+        traslados, maquinaria e insumos.
+        Esto te permitirá calcular automáticamente la ganancia obtenida por cada servicio.</p>
+
+      <p>¡Explorá y empezá a sacarle el máximo provecho! 🚀</p>
+    </div>
+
+    <div class="div4">
+      Datos generales
+    </div>
+  </div>
+
+  <!-- En tu archivo HTML principal -->
+  <script src="renderer-clientes.js"></script>
+  <script src="renderer-servicios.js"></script>
+  <script src="renderer-facturantes.js"></script>
+  <script src="renderer-facturacion.js"></script>
+  <script src="renderer-reportes.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./renderer-gastosI.js"></script>
+</body>
+
+</html>

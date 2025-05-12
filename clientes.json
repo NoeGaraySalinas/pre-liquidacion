@@ -1,0 +1,417 @@
+[
+  {
+    "cuit": "30-70776189-6",
+    "lugar": "CÓRDOBA",
+    "nombre": "ALBERTO MENDEZ E HIJOS SA (6)"
+  },
+  {
+    "cuit": "20-22566113-9",
+    "lugar": "CORDOBA",
+    "nombre": "ALBERTO MENDEZ E HIJOS SA (9)"
+  },
+  {
+    "cuit": "30-71004376-7",
+    "lugar": "CORDOBA",
+    "nombre": "AM CORDOBA S.A."
+  },
+  {
+    "cuit": "30-63405350-2",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO CASEROS Y R GARCIA MARTINEZ"
+  },
+  {
+    "cuit": "30-71531457-2",
+    "lugar": "CORDOBA",
+    "nombre": "BOIXADOS INDUSTRIAL S.A."
+  },
+  {
+    "cuit": "30-71481709-0",
+    "lugar": "LA RIOJA",
+    "nombre": "COBERTURA DE SALUD S.A. (La Rioja)"
+  },
+  {
+    "cuit": "30-71481709-0",
+    "lugar": "CORDOBA",
+    "nombre": "COBERTURA DE SALUD S.A. (Córdoba)"
+  },
+  {
+    "cuit": "30-71073853-6",
+    "lugar": "CORDOBA",
+    "nombre": "BRAMED S.R.L"
+  },
+  {
+    "cuit": "30-71625598-7",
+    "lugar": "CORDOBA",
+    "nombre": "FUNDACION ENSEÑANZA INTEGRAL GASTRONOMICA CELIA"
+  },
+  {
+    "cuit": "30-58747957-1",
+    "lugar": "RIO TERCERO",
+    "nombre": "CIRCULO ODONTOLOGICO REGIONAL RIO TERCERO"
+  },
+  {
+    "cuit": "30-71813163-0",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO PROPIETARIOS EDIFICIO ARRUABARRENA 66"
+  },
+  {
+    "cuit": "33-54570706-9",
+    "lugar": "COLONIA CAROYA",
+    "nombre": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA"
+  },
+  {
+    "cuit": "30-50712650-9",
+    "lugar": "CORDOBA",
+    "nombre": "INSTITUTO HIJA DE MARIA SANTISIMA DEL HUERTO"
+  },
+  {
+    "cuit": "27-17531399-6",
+    "lugar": "CORDOBA",
+    "nombre": "FARIERE MARTA NELIDA"
+  },
+  {
+    "cuit": "27-0000000-0",
+    "lugar": "CORDOBA",
+    "nombre": "CONSUMIDOR FINAL"
+  },
+  {
+    "cuit": "30-54750685-1",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO DE PROPIETARIOS AV. COLON ESQ SUCRE"
+  },
+  {
+    "cuit": "30-63408380-0",
+    "lugar": "CORDOBA",
+    "nombre": "DYCSA DISEÑO Y CONSTRUCCION SA"
+  },
+  {
+    "cuit": "33-71219052-9",
+    "lugar": "CORDOBA",
+    "nombre": "FIDUCIAM SRL"
+  },
+  {
+    "cuit": "30-64468200-1",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO EDIFICIO LAS LAJAS"
+  },
+  {
+    "cuit": "30-71704550-1",
+    "lugar": "CORDOBA",
+    "nombre": "FOXMA SAS"
+  },
+  {
+    "cuit": "33-71133868-9",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO DE PROPIETARIOS EDIFICIO TORRE EIFFEL"
+  },
+  {
+    "cuit": "30-71653296-4",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO LISANDRO SOCIEDAD CIVIL"
+  },
+  {
+    "cuit": "30-70762831-2",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO DE PROPIETARIOS EDIFICIO TORRE SERENA"
+  },
+  {
+    "cuit": "30-71644485-2",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO ATLANTIS II"
+  },
+  {
+    "cuit": "30-68758985-4",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO DE COPROPIETARIOS EDIFICIO TALA"
+  },
+  {
+    "cuit": "30-71623861-6",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO DE PROPIETARIOS DENOMINADO EDIFICIO GAGARIN"
+  },
+  {
+    "cuit": "30-69845707-0",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO EDIFICIO 9 DE JULIO 1680"
+  },
+  {
+    "cuit": "30-57061540-4",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO EL MIRADOR DE JUAN STABIO"
+  },
+  {
+    "cuit": "30-71565132-3",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO VALENTINA"
+  },
+  {
+    "cuit": "20-31932125-0",
+    "lugar": "CORDOBA",
+    "nombre": "VIVERO ALEJANDRO"
+  },
+  {
+    "cuit": "30-70824003-2",
+    "lugar": "CORDOBA",
+    "nombre": "COMPAÑÍA ARGENTINA DE DISEÑO SA"
+  },
+  {
+    "cuit": "30-71624141-2",
+    "lugar": "CORDOBA",
+    "nombre": "FIUMICCINO III"
+  },
+  {
+    "cuit": "30-71622353-8",
+    "lugar": "CORDOBA",
+    "nombre": "FIUMICCINO IV"
+  },
+  {
+    "cuit": "30-71207521-6",
+    "lugar": "CORDOBA",
+    "nombre": "VISUM S.A."
+  },
+  {
+    "cuit": "30-70992372-9",
+    "lugar": "CORDOBA",
+    "nombre": "SISCADAT S.A.S."
+  },
+  {
+    "cuit": "30-70710102-0",
+    "lugar": "CORDOBA",
+    "nombre": "GRANJAS CARNAVE SA"
+  },
+  {
+    "cuit": "30-70762831-2",
+    "lugar": "JESUS MARIA",
+    "nombre": "GRUPO PILAR SA"
+  },
+  {
+    "cuit": "30-68631480-0",
+    "lugar": "LA RIOJA",
+    "nombre": "INSTITUTO DE ESTADISTICA Y REGISTRO DE LA INDUSTRIA"
+  },
+  {
+    "cuit": "30-54667918-3",
+    "lugar": "JESUS MARIA",
+    "nombre": "INSTITUTO NACIONAL DE TECNOLOGIA AGROPECUARIA"
+  },
+  {
+    "cuit": "30-71456552-0",
+    "lugar": "CORDOBA",
+    "nombre": "VTV CORDOBA SA"
+  },
+  {
+    "cuit": "30-62706249-0",
+    "lugar": "JESUS MARIA",
+    "nombre": "LUIS A CARRIZO Y CIA SRL"
+  },
+  {
+    "cuit": "30-71728487-5",
+    "lugar": "CORDOBA",
+    "nombre": "JOFIEL SAS"
+  },
+  {
+    "cuit": "30-71110601-0",
+    "lugar": "CARLOS PAZ",
+    "nombre": "LH PARKING SRL"
+  },
+  {
+    "cuit": "30-67856116-5",
+    "lugar": "CORDOBA",
+    "nombre": "NACION SEGUROS SA"
+  },
+  {
+    "cuit": "27-04498067-9",
+    "lugar": "CORDOBA",
+    "nombre": "MARIANI NELIDA BEATRIZ"
+  },
+  {
+    "cuit": "30-71023848-7",
+    "lugar": "CORDOBA",
+    "nombre": "PANHEL SRL"
+  },
+  {
+    "cuit": "30-71658111-6",
+    "lugar": "CORDOBA",
+    "nombre": "PLAZA BBIKE SAS"
+  },
+  {
+    "cuit": "30-71023848-7",
+    "lugar": "CORDOBA",
+    "nombre": "PLAZA MOTOS S.A."
+  },
+  {
+    "cuit": "30-71740540-0",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 2 MZA 19 PARCELA 3"
+  },
+  {
+    "cuit": "30-71686173-9",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 8 MZA 46 TORRE 1"
+  },
+  {
+    "cuit": "3071686186-0",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 3 MZA 20 PARCELA 1"
+  },
+  {
+    "cuit": "30-71686219-0",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 3 MZA 32 PARCELA 1"
+  },
+  {
+    "cuit": "30-71740538-9",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 2 MZA 19 PARCELA 1"
+  },
+  {
+    "cuit": "30-71740539-7",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 2 MZA 19 PARCELA 2"
+  },
+  {
+    "cuit": "30-71738548-5",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 12 MZA 69 PARCELA 1"
+  },
+  {
+    "cuit": "30-71788858-4",
+    "lugar": "PROCREAR",
+    "nombre": "FIDEICOMISO BARRIO LICEO SECTOR 4 MZA 38 TORRE 1"
+  },
+  {
+    "cuit": "30-70719317-0",
+    "lugar": "CORDOBA",
+    "nombre": "SILICA NETWORKS ARGENTINA SA"
+  },
+  {
+    "cuit": "30-71676259-5",
+    "lugar": "CORDOBA",
+    "nombre": "QUO COMUNICACIÓN SAS"
+  },
+  {
+    "cuit": "30-69295670-9",
+    "lugar": "COLONIA CAROYA",
+    "nombre": "CHILEAR UNION SA"
+  },
+  {
+    "cuit": "33-70703725-9",
+    "lugar": "CORDOBA",
+    "nombre": "INDUSTRIAS JED S.R.L."
+  },
+  {
+    "cuit": "33-71742164-9",
+    "lugar": "CORDOBA",
+    "nombre": "DEL MUNDO A TUS MANOS SAS"
+  },
+  {
+    "cuit": "30-70719317-0",
+    "lugar": "CORDOBA",
+    "nombre": "SILICA NETWORKS ARGENTINA SA"
+  },
+  {
+    "cuit": "30-71541106-3",
+    "lugar": "CORDOBA",
+    "nombre": "SMART GROUP SRL"
+  },
+  {
+    "cuit": "34-53133865-2",
+    "lugar": "CARLOS PAZ",
+    "nombre": "UTHGRA"
+  },
+  {
+    "cuit": "30-71663959-9",
+    "lugar": "CORDOBA",
+    "nombre": "VITSA SOLUCIONES AMBIENTALES S.A."
+  },
+  {
+    "cuit": "30-62964267-2",
+    "lugar": "CORDOBA",
+    "nombre": "SUPERMERCADOS MAYORISTAS YAGUAR S.A."
+  },
+  {
+    "cuit": "30-71565740-2",
+    "lugar": "CORDOBA",
+    "nombre": "ZAMPONI ASESORES DE EMPRESAS SRL"
+  },
+  {
+    "cuit": "30-71725828-9",
+    "lugar": "CARLOS PAZ",
+    "nombre": "APARTS DE LA VILLA SA"
+  },
+  {
+    "cuit": "30-70800804-0",
+    "lugar": "CATAMARCA",
+    "nombre": "RED DE SEGURO MEDICO SRL"
+  },
+  {
+    "cuit": "33-70337877-9",
+    "lugar": "CORDOBA",
+    "nombre": "REHABILITA SRL"
+  },
+  {
+    "cuit": "30-61582617-7",
+    "lugar": "CORDOBA",
+    "nombre": "Consorcio Pablo I"
+  },
+  {
+    "cuit": "27-32492081-7",
+    "lugar": "CORDOBA",
+    "nombre": "CARLA ANDREA ISAIA"
+  },
+  {
+    "cuit": "30-70844243-3",
+    "lugar": "CORDOBA",
+    "nombre": "FERROFRAN SA"
+  },
+  {
+    "cuit": "30-54666298-1",
+    "lugar": "CORDOBA",
+    "nombre": "MUNICIPALIDAD RIO GRANDE"
+  },
+  {
+    "cuit": "30-71846234-3",
+    "lugar": "CARLOS PAZ",
+    "nombre": "CONSORCIO PROPIETARIOS CONSTANTINO III"
+  },
+  {
+    "cuit": "30-71425460-6",
+    "lugar": "San Juan",
+    "nombre": "Rafca SRL"
+  },
+  {
+    "cuit": "30-71004376-7",
+    "lugar": "Córdoba",
+    "nombre": "Alberto Méndez e Hijos SA (7)"
+  },
+  {
+    "cuit": "30-59821885-0",
+    "lugar": "Jesus María",
+    "nombre": "KWS ARGENTINA SA"
+  },
+  {
+    "cuit": "30-69298907-0",
+    "lugar": "Córdoba",
+    "nombre": "CIS GROUP LATINOAMERICA SA"
+  },
+  {
+    "cuit": "33-54135099-9",
+    "lugar": "JESUS MARIA",
+    "nombre": "SOCIEDAD RURAL DE JESUS MARIA"
+  },
+  {
+    "cuit": "23-24857442-9",
+    "lugar": "Córdoba",
+    "nombre": "MURILLO GUILLERMO LUIS"
+  },
+  {
+    "cuit": "30-70845961-1",
+    "lugar": "Córdoba",
+    "nombre": "PROYECTO, TECNOLOGIA Y CAPACITACION SRL"
+  },
+  {
+    "cuit": "30-70861025-5",
+    "lugar": "Córdoba",
+    "nombre": "Cosas Ricas SA"
+  }
+]

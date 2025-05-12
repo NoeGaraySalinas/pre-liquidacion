@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        button {
+            background-color: #ff6600;
+            /* Naranja Corsacor */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        button:hover {
+            background-color: #e55a00;
+        }
+
+        table {
+            width: auto;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 6px 10px;
+            text-align: left;
+            white-space: nowrap;
+            /* Evita que el texto se divida en varias líneas */
+        }
+
+        th {
+            background-color: #ff6600;
+            font-weight: bold;
+            color: white;
+        }
+
+        td {
+            max-width: 200px;
+            /* Ajusta el ancho máximo de las celdas */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Si el texto es muy largo, mostrará "..." */
+        }
+
+        button.editarBtn,
+        button.borrarBtn {
+            padding: 4px 8px;
+            font-size: 12px;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html">
+        <button>Volver atrás</button>
+    </a>
+
+    <h1>Clientes</h1>
+
+    <table id="clientesTable">
+        <thead>
+            <tr>
+                <th>Nombre o Razón Social</th>
+                <th>Alias</th>
+                <th>CUIT</th>
+                <th>Domicilio Físico</th>
+                <th>Domicilio de Facturación</th>
+                <th>IVA</th>
+                <th>Condición de Venta</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los clientes se cargarán aquí -->
+        </tbody>
+    </table>
+
+    <form id="clientForm" style="display: none;">
+        <input type="hidden" id="clienteId">
+        <label>Nombre: <input type="text" id="nombre"></label>
+        <label>Alias: <input type="text" id="alias"></label>
+        <label>CUIT: <input type="text" id="cuit"></label>
+        <label>Domicilio Físico: <input type="text" id="domicilioFisico"></label>
+        <label>Domicilio Facturación: <input type="text" id="domicilioFacturacion"></label>
+        <label>IVA: <input type="text" id="iva"></label>
+        <label>Condición de Venta: <input type="text" id="condVenta"></label>
+        <button type="button" id="guardarCliente">Guardar</button>
+        <button type="button" id="cancelarFormulario">Cancelar</button>
+    </form>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

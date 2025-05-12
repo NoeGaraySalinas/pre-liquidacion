@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "SAS",
+    "cuilCuit": "30716551489",
+    "id": 1743086318025
+  },
+  {
+    "nombre": "Sandra Cordoba",
+    "cuilCuit": "27213961751",
+    "id": 1744642999038
+  },
+  {
+    "nombre": "Felipe Nogales",
+    "cuilCuit": "20167440585",
+    "id": 1744643335002
+  },
+  {
+    "nombre": "No se factura",
+    "cuilCuit": null,
+    "id": 1744643373213
+  },
+  {
+    "nombre": "Maximiliano Nogales",
+    "cuilCuit": "20467653769",
+    "id": 1744643441060
+  },
+  {
+    "nombre": "Aylen Nogales",
+    "cuilCuit": "27456912171",
+    "id": 1744643532677
+  },
+  {
+    "nombre": "Omar",
+    "cuilCuit": "20184087295",
+    "id": 1744644185428
+  },
+  {
+    "nombre": "Sin Factura",
+    "cuilCuit": null,
+    "id": 1744644245947
+  }
+]
