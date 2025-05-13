@@ -549,3 +549,25 @@ ipcMain.handle('obtener-datos-reporte', async (event, filtros) => {
     return [];
   }
 });
+
+ipcMain.handle('get-gastos-internos', async () => {
+  try {
+    const filePath = path.join(__dirname, 'gastosInternos.json');
+    
+    // Verificar si el archivo existe
+    if (!fs.existsSync(filePath)) {
+      console.warn('El archivo gastosInternos.json no existe');
+      return [];
+    }
+
+    const data = await fs.promises.readFile(filePath, 'utf-8');
+    
+    // Manejar tanto array como objeto individual
+    const parsedData = JSON.parse(data);
+    return Array.isArray(parsedData) ? parsedData : [parsedData];
+    
+  } catch (error) {
+    console.error('Error al leer gastosInternos.json:', error);
+    return [];
+  }
+});

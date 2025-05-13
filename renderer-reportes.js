@@ -318,7 +318,7 @@ async function mostrarResultados(facturaciones, filtros) {
     }
 
     contenedor.innerHTML = tablaHTML;
-    
+
     // Solo si es filtro por periodo, mostrar gastos internos
     if (filtroPrincipal === 'periodo' && filtros.periodo) {
       await mostrarGastosInternosPorPeriodo(filtros.periodo);
@@ -497,15 +497,15 @@ try {
 // Modificar la función para hacerla async
 async function buscarCuitPorNombre(nombreCliente) {
   if (!nombreCliente) return "N/A";
-  
+
   if (clientes.length === 0) {
     await cargarDatosIniciales();
   }
 
-  const cliente = clientes.find(c => 
+  const cliente = clientes.find(c =>
     normalizarTexto(c.nombre) === normalizarTexto(nombreCliente)
   );
-  
+
   return cliente?.cuit || "N/A";
 }
 
@@ -527,7 +527,7 @@ function normalizarTexto(texto) {
 
 console.log("Ejemplo de búsqueda - Servicio 'Dycsa':", {
   existe: servicios.some(s => s.nombre === 'Dycsa'),
-  serviciosSimilares: servicios.filter(s => 
+  serviciosSimilares: servicios.filter(s =>
     s.nombre.toLowerCase().includes('dycsa')
   )
 });
@@ -576,7 +576,7 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
   // 2. Generar filas de la tabla
   const rows = await Promise.all(facturaciones.map(async (fact) => {
     // Buscar el servicio correspondiente (comparación insensible a mayúsculas/acentos)
-    const servicio = servicios.find(s => 
+    const servicio = servicios.find(s =>
       normalizarTexto(s.nombre) === normalizarTexto(fact.servicio)
     );
 
@@ -588,7 +588,7 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
     }
 
     const cuit = await buscarCuitPorNombre(fact.cliente);
-    
+
     return `
       <tr>
         <td>${formatearCUIT(cuit)}</td>
@@ -641,28 +641,38 @@ function mostrarGastosInternosPorPeriodo(periodo, contenedorDestinoId = 'div3') 
     .then(res => res.json())
     .then(gastos => {
       const gastosPeriodo = gastos.filter(g => g.periodo === periodo);
-      const totalGastos = gastosPeriodo.reduce((sum, g) => sum + parseFloat(g.monto || 0), 0);
+      const totalGastos = gastosPeriodo.reduce((sum, g) => sum + parseFloat(g.total || 0), 0);
 
       const tabla = document.createElement('table');
       tabla.className = 'styled-table';
       tabla.innerHTML = `
         <thead>
           <tr>
-            <th>Fecha</th>
-            <th>Descripción</th>
-            <th>Importe ($)</th>
+            <th>Sector</th>
+            <th>Servicio</th>
+            <th>Hs Trabajadas</th>
+            <th>Hs Liquidadas</th>
+            <th>Valor Hora ($)</th>
+            <th>Aumento (%)</th>
+            <th>Neto ($)</th>
+            <th>Total ($)</th>
           </tr>
         </thead>
         <tbody>
           ${gastosPeriodo.map(g => `
             <tr>
-              <td>${g.fecha || '-'}</td>
-              <td>${g.descripcion || '-'}</td>
-              <td>$${parseFloat(g.monto).toFixed(2)}</td>
+              <td>${g.sector || '-'}</td>
+              <td>${g.servicio || '-'}</td>
+              <td>${g.hsTrabajadas?.toFixed(2) || '0.00'}</td>
+              <td>${g.hsLiquidadas?.toFixed(2) || '0.00'}</td>
+              <td>$${g.valorHora?.toFixed(2) || '0.00'}</td>
+              <td>${g.aumento?.toFixed(2) || '0.00'}%</td>
+              <td>$${g.neto?.toFixed(2) || '0.00'}</td>
+              <td><strong>$${g.total?.toFixed(2) || '0.00'}</strong></td>
             </tr>
           `).join('')}
           <tr class="total-row">
-            <td colspan="2"><strong>Total de gastos</strong></td>
+            <td colspan="7"><strong>Total de gastos</strong></td>
             <td><strong>$${totalGastos.toFixed(2)}</strong></td>
           </tr>
         </tbody>
@@ -676,22 +686,26 @@ function mostrarGastosInternosPorPeriodo(periodo, contenedorDestinoId = 'div3') 
       contenedor.appendChild(subtitulo);
       contenedor.appendChild(tabla);
 
-      // Buscar el total facturado ya mostrado y restar
-      const totalFacturadoElement = document.getElementById('totalFacturadoPeriodo');
-      const totalFacturado = totalFacturadoElement ? parseFloat(totalFacturadoElement.dataset.total || 0) : 0;
-      const diferencia = totalFacturado - totalGastos;
+      // Solo agregar el resultado neto si aún no existe
+      const EXISTE_RESULTADO = document.getElementById('resultadoNetoGlobal');
+      if (!EXISTE_RESULTADO) {
+        const totalFacturadoElement = document.getElementById('totalFacturadoPeriodo');
+        const totalFacturado = totalFacturadoElement ? parseFloat(totalFacturadoElement.dataset.total || 0) : 0;
+        const diferencia = totalFacturado - totalGastos;
 
-      // Mostrar diferencia
-      const resultado = document.createElement('p');
-      resultado.innerHTML = `<strong>💼 Resultado Neto: $${diferencia.toFixed(2)}</strong>`;
-      resultado.style.marginTop = '1em';
-      resultado.style.fontSize = '1.2em';
-      contenedor.appendChild(resultado);
+        const resultado = document.createElement('p');
+        resultado.id = 'resultadoNetoGlobal'; // clave para no repetirlo
+        resultado.innerHTML = `<strong>💼 Resultado Neto: $${diferencia.toFixed(2)}</strong>`;
+        resultado.style.marginTop = '1em';
+        resultado.style.fontSize = '1.2em';
+        contenedor.appendChild(resultado);
+      }
     })
     .catch(err => {
       console.error('Error al cargar gastosInternos.json:', err);
     });
 }
+
 
 function generarTablaGeneral(facturaciones, filtros) {
   // Aquí puedes usar los filtros para ajustar la tabla si es necesario

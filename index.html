@@ -24,7 +24,7 @@
       <button id="gestionarFacturacion">Gestionar facturación</button>
       <button id="reporteGeneral">Generar reporte general</button>
       <button id="btnGastosInternos" class="menu-btn">Gastos Internos</button>
-      <button id="verHistorialBtn">Ver Historial</button>
+      <button id="insumosBtn">Insumos</button>
     </div>
 
     <div class="div2">
@@ -77,6 +77,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./renderer-gastosI.js"></script>
+  <script src="renderer-rentabilidad.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script type="module">
+  document.getElementById('btnRentabilidad').addEventListener('click', async () => {
+    const module = await import('./renderer-rentabilidad.js');
+    module.mostrarRentabilidad();
+  });
+</script>
+
 </body>
 
 </html>
