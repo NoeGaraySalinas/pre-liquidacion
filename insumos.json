@@ -1,1 +1,69 @@
-[]
+[
+  {
+    "id": "1747320513485",
+    "fecha": "2025-05-07",
+    "numero": "2-1816",
+    "cliente": "VTV CORDOBA SA",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Toallas rollo p/ manos  REM 1-2166 03/04/2025  Suc: Carcano",
+        "cantidad": 12,
+        "precio": 10179
+      },
+      {
+        "nombre": " Toalla rollo p/ manos  REM 1-2231 25/04/2025  Suc: Carcano",
+        "cantidad": 8,
+        "precio": 10179
+      },
+      {
+        "nombre": "Papel higienico jumbo  REM 1-2231 25/04/2025  Suc: Carcano",
+        "cantidad": 24,
+        "precio": 1690.08
+      },
+      {
+        "nombre": "Papel higienico jumbo  REM 1-2167 09/04/2025  Suc: Japon",
+        "cantidad": 24,
+        "precio": 1690.08
+      },
+      {
+        "nombre": " Jabon Liquido p/ manos  REM 1-2167 09/04/2025  Suc: Japon",
+        "cantidad": 1,
+        "precio": 5850
+      },
+      {
+        "nombre": " Toalla Rollo p/ manos  REM 1-2167 09/04/2025  Suc: Japon",
+        "cantidad": 8,
+        "precio": 10179
+      },
+      {
+        "nombre": " Toallas rollo p/ manos  REM 1-2224 21/04/2025  Suc: Japon",
+        "cantidad": 8,
+        "precio": 10179
+      },
+      {
+        "nombre": " Papel higienico jumbo  REM 1-2180 09/04/2025  Suc: Sur",
+        "cantidad": 24,
+        "precio": 1690.08
+      },
+      {
+        "nombre": "Toallas rollo p/ manos  REM 1-2180 09/04/2025  Suc: Sur",
+        "cantidad": 12,
+        "precio": 10179
+      },
+      {
+        "nombre": "Jabon liquido p/ manos  REM 1-2180 09/04/2025  Suc: Sur",
+        "cantidad": 1,
+        "precio": 5850
+      },
+      {
+        "nombre": " Rollo industrial 25cm  REM 1-2241 30/04/2025  Suc: Sur",
+        "cantidad": 1,
+        "precio": 10179
+      }
+    ],
+    "subtotal": 632156.76,
+    "iva": 132752.92,
+    "total": 764909.68
+  }
+]

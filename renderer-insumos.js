@@ -62,7 +62,7 @@ cargarEstilosRentab();
 // Función principal para cargar el formulario de insumos
 function loadInsumosForm() {
     console.log('Cargando formulario de insumos...');
-    
+
     const div3 = document.getElementById('div3');
     if (!div3) {
         console.error('Error: No se encontró el contenedor div3');
@@ -77,17 +77,18 @@ function loadInsumosForm() {
     formularioInsumos.id = 'formularioInsumos';
     formularioInsumos.innerHTML = `
         <h2>Registro de Facturas de Insumos</h2>
-        
+        <br>
         <div class="filtros-insumos">
             <input type="month" id="filterMonthInsumos" class="input-filtro">
             <input type="text" id="filterClienteInsumos" placeholder="Filtrar por cliente" class="input-filtro">
             <button id="btnFiltrarInsumos" class="btn-filtrar">Filtrar</button>
             <button id="btnLimpiarFiltrosInsumos" class="btn-secundario">Limpiar</button>
         </div>
-        
+        <br>
+        <br>
         <button id="btnNuevaFacturaInsumo" class="btn-primario">+ Nueva Factura</button>
         
-        <form id="facturaInsumoForm" class="oculto" style="display:none;">
+        <form id="facturaInsumoForm" class="formulario-delimitado oculto" style="display:none;">
             <div class="seccion-formulario">
                 <h3>Datos de la Factura</h3>
                 <div class="fila-formulario">
@@ -97,8 +98,22 @@ function loadInsumosForm() {
                     </div>
                     <div class="grupo-formulario">
                         <label for="clienteFacturaInsumo">Cliente*</label>
-                        <input type="text" id="clienteFacturaInsumo" required class="input-form">
+                        <input type="text" id="clienteFacturaInsumo" list="listaClientes" required class="input-form">
+                        <datalist id="listaClientes"></datalist>
                     </div>
+                    <div class="grupo-formulario">
+                        <label for="tipoFacturaInsumo">Tipo de Factura*</label>
+                        <select id="tipoFacturaInsumo" required class="input-form">
+                        <option value="">Seleccionar</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="Fce-A">Fce-A</option>
+                        <option value="Fce-B">Fce-B</option>
+                        <option value="Sin factura">Sin factura</option>
+                      </select>
+                    </div>
+
                     <div class="grupo-formulario">
                         <label for="numeroFacturaInsumo">N° Factura*</label>
                         <input type="text" id="numeroFacturaInsumo" required class="input-form">
@@ -148,6 +163,7 @@ function loadInsumosForm() {
                 <thead>
                     <tr>
                         <th>Fecha</th>
+                        <th>Tipo de Factura</th>
                         <th>N° Factura</th>
                         <th>Cliente</th>
                         <th>Cantidad Items</th>
@@ -162,11 +178,17 @@ function loadInsumosForm() {
 
     // Agregamos el formulario al div3
     div3.appendChild(formularioInsumos);
+    cargarClientesEnDatalist();
 
-    // Configuramos los eventos después de que el HTML se haya insertado
     setTimeout(() => {
         configurarEventosInsumos();
         renderizarFacturasInsumos();
+
+        // Disparar cálculo cuando cambia el tipo de factura
+        const tipoFacturaSelect = document.getElementById('tipoFacturaInsumo');
+        if (tipoFacturaSelect) {
+            tipoFacturaSelect.addEventListener('change', calcularTotalesFacturaInsumo);
+        }
     }, 50);
 }
 
@@ -238,47 +260,81 @@ function agregarItemInsumo() {
         <button type="button" class="btn-eliminar-item">×</button>
     `;
     detalle.appendChild(nuevoItem);
-    
+
     // Agregar evento al botón de eliminar
     const btnEliminar = nuevoItem.querySelector('.btn-eliminar-item');
     if (btnEliminar) {
-        btnEliminar.addEventListener('click', function() {
+        btnEliminar.addEventListener('click', function () {
             detalle.removeChild(nuevoItem);
             calcularTotalesFacturaInsumo();
         });
     }
 }
 
+function cargarClientesEnDatalist() {
+    const rutaClientes = path.join(__dirname, 'clientes.json');
+    const datalist = document.getElementById('listaClientes');
+
+    if (!datalist) return;
+
+    try {
+        const datos = fs.readFileSync(rutaClientes, 'utf-8');
+        const clientes = JSON.parse(datos);
+
+        datalist.innerHTML = ''; // Limpiar opciones previas
+        clientes.forEach(cliente => {
+            const option = document.createElement('option');
+            option.value = cliente.nombre;
+            datalist.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error al cargar clientes:', error);
+    }
+}
+
 function calcularTotalesFacturaInsumo() {
     const items = document.querySelectorAll('.item-insumo');
+    const tipoFactura = document.getElementById('tipoFacturaInsumo')?.value || '';
     let subtotal = 0;
-    
+
     items.forEach(item => {
         const cantidad = parseFloat(item.querySelector('.cantidadInsumo').value) || 0;
         const precio = parseFloat(item.querySelector('.precioInsumo').value.replace(',', '.')) || 0;
         subtotal += cantidad * precio;
     });
-    
-    const iva = subtotal * 0.21;
+
+    const aplicaIVA = !(tipoFactura === 'C' || tipoFactura === 'Sin factura');
+    const iva = aplicaIVA ? subtotal * 0.21 : 0;
     const total = subtotal + iva;
-    
-    document.getElementById('subtotalFacturaInsumo').value = formatPesos(subtotal);
-    document.getElementById('ivaFacturaInsumo').value = formatPesos(iva);
-    document.getElementById('totalFacturaInsumo').value = formatPesos(total);
+
+    // Mostrar como texto formateado, guardar el valor real en atributo
+    const subtotalInput = document.getElementById('subtotalFacturaInsumo');
+    subtotalInput.value = formatPesos(subtotal);
+    subtotalInput.setAttribute('data-valor', subtotal.toFixed(2));
+
+    const ivaInput = document.getElementById('ivaFacturaInsumo');
+    ivaInput.value = formatPesos(iva);
+    ivaInput.setAttribute('data-valor', iva.toFixed(2));
+
+    const totalInput = document.getElementById('totalFacturaInsumo');
+    totalInput.value = formatPesos(total);
+    totalInput.setAttribute('data-valor', total.toFixed(2));
 }
+
 
 function guardarFacturaInsumo(e) {
     e.preventDefault();
-    
+
     const fecha = document.getElementById('fechaFacturaInsumo').value;
     const cliente = document.getElementById('clienteFacturaInsumo').value;
     const numero = document.getElementById('numeroFacturaInsumo').value;
-    
-    if (!fecha || !cliente || !numero) {
+    const tipo = document.getElementById('tipoFacturaInsumo').value;
+
+    if (!fecha || !cliente || !numero || !tipo) {
         alert('Complete todos los campos obligatorios');
         return;
     }
-    
+
     const items = [];
     document.querySelectorAll('.item-insumo').forEach(item => {
         items.push({
@@ -287,30 +343,33 @@ function guardarFacturaInsumo(e) {
             precio: parseFloat(item.querySelector('.precioInsumo').value.replace(',', '.'))
         });
     });
-    
+
     if (items.length === 0) {
         alert('Agregue al menos un ítem a la factura');
         return;
     }
-    
-    const subtotal = parseFloat(document.getElementById('subtotalFacturaInsumo').value.replace(/[^\d.-]/g, ''));
-    const iva = parseFloat(document.getElementById('ivaFacturaInsumo').value.replace(/[^\d.-]/g, ''));
-    const total = parseFloat(document.getElementById('totalFacturaInsumo').value.replace(/[^\d.-]/g, ''));
+
+    const parseImporte = (valor) => parseFloat(valor.replace(/\./g, '').replace(',', '.')) || 0;
+
+    const subtotal = parseFloat(document.getElementById('subtotalFacturaInsumo').getAttribute('data-valor')) || 0;
+    const iva = parseFloat(document.getElementById('ivaFacturaInsumo').getAttribute('data-valor')) || 0;
+    const total = parseFloat(document.getElementById('totalFacturaInsumo').getAttribute('data-valor')) || 0;
 
     const factura = {
         id: Date.now().toString(),
         fecha,
         numero,
         cliente,
+        tipo,
         items,
         subtotal,
         iva,
         total
     };
-    
+
     insumos.push(factura);
     guardarInsumos();
-    
+
     document.getElementById('facturaInsumoForm').style.display = 'none';
     renderizarFacturasInsumos();
 }
@@ -318,21 +377,22 @@ function guardarFacturaInsumo(e) {
 function renderizarFacturasInsumos(facturasFiltradas = null) {
     const cuerpoTabla = document.getElementById('cuerpoTablaInsumos');
     if (!cuerpoTabla) return;
-    
+
     cuerpoTabla.innerHTML = '';
-    
+
     const datos = facturasFiltradas || insumos;
-    
+
     if (datos.length === 0) {
-        cuerpoTabla.innerHTML = '<tr><td colspan="6">No hay facturas de insumos registradas</td></tr>';
+        cuerpoTabla.innerHTML = '<tr><td colspan="7">No hay facturas de insumos registradas</td></tr>';
         return;
     }
-    
+
     datos.sort((a, b) => new Date(b.fecha) - new Date(a.fecha)).forEach(factura => {
         const fila = document.createElement('tr');
-        
+
         fila.innerHTML = `
             <td>${new Date(factura.fecha).toLocaleDateString()}</td>
+            <td>${factura.tipo}</td>
             <td>${factura.numero}</td>
             <td>${factura.cliente}</td>
             <td>${factura.items.length}</td>
@@ -342,39 +402,39 @@ function renderizarFacturasInsumos(facturasFiltradas = null) {
                 <button class="btn-accion btn-peligro" onclick="eliminarFacturaInsumo('${factura.id}')">🗑️</button>
             </td>
         `;
-        
+
         cuerpoTabla.appendChild(fila);
     });
 }
 
 function cargarEstilosRentab() {
-  const head = document.head;
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'rentab-style.css';
-  link.type = 'text/css';
-  link.id = 'rentab-style';
+    const head = document.head;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'rentab-style.css';
+    link.type = 'text/css';
+    link.id = 'rentab-style';
 
-  // Evitar que se cargue más de una vez
-  if (!document.getElementById('rentab-style')) {
-    head.appendChild(link);
-  }
+    // Evitar que se cargue más de una vez
+    if (!document.getElementById('rentab-style')) {
+        head.appendChild(link);
+    }
 }
 
 function aplicarFiltrosInsumos() {
     const mes = document.getElementById('filterMonthInsumos').value;
     const cliente = document.getElementById('filterClienteInsumos').value.toLowerCase();
-    
+
     let filtradas = insumos;
-    
+
     if (mes) {
         filtradas = filtradas.filter(f => f.fecha.startsWith(mes));
     }
-    
+
     if (cliente) {
         filtradas = filtradas.filter(f => f.cliente.toLowerCase().includes(cliente));
     }
-    
+
     renderizarFacturasInsumos(filtradas);
 }
 
@@ -387,26 +447,26 @@ function limpiarFiltrosInsumos() {
 function verDetalleFacturaInsumo(id) {
     const factura = insumos.find(f => f.id === id);
     if (!factura) return;
-    
+
     let detalle = `Factura N° ${factura.numero}\n`;
     detalle += `Cliente: ${factura.cliente}\n`;
     detalle += `Fecha: ${new Date(factura.fecha).toLocaleDateString()}\n\n`;
     detalle += 'Detalle de Insumos:\n';
-    
+
     factura.items.forEach(item => {
         detalle += `- ${item.nombre}: ${item.cantidad} × ${formatPesos(item.precio)} = ${formatPesos(item.cantidad * item.precio)}\n`;
     });
-    
+
     detalle += `\nSubtotal: ${formatPesos(factura.subtotal)}\n`;
     detalle += `IVA (21%): ${formatPesos(factura.iva)}\n`;
     detalle += `TOTAL: ${formatPesos(factura.total)}`;
-    
+
     alert(detalle);
 }
 
 function eliminarFacturaInsumo(id) {
     if (!confirm('¿Está seguro que desea eliminar esta factura de insumos?')) return;
-    
+
     insumos = insumos.filter(f => f.id !== id);
     guardarInsumos();
     renderizarFacturasInsumos();
@@ -416,7 +476,7 @@ function eliminarFacturaInsumo(id) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM cargado - Módulo de Insumos');
     cargarInsumos();
-    
+
     // Configurar el botón de insumos
     const insumosBtn = document.getElementById('insumosBtn');
     if (insumosBtn) {
