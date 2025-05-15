@@ -21,7 +21,6 @@ if (!__dirname) {
 // Variables globales
 let listaServiciosGI = [];
 
-
 // Función para formatear moneda
 function formatPesos(valor) {
     return valor.toLocaleString('es-AR', {
@@ -31,148 +30,56 @@ function formatPesos(valor) {
 }
 
 // Inicialización cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     initGastosInternos();
     cargarServiciosGI();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  sugerenciasDivGI = document.getElementById('sugerencias-gastos');
-  if (!sugerenciasDivGI) {
-    console.warn('Elemento sugerencias-gastos no encontrado');
-    sugerenciasDivGI = document.createElement('div');
-    sugerenciasDivGI.style.display = 'none';
-    document.body.appendChild(sugerenciasDivGI);
-  }
+    setupGlobalEventListeners();
 });
 
 // Función principal de inicialización
-// 1. Definir variable global al inicio del archivo
-let sugerenciasDivGI = null;
-let serviciosGI = [];
-
-// 2. Función optimizada para inicialización
 function initGastosInternos() {
     const MAX_INTENTOS = 5;
     let intentos = 0;
 
-    // Función para cargar servicios si no están disponibles
-    async function cargarServiciosGI() {
-        try {
-            serviciosGI = await ipcRenderer.invoke('get-servicios');
-            console.log(`${serviciosGI.length} servicios cargados para Gastos Internos`);
-        } catch (error) {
-            console.error('Error cargando servicios:', error);
-            serviciosGI = [];
-        }
-    }
+    function intentarInicializar() {
+        const btnGastosInternos = document.getElementById('btnGastosInternos');
 
-    // Función para configurar el área de sugerencias
-    function configurarSugerencias() {
-        sugerenciasDivGI = document.getElementById('sugerencias-gastos');
-        if (!sugerenciasDivGI) {
-            console.warn('Creando contenedor de sugerencias dinámicamente');
-            sugerenciasDivGI = document.createElement('div');
-            sugerenciasDivGI.id = 'sugerencias-gastos';
-            sugerenciasDivGI.className = 'sugerencias-container';
-            document.body.appendChild(sugerenciasDivGI);
-        }
-    }
-
-    // Función principal de inicialización
-    async function intentarInicializar() {
-        try {
-            const btnGastosInternos = document.getElementById('btnGastosInternos');
-            
-            if (btnGastosInternos) {
-                // Cargar datos necesarios primero
-                await cargarServiciosGI();
-                configurarSugerencias();
-
-                // Configurar evento del botón
-                btnGastosInternos.addEventListener('click', async function() {
-                    try {
-                        await loadGastosInternosForm();
-                        console.log('Formulario de gastos cargado correctamente');
-                    } catch (e) {
-                        console.error('Error al cargar formulario:', e);
-                        mostrarNotificacion('Error al cargar el formulario', 'error');
-                    }
-                });
-                
-                console.log('Módulo de Gastos Internos completamente inicializado');
-            } else if (intentos < MAX_INTENTOS) {
-                intentos++;
-                setTimeout(intentarInicializar, 500 * intentos); // Aumentar el delay
-            } else {
-                console.error('Elemento btnGastosInternos no encontrado');
-            }
-        } catch (error) {
-            console.error('Error en inicialización:', error);
+        if (btnGastosInternos) {
+            btnGastosInternos.addEventListener('click', function() {
+                try {
+                    loadGastosInternosForm();
+                } catch (e) {
+                    console.error('Error al cargar formulario de gastos internos:', e);
+                    alert('Error al cargar el formulario');
+                }
+            });
+            console.log('Botón de Gastos Internos inicializado correctamente');
+        } else if (intentos < MAX_INTENTOS) {
+            intentos++;
+            setTimeout(intentarInicializar, 300 * intentos);
+        } else {
+            console.error('Botón btnGastosInternos no encontrado después de varios intentos');
         }
     }
 
     intentarInicializar();
 }
 
-// 3. Inicializar cuando el DOM esté listo
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGastosInternos);
-} else {
-    initGastosInternos();
-}
-
-document.getElementById("btnGastosInternos").addEventListener("click", () => {
-    // cargar el contenido de la sección, mostrarla, etc.
-    cargarServiciosGI(); // ← Esta llamada es importante
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const inputServicioGI = document.getElementById("inputServicioGI");
-    const sugerenciasDivGI = document.getElementById("sugerenciasServicioGI");
-
-    if (!inputServicioGI || !sugerenciasDivGI) return;
-
-    inputServicioGI.addEventListener("input", () => {
-        const texto = inputServicioGI.value.toLowerCase();
-        sugerenciasDivGI.innerHTML = "";
-
-        if (texto.length === 0 || listaServiciosGI.length === 0) return;
-
-        const coincidencias = listaServiciosGI.filter(servicio =>
-            servicio.nombre.toLowerCase().includes(texto)
-        );
-
-        coincidencias.forEach(servicio => {
-            const item = document.createElement("div");
-            item.classList.add("sugerencia-item");
-            item.textContent = servicio.nombre;
-
-            item.addEventListener("click", () => {
-                inputServicioGI.value = servicio.nombre;
-                sugerenciasDivGI.innerHTML = "";
-            });
-
-            sugerenciasDivGI.appendChild(item);
-        });
-    });
-
-    // 👇 Este bloque va adentro también
+// Configurar listeners globales
+function setupGlobalEventListeners() {
     document.addEventListener("click", (e) => {
-        if (!sugerenciasDivGI.contains(e.target) && e.target !== inputServicioGI) {
+        const sugerenciasDivGI = document.getElementById("sugerenciasServicioGI");
+        const inputServicioGI = document.getElementById("inputServicioGI");
+        
+        if (sugerenciasDivGI && inputServicioGI && 
+            !sugerenciasDivGI.contains(e.target) && 
+            e.target !== inputServicioGI) {
             sugerenciasDivGI.innerHTML = "";
         }
     });
-});
-
-document.addEventListener("click", (e) => {
-    if (!sugerenciasDivGI.contains(e.target) && e.target !== inputServicioGI) {
-        sugerenciasDivGI.innerHTML = "";
-    }
-});
+}
 
 // Función para cargar servicios
-
 function cargarServiciosGI() {
     if (!fs.existsSync(rutaServicios)) {
         console.warn('Archivo servicios.json no encontrado. Creando uno nuevo...');
@@ -200,14 +107,12 @@ function cargarServiciosGI() {
     });
 }
 
-// Inicialización segura
+// Inicialización segura de elementos globales
 function safeInit() {
     try {
-        initGastosInternos();
-        cargarServiciosGI();
-        console.log('Módulo de Gastos Internos inicializado correctamente');
+        console.log('Inicialización general completada (sin cargar módulos específicos)');
     } catch (error) {
-        console.error('Error en la inicialización de Gastos Internos:', error);
+        console.error('Error en la inicialización general:', error);
     }
 }
 
@@ -335,9 +240,9 @@ function loadGastosInternosForm() {
                 </div>
 
                 <div class="form-actions">
-            <button type="submit" class="btn-primary">Guardar Gasto</button>
-            <button type="button" id="cancelarGastoGI" class="btn-secondary">Cancelar</button>
-        </div>
+                    <button type="submit" class="btn-primary">Guardar Gasto</button>
+                    <button type="button" id="cancelarGastoGI" class="btn-secondary">Cancelar</button>
+                </div>
             </div>
         </form>
         
@@ -366,15 +271,6 @@ function loadGastosInternosForm() {
     setupFormEvents();
     renderGastosInternos();
 }
-
-document.getElementById('inputServicioGI').addEventListener('input', (e) => {
-    const texto = e.target.value;
-    if (texto.length > 0) {
-        mostrarSugerenciasServicioGI(texto);
-    } else {
-        document.getElementById('sugerenciasServicioGI').innerHTML = '';
-    }
-});
 
 // Configurar eventos del formulario
 function setupFormEvents() {

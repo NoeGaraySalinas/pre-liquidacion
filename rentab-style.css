@@ -107,3 +107,63 @@ canvas {
     color: #333;
     font-size: 1.5rem;
 }
+
+/* insumos */
+
+/* rentab-style.css */
+.input-form {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+}
+
+.btn-primario {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background-color: #6c757d;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fila-formulario {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grupo-formulario {
+  flex: 1;
+}
+
+.item-insumo {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-insumo input {
+  flex: 1;
+  padding: 6px;
+}
+
+.item-insumo .btn-eliminar-item {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+

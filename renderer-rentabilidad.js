@@ -8,9 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Tarjetas de KPI
+
+// Ganancia Neta
 async function calcularGananciaNetaTotal() {
-    const rutaFacturacion = path.join(__dirname,  'facturacion.json');
-    const rutaGastos = path.join(__dirname,  'gastosInternos.json');
+    const rutaFacturacion = path.join(__dirname, 'facturacion.json');
+    const rutaGastos = path.join(__dirname, 'gastosInternos.json');
 
     let totalFacturado = 0;
     let totalGastosInternos = 0;
@@ -71,13 +73,13 @@ async function mostrarRentabilidad() {
     <div class="dashboard">
       <div class="tarjetas-kpi">
         <div class="kpi-card" id="kpi-ganancia-neta" title="Suma de todas las ganancias netas hasta la fecha">
-        <div class="icono">💰</div>
-        <div class="dato" data-valor="0">0</div>
-        <div class="titulo">Ganancia total neta</div>
-      </div>
-        <div class="kpi-card" title="Margen de ganancia respecto a ingresos">
+          <div class="icono">💰</div>
+          <div class="dato" data-valor="0">0</div>
+          <div class="titulo">Ganancia total neta</div>
+        </div>
+        <div class="kpi-card" id="kpi-margen" title="Margen de ganancia respecto a ingresos">
           <div class="icono">📈</div>
-          <div class="dato" data-valor="38">0</div>
+          <div class="dato" data-valor="0">0</div>
           <div class="etiqueta">Margen de rentabilidad (%)</div>
         </div>
         <div class="kpi-card" title="Cliente con mayor aporte a la ganancia">
@@ -93,7 +95,7 @@ async function mostrarRentabilidad() {
       </div>
 
       <div class="graficos">
-      <h3>Distribución de ganancias por clientes</h3>
+        <h3>Distribución de ganancias por clientes</h3>
         <canvas id="graficoPie" width="300" height="300"></canvas>
         <h3>Comparación de ingresos y costos por servicio</h3>
         <canvas id="graficoBarras" width="400" height="300"></canvas>
@@ -112,23 +114,36 @@ async function mostrarRentabilidad() {
     </div>
   `;
 
-    animarDatosNumericos();
     animarGraficos();
     generarGraficosEjemplo();
 
-    // 🔽 NUEVO: actualizar tarjeta con datos reales
+    // 🔽 Actualizar KPIs con datos reales
     const gananciaNeta = await calcularGananciaNetaTotal();
+    const margenRentabilidad = await calcularMargenRentabilidad();
+
     console.log("Ganancia neta calculada:", gananciaNeta);
+    console.log("Margen de rentabilidad:", margenRentabilidad);
 
     const tarjetaGanancia = document.querySelector("#kpi-ganancia-neta .dato[data-valor]");
     if (tarjetaGanancia) {
         tarjetaGanancia.setAttribute("data-valor", gananciaNeta);
-        tarjetaGanancia.textContent = "$0";
-        animarDatosNumericos();
+        tarjetaGanancia.textContent = "0";
     } else {
         console.warn("No se encontró la tarjeta de ganancia neta");
     }
+
+    const tarjetaMargen = document.querySelector("#kpi-margen .dato[data-valor]");
+    if (tarjetaMargen) {
+        tarjetaMargen.setAttribute("data-valor", margenRentabilidad);
+        tarjetaMargen.textContent = "0";
+    } else {
+        console.warn("No se encontró la tarjeta de margen de rentabilidad");
+    }
+
+    // 🟢 Solo una llamada después de actualizar los datos
+    animarDatosNumericos();
 }
+
 
 function animarDatosNumericos() {
     document.querySelectorAll(".dato").forEach(el => {
@@ -138,6 +153,9 @@ function animarDatosNumericos() {
         let actual = 0;
         const velocidad = valorFinal / 60;
 
+        // Identifica por ID si el valor es un porcentaje
+        const esPorcentaje = el.closest("#kpi-margen") !== null;
+
         const intervalo = setInterval(() => {
             actual += velocidad;
             if (actual >= valorFinal) {
@@ -145,13 +163,13 @@ function animarDatosNumericos() {
                 clearInterval(intervalo);
             }
 
-            const esPorcentaje = el.closest(".kpi-card")?.textContent.includes('%');
             el.textContent = esPorcentaje
                 ? `${Math.round(actual)}%`
                 : `$${Math.round(actual).toLocaleString()}`;
         }, 20);
     });
 }
+
 
 function animarGraficos() {
     document.querySelectorAll("canvas").forEach(canvas => {
@@ -288,7 +306,36 @@ function generarGraficosEjemplo() {
     });
 }
 
-
-
-
 window.mostrarRentabilidad = mostrarRentabilidad;
+
+// Margen % de rentabilidad
+async function calcularMargenRentabilidad() {
+    const rutaFacturacion = path.join(__dirname, 'facturacion.json');
+    const rutaGastos = path.join(__dirname, 'gastosInternos.json');
+
+    let totalFacturado = 0;
+    let totalGastosInternos = 0;
+
+    try {
+        const dataFacturacion = JSON.parse(fs.readFileSync(rutaFacturacion, 'utf8'));
+        totalFacturado = dataFacturacion
+            .filter(f => f.periodo.includes('2025'))
+            .reduce((acc, cur) => acc + (parseFloat(cur.valores?.total) || 0), 0);
+
+        const dataGastos = JSON.parse(fs.readFileSync(rutaGastos, 'utf8'));
+        totalGastosInternos = dataGastos
+            .filter(g => g.periodo?.includes('2025'))
+            .reduce((acc, cur) => acc + (parseFloat(cur.total) || 0), 0);
+
+        const gananciaNeta = totalFacturado - totalGastosInternos;
+
+        if (totalFacturado === 0) return 0;
+
+        const margen = (gananciaNeta / totalFacturado) * 100;
+        return margen.toFixed(2); // Devolvemos con 2 decimales
+    } catch (error) {
+        console.error("Error al calcular margen de rentabilidad:", error);
+        return 0;
+    }
+}
+
