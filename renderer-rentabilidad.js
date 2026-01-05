@@ -144,7 +144,6 @@ async function mostrarRentabilidad() {
     animarDatosNumericos();
 }
 
-
 function animarDatosNumericos() {
     document.querySelectorAll(".dato").forEach(el => {
         const valorFinal = +el.dataset.valor;
@@ -169,7 +168,6 @@ function animarDatosNumericos() {
         }, 20);
     });
 }
-
 
 function animarGraficos() {
     document.querySelectorAll("canvas").forEach(canvas => {
@@ -338,4 +336,3 @@ async function calcularMargenRentabilidad() {
         return 0;
     }
 }
-

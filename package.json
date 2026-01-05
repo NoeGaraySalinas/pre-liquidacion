@@ -2,20 +2,47 @@
   "name": "pre-liquidacion",
   "version": "1.0.0",
   "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
-  },
-  "keywords": [],
-  "author": "",
+  "description": "Sistema de pre-liquidación de servicios",
+  "author": "Noelia Garay Salinas",
   "license": "ISC",
   "type": "commonjs",
-  "description": "",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
   "dependencies": {
     "sqlite3": "^5.1.7",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "electron": "^35.0.1"
+    "electron": "^35.0.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.corsacor.preliquidacion",
+    "productName": "Pre-Liquidación",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/.*",
+      "!**/*.map",
+      "!**/*.md",
+      "!package-lock.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true
+    }
   }
 }

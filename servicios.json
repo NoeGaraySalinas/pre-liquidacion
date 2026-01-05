@@ -1,986 +1,2194 @@
 [
   {
+    "id": "1750878056930",
+    "nombre": "Asociacion mutual mercantil del personal de AGEC",
+    "operarios": 1,
+    "horasAutorizadas": 8,
+    "categoria": "FO",
+    "valorHora": 15951.25,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1743083656971",
     "nombre": "Ama Hogar - Sarmiento",
     "operarios": 1,
     "horasAutorizadas": 32,
-    "id": 1743083656971
+    "categoria": "mensual",
+    "valorHora": 17246.49,
+    "gremio": "SOELSAC"
   },
   {
+    "id": "1743083669431",
     "nombre": "Ama Hogar - Santa Rosa",
     "operarios": 2,
     "horasAutorizadas": 12,
-    "id": 1743083669431
+    "categoria": "mensual",
+    "valorHora": 17246.49,
+    "gremio": "SOELSAC"
   },
   {
+    "id": "1743083684997",
     "nombre": "Ama Hogar - Oncativo",
     "operarios": 1,
     "horasAutorizadas": 8,
-    "id": 1743083684997
+    "categoria": "mensual",
+    "valorHora": 17246.49,
+    "gremio": "SOELSAC"
   },
   {
+    "id": "1743084188824",
     "nombre": "Ama Hogar - Alvear",
     "operarios": 1,
     "horasAutorizadas": 12,
-    "id": 1743084188824
+    "categoria": "mensual",
+    "valorHora": 17246.49,
+    "gremio": "SOELSAC"
   },
   {
+    "id": "1743084215707",
     "nombre": "Ama Hogar - Musicos del Centro (Olmos 230)",
     "operarios": 1,
     "horasAutorizadas": 4,
-    "id": 1743084215707
+    "categoria": "mensual",
+    "valorHora": 17246.49,
+    "gremio": "SOELSAC"
   },
   {
-    "nombre": "AMCO",
-    "operarios": 1,
-    "horasAutorizadas": 160,
-    "id": 1744206930560
-  },
-  {
-    "nombre": "Arcos del Cerro - Limpieza",
-    "operarios": 3,
-    "horasAutorizadas": 192,
-    "id": 1744206969976
-  },
-  {
-    "nombre": "Arcos del Cerro - Jardineria",
-    "operarios": 1,
-    "horasAutorizadas": 72,
-    "id": 1744644323705
-  },
-  {
-    "nombre": "Boixados",
-    "operarios": 1,
-    "horasAutorizadas": 32,
-    "id": 1744644844861
-  },
-  {
-    "nombre": "Boreal (La Rioja)",
-    "operarios": 2,
-    "horasAutorizadas": 160,
-    "id": 1744644895623
-  },
-  {
-    "nombre": "Boreal (Chilecito)",
-    "operarios": 1,
-    "horasAutorizadas": 40,
-    "id": 1744644910685
-  },
-  {
-    "nombre": "Boreal (Cordoba)",
-    "operarios": 2,
-    "horasAutorizadas": 160,
-    "id": 1744644925921
-  },
-  {
-    "nombre": "Boreal (Corte de Cesped)",
-    "operarios": 5,
-    "horasAutorizadas": 7.5,
-    "id": 1744645634191
-  },
-  {
-    "nombre": "Bramed",
-    "operarios": 1,
-    "horasAutorizadas": 80,
-    "id": 1744645655040
-  },
-  {
-    "nombre": "Casa de Jóvenes RG",
-    "operarios": 3,
-    "horasAutorizadas": 48,
-    "id": 1744645675271
-  },
-  {
-    "nombre": "Casa de Jóvenes RG (corte de cesped)",
-    "operarios": 3,
-    "horasAutorizadas": 24,
-    "id": 1744645691878
-  },
-  {
-    "nombre": "Celia",
-    "operarios": 6,
-    "horasAutorizadas": 320,
-    "id": 1744645717150
-  },
-  {
-    "nombre": "Celia (Limpieza Especial)",
-    "operarios": 5,
-    "horasAutorizadas": 46,
-    "id": 1744645755497
-  },
-  {
-    "nombre": "Circulo Odontologico Rio III",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1744645782092
-  },
-  {
-    "nombre": "Consorcio Arruabarrena",
-    "operarios": 3,
-    "horasAutorizadas": 24,
-    "id": 1744645798405
-  },
-  {
-    "nombre": "Cooperativa Caroya - Adm",
-    "operarios": 3,
-    "horasAutorizadas": 80,
-    "id": 1744645825291
-  },
-  {
-    "nombre": "Cooperativa Caroya - Banco de Sangre",
-    "operarios": 3,
-    "horasAutorizadas": 40,
-    "id": 1744645903599
-  },
-  {
-    "nombre": "Cooperativa Caroya - Nº 22",
-    "operarios": 1,
-    "horasAutorizadas": 40,
-    "id": 1744645924040
-  },
-  {
-    "nombre": "Cooperativa Caroya - N°34",
-    "operarios": 1,
-    "horasAutorizadas": 40,
-    "id": 1744645936695
-  },
-  {
-    "nombre": "Cooperativa Caroya - Ruta 9",
-    "operarios": 2,
-    "horasAutorizadas": 96,
-    "id": 1744645957194
-  },
-  {
-    "nombre": "Cooperativa Caroya - Sinsacate",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1744645972276
-  },
-  {
-    "nombre": "Cooperativa Caroya - TV",
-    "operarios": 3,
-    "horasAutorizadas": 40,
-    "id": 1744645987095
-  },
-  {
-    "nombre": "Colegio El Huerto",
-    "operarios": 5,
-    "horasAutorizadas": 80,
-    "id": 1744646002843
-  },
-  {
-    "nombre": "Edificio Avellaneda",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1744646017807
-  },
-  {
-    "nombre": "Edificio Avellaneda (Corte de Cesped)",
-    "operarios": 5,
-    "horasAutorizadas": 5,
-    "id": 1744646038452
-  },
-  {
-    "nombre": "Edificio Av. Patria",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1744646057167
-  },
-  {
-    "nombre": "Edificio Av. Colon",
-    "operarios": 1,
-    "horasAutorizadas": 36,
-    "id": 1744646072548
-  },
-  {
-    "nombre": "Dycsa",
-    "operarios": 1,
-    "horasAutorizadas": 80,
-    "id": 1744646088797
-  },
-  {
-    "nombre": "Edificio Gran Portico",
-    "operarios": 3,
-    "horasAutorizadas": 72,
-    "id": 1744646109763
-  },
-  {
-    "nombre": "Edificio Gran Portico (Adicionales)",
-    "operarios": 2,
-    "horasAutorizadas": 15,
-    "id": 1744646145260
-  },
-  {
-    "nombre": "Edificio Gran Portico (Domingos)",
-    "operarios": 1,
-    "horasAutorizadas": 2,
-    "id": 1744646165040
-  },
-  {
-    "nombre": "Edificio Gran Portico (Vidrios)",
-    "operarios": 1,
-    "horasAutorizadas": 3,
-    "id": 1744646181679
-  },
-  {
-    "nombre": "Edificio Florida Park",
-    "operarios": 3,
-    "horasAutorizadas": 72,
-    "id": 1744646209559
-  },
-  {
-    "nombre": "Edificio Florida Park (Adicionales)",
-    "operarios": 2,
-    "horasAutorizadas": 8,
-    "id": 1744646225252
-  },
-  {
-    "nombre": "Edificio Florida Park (Vidrios)",
-    "operarios": 1,
-    "horasAutorizadas": 2,
-    "id": 1744646238713
-  },
-  {
-    "nombre": "Edificio Florida Park (Domingos)",
-    "operarios": 1,
-    "horasAutorizadas": 2,
-    "id": 1744646250981
-  },
-  {
-    "nombre": "Edificio José Ingenieros",
-    "operarios": 3,
-    "horasAutorizadas": 72,
-    "id": 1744646267563
-  },
-  {
-    "nombre": "Edificio Las Lajas",
-    "operarios": 1,
-    "horasAutorizadas": 176,
-    "id": 1744646287645
-  },
-  {
-    "nombre": "Edificio Rincón",
-    "operarios": 1,
-    "horasAutorizadas": 40,
-    "id": 1744646299814
-  },
-  {
-    "nombre": "Edificio Rincón (corte de cesped)",
-    "operarios": 5,
-    "horasAutorizadas": 6.25,
-    "id": 1744646575373
-  },
-  {
-    "nombre": "Edificio El Fenix",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1744646634478
-  },
-  {
-    "nombre": "Edificio Eiffel",
-    "operarios": 1,
-    "horasAutorizadas": 116,
-    "id": 1744646654235
-  },
-  {
-    "nombre": "Edificio Lisandro",
-    "operarios": 2,
-    "horasAutorizadas": 32,
-    "id": 1744646673064
-  },
-  {
-    "nombre": "Edificio Lisandro (Nuevo)",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1744646697062
-  },
-  {
-    "nombre": "Edificio Torre Serena",
-    "operarios": 3,
-    "horasAutorizadas": 48,
-    "id": 1744646713814
-  },
-  {
-    "nombre": "Edificio Atlantis",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1744646725596
-  },
-  {
-    "nombre": "Edificio El Tala",
-    "operarios": 4,
-    "horasAutorizadas": 24,
-    "id": 1744646742944
-  },
-  {
-    "nombre": "Edificio Gagarin",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1744646760782
-  },
-  {
-    "nombre": "Edificio Constantino",
-    "operarios": 4,
-    "horasAutorizadas": 84,
-    "id": 1744646775942
-  },
-  {
-    "nombre": "Edificio Pilar",
-    "operarios": 1,
-    "horasAutorizadas": 8,
-    "id": 1744646811532
-  },
-  {
-    "nombre": "Edificio Stabio- Jornada Completa",
-    "operarios": 3,
-    "horasAutorizadas": 176,
-    "id": 1744646830964
-  },
-  {
-    "nombre": "Edificio Stabio- Limpieza",
-    "operarios": 4,
-    "horasAutorizadas": 136,
-    "id": 1744646847317
-  },
-  {
-    "nombre": "Edificio Valentina I",
-    "operarios": 2,
-    "horasAutorizadas": 12,
-    "id": 1744646866319
-  },
-  {
-    "nombre": "Estetica Santo Cuore",
-    "operarios": 2,
-    "horasAutorizadas": 32,
-    "id": 1744646881146
-  },
-  {
-    "nombre": "Etiqueta Negra",
-    "operarios": 2,
-    "horasAutorizadas": 40,
-    "id": 1744646893116
-  },
-  {
-    "nombre": "Fiumiccino III",
-    "operarios": 6,
-    "horasAutorizadas": 96,
-    "id": 1744646908544
-  },
-  {
-    "nombre": "Fiumiccino IV",
-    "operarios": 6,
-    "horasAutorizadas": 96,
-    "id": 1744646933061
-  },
-  {
-    "nombre": "Global",
-    "operarios": 1,
-    "horasAutorizadas": 32,
-    "id": 1744646959448
-  },
-  {
-    "nombre": "Global (Siscadat S.A.S)",
-    "operarios": 1,
-    "horasAutorizadas": 32,
-    "id": 1744647012655
-  },
-  {
-    "nombre": "Global (Adicional)",
-    "operarios": 3,
-    "horasAutorizadas": 36,
-    "id": 1744647034637
-  },
-  {
-    "nombre": "Granjas Carnave",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1744647052029
-  },
-  {
-    "nombre": "Grupo Pilar JM",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1744647062613
-  },
-  {
-    "nombre": "IERIC - LA RIOJA",
-    "operarios": 1,
-    "horasAutorizadas": 12,
-    "id": 1744647078025
-  },
-  {
-    "nombre": "IERIC - CATAMARCA",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1744647095497
-  },
-  {
-    "nombre": "INTA",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1744647110287
-  },
-  {
-    "nombre": "ITV - Av. Japon",
-    "operarios": 1,
-    "horasAutorizadas": 136,
-    "id": 1744647125388
-  },
-  {
-    "nombre": "ITV - Carcano",
-    "operarios": 4,
-    "horasAutorizadas": 136,
-    "id": 1744647141286
-  },
-  {
-    "nombre": "ITV - Zona Sur",
-    "operarios": 2,
-    "horasAutorizadas": 136,
-    "id": 1744647153406
-  },
-  {
-    "nombre": "LAC",
-    "operarios": 1,
-    "horasAutorizadas": 80,
-    "id": 1744647163741
-  },
-  {
-    "nombre": "Tru Motos - Suc Olmos",
-    "operarios": 2,
-    "horasAutorizadas": 32,
-    "id": 1744647180833
-  },
-  {
-    "nombre": "Tru Motos - Suc Heras",
-    "operarios": 3,
-    "horasAutorizadas": 16,
-    "id": 1744647609818
-  },
-  {
-    "nombre": "Tru Motos - Suc Rivera",
-    "operarios": 3,
-    "horasAutorizadas": 72,
-    "id": 1744647629250
-  },
-  {
-    "nombre": "Tru Motos - Suc Sarmiento",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1744647657300
-  },
-  {
-    "nombre": "KWS Argentina",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1744647669908
-  },
-  {
-    "nombre": "KWS - Tulumba",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1744647685394
-  },
-  {
-    "nombre": "LH Parking",
-    "operarios": 3,
-    "horasAutorizadas": 24,
-    "id": 1744647708763
-  },
-  {
-    "nombre": "Nacion Seguros",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1744647720334
-  },
-  {
-    "nombre": "Panaderia Alsina",
-    "operarios": 3,
-    "horasAutorizadas": 96,
-    "id": 1744647737687
-  },
-  {
-    "nombre": "Panhel Av Sabattini",
-    "operarios": 1,
-    "horasAutorizadas": 80,
-    "id": 1744647749661
-  },
-  {
-    "nombre": "Panhel Lopez y Planes",
-    "operarios": 1,
-    "horasAutorizadas": 48,
-    "id": 1744647762743
-  },
-  {
-    "nombre": "PM Capitalinas (Garat)",
-    "operarios": 3,
-    "horasAutorizadas": 40,
-    "id": 1744647776312
-  },
-  {
-    "nombre": "PM Depósito",
-    "operarios": 3,
-    "horasAutorizadas": 7.5,
-    "id": 1744647822480
-  },
-  {
-    "nombre": "PM Depósito LE",
-    "operarios": 2,
-    "horasAutorizadas": 5,
-    "id": 1744647834755
-  },
-  {
-    "nombre": "PM Maipu 410",
-    "operarios": 1,
-    "horasAutorizadas": 88,
-    "id": 1744647849579
-  },
-  {
-    "nombre": "PM Maipu 410 LE",
-    "operarios": 5,
-    "horasAutorizadas": 7.5,
-    "id": 1744647867169
-  },
-  {
-    "nombre": "PM Rivera Indarte 529",
-    "operarios": 2,
-    "horasAutorizadas": 24,
-    "id": 1744647882203
-  },
-  {
-    "nombre": "PM Rivera Indarte 563 (FO)",
-    "operarios": 2,
-    "horasAutorizadas": 12,
-    "id": 1744647924932
-  },
-  {
-    "nombre": "PM Republica 737",
-    "operarios": 2,
-    "horasAutorizadas": 20,
-    "id": 1744647944752
-  },
-  {
-    "nombre": "PM San Luis Mitre 727",
-    "operarios": 2,
-    "horasAutorizadas": 36,
-    "id": 1744647963279
-  },
-  {
-    "nombre": "PM San Luis Buenos Aires esq General Paz",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1744647987426
-  },
-  {
-    "nombre": "Sector 2 MZA 19 L3 - Procrear",
-    "operarios": 1,
-    "horasAutorizadas": 4,
-    "id": 1744648153494
-  },
-  {
-    "nombre": "Sector 8 MZA 46 T1 - Procrear",
-    "operarios": 4,
-    "horasAutorizadas": 48,
-    "id": 1744648174577
-  },
-  {
-    "nombre": "Sector 3 MZA 20 L1 - Procrear",
-    "operarios": 2,
-    "horasAutorizadas": 36,
-    "id": 1744648195025
-  },
-  {
-    "nombre": "Sector 3 MZA 32 L1 - Procrear",
-    "operarios": 3,
-    "horasAutorizadas": 16,
-    "id": 1744648212448
-  },
-  {
-    "nombre": "Sector 2 MZA 19 L1 - Procrear",
-    "operarios": 2,
-    "horasAutorizadas": 8,
-    "id": 1744648226277
-  },
-  {
-    "nombre": "Sector 2 MZA 19 L2 - Procrear",
-    "operarios": 3,
-    "horasAutorizadas": 8,
-    "id": 1744648239979
-  },
-  {
-    "nombre": "Sector 12 MZA 69 L11 - Procrear",
-    "operarios": 1,
-    "horasAutorizadas": 4,
-    "id": 1744648254378
-  },
-  {
-    "nombre": "Sector 4 MZA 38 - Procrear",
-    "operarios": 2,
-    "horasAutorizadas": 100,
-    "id": 1744648299775
-  },
-  {
-    "nombre": "Quadra 54",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1744648313654
-  },
-  {
-    "nombre": "Quo Estrategia",
-    "operarios": 2,
-    "horasAutorizadas": 63,
-    "id": 1744648326648
-  },
-  {
-    "nombre": "Reeferline (Contenedores)",
-    "operarios": 2,
-    "horasAutorizadas": 24,
-    "id": 1744648338330
-  },
-  {
-    "nombre": "Rhino 4x4",
-    "operarios": 1,
-    "horasAutorizadas": 176,
-    "id": 1744648355179
-  },
-  {
-    "nombre": "Roller Show - Malagueño",
-    "operarios": 3,
-    "horasAutorizadas": 32,
-    "id": 1744648369055
-  },
-  {
-    "nombre": "Silica Networks",
-    "operarios": 1,
-    "horasAutorizadas": 12,
-    "id": 1744648381514
-  },
-  {
-    "nombre": "Smart Tienda Tecno",
-    "operarios": 2,
-    "horasAutorizadas": 24,
-    "id": 1744648397698
-  },
-  {
-    "nombre": "Soelsac",
-    "operarios": 1,
-    "horasAutorizadas": 88,
-    "id": 1744648419425
-  },
-  {
-    "nombre": "Supervisión",
-    "operarios": 2,
-    "horasAutorizadas": 352,
-    "id": 1744648438305
-  },
-  {
-    "nombre": "Torres del Marques",
-    "operarios": 1,
-    "horasAutorizadas": 12,
-    "id": 1744648458966
-  },
-  {
-    "nombre": "UTHGRA (Cordoba)",
-    "operarios": 3,
-    "horasAutorizadas": 180,
-    "id": 1744648477164
-  },
-  {
-    "nombre": "UTHGRA (Rio Ceballos)",
-    "operarios": 2,
-    "horasAutorizadas": 48,
-    "id": 1744648503937
-  },
-  {
-    "nombre": "UTHGRA (VCP)",
-    "operarios": 2,
-    "horasAutorizadas": 48,
-    "id": 1744648514660
-  },
-  {
-    "nombre": "VITSA",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1744648525563
-  },
-  {
-    "nombre": "Yaguar",
-    "operarios": 7,
-    "horasAutorizadas": 288,
-    "id": 1744648543601
-  },
-  {
-    "nombre": "Yaguar (Corte de Cesped)",
-    "operarios": 5,
-    "horasAutorizadas": 124,
-    "id": 1744648574748
-  },
-  {
-    "nombre": "Zamponi Asesores",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1744648590364
-  },
-  {
-    "nombre": "Apart Hotel (FO)",
-    "operarios": 3,
-    "horasAutorizadas": 19,
-    "id": 1744648616647
-  },
-  {
-    "nombre": "RED SEGUROS (FO)",
-    "operarios": 1,
-    "horasAutorizadas": 25,
-    "id": 1744648640891
-  },
-  {
-    "nombre": "Edificio Dean Funes(FO)",
-    "operarios": 2,
-    "horasAutorizadas": 48,
-    "id": 1744648659256
-  },
-  {
-    "nombre": "Cubano (FO corte de cesped)",
-    "operarios": 3,
-    "horasAutorizadas": 21,
-    "id": 1744648693086
-  },
-  {
-    "nombre": "Edificio Pablo 1",
-    "operarios": 1,
-    "horasAutorizadas": 48,
-    "id": 1744648708270
-  },
-  {
-    "nombre": "Casa Jorge Newbery(FO)",
-    "operarios": 10,
-    "horasAutorizadas": 32.5,
-    "id": 1744648743157
-  },
-  {
-    "nombre": "Eventos Eulalia(FO)",
-    "operarios": 3,
-    "horasAutorizadas": 2,
-    "id": 1744648773979
-  },
-  {
-    "nombre": "Oncativo(FO)",
-    "operarios": 40,
-    "horasAutorizadas": 127.5,
-    "id": 1744648815543
-  },
-  {
-    "nombre": "Pasteleria (FO)",
-    "operarios": 5,
-    "horasAutorizadas": 30,
-    "id": 1744648838643
-  },
-  {
-    "nombre": "Rafael Nuñez",
-    "operarios": 7,
-    "horasAutorizadas": 50.66,
-    "id": 1744648860162
-  },
-  {
-    "nombre": "Terreno La Madrid(FO)",
-    "operarios": 5,
-    "horasAutorizadas": 36,
-    "id": 1744648892250
-  },
-  {
-    "nombre": "VCP Gilda (FO)",
-    "operarios": 9,
-    "horasAutorizadas": 124,
-    "id": 1744648937138
-  },
-  {
-    "nombre": "Local Alvear 615",
-    "operarios": 1,
-    "horasAutorizadas": 2.75,
-    "id": 1744648959208
-  },
-  {
-    "nombre": "Nave (Corte de Cesped) FO",
-    "operarios": 5,
-    "horasAutorizadas": 80,
-    "id": 1744648985581
-  },
-  {
-    "nombre": "Corsacor - Administración",
-    "operarios": 1,
-    "horasAutorizadas": 80,
-    "id": 1746458832976
-  },
-  {
-    "nombre": "Corsacor - Galpón",
-    "operarios": 4,
-    "horasAutorizadas": 432,
-    "id": 1746458868378
-  },
-  {
-    "nombre": "Corsacor - Limpieza",
-    "operarios": 2,
-    "horasAutorizadas": 60,
-    "id": 1746458973893
-  },
-  {
-    "nombre": "Corsacor - Mantenimiento",
-    "operarios": 6,
-    "horasAutorizadas": 176,
-    "id": 1746459011474
-  },
-  {
-    "nombre": "Corsacor - VCP",
-    "operarios": 1,
-    "horasAutorizadas": 4,
-    "id": 1746459042352
-  },
-  {
-    "nombre": "Corsacor - Oficinas VCP",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1746459069419
-  },
-  {
-    "nombre": "Colegio El Huerto (Adicional)",
-    "operarios": 1,
-    "horasAutorizadas": 6.5,
-    "id": 1746647027949
-  },
-  {
-    "nombre": "Cooperativa Caroya - Adm (Adicional)",
-    "operarios": 1,
-    "horasAutorizadas": 3,
-    "id": 1746647937400
-  },
-  {
-    "nombre": "Edificio José Ingenieros (Adicional)",
-    "operarios": 1,
-    "horasAutorizadas": 3,
-    "id": 1746708221588
-  },
-  {
-    "nombre": "KWS - Sinsacate",
-    "operarios": 2,
-    "horasAutorizadas": 16,
-    "id": 1746713256926
-  },
-  {
-    "nombre": "Panhel Av Sabattini (Adicionales)",
-    "operarios": 1,
-    "horasAutorizadas": 4,
-    "id": 1746714778474
-  },
-  {
-    "nombre": "PM Rivera Indarte 529 LE",
-    "operarios": 3,
-    "horasAutorizadas": 3.5,
-    "id": 1746715374771
-  },
-  {
-    "nombre": "PM Rivera Indarte 563",
-    "operarios": 1,
-    "horasAutorizadas": 24,
-    "id": 1746715499672
-  },
-  {
-    "nombre": "PM Rivera Indarte 563 LE",
-    "operarios": 3,
-    "horasAutorizadas": 2.25,
-    "id": 1746715526837
-  },
-  {
-    "nombre": "PM Republica 737 LE",
-    "operarios": 1,
-    "horasAutorizadas": 1,
-    "id": 1746715922719
-  },
-  {
-    "nombre": "PM San Luis Mitre 727 LE",
-    "operarios": 1,
-    "horasAutorizadas": 1,
-    "id": 1746716086282
-  },
-  {
-    "nombre": "PM San Luis Buenos Aires esq General Paz LE",
-    "operarios": 1,
-    "horasAutorizadas": 1,
-    "id": 1746716263083
-  },
-  {
-    "nombre": "Tru Motos (Limpieza de Vidrios)",
-    "operarios": 1,
-    "horasAutorizadas": 10,
-    "id": 1746718387765
-  },
-  {
-    "nombre": "Cis Group (eventual)",
-    "operarios": 1,
-    "horasAutorizadas": 6,
-    "id": 1746720243480
-  },
-  {
-    "nombre": "Sociedad Rural JM",
-    "operarios": 1,
-    "horasAutorizadas": 16,
-    "id": 1746720420136
-  },
-  {
-    "nombre": "FO Altos de Velez Sarfield",
-    "operarios": 1,
-    "horasAutorizadas": 42.5,
-    "id": 1746720824084
-  },
-  {
-    "nombre": "FO Pilar (poda y desmalezado)",
-    "operarios": 5,
-    "horasAutorizadas": 35,
-    "id": 1746721238362
-  },
-  {
-    "nombre": "FO Deposito Tru Motos",
-    "operarios": 11,
-    "horasAutorizadas": 126.75,
-    "id": 1746722629152
-  },
-  {
-    "nombre": "FO Dpto Chacabuco 386",
-    "operarios": 1,
-    "horasAutorizadas": 6,
-    "id": 1746722803062
-  },
-  {
-    "nombre": "FO Maipu 164",
-    "operarios": 11,
-    "horasAutorizadas": 92.75,
-    "id": 1746723078381
-  },
-  {
-    "nombre": "Boreal - Córdoba (vigilancia)",
-    "operarios": 1,
-    "horasAutorizadas": 180,
-    "id": 1746730141544
-  },
-  {
-    "nombre": "Panaderia Del Pilar (vigilancia)",
-    "operarios": 1,
-    "horasAutorizadas": 370,
-    "id": 1746730573676
-  },
-  {
+    "id": "1746734491434",
     "nombre": "FO Ama Hogar Oncativo (vidrios)",
     "operarios": 4,
     "horasAutorizadas": 12,
-    "id": 1746734491434
+    "categoria": "FO",
+    "valorHora": 0,
+    "gremio": "FO"
   },
   {
+    "id": "1744206930560",
+    "nombre": "AMCO",
+    "operarios": 1,
+    "horasAutorizadas": 160,
+    "categoria": "mensual",
+    "valorHora": 13915.53,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744206969976",
+    "nombre": "Arcos del Cerro - Limpieza",
+    "operarios": 3,
+    "horasAutorizadas": 192,
+    "categoria": "mensual",
+    "valorHora": 10416.54,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744644323705",
+    "nombre": "Arcos del Cerro - Jardineria",
+    "operarios": 1,
+    "horasAutorizadas": 72,
+    "categoria": "FO",
+    "valorHora": 9634.24,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744644844863",
+    "nombre": "Boixados (Capilla de los Remedios)",
+    "operarios": 1,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 10553.52,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744644844861",
+    "nombre": "Boixados",
+    "operarios": 1,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 11410.47,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744644895623",
+    "nombre": "Boreal (La Rioja)",
+    "operarios": 2,
+    "horasAutorizadas": 160,
+    "categoria": "mensual",
+    "valorHora": 15146,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744644910685",
+    "nombre": "Boreal (Chilecito)",
+    "operarios": 1,
+    "horasAutorizadas": 40,
+    "categoria": "mensual",
+    "valorHora": 15146,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744644925921",
+    "nombre": "Boreal (Cordoba)",
+    "operarios": 2,
+    "horasAutorizadas": 160,
+    "categoria": "mensual",
+    "valorHora": 11662.09,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746730141544",
+    "nombre": "Boreal - Córdoba (vigilancia)",
+    "operarios": 1,
+    "horasAutorizadas": 180,
+    "categoria": "mensual",
+    "valorHora": 15203.55,
+    "gremio": "SUVICO",
+    "ultimaActualizacion": "2025-12-30T14:10:57.716Z",
+    "periodoActualizacion": "2025-11"
+  },
+  {
+    "id": "1744644925920",
+    "nombre": "Boreal (Cordoba) Limpieza Aguas Residuales",
+    "operarios": 2,
+    "horasAutorizadas": 49.75,
+    "categoria": "FO",
+    "valorHora": 10786.25,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744645634191",
+    "nombre": "Boreal (Corte de Cesped)",
+    "operarios": 5,
+    "horasAutorizadas": 7.5,
+    "categoria": "FO",
+    "valorHora": 9371.2,
+    "gremio": "FO"
+  },
+  {
+    "id": "1751047267992",
+    "nombre": "Boreal Cordoba (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 9,
+    "categoria": "mensual",
+    "valorHora": 11662.09,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1751908143229",
+    "nombre": "Boreal (Cordoba) Limpieza Aguas Residuales",
+    "operarios": 2,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 9371.2,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744645675270",
+    "nombre": "Cachavacha (FO)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 412000,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744645782092",
+    "nombre": "Circulo Odontologico Rio III",
+    "operarios": 1,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 11845.76,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744645798404",
+    "nombre": "Contrini",
+    "operarios": 1,
+    "horasAutorizadas": 30,
+    "categoria": "FO",
+    "valorHora": 10033,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744645798405",
+    "nombre": "Consorcio Arruabarrena",
+    "operarios": 3,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 12101.85,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746647027949",
+    "nombre": "Colegio El Huerto (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 6.5,
+    "categoria": "mensual",
+    "valorHora": 13070.93,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746734518482",
     "nombre": "FO Cooperativa Caroya (vidrios)",
     "operarios": 5,
     "horasAutorizadas": 70,
-    "id": 1746734518482
+    "categoria": "FO",
+    "valorHora": 18674.77,
+    "gremio": "FO"
   },
   {
+    "id": "1744646002843",
+    "nombre": "Colegio El Huerto",
+    "operarios": 1,
+    "horasAutorizadas": 80,
+    "categoria": "mensual",
+    "valorHora": 13070.93,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648693086",
+    "nombre": "Cubano (FO corte de cesped)",
+    "operarios": 3,
+    "horasAutorizadas": 21,
+    "categoria": "FO",
+    "valorHora": 0,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744646088797",
+    "nombre": "Dycsa",
+    "operarios": 1,
+    "horasAutorizadas": 80,
+    "categoria": "mensual",
+    "valorHora": 8497.63,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646088798",
+    "nombre": "Dycsa - B° Villa Belgrano",
+    "operarios": 1,
+    "horasAutorizadas": 80,
+    "categoria": "mensual",
+    "valorHora": 8497.63,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646057167",
+    "nombre": "Edificio Av. Patria",
+    "operarios": 1,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 13443.57,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646072548",
+    "nombre": "Edificio Av. Colon",
+    "operarios": 1,
+    "horasAutorizadas": 36,
+    "categoria": "mensual",
+    "valorHora": 13443.57,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646109763",
+    "nombre": "Edificio Gran Portico",
+    "operarios": 3,
+    "horasAutorizadas": 72,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646145260",
+    "nombre": "Edificio Gran Portico (Adicionales)",
+    "operarios": 2,
+    "horasAutorizadas": 15,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646165040",
+    "nombre": "Edificio Gran Portico (Domingos)",
+    "operarios": 1,
+    "horasAutorizadas": 2,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646181679",
+    "nombre": "Edificio Gran Portico (Vidrios)",
+    "operarios": 1,
+    "horasAutorizadas": 3,
+    "categoria": "FO",
+    "valorHora": 8766.5,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744646209559",
+    "nombre": "Edificio Florida Park",
+    "operarios": 3,
+    "horasAutorizadas": 72,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646225252",
+    "nombre": "Edificio Florida Park (Adicionales)",
+    "operarios": 2,
+    "horasAutorizadas": 8,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646238713",
+    "nombre": "Edificio Florida Park (Vidrios)",
+    "operarios": 1,
+    "horasAutorizadas": 2,
+    "categoria": "FO",
+    "valorHora": 8766.5,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744646250981",
+    "nombre": "Edificio Florida Park (Domingos)",
+    "operarios": 1,
+    "horasAutorizadas": 2,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646267563",
+    "nombre": "Edificio José Ingenieros",
+    "operarios": 3,
+    "horasAutorizadas": 72,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746708221588",
+    "nombre": "Edificio José Ingenieros (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 3,
+    "categoria": "mensual",
+    "valorHora": 8766.5,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646287645",
+    "nombre": "Edificio Las Lajas",
+    "operarios": 1,
+    "horasAutorizadas": 176,
+    "categoria": "mensual",
+    "valorHora": 8651.74,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646634478",
+    "nombre": "Edificio El Fenix",
+    "operarios": 1,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 14857.27,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646654235",
+    "nombre": "Edificio Eiffel",
+    "operarios": 1,
+    "horasAutorizadas": 116,
+    "categoria": "mensual",
+    "valorHora": 10148.78,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646673064",
+    "nombre": "Edificio Lisandro",
+    "operarios": 2,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 8411.35,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646697062",
+    "nombre": "Edificio Ivadem",
+    "operarios": 1,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 8411.35,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646713813",
+    "nombre": "Edificio Torre Mying vcp",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 12500,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744646713814",
+    "nombre": "Edificio Torre Serena",
+    "operarios": 1,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 8411.35,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646725596",
+    "nombre": "Edificio Atlantis",
+    "operarios": 2,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 7751.3,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646742944",
+    "nombre": "Edificio El Tala",
+    "operarios": 4,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 7751.3,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646760782",
+    "nombre": "Edificio Gagarin",
+    "operarios": 2,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 9124.35,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648708270",
+    "nombre": "Edificio Pablo 1",
+    "operarios": 1,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646811532",
+    "nombre": "Edificio Pilar",
+    "operarios": 1,
+    "horasAutorizadas": 8,
+    "categoria": "mensual",
+    "valorHora": 13632.73,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646830964",
+    "nombre": "Edificio Stabio- Jornada Completa",
+    "operarios": 3,
+    "horasAutorizadas": 176,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646847317",
+    "nombre": "Edificio Stabio- Limpieza",
+    "operarios": 4,
+    "horasAutorizadas": 136,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646866319",
+    "nombre": "Edificio Valentina I",
+    "operarios": 2,
+    "horasAutorizadas": 12,
+    "categoria": "mensual",
+    "valorHora": 12582.32,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646881146",
+    "nombre": "Estetica Santo Cuore",
+    "operarios": 2,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 14208.29,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646893116",
+    "nombre": "Etiqueta Negra",
+    "operarios": 2,
+    "horasAutorizadas": 40,
+    "categoria": "mensual",
+    "valorHora": 13450.96,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646908544",
+    "nombre": "Fiumiccino III",
+    "operarios": 6,
+    "horasAutorizadas": 96,
+    "categoria": "mensual",
+    "valorHora": 9185.06,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646933061",
+    "nombre": "Fiumiccino IV",
+    "operarios": 6,
+    "horasAutorizadas": 96,
+    "categoria": "mensual",
+    "valorHora": 8495.25,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744646959448",
+    "nombre": "Global",
+    "operarios": 1,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 9258.51,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647012655",
+    "nombre": "Global (Siscadat S.A.S)",
+    "operarios": 1,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 8563.18,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647034637",
+    "nombre": "Global (Adicional)",
+    "operarios": 3,
+    "horasAutorizadas": 36,
+    "categoria": "mensual",
+    "valorHora": 8563.18,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647052029",
+    "nombre": "Granjas Carnave",
+    "operarios": 1,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 14321.67,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647062613",
+    "nombre": "Grupo Pilar JM",
+    "operarios": 2,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 12117.99,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647078025",
+    "nombre": "IERIC - LA RIOJA",
+    "operarios": 1,
+    "horasAutorizadas": 12,
+    "categoria": "mensual",
+    "valorHora": 13467.97,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647095497",
+    "nombre": "IERIC - CATAMARCA",
+    "operarios": 2,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 13734.11,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647110287",
+    "nombre": "INTA",
+    "operarios": 1,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 9638.28,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647125388",
+    "nombre": "ITV - Av. Japon",
+    "operarios": 1,
+    "horasAutorizadas": 136,
+    "categoria": "mensual",
+    "valorHora": 9118.29,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647141286",
+    "nombre": "ITV - Carcano",
+    "operarios": 4,
+    "horasAutorizadas": 136,
+    "categoria": "mensual",
+    "valorHora": 9118.29,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647153406",
+    "nombre": "ITV - Zona Sur",
+    "operarios": 2,
+    "horasAutorizadas": 136,
+    "categoria": "mensual",
+    "valorHora": 9118.29,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647163741",
+    "nombre": "LAC (Dean Funes)",
+    "operarios": 1,
+    "horasAutorizadas": 80,
+    "categoria": "mensual",
+    "valorHora": 12267.07,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647708763",
+    "nombre": "LH Parking",
+    "operarios": 3,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 9611.72,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647924931",
+    "nombre": "Las Heras vcp (FO)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "mensual",
+    "valorHora": 62400,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647708762",
+    "nombre": "Limpieza eventual",
+    "operarios": 1,
+    "horasAutorizadas": 4,
+    "categoria": "FO",
+    "valorHora": 21678,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744647720334",
+    "nombre": "Nacion Seguros",
+    "operarios": 1,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 13110.22,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1751036757352",
+    "nombre": "Nauty car",
+    "operarios": 1,
+    "horasAutorizadas": 80,
+    "categoria": "mensual",
+    "valorHora": 8965.41,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647749661",
+    "nombre": "Panhel Av Sabattini",
+    "operarios": 1,
+    "horasAutorizadas": 80,
+    "categoria": "mensual",
+    "valorHora": 11162.34,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746714778474",
+    "nombre": "Panhel Av Sabattini (Adicionales)",
+    "operarios": 1,
+    "horasAutorizadas": 4,
+    "categoria": "mensual",
+    "valorHora": 11162.34,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746735395046",
     "nombre": "FO Panhel Sabattini (vidrios)",
     "operarios": 4,
     "horasAutorizadas": 2.52,
-    "id": 1746735395046
+    "categoria": "FO",
+    "valorHora": 0,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744647762743",
+    "nombre": "Panhel Lopez y Planes",
+    "operarios": 1,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 11162.34,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746730573676",
+    "nombre": "Panaderia Del Pilar (vigilancia)",
+    "operarios": 1,
+    "horasAutorizadas": 370,
+    "categoria": "mensual",
+    "valorHora": 12888.8,
+    "gremio": "SUVICO",
+    "ultimaActualizacion": "2025-12-30T14:39:00.428Z",
+    "periodoActualizacion": "2025-11"
+  },
+  {
+    "id": "1744647776312",
+    "nombre": "PM Capitalinas (Garat)",
+    "operarios": 3,
+    "horasAutorizadas": 40,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647822480",
+    "nombre": "PM Depósito",
+    "operarios": 3,
+    "horasAutorizadas": 7.5,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647834755",
+    "nombre": "PM Depósito LE",
+    "operarios": 2,
+    "horasAutorizadas": 5,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647849579",
+    "nombre": "PM Maipu 410",
+    "operarios": 1,
+    "horasAutorizadas": 88,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647867169",
+    "nombre": "PM Maipu 410 LE",
+    "operarios": 5,
+    "horasAutorizadas": 7.5,
+    "categoria": "mensual",
+    "valorHora": 8851.01,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647882203",
+    "nombre": "PM Rivera Indarte 529",
+    "operarios": 2,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746715374771",
+    "nombre": "PM Rivera Indarte 529 LE",
+    "operarios": 3,
+    "horasAutorizadas": 3.5,
+    "categoria": "mensual",
+    "valorHora": 8851.01,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746715499672",
+    "nombre": "PM Rivera Indarte 563",
+    "operarios": 1,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746715526837",
+    "nombre": "PM Rivera Indarte 563 LE",
+    "operarios": 3,
+    "horasAutorizadas": 2.25,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1751989941931",
+    "nombre": "PM Rivera Indarte 563 (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 2.5,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647987426",
+    "nombre": "PM San Luis Buenos Aires esq General Paz",
+    "operarios": 2,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746716263083",
+    "nombre": "PM San Luis Buenos Aires esq General Paz LE",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648313654",
+    "nombre": "Quadra 54",
+    "operarios": 1,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 20340.63,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648326648",
+    "nombre": "Quo Estrategia",
+    "operarios": 2,
+    "horasAutorizadas": 63,
+    "categoria": "mensual",
+    "valorHora": 11981.67,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648338330",
+    "nombre": "Reeferline (Contenedores)",
+    "operarios": 2,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 13502.72,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648369055",
+    "nombre": "Roller Show - Malagueño",
+    "operarios": 3,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 11647.69,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1751920034087",
+    "nombre": "Roller Show - Malagueño (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 4,
+    "categoria": "mensual",
+    "valorHora": 10772.93,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648381514",
+    "nombre": "Silica Networks",
+    "operarios": 1,
+    "horasAutorizadas": 12,
+    "categoria": "mensual",
+    "valorHora": 24510.48,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648397698",
+    "nombre": "Smart Tienda Tecno",
+    "operarios": 2,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 10416.54,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648458966",
+    "nombre": "Torres del Marques",
+    "operarios": 1,
+    "horasAutorizadas": 12,
+    "categoria": "mensual",
+    "valorHora": 16209.26,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1746718387765",
+    "nombre": "Tru Motos (Limpieza de Vidrios)",
+    "operarios": 1,
+    "horasAutorizadas": 10,
+    "categoria": "mensual",
+    "valorHora": 9653.36,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647180834",
+    "nombre": "Tru Motos - Suc Capdevilla",
+    "operarios": 1,
+    "horasAutorizadas": 20,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647180835",
+    "nombre": "FO Tru Motos - Suc Capdevilla",
+    "operarios": 1,
+    "horasAutorizadas": 39.16,
+    "categoria": "FO",
+    "valorHora": 11111.02,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744647180833",
+    "nombre": "Tru Motos - Suc Olmos",
+    "operarios": 2,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647609818",
+    "nombre": "Tru Motos - Suc Heras",
+    "operarios": 3,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647629250",
+    "nombre": "Tru Motos - Suc Rivera",
+    "operarios": 3,
+    "horasAutorizadas": 72,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744647657300",
+    "nombre": "Tru Motos - Suc Sarmiento",
+    "operarios": 2,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648477164",
+    "nombre": "UTHGRA (Cordoba)",
+    "operarios": 3,
+    "horasAutorizadas": 180,
+    "categoria": "mensual",
+    "valorHora": 8766.51,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1749658335239",
+    "nombre": "UTHGRA (Cordoba) Adicional",
+    "operarios": 1,
+    "horasAutorizadas": 3,
+    "categoria": "mensual",
+    "valorHora": 8766.51,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648503937",
+    "nombre": "UTHGRA (Rio Ceballos)",
+    "operarios": 2,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 8766.51,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648514660",
+    "nombre": "UTHGRA (VCP)",
+    "operarios": 2,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 8859.17,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648525563",
+    "nombre": "VITSA",
+    "operarios": 1,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 11959.68,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1744648543601",
+    "nombre": "Yaguar",
+    "operarios": 7,
+    "horasAutorizadas": 288,
+    "categoria": "mensual",
+    "valorHora": 10307.08,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2025-12-30T15:00:06.448Z",
+    "periodoActualizacion": "2025-11"
+  },
+  {
+    "id": "1744648574748",
+    "nombre": "Yaguar (Corte de Cesped)",
+    "operarios": 5,
+    "horasAutorizadas": 124,
+    "categoria": "FO",
+    "valorHora": 8714.83,
+    "gremio": "FO"
+  },
+  {
+    "id": "1744648590364",
+    "nombre": "Zamponi Asesores",
+    "operarios": 1,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 14015.98,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1757347623055",
+    "nombre": "Boixados (Corte de Cesped)",
+    "operarios": 1,
+    "horasAutorizadas": 15.75,
+    "categoria": "FO",
+    "valorHora": 11410.47,
+    "gremio": "FO"
+  },
+  {
+    "id": "1757429942182",
+    "nombre": "Tru Motos - Suc Olmos (Adicionales)",
+    "operarios": 1,
+    "horasAutorizadas": 3,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1757430381400",
+    "nombre": "Tru Motos - Suc Rivera (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1757433628560",
+    "nombre": "FO Boreal (Cordoba)",
+    "operarios": 1,
+    "horasAutorizadas": 25.33,
+    "categoria": "FO",
+    "valorHora": 11662.09,
+    "gremio": "FO"
+  },
+  {
+    "id": "1757445282979",
+    "nombre": "LAC (YPF AGRO)",
+    "operarios": 1,
+    "horasAutorizadas": 32,
+    "categoria": "mensual",
+    "valorHora": 1792500,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1759434969205",
+    "nombre": "ITV - Deposito",
+    "operarios": 3,
+    "horasAutorizadas": 260,
+    "categoria": "mensual",
+    "valorHora": 9632.58,
+    "gremio": "SUVICO",
+    "ultimaActualizacion": "2025-12-30T14:15:20.630Z",
+    "periodoActualizacion": "2025-11"
+  },
+  {
+    "id": "1759435260278",
+    "nombre": "Benedetti - Obra Policiales",
+    "operarios": 3,
+    "horasAutorizadas": 472,
+    "categoria": "mensual",
+    "valorHora": 10474.77,
+    "gremio": "SUVICO",
+    "ultimaActualizacion": "2025-12-30T14:53:27.724Z",
+    "periodoActualizacion": "2025-11"
+  },
+  {
+    "id": "1761757107450",
+    "nombre": "Boreal (Salta)",
+    "operarios": 1,
+    "horasAutorizadas": 78,
+    "categoria": "mensual",
+    "valorHora": 9736.36,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761761613888",
+    "nombre": "Edificio Esquiu",
+    "operarios": 1,
+    "horasAutorizadas": 20,
+    "categoria": "FO",
+    "valorHora": 11020.16,
+    "gremio": "FO"
+  },
+  {
+    "id": "1761762424777",
+    "nombre": "Nurzhan",
+    "operarios": 1,
+    "horasAutorizadas": 24,
+    "categoria": "mensual",
+    "valorHora": 10440,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761762873887",
+    "nombre": "Optica Clarylent",
+    "operarios": 1,
+    "horasAutorizadas": 18,
+    "categoria": "mensual",
+    "valorHora": 9600,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761763014294",
+    "nombre": "Pinto Automotores",
+    "operarios": 1,
+    "horasAutorizadas": 40,
+    "categoria": "mensual",
+    "valorHora": 10200,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761763189788",
+    "nombre": "PM Maipu 410 (Vidrios)",
+    "operarios": 1,
+    "horasAutorizadas": 11,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761763352641",
+    "nombre": "PM Rivera Indarte 529 (Vidrios)",
+    "operarios": 1,
+    "horasAutorizadas": 3.5,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761763392972",
+    "nombre": "PM Rivera Indarte 563 (Vidrios)",
+    "operarios": 1,
+    "horasAutorizadas": 3.25,
+    "categoria": "mensual",
+    "valorHora": 9569.71,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761766229548",
+    "nombre": "Tecno Materiales",
+    "operarios": 1,
+    "horasAutorizadas": 12,
+    "categoria": "mensual",
+    "valorHora": 9975.86,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761766395710",
+    "nombre": "Tru Motos - Suc Olmos (Vidrios)",
+    "operarios": 1,
+    "horasAutorizadas": 3,
+    "categoria": "mensual",
+    "valorHora": 12013.23,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761836146667",
+    "nombre": "FO Cubano",
+    "operarios": 1,
+    "horasAutorizadas": 15,
+    "categoria": "FO",
+    "valorHora": 0,
+    "gremio": "FO"
+  },
+  {
+    "id": "1761842502921",
+    "nombre": "Edificio Pehuen",
+    "operarios": 1,
+    "horasAutorizadas": 64,
+    "categoria": "mensual",
+    "valorHora": 11060.05,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1761924274275",
+    "nombre": "Lavado Cortinas",
+    "operarios": 1,
+    "horasAutorizadas": 4,
+    "categoria": "FO",
+    "valorHora": 20000,
+    "gremio": "FO"
+  },
+  {
+    "id": "1763387796698",
+    "nombre": "Arcos del Cerro - Limpieza (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 10,
+    "categoria": "mensual",
+    "valorHora": 10416.54,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1763394931080",
+    "nombre": "Centro de Estudios Historicos",
+    "operarios": 1,
+    "horasAutorizadas": 8,
+    "categoria": "mensual",
+    "valorHora": 10600,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1763470582051",
+    "nombre": "Colegio Corazon de Maria",
+    "operarios": 1,
+    "horasAutorizadas": 54,
+    "categoria": "mensual",
+    "valorHora": 21200,
+    "gremio": "SOELSAC"
+  },
+  {
+    "id": "1764073874130",
+    "nombre": "Prueba SOELSAC",
+    "operarios": 1,
+    "horasAutorizadas": 10,
+    "categoria": "mensual",
+    "valorHora": 10763,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2025-11-28T15:18:10.630Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "nombre": "Prueba SUVICO",
+    "operarios": 1,
+    "horasAutorizadas": 10,
+    "categoria": "mensual",
+    "valorHora": 10000,
+    "gremio": "SUVICO",
+    "id": 1764073906331
+  },
+  {
+    "nombre": "Boreal vigilancia (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 10,
+    "categoria": "mensual",
+    "valorHora": 15058.98,
+    "gremio": "SUVICO",
+    "id": 1764186709053
+  },
+  {
+    "nombre": "Boreal (Salta)",
+    "operarios": 1,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 9736.36,
+    "gremio": "SOELSAC",
+    "id": 1764773725895
+  },
+  {
+    "nombre": "Boreal (Chaco)",
+    "operarios": 1,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 10814,
+    "gremio": "SOELSAC",
+    "id": 1764773784157
+  },
+  {
+    "nombre": "Boreal (Corrientes)",
+    "operarios": 1,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 10814,
+    "gremio": "SOELSAC",
+    "id": 1764773826409
+  },
+  {
+    "id": "1764773864505",
+    "nombre": "Centro de estudios históricos",
+    "operarios": 1,
+    "horasAutorizadas": 8,
+    "categoria": "mensual",
+    "valorHora": 10889.38,
+    "gremio": "SOELSAC"
+  },
+  {
+    "nombre": "Clinica Hair & Beauty",
+    "operarios": 1,
+    "horasAutorizadas": 60,
+    "categoria": "mensual",
+    "valorHora": 10600,
+    "gremio": "SOELSAC",
+    "id": 1764773900818
+  },
+  {
+    "nombre": "Boreal (Cordoba) Limpieza de Pileta",
+    "operarios": 1,
+    "horasAutorizadas": 3.33,
+    "categoria": "mensual",
+    "valorHora": 11662.09,
+    "gremio": "SOELSAC",
+    "id": 1767016700305
+  },
+  {
+    "nombre": "Boreal (Cordoba) Vidrios",
+    "operarios": 1,
+    "horasAutorizadas": 5.33,
+    "categoria": "mensual",
+    "valorHora": 11662.09,
+    "gremio": "SOELSAC",
+    "id": 1767016920156
+  },
+  {
+    "nombre": "Colegio Corazon de Maria FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 863900,
+    "gremio": "SOELSAC",
+    "id": 1767098522356
+  },
+  {
+    "nombre": "Cordiez B ° Sep FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 3810000,
+    "gremio": "SOELSAC",
+    "id": 1767099444314
+  },
+  {
+    "nombre": "Hotel Quorum FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 604800,
+    "gremio": "SOELSAC",
+    "id": 1767099649334
+  },
+  {
+    "nombre": "Hotel Quorum (Eventual)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 462000,
+    "gremio": "SOELSAC",
+    "id": 1767099704045
+  },
+  {
+    "nombre": "FO Laprida 131",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 6072000,
+    "gremio": "SOELSAC",
+    "id": 1767100204327
+  },
+  {
+    "nombre": "UTHGRA (Cordoba) Evento Camping San Martin",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 120000,
+    "gremio": "SOELSAC",
+    "id": 1767100686746
+  },
+  {
+    "nombre": "Expreso Biletta",
+    "operarios": 1,
+    "horasAutorizadas": 518,
+    "categoria": "mensual",
+    "valorHora": 10880.62,
+    "gremio": "SUVICO",
+    "id": 1767105278764,
+    "ultimaActualizacion": "2025-12-30T14:36:16.042Z",
+    "periodoActualizacion": "2025-11"
+  },
+  {
+    "nombre": "Cordiez O'Higgins FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1800000,
+    "gremio": "SOELSAC",
+    "id": 1767107389233
+  },
+  {
+    "nombre": "Murillo Guillermo Luis FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 60000,
+    "gremio": "SOELSAC",
+    "id": 1767107582415
+  },
+  {
+    "nombre": "Cyre SA (LE)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 828000,
+    "gremio": "FO",
+    "id": 1767107933380
+  },
+  {
+    "nombre": "Cordiez O'Higgins FO 7/12",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 2115000,
+    "gremio": "FO",
+    "id": 1767111016711
+  },
+  {
+    "nombre": "Cordiez O'Higgins FO 11/12",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1410000,
+    "gremio": "FO",
+    "id": 1767111267208
+  },
+  {
+    "nombre": "Cordiez O'Higgins FO 12/12",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1560000,
+    "gremio": "FO",
+    "id": 1767111791590
+  },
+  {
+    "nombre": "Cordiez O'Higgins FO 14/12",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1230000,
+    "gremio": "FO",
+    "id": 1767111915418
+  },
+  {
+    "nombre": "Alberto Méndez e Hijos (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 61875,
+    "gremio": "FO",
+    "id": 1767112145208
+  },
+  {
+    "nombre": "AM Córdoba SA (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 150000,
+    "gremio": "FO",
+    "id": 1767112319657
+  },
+  {
+    "nombre": "Boixados (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 75000,
+    "gremio": "FO",
+    "id": 1767112657874
+  },
+  {
+    "nombre": "Boreal (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 442500,
+    "gremio": "FO",
+    "id": 1767113227489
+  },
+  {
+    "nombre": "Centro de estudios históricos (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 9075,
+    "gremio": "FO",
+    "id": 1767113431807
+  },
+  {
+    "nombre": "Círculo Odontológico (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 27225,
+    "gremio": "FO",
+    "id": 1767113841848
+  },
+  {
+    "nombre": "FJG S.A.S. (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 56250,
+    "gremio": "FO",
+    "id": 1767116132212
+  },
+  {
+    "nombre": "Dycsa (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 90000,
+    "gremio": "FO",
+    "id": 1767116336547
+  },
+  {
+    "nombre": "Edificio Las Lajas (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 199650,
+    "gremio": "FO",
+    "id": 1767116548319
+  },
+  {
+    "nombre": "Consorcio Eiffel (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 131587.5,
+    "gremio": "FO",
+    "id": 1767116895435
+  },
+  {
+    "nombre": "Pablo I (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 108900,
+    "gremio": "FO",
+    "id": 1767117293244
+  },
+  {
+    "nombre": "Edificio Pilar (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 9075,
+    "gremio": "FO",
+    "id": 1767117750322
+  },
+  {
+    "id": "1767118016432",
+    "nombre": "Torre Stabio (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 255000,
+    "gremio": "FO"
+  },
+  {
+    "id": "1767118790612",
+    "nombre": "Etiqueta negra (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 37500,
+    "gremio": "FO"
+  },
+  {
+    "id": "1767118985687",
+    "nombre": "Global Visum SA (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO"
+  },
+  {
+    "nombre": "Siscadat SA (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767119244111
+  },
+  {
+    "nombre": "Granjas Carnave (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767119411962
+  },
+  {
+    "id": "1767183023185",
+    "nombre": "Grupo pilar (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO"
+  },
+  {
+    "nombre": "VTV CORDOBA SA (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 382500,
+    "gremio": "FO",
+    "id": 1767183253299
+  },
+  {
+    "nombre": "IERIC (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 26250,
+    "gremio": "FO",
+    "id": 1767183463750
+  },
+  {
+    "nombre": "INTA (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767183701571
+  },
+  {
+    "nombre": "A.p.m. S.A. (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767184293384
+  },
+  {
+    "nombre": "Luis a Carrizo y Cia SRL (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 30000,
+    "gremio": "FO",
+    "id": 1767184534663
+  },
+  {
+    "nombre": "LH PARKING SRL (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 27225,
+    "gremio": "FO",
+    "id": 1767184724581
+  },
+  {
+    "id": "1767185331443",
+    "nombre": "Nacion Seguros (mes 11)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 314645.28,
+    "gremio": "FO"
+  },
+  {
+    "nombre": "Nacion Seguros (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767188125790
+  },
+  {
+    "nombre": "Nurzhan S.a. (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767188306270
+  },
+  {
+    "nombre": "Nauty car (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 75000,
+    "gremio": "FO",
+    "id": 1767188696752
+  },
+  {
+    "nombre": "Optica Clarylent (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 67500,
+    "gremio": "FO",
+    "id": 1767188951885
+  },
+  {
+    "nombre": "Panhel SRL (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 120000,
+    "gremio": "FO",
+    "id": 1767189329462
+  },
+  {
+    "nombre": "Pinto automotores (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 37500,
+    "gremio": "FO",
+    "id": 1767189459146
+  },
+  {
+    "nombre": "Plaza Bbike S.A.S. (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 165000,
+    "gremio": "FO",
+    "id": 1767189884712
+  },
+  {
+    "nombre": "Plaza Bbike S.A.S. San Luis (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 48750,
+    "gremio": "FO",
+    "id": 1767190871060
+  },
+  {
+    "nombre": "Silica Networks Argentina SA (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767191148150
+  },
+  {
+    "nombre": "Quo Comunicacion S.A.S. (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 56250,
+    "gremio": "FO",
+    "id": 1767191694871
+  },
+  {
+    "nombre": "Reeferline (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767191851051
+  },
+  {
+    "nombre": "Del Mundo a Tus Manos S.A.S. (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767192026568
+  },
+  {
+    "nombre": "Smart Group SRL (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767192427077
+  },
+  {
+    "nombre": "Tecno materiales (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767192592195
+  },
+  {
+    "nombre": "Tru motos (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 187500,
+    "gremio": "FO",
+    "id": 1767192723058
+  },
+  {
+    "nombre": "UTHGRA Cba (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 165000,
+    "gremio": "FO",
+    "id": 1767193048613
+  },
+  {
+    "nombre": "UTHGRA RC (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 45000,
+    "gremio": "FO",
+    "id": 1767193309216
+  },
+  {
+    "nombre": "UTHGRA VCP (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 45000,
+    "gremio": "FO",
+    "id": 1767193466289
+  },
+  {
+    "nombre": "VITSA (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767193590466
+  },
+  {
+    "nombre": "Zamponi (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767193694266
+  },
+  {
+    "nombre": "Boreal La Rioja (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 150000,
+    "gremio": "FO",
+    "id": 1767194273477
+  },
+  {
+    "nombre": "Boreal (Chaco)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 45000,
+    "gremio": "FO",
+    "id": 1767194898064
+  },
+  {
+    "nombre": "Boreal Chaco (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 45000,
+    "gremio": "FO",
+    "id": 1767355799157
+  },
+  {
+    "nombre": "Boreal Chilecito (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 37500,
+    "gremio": "FO",
+    "id": 1767356005793
+  },
+  {
+    "nombre": "Boreal Cordoba (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 165000,
+    "gremio": "FO",
+    "id": 1767356230718
+  },
+  {
+    "nombre": "Boreal Corrientes (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 45000,
+    "gremio": "FO",
+    "id": 1767356873736
+  },
+  {
+    "nombre": "Cyre LE 16/12",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1073400,
+    "gremio": "FO",
+    "id": 1767357643218
+  },
+  {
+    "nombre": "Cyre LE 17/12",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1350000,
+    "gremio": "FO",
+    "id": 1767357674440
+  },
+  {
+    "nombre": "Cyre LE 18/12",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1279950,
+    "gremio": "FO",
+    "id": 1767357706335
+  },
+  {
+    "nombre": "Cordiez: Bernardo O'Higgins 5890",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 885000,
+    "gremio": "FO",
+    "id": 1767358493647
+  },
+  {
+    "nombre": "Mitre 35 FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 384000,
+    "gremio": "FO",
+    "id": 1767359021269
+  },
+  {
+    "nombre": "Gran Portico (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 67500,
+    "gremio": "FO",
+    "id": 1767359681234
+  },
+  {
+    "nombre": "Florida Park (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 67500,
+    "gremio": "FO",
+    "id": 1767360141481
+  },
+  {
+    "nombre": "José Ingenieros (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 67500,
+    "gremio": "FO",
+    "id": 1767360754470
+  },
+  {
+    "nombre": "Colegio el Huerto (mes 12/25)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 440946.56,
+    "gremio": "FO",
+    "id": 1767361159227
+  },
+  {
+    "nombre": "Colegio El Huerto (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 75000,
+    "gremio": "FO",
+    "id": 1767361271358
+  },
+  {
+    "nombre": "Edificio Colon (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 33750,
+    "gremio": "FO",
+    "id": 1767361558115
+  },
+  {
+    "nombre": "Edificio Lisandro (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 30000,
+    "gremio": "FO",
+    "id": 1767361929730
+  },
+  {
+    "nombre": "Edificio Ivadem (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767362230828
+  },
+  {
+    "nombre": "Edificio Torre Serena (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 45000,
+    "gremio": "FO",
+    "id": 1767367908216
+  },
+  {
+    "nombre": "Edificio Atlantis II (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767368821101
+  },
+  {
+    "nombre": "Edificio El Tala (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767368982892
+  },
+  {
+    "nombre": "Edificio Gagarin (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO",
+    "id": 1767369366697
+  },
+  {
+    "id": "1767369498581",
+    "nombre": "Fiumiccino III (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 90000,
+    "gremio": "FO"
+  },
+  {
+    "id": "1767369591246",
+    "nombre": "Fiumiccino IV (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 90000,
+    "gremio": "FO"
+  },
+  {
+    "nombre": "Arcos del cerro (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 165000,
+    "gremio": "FO",
+    "id": 1767380099942
+  },
+  {
+    "nombre": "Edificio Av. Patria (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767380651992
+  },
+  {
+    "nombre": "Edificio Valentina (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 11250,
+    "gremio": "FO",
+    "id": 1767380818545
+  },
+  {
+    "nombre": "Edificio Arruabarrena (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 22500,
+    "gremio": "FO",
+    "id": 1767381870969
+  },
+  {
+    "id": "1767382075241",
+    "nombre": "Edificio El Fenix (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 15000,
+    "gremio": "FO"
+  },
+  {
+    "nombre": "Estética Santo Cuore (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 30000,
+    "gremio": "FO",
+    "id": 1767382959173
+  },
+  {
+    "id": "1767383152240",
+    "nombre": "Torres del Marquez (Bono)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 11250,
+    "gremio": "FO"
   }
 ]

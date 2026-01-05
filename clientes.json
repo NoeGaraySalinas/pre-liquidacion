@@ -55,11 +55,6 @@
     "nombre": "CONSORCIO PROPIETARIOS EDIFICIO ARRUABARRENA 66"
   },
   {
-    "cuit": "33-54570706-9",
-    "lugar": "COLONIA CAROYA",
-    "nombre": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA"
-  },
-  {
     "cuit": "30-50712650-9",
     "lugar": "CORDOBA",
     "nombre": "INSTITUTO HIJA DE MARIA SANTISIMA DEL HUERTO"
@@ -413,5 +408,210 @@
     "cuit": "30-70861025-5",
     "lugar": "Córdoba",
     "nombre": "Cosas Ricas SA"
+  },
+  {
+    "cuit": "33-54570706-9",
+    "lugar": "COLONIA CAROYA",
+    "nombre": "COOPERATIVA DE SERVICIOS PUBLICOS DE COLONIA CAROYA Y JESUS MARIA"
+  },
+  {
+    "cuit": "20256085446",
+    "lugar": "CÓRDOBA",
+    "nombre": "Gustavo José Bocco"
+  },
+  {
+    "cuit": "30714107859",
+    "lugar": "CÓRDOBA",
+    "nombre": "AGEC"
+  },
+  {
+    "cuit": "27-04498067-9",
+    "lugar": "CORDOBA",
+    "nombre": "Mariani Nelida Beatriz"
+  },
+  {
+    "cuit": "33-71430994-9",
+    "lugar": "CARLOS PAZ",
+    "nombre": "Quatro Pilares SRL"
+  },
+  {
+    "cuit": "30-50357927-4",
+    "lugar": "CORDOBA CAPITAL",
+    "nombre": "CYRE SA"
+  },
+  {
+    "cuit": "30-58721650-3",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO PROPIETARIOS EDIFICIO ALBORA"
+  },
+  {
+    "cuit": "20-25608544-6",
+    "lugar": "CORDOBA",
+    "nombre": "BOCCO GUSTAVO JOSE"
+  },
+  {
+    "cuit": "30-71278980-4",
+    "lugar": "CÓRDOBA",
+    "nombre": "WALTER VERONICA LETICIA; WALTER MARTIN ADOLFO"
+  },
+  {
+    "cuit": "27-34188273-2",
+    "lugar": "CORDOBA",
+    "nombre": "CLAROS JESSIE MELISA"
+  },
+  {
+    "cuit": "30-68225261-4",
+    "lugar": "CORDOBA",
+    "nombre": "CONTRINI HNOS SRL"
+  },
+  {
+    "cuit": "20-06289809-8",
+    "lugar": "CORDOBA",
+    "nombre": "Domingo Casiano Gallara"
+  },
+  {
+    "cuit": "33-70340648-9",
+    "lugar": "CORDOBA",
+    "nombre": "DULCE SRL"
+  },
+  {
+    "cuit": "30-57459695-1",
+    "lugar": "CORDOBA",
+    "nombre": "Centro Privado tomografia computada"
+  },
+  {
+    "cuit": "30-71031139-7",
+    "lugar": "CORDOBA",
+    "nombre": "BONDIO SRL"
+  },
+  {
+    "cuit": "30-57459695-1",
+    "lugar": "CORDOBA",
+    "nombre": "CENTRO PRIVADO TOMOGRAFIA COMPUTADA"
+  },
+  {
+    "cuit": "33-68977568-9",
+    "lugar": "CORDOBA",
+    "nombre": "Finar SA"
+  },
+  {
+    "cuit": "30-678661860",
+    "lugar": "CORDOBA",
+    "nombre": "Municipalidad de Bialet Masse"
+  },
+  {
+    "cuit": "30-63723715-9",
+    "lugar": "CORDOBA",
+    "nombre": "MUNICIPALIDAD DE MALAGUEÑO"
+  },
+  {
+    "cuit": "20-27077001-1",
+    "lugar": "CORDOBA",
+    "nombre": "Benedetti Diego Martin"
+  },
+  {
+    "cuit": "CORDOBA",
+    "lugar": "CORDOBA",
+    "nombre": "GENESIO INGENIERIA SA"
+  },
+  {
+    "cuit": "30-71652235-7",
+    "lugar": "CORDOBA",
+    "nombre": "NURZHAN S.A. S. A."
+  },
+  {
+    "cuit": "20-12349088-7",
+    "lugar": "CORDOBA",
+    "nombre": "SALISCHIKER EDUARDO CARLOS"
+  },
+  {
+    "cuit": "30-71892207-7",
+    "lugar": "CORDOBA",
+    "nombre": "Viale-pinto Automotores S.A.S."
+  },
+  {
+    "cuit": "30-70771348-4",
+    "lugar": "MALAGUEÑO",
+    "nombre": "GRUPO PILAR S.A. (Tecnomateriales)"
+  },
+  {
+    "cuit": "30-70769521-4",
+    "lugar": "CORDOBA",
+    "nombre": "ARITAL SA"
+  },
+  {
+    "cuit": "27-20873212-4",
+    "lugar": "CORDOBA",
+    "nombre": "Llinares Gabriela"
+  },
+  {
+    "cuit": "30-51543330-5",
+    "lugar": "CORDOBA",
+    "nombre": "FRANCISCO BOIXADOS S A C"
+  },
+  {
+    "cuit": "30-67759149-4",
+    "lugar": "CORDOBA",
+    "nombre": "CENTRO DE ESTUDIOS HISTÓRICOS PROFESOR CARLOS S.A. SEGRETI"
+  },
+  {
+    "cuit": "33-70832709-9",
+    "lugar": "DEAN FUNES",
+    "nombre": "A.P.M S.A."
+  },
+  {
+    "cuit": "30-56614196-1",
+    "lugar": "CORDOBA",
+    "nombre": "ASOCIACION AMIGOS DEL PAIS"
+  },
+  {
+    "cuit": "30-56887493-1",
+    "lugar": "CORDOBA",
+    "nombre": "Sind.Arg.Tel.,Telecom.,Serv.Audiovis.,Interact."
+  },
+  {
+    "cuit": "2737821090",
+    "lugar": "CORDOBA",
+    "nombre": "Noelia"
+  },
+  {
+    "cuit": "30-71481709-0",
+    "lugar": "SALTA",
+    "nombre": "COBERTURA DE SALUD S.A. (Salta)"
+  },
+  {
+    "cuit": "30-71831516-2",
+    "lugar": "CORDOBA",
+    "nombre": "FJG S.A.S."
+  },
+  {
+    "cuit": "30-71536860-5",
+    "lugar": "CORDOBA",
+    "nombre": "TARGET MEDIA S.R.L"
+  },
+  {
+    "cuit": "30-66865399-1",
+    "lugar": "Rio Tercero",
+    "nombre": "Expreso Biletta s r L"
+  },
+  {
+    "cuit": "30-71559104-5",
+    "lugar": "CABA",
+    "nombre": "Flaltia S.A."
+  },
+  {
+    "cuit": "30-71207521-6",
+    "lugar": "CORDOBA",
+    "nombre": "Global Visum SA"
+  },
+  {
+    "cuit": "30-68631480-0",
+    "lugar": "CATAMARCA/ LA RIOJA",
+    "nombre": "IERIC - Instit.Estad.y Registro Ind.Constr."
+  },
+  {
+    "cuit": "30-71206982-8",
+    "lugar": "CORDOBA",
+    "nombre": "Emintex SA"
   }
 ]

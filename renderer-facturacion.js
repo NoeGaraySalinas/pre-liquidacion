@@ -10,6 +10,9 @@ if (!window.fs) {
   window.fs = require('fs');
 }
 
+let valorHoraBaseGlobal = null;
+
+
 console.log("renderer-facturacion.js cargado correctamente");
 
 window._facturacionInitialized = false;
@@ -123,48 +126,70 @@ if (inputValorHora) {
 
 // Asegurar que el DOM esté cargado
 document.addEventListener('DOMContentLoaded', () => {
+
   const inputAumento = document.getElementById('inputAumento');
-  
-  if (inputAumento) {
-    inputAumento.addEventListener('input', function() {
-      // Reemplazar coma por punto y validar
-      let newValue = this.value.replace(',', '.');
-      
-      // Validar que sea número válido
-      if (newValue && !isNaN(newValue)) {
-        // Validar máximo dos decimales
-        const parts = newValue.split('.');
-        if (parts.length > 1) {
-          newValue = `${parts[0]}.${parts[1].slice(0, 2)}`;
-        }
-        
-        // Actualizar valor
-        this.value = newValue;
-        
-        // Disparar evento de cambio si es necesario
-        const event = new Event('change');
-        this.dispatchEvent(event);
-      } else if (newValue !== '') {
-        // Revertir si no es número válido
-        this.value = this.value.slice(0, -1);
+
+  if (!inputAumento) {
+    console.warn('inputAumento todavía no existe, se activará cuando se cargue el formulario.');
+    return; // ⛔ Frenamos acá para evitar errores
+  }
+
+  // --- Evento INPUT (validación mientras escribe) ---
+  inputAumento.addEventListener('input', function () {
+    let newValue = this.value.replace(',', '.');
+
+    if (newValue && !isNaN(newValue)) {
+      const parts = newValue.split('.');
+      if (parts.length > 1) {
+        newValue = `${parts[0]}.${parts[1].slice(0, 2)}`;
       }
-    });
-  } else {
-    console.warn('Elemento inputAumento no encontrado');
-  }
+
+      this.value = newValue;
+
+      const event = new Event('change');
+      this.dispatchEvent(event);
+    } else if (newValue !== '') {
+      this.value = this.value.slice(0, -1);
+    }
+  });
+
+  // --- Evento BLUR (cuando sale del input) ---
+  inputAumento.addEventListener('blur', function () {
+    let valor = this.value.replace(',', '.');
+    const parsedValor = parseFloat(valor);
+
+    if (isNaN(parsedValor) || parsedValor < 0) {
+      this.value = '';
+    } else {
+      this.value = parsedValor.toFixed(2);
+    }
+  });
+
 });
 
-document.getElementById('inputAumento').addEventListener('blur', function () {
-  let valor = this.value.replace(',', '.'); // Aseguramos que el valor tenga punto en lugar de coma
-  const parsedValor = parseFloat(valor);
-
-  if (isNaN(parsedValor) || parsedValor < 0) {
-    this.value = ''; // Limpiar el campo si el valor no es válido
-  } else {
-    this.value = parsedValor.toFixed(2); // Asegurarse de que tenga 2 decimales
+const topes = {
+  "Felipe Nogales": {
+    mensual: 4441534.77,
+    anual: 53298417.30
+  },
+  "Aylen Nogales": {
+    mensual: 2447891.32,
+    anual: 29374695.90
+  },
+  "Maximiliano Nogales": {
+    mensual: 1953265.86,
+    anual: 23439190.34
+  },
+  "Sandra Cordoba": {
+    mensual: 2447891.32,
+    anual: 29374695.90
+  },
+  "Omar": {
+    mensual: 651088.62,
+    anual: 7813063.45
   }
-});
-
+  // SAS no se incluye porque no tiene tope
+};
 
 function handleFacturacionClick() {
   console.log("Botón 'Gestionar Facturación' presionado");
@@ -197,10 +222,12 @@ function loadFacturacionForm() {
     
     <!-- Filtros -->
     <div class="filters">
-      <input type="month" id="filterMonth">
-      <button id="applyFilters" class="btn-filter">Filtrar</button>
-      <button id="nuevaFacturacionBtn" class="btn-primary">+ Nueva Facturación</button>
-    </div>
+  <input type="month" id="filterMonth">
+
+  <button id="applyFilters" class="btn-filter">Filtrar</button>
+  <button id="nuevaFacturacionBtn" class="btn-primary">+ Nueva Facturación</button>
+</div>
+
     
     <!-- FORMULARIO COMPLETO -->
       <form id="facturacionForm" style="display:none;">
@@ -232,9 +259,13 @@ function loadFacturacionForm() {
           <input type="text" id="inputFacturante" list="facturantesList">
           <datalist id="facturantesList"></datalist>
         </div>
-      </div>
+        <div class="form-group">
+          <label for="inputFechaEmision">Fecha de Emisión</label>
+          <input type="date" id="inputFechaEmision" class="form-control" required />
+        </div>
     </div>
-    
+    </div>
+
     <div class="form-section">
       <h3>Detalles de Horas</h3>
       
@@ -262,20 +293,25 @@ function loadFacturacionForm() {
     </div>
     
     <div class="form-section">
-      <h3>Valores Monetarios</h3>
-      
-      <div class="form-row">
-        <div class="form-group">
-          <label for="inputValorHora">Valor Hora ($)*</label>
-          <input type="text" id="inputValorHora" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="inputAumento">Aumento (%)</label>
-          <input type="text" id="inputAumento" value="0">
-        </div>
-      </div>
+  <h3>Valores Monetarios</h3>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label for="inputValorHora">Valor Hora ($)*</label>
+      <input type="number" id="inputValorHora" step="0.01" required>
     </div>
+    
+    <div class="form-group">
+      <label for="inputAumento">Aumento (%)</label>
+      <input type="number" id="inputAumento" step="0.01" value="0">
+    </div>
+
+    <div class="form-group">
+      <label for="inputValorHoraAumentado">Valor Hora con aumento ($)</label>
+      <input type="number" id="inputValorHoraAumentado" readonly>
+    </div>
+  </div>
+</div>
     
     <div class="form-section">
       <h3>Datos de Factura</h3>
@@ -297,6 +333,10 @@ function loadFacturacionForm() {
           <label for="inputNroFactura">N° Factura</label>
           <input type="text" id="inputNroFactura">
         </div>
+        <label style="display: flex; align-items: center; gap: 4px; font-weight: normal;">
+      <input type="checkbox" id="checkExento">
+      Exento
+    </label>
       </div>
     </div>
     
@@ -335,6 +375,7 @@ function loadFacturacionForm() {
           <th>Cliente</th>
           <th>Servicio</th>
           <th>Facturante</th>
+          <th>Fecha Emisión</th>
           <th>Hs. trabajadas</th>
           <th>Hs. del mes</th>
           <th>Hs. liquidadas</th>
@@ -352,6 +393,35 @@ function loadFacturacionForm() {
       <tbody id="facturacionTableBody"></tbody>
     </table>
     `;
+
+
+  const checkExento = document.getElementById("checkExento");
+  const tipoFacturaInput = document.getElementById("inputTipoFactura");
+
+  if (checkExento) {
+    checkExento.addEventListener("change", calcularTotales);
+  }
+
+  if (tipoFacturaInput) {
+    tipoFacturaInput.addEventListener("change", calcularTotales);
+  }
+
+
+  document.getElementById("applyFilters").addEventListener("click", async () => {
+    const month = document.getElementById("filterMonth").value;
+    if (!month) {
+      showNotification("⚠️ Seleccioná un mes para filtrar", "warning");
+      return;
+    }
+    const facturaciones = await ipcRenderer.invoke("get-facturacion", { month });
+    cargarFacturacionEnTabla(facturaciones); // Asegurate de tener esta función
+  });
+
+  function formatoFechaYYYYMMDD(fechaStr) {
+    if (!fechaStr) return '-';
+    const [a, m, d] = fechaStr.split('-');
+    return `${d}/${m}/${a}`;
+  }
 
 
   document.getElementById("inputValorHora").addEventListener("input", (e) => {
@@ -386,7 +456,7 @@ window.loadFacturacionForm = loadFacturacionForm;
 
 // Función para configurar eventos de facturación
 function setupFacturacionEvents() {
-  // Mostrar/ocultar formulario
+  // Botón para mostrar formulario
   const nuevaFactBtn = document.getElementById('nuevaFacturacionBtn');
   if (nuevaFactBtn) {
     nuevaFactBtn.addEventListener('click', () => {
@@ -398,51 +468,159 @@ function setupFacturacionEvents() {
     });
   }
 
-  const inputHsLiquidadas = document.getElementById('inputHsLiquidadas');
-  if (inputHsLiquidadas) {
-    inputHsLiquidadas.addEventListener('input', calcularTotales);
-  }
-
+  // Botón cancelar
   const cancelarBtn = document.getElementById('cancelarFacturacion');
   if (cancelarBtn) {
     cancelarBtn.addEventListener('click', () => {
       const form = document.getElementById('facturacionForm');
       if (form) {
-        form.style.display = 'none';
         form.reset();
+        form.style.display = 'none';
       }
       if (nuevaFactBtn) {
         nuevaFactBtn.style.display = 'block';
       }
     });
   }
-  let facturacionActual = {
-    valores: {
-      hora: 0
-    }
-  };
 
-  // Cálculos automáticos
-  const calcFields = ['inputValorHora', 'inputHsTrabajadas', 'inputAumento', 'inputTipoFactura'];
+  // Campos que recalculan automáticamente
+  const calcFields = [
+    'inputHsLiquidadas',
+    'inputValorHora',
+    'inputHsTrabajadas',
+    'inputAumento',
+    'inputTipoFactura'
+  ];
+
   calcFields.forEach(field => {
     const input = document.getElementById(field);
     if (input) {
       input.addEventListener('input', calcularTotales);
+      input.addEventListener('change', calcularTotales);
     }
   });
 
+  // Formatear valor hora al perder foco
   const inputValorHora = document.getElementById('inputValorHora');
   if (inputValorHora) {
-    let valorNumerico = 0;
-
-    // Manejar entrada de datos
-    inputValorHora.addEventListener('input', () => {
-      calcularTotales();
-    });
-
     inputValorHora.addEventListener('blur', (e) => {
       const valorNumerico = getNumber('inputValorHora');
       e.target.value = formatoMonetario(valorNumerico);
+    });
+  }
+
+  // Traer valor hora automáticamente al seleccionar servicio + aplicar aumentos
+  const inputServicio = document.getElementById("inputServicio");
+  if (inputServicio) {
+    inputServicio.addEventListener("change", async () => {
+      const servicioSeleccionado = inputServicio.value;
+
+      // ✅ SOLUCIÓN: Obtener el servicio actualizado desde servicios.json
+      let servicioActualizado;
+      try {
+        const servicios = await ipcRenderer.invoke("get-servicios-autocomplete");
+        servicioActualizado = servicios.find(s => s.nombre === servicioSeleccionado);
+      } catch (error) {
+        console.error("Error al obtener servicio actualizado:", error);
+        return;
+      }
+
+      if (!servicioActualizado) {
+        console.warn("⚠️ Servicio no encontrado:", servicioSeleccionado);
+        return;
+      }
+
+      const inputValorHora = document.getElementById("inputValorHora");
+      const valorHoraBase = servicioActualizado.valorHora || 0; // ✅ Usa el valor ACTUALIZADO
+      const gremio = servicioActualizado.gremio;
+
+      // Debug: verificar que estamos usando el valor correcto
+      console.log("🔄 Servicio seleccionado:", {
+        nombre: servicioSeleccionado,
+        valorHoraBase_actualizado: valorHoraBase,
+        gremio: gremio
+      });
+
+      // Guardamos la base globalmente
+      valorHoraBaseGlobal = valorHoraBase;
+
+      // 1) Tomar el periodo elegido en la facturación
+      const periodo = document.getElementById("inputPeriodo").value; // formato YYYY-MM
+
+      // Siempre mostramos el valor HORA BASE ACTUALIZADO en el inputValorHora
+      if (inputValorHora) inputValorHora.value = valorHoraBase.toFixed(2);
+
+      if (!periodo) {
+        // Si no hay periodo aún, limpiamos campo aumentado y recalculamos
+        const inputValorHoraAumentado = document.getElementById("inputValorHoraAumentado");
+        if (inputValorHoraAumentado) inputValorHoraAumentado.value = valorHoraBase.toFixed(2);
+        calcularTotales();
+        return;
+      }
+
+      // 2) Buscar aumento aplicable (usando el PERIODO seleccionado)
+      const aumento = await window.getAumentoAplicable(gremio, periodo);
+
+      if (!aumento) {
+        // Sin aumento proyectado → mostrar base en el input de valor aumentado
+        const inputValorHoraAumentado = document.getElementById("inputValorHoraAumentado");
+        if (inputValorHoraAumentado) inputValorHoraAumentado.value = valorHoraBase.toFixed(2);
+
+        // Aseguramos el inputAumento en 0
+        const inputAumento = document.getElementById("inputAumento");
+        if (inputAumento) inputAumento.value = 0;
+
+        // Guardar TEMPORAL para el guardado final
+        window._ultimoAumentoAplicado = null;
+
+        calcularTotales();
+        return;
+      }
+
+      // 3) Calcular valor hora aumentado (acumulativo / no acumulativo ya lo maneja calcularValorHoraAumentado)
+      const valorAumentado = window.calcularValorHoraAumentado(valorHoraBase, aumento, []);
+
+      // Debug: verificar cálculo correcto
+      console.log("📌 Aumento aplicado:", {
+        porcentaje: aumento.porcentaje + "%",
+        sobre_valor_base: valorHoraBase,
+        resultado: valorAumentado
+      });
+
+      // 4) **IMPORTANTE**: NO sobrescribir inputValorHora (ese siempre el base actualizado)
+      //    En vez de eso, colocamos el resultado en el campo dedicado:
+      const inputValorHoraAumentado = document.getElementById("inputValorHoraAumentado");
+      if (inputValorHoraAumentado) inputValorHoraAumentado.value = valorAumentado.toFixed(2);
+
+      // 5) Mostrar el porcentaje de aumento en el input correspondiente (si existe)
+      const inputAumento = document.getElementById("inputAumento");
+      if (inputAumento) inputAumento.value = aumento.porcentaje;
+
+      // 6) Guardar TEMPORALMENTE la info del aumento aplicado para usarla al guardar factura
+      window._ultimoAumentoAplicado = {
+        ...aumento,
+        valorBase: valorHoraBase,
+        valorFinal: valorAumentado,
+        esUltimoMes: window.esUltimoMesAumento(aumento, periodo)
+      };
+
+      // 7) Recalcular totales (usa inputValorHora base y/o inputValorHoraAumentado según tu lógica)
+      calcularTotales();
+    });
+  }
+
+  // Mostrar valor hora aumentado automáticamente
+  const inputAumento = document.getElementById('inputAumento');
+  if (inputAumento) {
+    inputAumento.addEventListener('input', () => {
+      const valorHora = getNumber('inputValorHora');
+      const aumento = getNumber('inputAumento'); // porcentaje
+      const aumentado = valorHora * (1 + (aumento / 100));
+
+      const inputValorHoraAumentado = document.getElementById('inputValorHoraAumentado');
+      if (inputValorHoraAumentado) {
+        inputValorHoraAumentado.value = aumentado.toFixed(2);
+      }
     });
   }
 
@@ -455,6 +633,54 @@ function setupFacturacionEvents() {
     });
   }
 }
+
+function setupRecalculoAumento() {
+  const campos = [
+    "inputPeriodo",
+    "inputServicio",
+    "inputValorHora",
+    "inputFechaEmision",
+    "inputCliente"
+  ];
+
+  campos.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("change", aplicarAumento);
+      el.addEventListener("input", aplicarAumento);
+    }
+  });
+}
+
+// Llamar al final de setupFacturacionEvents()
+setupRecalculoAumento();
+
+
+function setupValorHoraConAumento() {
+  const recalcular = () => window.aplicarAumento();
+
+  const campos = [
+    "inputPeriodo",
+    "inputServicio",
+    "inputCliente",
+    "inputValorHora",
+    "inputFacturante",
+    "inputFechaEmision",
+    "inputHsTrabajadas",
+    "inputHsMes",
+    "inputHsLiquidadas",
+    "inputHsAdeudadas"
+  ];
+
+  campos.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("change", recalcular);
+      el.addEventListener("input", recalcular);
+    }
+  });
+}
+
 
 const camposNumericos = [
   'inputValorHora',
@@ -475,7 +701,6 @@ camposNumericos.forEach(id => {
   }
 });
 
-
 function calcularTotales() {
   const valorHora = parseFloat(document.getElementById('inputValorHora').value.replace(/[^0-9.]/g, '')) || 0;
   const hsTrabajadas = parseFloat(document.getElementById('inputHsTrabajadas').value) || 0;
@@ -486,6 +711,7 @@ function calcularTotales() {
   const inputNeto = document.getElementById('inputNeto');
   const inputIVA = document.getElementById('inputIVA');
   const inputTotal = document.getElementById('inputTotal');
+  const checkExento = document.getElementById('checkExento'); // 👈 nuevo
 
   const tipoFactura = tipoFacturaInput?.value || 'A';
 
@@ -500,16 +726,28 @@ function calcularTotales() {
     hsAdeudadasInput.classList.add('negativo');
   }
 
-  console.log({ valorHora, aumento, tipo: typeof aumento });
-  
   // Cálculo de valor hora aumentado con redondeo correcto
   const valorHoraAumentado = parseFloat(valorHora * (1 + aumento / 100)).toFixed(4);
   const valorHoraAumentadoRedondeado = Math.round(valorHoraAumentado * 100) / 100; // Redondea a 2 decimales
-  
-  // Cálculo de neto, IVA y total con el valor redondeado
-  const neto = parseFloat((valorHoraAumentadoRedondeado * hsLiquidadas).toFixed(2));
-  const iva = (tipoFactura !== 'C' && tipoFactura !== 'noSeFactura') ? parseFloat((neto * 0.21).toFixed(2)) : 0;
-  const total = parseFloat((neto + iva).toFixed(2));
+
+  // Neto base imponible
+  const netoBase = parseFloat((valorHoraAumentadoRedondeado * hsLiquidadas).toFixed(2));
+
+  let neto, iva, total;
+
+  if (checkExento && checkExento.checked) {
+    // 👉 Caso EXENTO
+    total = parseFloat((netoBase * 1.21).toFixed(2));
+    iva = 0;
+    neto = total; // Se muestra el total en el campo Neto
+  } else {
+    // 👉 Caso normal
+    iva = (tipoFactura !== 'C' && tipoFactura !== 'noSeFactura')
+      ? parseFloat((netoBase * 0.21).toFixed(2))
+      : 0;
+    neto = netoBase;
+    total = parseFloat((neto + iva).toFixed(2));
+  }
 
   // Asignar valores formateados
   inputNeto.value = formatoMonetario(neto);
@@ -521,6 +759,7 @@ function calcularTotales() {
   inputTotal.value = formatoMonetario(total);
   inputTotal.dataset.valorExacto = total.toFixed(2);
 }
+
 
 function formatoMonetario(num) {
   // Asegurarse de que el número esté redondeado a 2 decimales
@@ -563,35 +802,48 @@ document.querySelectorAll('input[type="text"]').forEach(input => {
   });
 });
 
-
 async function guardarFacturacion() {
   const submitBtn = document.querySelector('#facturacionForm [type="submit"]');
   if (!submitBtn) return;
 
   const originalBtnText = submitBtn.textContent;
+  
+  // ✅ CORRECCIÓN: Verificar correctamente si es edición
+  const esEdicion = window._facturacionEditando !== null && 
+                    window._facturacionEditando !== undefined && 
+                    window._facturacionEditando !== '';
+
+  console.log('🔍 Estado de edición:', {
+    esEdicion: esEdicion,
+    _facturacionEditando: window._facturacionEditando
+  });
 
   try {
-    // Deshabilitar botón durante el guardado
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Guardando...';
+    submitBtn.textContent = esEdicion ? 'Actualizando...' : 'Guardando...';
 
-    // Función para normalizar números con exactamente 2 decimales
     const formatCurrency = (value) => {
       const num = parseFloat(value) || 0;
       return parseFloat(num.toFixed(2));
     };
 
     const clienteSeleccionado = document.getElementById('inputCliente').value.trim();
-    const cuitCliente = obtenerCuitCliente(clienteSeleccionado);
+    const cuitCliente = await obtenerCuitCliente(clienteSeleccionado);
 
-    // Construir objeto facturación con el formato exacto requerido
+    // Obtener datos del servicio para actualizar el valor hora
+    const servicioNombre = document.getElementById('inputServicio').value.trim();
+    const valorHoraAumentado = parseFloat(document.getElementById('inputValorHoraAumentado').value) || 0;
+    const aumentoAplicado = window._ultimoAumentoAplicado;
+
+    // Construir objeto facturación
     const facturacion = {
-      id: parseInt(Date.now().toString()), // Convertir a número entero
+      id: esEdicion ? window._facturacionEditando : parseInt(Date.now().toString()),
       periodo: document.getElementById('inputPeriodo').value,
       cliente: clienteSeleccionado,
       cuit: cuitCliente,
-      servicio: document.getElementById('inputServicio').value.trim(),
+      servicio: servicioNombre,
       facturante: document.getElementById('inputFacturante').value.trim(),
+      fechaEmision: document.getElementById('inputFechaEmision')?.value || new Date().toISOString().split('T')[0],
       horas: {
         trabajadas: formatCurrency(document.getElementById('inputHsTrabajadas').value),
         mes: formatCurrency(document.getElementById('inputHsMes').value),
@@ -603,61 +855,107 @@ async function guardarFacturacion() {
         aumento: document.getElementById('inputAumento').value,
         neto: formatCurrency(document.getElementById('inputNeto').dataset.valorExacto),
         iva: formatCurrency(document.getElementById('inputIVA').dataset.valorExacto),
-        total: formatCurrency(document.getElementById('inputTotal').dataset.valorExacto)
+        total: formatCurrency(document.getElementById('inputTotal').dataset.valorExacto),
+        horaAumentada: valorHoraAumentado
       },
       factura: {
         tipo: document.getElementById('inputTipoFactura').value,
         numero: document.getElementById('inputNroFactura').value.trim() || null
       },
       fechaRegistro: new Date().toISOString(),
-      estado: 'pendiente'
+      estado: 'pendiente',
+      aumentoAplicado: aumentoAplicado ? {
+        gremio: aumentoAplicado.gremio,
+        tipo: aumentoAplicado.tipo,
+        porcentaje: aumentoAplicado.porcentaje,
+        mes: aumentoAplicado.mes,
+        esUltimoMes: aumentoAplicado.esUltimoMes
+      } : null
     };
 
-    // Validar antes de guardar
     if (!validarFacturacion(facturacion)) {
       showNotification('❌ Por favor complete todos los campos requeridos', 'error');
       return;
     }
 
-    // Mostrar el objeto que se va a guardar (para depuración)
-    console.log('Objeto a guardar:', JSON.stringify(facturacion, null, 2));
+    console.log('📦 Objeto a guardar:', {
+      esEdicion: esEdicion,
+      id: facturacion.id,
+      accion: esEdicion ? 'ACTUALIZAR' : 'CREAR NUEVA'
+    });
 
-    function obtenerCuitCliente(nombreCliente) {
-      const clientes = JSON.parse(localStorage.getItem('clientes')) || []; // O donde guardes los clientes
-
-      const clienteEncontrado = clientes.find(c => c.nombre === nombreCliente);
-      return clienteEncontrado ? clienteEncontrado.cuit : "N/A";
+    // ✅ CORRECCIÓN: Actualizar valor hora según el tipo REAL de aumento
+    if (aumentoAplicado) {
+      try {
+        if (aumentoAplicado.tipo === "sobre-saldos") {
+          // SOBRE SALDOS: Actualizar SIEMPRE después de facturar
+          console.log("🔄 Actualizando servicio (sobre saldos):", {
+            nombre: servicioNombre,
+            valor_anterior: document.getElementById('inputValorHora').value,
+            nuevo_valor: valorHoraAumentado,
+            periodo: facturacion.periodo
+          });
+          
+          const resultadoActualizacion = await ipcRenderer.invoke('actualizar-valor-hora-servicio', {
+            nombre: servicioNombre,
+            nuevoValorHora: valorHoraAumentado,
+            gremio: aumentoAplicado.gremio,
+            periodo: facturacion.periodo
+          });
+          
+          if (resultadoActualizacion.success) {
+            console.log('✅ Valor hora del servicio actualizado (sobre saldos)');
+          } else {
+            console.error('❌ Error actualizando servicio:', resultadoActualizacion.error);
+          }
+          
+        } else if (aumentoAplicado.tipo === "acumulativo" && aumentoAplicado.esUltimoMes) {
+          // ACUMULATIVO: Actualizar SOLO en el ÚLTIMO mes de la paritaria
+          console.log("🎯 Actualizando servicio (acumulativo - último mes):", {
+            nombre: servicioNombre,
+            valor_anterior: document.getElementById('inputValorHora').value,
+            nuevo_valor: valorHoraAumentado,
+            periodo: facturacion.periodo,
+            es_ultimo_mes: true
+          });
+          
+          const resultadoActualizacion = await ipcRenderer.invoke('actualizar-valor-hora-servicio', {
+            nombre: servicioNombre,
+            nuevoValorHora: valorHoraAumentado,
+            gremio: aumentoAplicado.gremio,
+            periodo: facturacion.periodo
+          });
+          
+          if (resultadoActualizacion.success) {
+            console.log('✅ Valor hora del servicio actualizado (acumulativo - último mes)');
+          } else {
+            console.error('❌ Error actualizando servicio:', resultadoActualizacion.error);
+          }
+          
+        } else if (aumentoAplicado.tipo === "acumulativo") {
+          console.log("ℹ️  Servicio NO actualizado (acumulativo - no es último mes)");
+        }
+      } catch (error) {
+        console.error('❌ Error en actualización servicio:', error);
+      }
     }
 
+    // ✅ CORRECCIÓN: Usar el IPC correcto según si es edición o creación
+    const ipcMethod = esEdicion ? 'actualizar-facturacion' : 'guardar-facturacion';
+    console.log('📡 Llamando IPC:', ipcMethod);
 
-    // Enviar al proceso principal
-    const resultado = await ipcRenderer.invoke('guardar-facturacion', facturacion);
+    const resultado = await ipcRenderer.invoke(ipcMethod, facturacion);
 
     if (resultado.success) {
-      showNotification('✅ Facturación guardada correctamente');
-
-      // Resetear formulario
-      const form = document.getElementById('facturacionForm');
-      if (form) {
-        form.reset();
-        form.style.display = 'none';
-
-        // Resetear valores calculados
-        ['inputNeto', 'inputIVA', 'inputTotal'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) {
-            el.value = '';
-            el.dataset.valorExacto = '0';
-          }
-        });
-      }
-
-      // Mostrar botón de nueva facturación
-      const nuevaFactBtn = document.getElementById('nuevaFacturacionBtn');
-      if (nuevaFactBtn) nuevaFactBtn.style.display = 'block';
-
-      // Recargar datos
+      showNotification(esEdicion ? '✅ Facturación actualizada correctamente' : '✅ Facturación guardada correctamente');
+      
+      // Resetear formulario y limpiar edición
+      cancelarEdicion();
+      
       await loadFacturacionData();
+      await verificarTopeFacturante(facturacion);
+      await verificarTopeAnualFacturante(facturacion);
+
     } else {
       showNotification(`❌ Error: ${resultado.error || 'Error desconocido'}`, 'error');
     }
@@ -668,6 +966,121 @@ async function guardarFacturacion() {
     submitBtn.disabled = false;
     submitBtn.textContent = originalBtnText;
   }
+}
+
+async function verificarTopeFacturante(nuevaFacturacion) {
+  const { facturante, periodo } = nuevaFacturacion;
+
+  // Obtener todas las facturaciones del periodo para ese facturante
+  let facturaciones = [];
+  try {
+    facturaciones = await ipcRenderer.invoke('get-facturacion');
+  } catch (err) {
+    console.error("Error al cargar facturaciones:", err);
+    return;
+  }
+
+  const delMismoFacturante = facturaciones.filter(f =>
+    f.facturante === facturante && f.periodo === periodo
+  );
+
+  const totalFacturado = delMismoFacturante.reduce((sum, f) => sum + (f.valores.total || 0), 0);
+
+  // Obtener tope desde facturantes.json
+  let facturantesData = [];
+  try {
+    facturantesData = await ipcRenderer.invoke('get-facturantes');
+  } catch (err) {
+    console.error("Error al cargar facturantes.json:", err);
+    return;
+  }
+
+  const datosFacturante = facturantesData.find(f => f.nombre === facturante);
+  if (!datosFacturante || !datosFacturante.topeMensual) return;
+
+  const tope = datosFacturante.topeMensual;
+  const porcentaje = (totalFacturado / tope) * 100;
+
+  if (porcentaje >= 100) {
+    const sugerido = await buscarFacturanteConMenorFacturacion(periodo, facturante);
+    mostrarNotificacion(`🚨 ${facturante} superó su tope mensual.\nRecomendado: ${sugerido}`, "error");
+  } else if (porcentaje >= 80) {
+    mostrarNotificacion(`⚠️ ${facturante} ha alcanzado el ${porcentaje.toFixed(1)}% de su tope mensual.`, "warning");
+  }
+}
+
+async function buscarFacturanteConMenorFacturacion(periodo, excluir = "") {
+  let facturaciones = [];
+  try {
+    facturaciones = await ipcRenderer.invoke('get-facturacion');
+  } catch (err) {
+    console.error("Error al cargar facturaciones:", err);
+    return "Desconocido";
+  }
+
+  // Agrupar por facturante
+  const sumaPorFacturante = {};
+  facturaciones
+    .filter(f => f.periodo === periodo)
+    .forEach(f => {
+      if (!sumaPorFacturante[f.facturante]) sumaPorFacturante[f.facturante] = 0;
+      sumaPorFacturante[f.facturante] += f.valores.total || 0;
+    });
+
+  // Buscar el que menos facturó (excepto el actual)
+  const candidatos = Object.entries(sumaPorFacturante).filter(([nombre]) => nombre !== excluir);
+  if (candidatos.length === 0) return "Ninguno disponible";
+
+  const [recomendado] = candidatos.reduce((min, actual) => actual[1] < min[1] ? actual : min);
+  return recomendado;
+}
+
+async function verificarTopeAnualFacturante(nuevaFacturacion) {
+  const { facturante, fechaEmision } = nuevaFacturacion;
+  const fechaFactura = new Date(fechaEmision);
+  const añoActual = fechaFactura.getFullYear();
+  const inicioAño = new Date(`${añoActual}-01-01`);
+
+  let facturaciones = [];
+  try {
+    facturaciones = await ipcRenderer.invoke('get-facturacion');
+  } catch (err) {
+    console.error("Error al cargar facturaciones.json:", err);
+    return;
+  }
+
+  // Filtrar facturaciones del mismo facturante entre 1/1 y la fecha de emisión
+  const delMismoFacturante = facturaciones.filter(f => {
+    if (f.facturante !== facturante || !f.fechaEmision) return false;
+    const fecha = new Date(f.fechaEmision);
+    return fecha >= inicioAño && fecha <= fechaFactura;
+  });
+
+  const totalAnual = delMismoFacturante.reduce((sum, f) => sum + (f.valores?.total || 0), 0);
+
+  let facturantesData = [];
+  try {
+    facturantesData = await ipcRenderer.invoke('get-facturantes');
+  } catch (err) {
+    console.error("Error al cargar facturantes.json:", err);
+    return;
+  }
+
+  const datosFacturante = facturantesData.find(f => f.nombre === facturante);
+  if (!datosFacturante || !datosFacturante.topeAnual) return;
+
+  const tope = datosFacturante.topeAnual;
+  const porcentaje = (totalAnual / tope) * 100;
+
+  const mensaje = `
+📅 Desde el 1 de enero al ${fechaFactura.toLocaleDateString()}
+💰 Total facturado por ${facturante}: $${totalAnual.toLocaleString()}
+📊 Porcentaje del tope anual: ${porcentaje.toFixed(2)}%
+🔢 Tope anual: $${tope.toLocaleString()}
+`;
+
+  // Usar una ventana modal si querés más impacto visual:
+  alert(mensaje);
 }
 
 // Función de validación mejorada
@@ -694,7 +1107,7 @@ function validarFacturacion(fact) {
 
 async function loadFacturacionData(month = '') {
   try {
-    const facturaciones = await ipcRenderer.invoke('get-facturacion', month);
+    const facturaciones = await ipcRenderer.invoke('get-facturacion', { month });
     const tbody = document.getElementById('facturacionTableBody');
     if (!tbody) return;
 
@@ -705,6 +1118,13 @@ async function loadFacturacionData(month = '') {
       return;
     }
 
+    // 🔽 ORDENAR por fecha de emisión o registro (más nuevas primero)
+    facturaciones.sort((a, b) => {
+      const fechaA = new Date(a.fechaEmision || a.fechaRegistro || 0);
+      const fechaB = new Date(b.fechaEmision || b.fechaRegistro || 0);
+      return fechaB - fechaA;
+    });
+
     facturaciones.forEach(fact => {
       const tr = document.createElement('tr');
       tr.innerHTML = `
@@ -712,6 +1132,7 @@ async function loadFacturacionData(month = '') {
         <td class="compact">${fact.cliente}</td>
         <td class="compact">${fact.servicio}</td>
         <td class="compact">${fact.facturante}</td>
+        <td class="compact">${fact.fechaEmision || '-'}</td>
         <td class="compact number">${fact.horas.trabajadas}</td>
         <td class="compact number">${fact.horas.mes}</td>
         <td class="compact number">${fact.horas.liquidadas}</td>
@@ -724,6 +1145,7 @@ async function loadFacturacionData(month = '') {
         <td class="compact currency">${formatoMonetario(fact.valores.iva)}</td>
         <td class="compact currency">${formatoMonetario(fact.valores.total)}</td>
         <td class="compact actions">
+          <button class="edit-btn icon-btn" data-id="${fact.id}" title="Editar">✏️</button>
           <button class="delete-btn icon-btn" data-id="${fact.id}" title="Eliminar">🗑️</button>
         </td>
       `;
@@ -737,6 +1159,162 @@ async function loadFacturacionData(month = '') {
     if (tbody) {
       tbody.innerHTML = `<tr><td colspan="16" class="error-msg">Error al cargar facturaciones</td></tr>`;
     }
+  }
+  setupDeleteButtons();
+  setupEditButtons();
+}
+
+// Función para configurar botones de edición
+async function setupEditButtons() {
+  const buttons = document.querySelectorAll('.edit-btn');
+  if (!buttons.length) return;
+
+  // Remover listeners anteriores para evitar duplicados
+  buttons.forEach(btn => {
+    btn.replaceWith(btn.cloneNode(true));
+  });
+
+  document.querySelectorAll('.edit-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const id = e.target.dataset.id;
+      if (!id) {
+        console.error('ID no encontrado en el botón editar');
+        return;
+      }
+
+      try {
+        // Obtener la facturación
+        const facturaciones = await ipcRenderer.invoke('get-facturacion');
+        const facturacion = facturaciones.find(f => f.id == id);
+
+        if (!facturacion) {
+          showNotification('❌ Facturación no encontrada', 'error');
+          return;
+        }
+
+        // Cargar los datos en el formulario
+        cargarFacturacionEnFormulario(facturacion);
+
+      } catch (error) {
+        console.error('Error al cargar facturación para editar:', error);
+        showNotification('❌ Error al cargar facturación', 'error');
+      }
+    });
+  });
+}
+
+// Función para cancelar edición
+function cancelarEdicion() {
+  const form = document.getElementById('facturacionForm');
+  if (form) {
+    form.reset();
+    form.style.display = 'none';
+  }
+
+  const nuevaFactBtn = document.getElementById('nuevaFacturacionBtn');
+  if (nuevaFactBtn) {
+    nuevaFactBtn.style.display = 'block';
+  }
+
+  // Remover botón cancelar edición
+  const cancelEditBtn = document.getElementById('cancelarEdicionBtn');
+  if (cancelEditBtn) {
+    cancelEditBtn.remove();
+  }
+
+  // Restaurar texto del botón
+  const submitBtn = document.querySelector('#facturacionForm [type="submit"]');
+  if (submitBtn) {
+    submitBtn.textContent = 'Guardar Facturación';
+  }
+
+  // Limpiar ID de edición
+  window._facturacionEditando = null;
+
+  showNotification('Edición cancelada', 'info');
+}
+// Función para cargar datos de facturación en el formulario
+function cargarFacturacionEnFormulario(facturacion) {
+  try {
+    console.log('🔄 Cargando facturación en formulario:', facturacion);
+
+    // Mostrar el formulario y ocultar botón "Nueva Facturación"
+    const form = document.getElementById('facturacionForm');
+    const nuevaFactBtn = document.getElementById('nuevaFacturacionBtn');
+
+    if (form) {
+      form.style.display = 'block';
+    }
+    if (nuevaFactBtn) {
+      nuevaFactBtn.style.display = 'none';
+    }
+
+    // Llenar los campos del formulario
+    document.getElementById('inputPeriodo').value = facturacion.periodo || '';
+    document.getElementById('inputCliente').value = facturacion.cliente || '';
+    document.getElementById('inputServicio').value = facturacion.servicio || '';
+    document.getElementById('inputFacturante').value = facturacion.facturante || '';
+    document.getElementById('inputFechaEmision').value = facturacion.fechaEmision || '';
+
+    // Horas
+    document.getElementById('inputHsTrabajadas').value = facturacion.horas?.trabajadas || 0;
+    document.getElementById('inputHsMes').value = facturacion.horas?.mes || 0;
+    document.getElementById('inputHsLiquidadas').value = facturacion.horas?.liquidadas || 0;
+    document.getElementById('inputHsAdeudadas').value = facturacion.horas?.adeudadas || 0;
+
+    // Valores
+    document.getElementById('inputValorHora').value = facturacion.valores?.hora || 0;
+    document.getElementById('inputAumento').value = facturacion.valores?.aumento || 0;
+    document.getElementById('inputValorHoraAumentado').value = facturacion.valores?.horaAumentada || facturacion.valores?.hora || 0;
+
+    // Factura
+    document.getElementById('inputTipoFactura').value = facturacion.factura?.tipo || 'A';
+    document.getElementById('inputNroFactura').value = facturacion.factura?.numero || '';
+
+    // Checkbox Exento
+    const checkExento = document.getElementById('checkExento');
+    if (checkExento) {
+      // Esto depende de cómo guardes la info de exento en tu facturación
+      checkExento.checked = false; // Ajustar según tu lógica
+    }
+
+    // Guardar el ID de la facturación que se está editando
+    window._facturacionEditando = facturacion.id;
+
+    // Cambiar el texto del botón de guardar
+    const submitBtn = document.querySelector('#facturacionForm [type="submit"]');
+    if (submitBtn) {
+      submitBtn.textContent = 'Actualizar Facturación';
+    }
+
+    // Agregar botón cancelar edición si no existe
+    let cancelEditBtn = document.getElementById('cancelarEdicionBtn');
+    if (!cancelEditBtn) {
+      cancelEditBtn = document.createElement('button');
+      cancelEditBtn.type = 'button';
+      cancelEditBtn.id = 'cancelarEdicionBtn';
+      cancelEditBtn.className = 'btn-secondary';
+      cancelEditBtn.textContent = 'Cancelar Edición';
+      cancelEditBtn.style.marginLeft = '10px';
+
+      cancelEditBtn.addEventListener('click', cancelarEdicion);
+
+      const formActions = document.querySelector('.form-actions');
+      if (formActions) {
+        formActions.appendChild(cancelEditBtn);
+      }
+    }
+
+    // Recalcular totales para mostrar valores actualizados
+    setTimeout(() => {
+      calcularTotales();
+    }, 100);
+
+    showNotification(`✏️ Editando facturación ${facturacion.id}`, 'info');
+
+  } catch (error) {
+    console.error('Error al cargar facturación en formulario:', error);
+    showNotification('❌ Error al cargar datos para editar', 'error');
   }
 }
 
@@ -788,6 +1366,126 @@ function formatMonth(monthString) {
   const [year, month] = monthString.split('-');
   const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
   return `${months[parseInt(month) - 1]} ${year}`;
+}
+
+// APLICAR AUMENTO AUTOMÁTICAMENTE
+window.aplicarAumento = async function () {
+  try {
+    const inputPeriodo = document.getElementById("inputPeriodo");
+    const inputServicio = document.getElementById("inputServicio");
+    const inputAumento = document.getElementById("inputAumento");
+    const inputValorHora = document.getElementById("inputValorHora");
+
+    if (!inputPeriodo || !inputServicio || !inputValorHora || !inputAumento) {
+      console.warn("⏳ aplicarAumento(): esperando elementos del DOM...");
+      return;
+    }
+
+    const periodo = inputPeriodo.value;          // YYYY-MM
+    const servicioNombre = inputServicio.value;  // Texto
+
+    if (!periodo || !servicioNombre) {
+      inputAumento.value = 0;
+      return;
+    }
+
+    // ✅ CORRECCIÓN: Obtener el servicio ACTUALIZADO para tener el valor hora correcto
+    let servicioActualizado;
+    let valorHoraBase;
+
+    try {
+      const servicios = await ipcRenderer.invoke("get-servicios-autocomplete");
+      servicioActualizado = servicios.find(s => s.nombre === servicioNombre);
+
+      if (servicioActualizado) {
+        valorHoraBase = servicioActualizado.valorHora || 0;
+        // Actualizar el inputValorHora con el valor actualizado
+        inputValorHora.value = valorHoraBase.toFixed(2);
+      } else {
+        console.warn("⚠️ Servicio no encontrado:", servicioNombre);
+        valorHoraBase = parseFloat(inputValorHora.value) || 0;
+      }
+    } catch (error) {
+      console.error("Error al obtener servicio actualizado:", error);
+      valorHoraBase = parseFloat(inputValorHora.value) || 0;
+    }
+
+    if (!servicioActualizado || !servicioActualizado.gremio) {
+      console.log("⚠️ Servicio sin gremio definido");
+      inputAumento.value = 0;
+      return;
+    }
+
+    const gremio = servicioActualizado.gremio;
+    console.log("🔍 Buscando aumento:", {
+      gremio,
+      periodo,
+      servicio: servicioNombre,
+      valorHoraBase: valorHoraBase
+    });
+
+    const aumento = await window.getAumentoAplicable(gremio, periodo);
+
+    if (!aumento) {
+      console.log("ℹ️ No hay aumento para este gremio y período");
+      inputAumento.value = 0;
+
+      // Mostrar valor base en el campo aumentado
+      const inputValorHoraAumentado = document.getElementById("inputValorHoraAumentado");
+      if (inputValorHoraAumentado) {
+        inputValorHoraAumentado.value = valorHoraBase.toFixed(2);
+      }
+
+      // Limpiar aumento temporal
+      window._ultimoAumentoAplicado = null;
+
+      calcularTotales();
+      return;
+    }
+
+    // Colocar el porcentaje en el input
+    inputAumento.value = aumento.porcentaje;
+
+    // ✅ CORRECCIÓN: Calcular valor hora aumentado usando el servicio ACTUALIZADO
+    const valorAumentado = window.calcularValorHoraAumentado(valorHoraBase, aumento, []);
+
+    const inputValorHoraAumentado = document.getElementById("inputValorHoraAumentado");
+    if (inputValorHoraAumentado) {
+      inputValorHoraAumentado.value = valorAumentado.toFixed(2);
+    }
+
+    // ✅ CORRECCIÓN: Guardar info del aumento aplicado (igual que en el evento change)
+    window._ultimoAumentoAplicado = {
+      ...aumento,
+      valorBase: valorHoraBase,
+      valorFinal: valorAumentado,
+      esUltimoMes: aumento.esUltimoMes // ← Usar el esUltimoMes que ya calcula getAumentoAplicable
+    };
+
+    console.log(`📌 Aumento aplicado: ${aumento.porcentaje}% sobre ${valorHoraBase} = ${valorAumentado}`, {
+      tipo: aumento.tipo,
+      esUltimoMes: aumento.esUltimoMes
+    });
+
+    calcularTotales();
+
+  } catch (err) {
+    console.error("❌ Error en aplicarAumento:", err);
+  }
+};
+
+// Hacerla global
+window.aplicarAumento = aplicarAumento;
+
+async function obtenerCuitCliente(nombreCliente) {
+  try {
+    const clientes = await ipcRenderer.invoke('get-clientes-autocomplete');
+    const clienteEncontrado = clientes.find(c => c.nombre === nombreCliente);
+    return clienteEncontrado ? clienteEncontrado.cuit : "N/A";
+  } catch (error) {
+    console.error('Error al obtener el CUIT del cliente:', error);
+    return "N/A";
+  }
 }
 
 // Configurar listeners IPC
@@ -896,12 +1594,35 @@ async function loadAutocompleteData() {
     const servicios = await ipcRenderer.invoke('get-servicios-autocomplete');
     const facturantes = await ipcRenderer.invoke('get-facturantes-autocomplete');
 
+    // Clientes y Facturantes siguen igual
     setupAutocomplete('inputCliente', 'clientesList', clientes);
-    setupAutocomplete('inputServicio', 'serviciosList', servicios);
     setupAutocomplete('inputFacturante', 'facturantesList', facturantes);
+
+
+    // Servicios → generamos el datalist manualmente para guardar valorHora y gremio
+    const serviciosList = document.getElementById('serviciosList');
+    serviciosList.innerHTML = '';
+
+    servicios.forEach(servicio => {
+      const option = document.createElement('option');
+      option.value = servicio.nombre;
+
+      if (servicio.valorHora) {
+        option.dataset.valorHora = servicio.valorHora;
+      }
+
+      if (servicio.gremio) {
+        option.dataset.gremio = servicio.gremio;  // ⚡ NECESARIO
+      }
+
+      serviciosList.appendChild(option);
+    });
+
+
   } catch (error) {
     console.error('Error cargando autocompletado:', error);
   }
+  setupValorHoraConAumento();
 }
 
 function waitForElement(selector) {
@@ -988,7 +1709,6 @@ function getNumber(id) {
   return isNaN(parsed) ? 0 : parsed;
 }
 
-
 function prepararInputsFacturacion() {
   const inputValorHora = document.getElementById("inputValorHora");
   const inputAumento = document.getElementById("inputAumento");
@@ -1044,6 +1764,4 @@ function prepararInputsFacturacion() {
     });
   }
 }
-
-
 

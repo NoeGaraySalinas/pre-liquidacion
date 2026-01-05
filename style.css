@@ -72,7 +72,7 @@
 .div3 {
   grid-column: 2 / 3; /* En la segunda columna */
   grid-row: 1 / 2; /* En la segunda fila, justo debajo de div2 */
-  text-align: center;
+  text-align: left;
   border-top: 2px solid #a7a4a4;
   padding: 8px 0;
   margin-top: 70px;
@@ -1119,46 +1119,6 @@ input[readonly] {
   background-color: #e6763b;
 }
 
-/* Tabla */
-.reporte-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.reporte-table th,
-.reporte-table td {
-  padding: 8px 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.reporte-table th {
-  background-color: #ff8c4a;
-  color: white;
-  font-weight: bold;
-}
-
-.reporte-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.reporte-table tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Opcional: estilos para celdas con números o montos */
-.reporte-table .number {
-  text-align: right;
-}
-
-.reporte-table .currency {
-  text-align: right;
-  font-weight: bold;
-  color: #333;
-}
-
 /* Botones de exportar */
 .exportar-btn,
 .exportar-pdf-btn,
@@ -1228,33 +1188,98 @@ input[readonly] {
   background-color: #FF9800;
 }
 
+/* ========================
+   Estilos generales tabla
+======================== */
 .reporte-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
 }
-.reporte-table th, .reporte-table td {
+
+.reporte-table th,
+.reporte-table td {
   padding: 8px 12px;
   border: 1px solid #ddd;
   text-align: left;
 }
+
 .reporte-table th {
   background-color: #ff8c4a;
+  color: white;
   font-weight: bold;
 }
-.number, .currency {
+
+.reporte-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.reporte-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Celdas especiales */
+.reporte-table .number,
+.reporte-table .currency {
   text-align: right;
 }
+
+.reporte-table .currency {
+  font-weight: bold;
+  color: #333;
+}
+
 .total-row {
   font-weight: bold;
   background-color: #f0f0f0;
 }
 
-.reporte-table th:nth-child(3), 
-.reporte-table th:nth-child(4),
-.reporte-table th:nth-child(5) {
-  width: 100px; /* o el ancho que prefieras */
+/* Ajuste de ancho específico para columnas */
+.reporte-table th:nth-child(3), /* Servicio */
+.reporte-table th:nth-child(4), /* Hs. Autorizadas */
+.reporte-table th:nth-child(5)  /* Hs. Trabajadas */
+{
+  width: 100px; /* Ajusta según tu preferencia */
 }
+
+/* ========================
+   Estilos para impresión A4 horizontal
+======================== */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 20mm;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+  }
+
+  .reporte-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .reporte-table th,
+  .reporte-table td {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .total-row {
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+
+  /* Evitar que las celdas se corten */
+  .reporte-table td {
+    white-space: nowrap;
+  }
+}
+
 
 input.negativo {
   color: red;
@@ -1394,4 +1419,9 @@ input.positivo {
   background-color: #f8d7da;
   color: #721c24;
   border-left: 4px solid #dc3545;
+}
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 4px solid #28a745;
 }

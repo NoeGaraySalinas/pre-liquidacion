@@ -1,0 +1,36 @@
+[
+  {
+    "id": "1764174594980",
+    "gremio": "SOELSAC",
+    "tipo": "acumulativo",
+    "meses": [
+      {
+        "mes": "2025-11",
+        "porcentaje": 2.73
+      },
+      {
+        "mes": "2025-12",
+        "porcentaje": 2.62
+      },
+      {
+        "mes": "2026-01",
+        "porcentaje": 2.28
+      }
+    ]
+  },
+  {
+    "id": "1764184719989",
+    "gremio": "SUVICO",
+    "tipo": "sobre-saldos",
+    "meses": [
+      {
+        "mes": "2025-11",
+        "porcentaje": 0.96
+      },
+      {
+        "mes": "2025-12",
+        "porcentaje": 0.93
+      }
+    ]
+  }
+]

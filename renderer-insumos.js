@@ -1,19 +1,5 @@
 // Rutas de archivos
 const rutaInsumos = path.join(__dirname, 'insumos.json');
-const existingLink = document.querySelector('link[href="rentab-style.css"]');
-
-// Variables globales
-let insumos = [];
-
-const rentabCssId = 'rentab-css';
-
-if (!document.getElementById(rentabCssId)) {
-    const link = document.createElement('link');
-    link.id = rentabCssId;
-    link.rel = 'stylesheet';
-    link.href = 'rentab-style.css'; // Como está en la raíz, esto es correcto
-    document.head.appendChild(link);
-}
 
 // Función para cargar insumos desde archivo
 function cargarInsumos() {
@@ -56,8 +42,6 @@ function formatPesos(valor) {
         currency: 'ARS'
     });
 }
-
-cargarEstilosRentab();
 
 // Función principal para cargar el formulario de insumos
 function loadInsumosForm() {
@@ -321,7 +305,6 @@ function calcularTotalesFacturaInsumo() {
     totalInput.setAttribute('data-valor', total.toFixed(2));
 }
 
-
 function guardarFacturaInsumo(e) {
     e.preventDefault();
 
@@ -407,20 +390,6 @@ function renderizarFacturasInsumos(facturasFiltradas = null) {
     });
 }
 
-function cargarEstilosRentab() {
-    const head = document.head;
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'rentab-style.css';
-    link.type = 'text/css';
-    link.id = 'rentab-style';
-
-    // Evitar que se cargue más de una vez
-    if (!document.getElementById('rentab-style')) {
-        head.appendChild(link);
-    }
-}
-
 function aplicarFiltrosInsumos() {
     const mes = document.getElementById('filterMonthInsumos').value;
     const cliente = document.getElementById('filterClienteInsumos').value.toLowerCase();
@@ -483,10 +452,6 @@ document.addEventListener('DOMContentLoaded', () => {
         insumosBtn.addEventListener('click', loadInsumosForm);
     }
 });
-
-document.getElementById('facturaInsumoForm').classList.remove('oculto');
-document.getElementById('facturaInsumoForm').classList.add('visible');
-
 
 // Hacer funciones accesibles globalmente
 window.verDetalleFacturaInsumo = verDetalleFacturaInsumo;

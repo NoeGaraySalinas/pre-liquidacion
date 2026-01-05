@@ -10,6 +10,15 @@
 
 <body>
 
+  <!-- SOLO MOVÍ ESTE BLOQUE -->
+  <script type="module">
+    document.getElementById('btnRentabilidad').addEventListener('click', async () => {
+      const module = await import('./renderer-rentabilidad.js');
+      module.mostrarRentabilidad();
+    });
+  </script>
+  <!-- FIN DEL BLOQUE MOVIDO -->
+
   <div style="display: flex; align-items: center; gap: 200px; padding: 10px 0; border-bottom: 2px solid #a7a4a4;">
     <img src="assets/Logo-fondotransparente.png" alt="logo" style="width: 150px; height: auto; margin: 20px;">
     <h1 style="font-size: 28px; font-family: 'Arial', sans-serif; font-weight: 600; color: #2c3e50;">PRE LIQUIDACION -
@@ -23,7 +32,7 @@
       <button id="facturantes">Responsables de facturación</button>
       <button id="gestionarFacturacion">Gestionar facturación</button>
       <button id="reporteGeneral">Generar reporte general</button>
-      <button id="btnGastosInternos" class="menu-btn">Gastos Internos</button>
+      <button id="btnGastosInternos">Gastos Internos</button>
       <button id="insumosBtn">Insumos</button>
     </div>
 
@@ -32,6 +41,7 @@
       <button id="btnEvolucion">Evolución mensual (ingresos + gastos)</button>
       <button id="btnClientesImpacto">Clientes con mayor impacto económico</button>
       <button id="btnComparativaServicios">Comparativa de servicios</button>
+      <button id="btnAumento">Aumento</button>
     </div>
 
     <div class="div3" id="div3">
@@ -67,26 +77,38 @@
     </div>
   </div>
 
-  <!-- En tu archivo HTML principal -->
   <script src="renderer-clientes.js"></script>
   <script src="renderer-servicios.js"></script>
   <script src="renderer-facturantes.js"></script>
   <script src="renderer-facturacion.js"></script>
+  <script src="renderer-gastosI.js"></script>
+  <script src="renderer-insumos.js"></script>
   <script src="renderer-reportes.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="./renderer-gastosI.js"></script>
-  <script src="renderer-rentabilidad.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script type="module">
-    document.getElementById('btnRentabilidad').addEventListener('click', async () => {
-      const module = await import('./renderer-rentabilidad.js');
-      module.mostrarRentabilidad();
+
+  <script src="./renderer-rentabilidad.js"></script>
+
+  <!-- RENTABILIDAD -->
+<script>
+  document.getElementById('btnRentabilidad').addEventListener('click', () => {
+    window.mostrarRentabilidad();
+  });
+</script>
+
+  <!-- AUMENTO -->
+  <script src="./renderer-aumento.js"></script>
+
+  <script>
+    document.getElementById('btnAumento').addEventListener('click', () => {
+      window.loadAumentoForm();
     });
   </script>
-  <script src="renderer-insumos.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </body>
 
 </html>

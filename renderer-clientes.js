@@ -39,7 +39,6 @@ function loadClientesTable() {
   document.getElementById("div3").innerHTML = `
     <h2>Gestión de Clientes</h2>
     <button id="agregarClienteBtn">Agregar Cliente</button>
-    <button id="editarClienteBtn">Editar Cliente</button>
 
     <form id="clientForm" style="display: none; margin-top: 10px;">
       <input type="text" id="nombre" placeholder="Nombre">
@@ -121,6 +120,7 @@ function populateClientesTable(clientes) {
       <td>${cliente.lugar}</td>
       <td>${cliente.cuit}</td>
       <td>
+        <button class="edit-btn" data-cuit="${cliente.cuit}" title="Editar">✏️</button>
         <button class="delete-btn" data-cuit="${cliente.cuit}" title="Eliminar">
           🗑️
         </button>
@@ -138,7 +138,26 @@ function populateClientesTable(clientes) {
   });
 
   console.log("Tabla de clientes actualizada.");
+
+  document.querySelectorAll(".edit-btn").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const cuit = event.target.getAttribute("data-cuit");
+      ipcRenderer.send("get-clients"); // Asegurate de tener los datos actualizados
+      ipcRenderer.once("clients-data", (event, clientes) => {
+        const cliente = clientes.find(c => c.cuit === cuit);
+        if (cliente) {
+          document.getElementById("editNombre").value = cliente.nombre;
+          document.getElementById("editLugar").value = cliente.lugar;
+          document.getElementById("editCuit").value = cliente.cuit;
+          document.getElementById("editClientForm").style.display = "block";
+        }
+      });
+    });
+  });
 }
+
+
+
 
 // Función para eliminar un cliente
 function eliminarCliente(cuit) {
@@ -196,16 +215,3 @@ function saveClientEdit(event) {
   document.getElementById("editClientForm").style.display = "none";
   loadClientesData();
 }
-
-document.querySelectorAll(".edit-btn").forEach((btn) => {
-  btn.addEventListener("click", (event) => {
-    const cuit = event.target.getAttribute("data-cuit");
-    const cliente = clientes.find(c => c.cuit === cuit);
-    if (cliente) {
-      document.getElementById("editNombre").value = cliente.nombre;
-      document.getElementById("editLugar").value = cliente.lugar;
-      document.getElementById("editCuit").value = cliente.cuit;
-      document.getElementById("editClientForm").style.display = "block";
-    }
-  });
-});

@@ -1,69 +1,372 @@
 [
   {
-    "id": "1747320513485",
-    "fecha": "2025-05-07",
-    "numero": "2-1816",
+    "id": "1767358667519",
+    "fecha": "2025-12-21",
+    "numero": "2 - 2288",
+    "cliente": "CYRE SA",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Uso de Productos Especiales (Ceras y Selladores) Cordiez: Bernardo O'Higgins 5890",
+        "cantidad": 1,
+        "precio": 109482
+      }
+    ],
+    "subtotal": 109482,
+    "iva": 22991.22,
+    "total": 132473.22
+  },
+  {
+    "id": "1767357929778",
+    "fecha": "2025-12-18",
+    "numero": "2 - 2286",
+    "cliente": "CYRE SA",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Uso de Productos Especiales (Ceras y Selladores) Cordiez: Bernardo O'Higgins 5890 Dia 16/12/25",
+        "cantidad": 1,
+        "precio": 516161
+      }
+    ],
+    "subtotal": 516161,
+    "iva": 108393.81,
+    "total": 624554.81
+  },
+  {
+    "id": "1767108882164",
+    "fecha": "2025-12-12",
+    "numero": "2 - 2238",
+    "cliente": "Flaltia S.A.",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Materiales: gargantas, impermeabilizacion techo y pintura baños Arena Gruesa",
+        "cantidad": 34,
+        "precio": 1074.38
+      },
+      {
+        "nombre": "Arena Fina",
+        "cantidad": 5,
+        "precio": 1157.02
+      },
+      {
+        "nombre": "Cemento ",
+        "cantidad": 6,
+        "precio": 5206.61
+      },
+      {
+        "nombre": "Pegamento Ceramico",
+        "cantidad": 1,
+        "precio": 9008.26
+      },
+      {
+        "nombre": "Lija Al Agua 150",
+        "cantidad": 10,
+        "precio": 579.77
+      },
+      {
+        "nombre": "Lija Al Agua 80",
+        "cantidad": 10,
+        "precio": 579.77
+      },
+      {
+        "nombre": "Pintura Latex ",
+        "cantidad": 1,
+        "precio": 37000
+      },
+      {
+        "nombre": "Enduido Plastico Interior",
+        "cantidad": 3,
+        "precio": 14555.91
+      },
+      {
+        "nombre": "Fijador Sellador 1lts ",
+        "cantidad": 3,
+        "precio": 6237.16
+      },
+      {
+        "nombre": "Membrana Asfaltica",
+        "cantidad": 12,
+        "precio": 86000
+      }
+    ],
+    "subtotal": 1225536.55,
+    "iva": 257362.68,
+    "total": 1482899.23
+  },
+  {
+    "id": "1767109815090",
+    "fecha": "2025-12-12",
+    "numero": "2 - 2239",
+    "cliente": "Flaltia S.A.",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Materiales: Reparacion y colocacion de luces led y tomas *Plafon led cuadrado 18w",
+        "cantidad": 7,
+        "precio": 5615.12
+      },
+      {
+        "nombre": "Caja Paso PVC 115x115x65",
+        "cantidad": 1,
+        "precio": 2803.29
+      },
+      {
+        "nombre": "MTS Cable canal 20x10",
+        "cantidad": 10,
+        "precio": 586.73
+      },
+      {
+        "nombre": "Taco Univ.6mm",
+        "cantidad": 40,
+        "precio": 34.9
+      },
+      {
+        "nombre": "Tornillo p/Taco nº6",
+        "cantidad": 40,
+        "precio": 17.61
+      },
+      {
+        "nombre": "Llave Kalop 1 punto",
+        "cantidad": 1,
+        "precio": 2630.26
+      },
+      {
+        "nombre": "Caja p/cable canal 5x10",
+        "cantidad": 1,
+        "precio": 928.67
+      },
+      {
+        "nombre": "Mts cable unip 1.5 marron",
+        "cantidad": 23,
+        "precio": 411.84
+      },
+      {
+        "nombre": "Mts cable unip 1.5 celeste",
+        "cantidad": 11,
+        "precio": 411.84
+      }
+    ],
+    "subtotal": 67638.32,
+    "iva": 14204.05,
+    "total": 81842.37
+  },
+  {
+    "id": "1767110149335",
+    "fecha": "2025-12-12",
+    "numero": "2 - 2240",
+    "cliente": "Flaltia S.A.",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Materiales fabricacion y colocacion puerta de reja *Barra-planchuela perforada",
+        "cantidad": 1,
+        "precio": 126398.22
+      },
+      {
+        "nombre": "Disco 115x1,6x22,2",
+        "cantidad": 3,
+        "precio": 555.87
+      },
+      {
+        "nombre": "Disco flap base fibra 115 grano 80 ",
+        "cantidad": 1,
+        "precio": 2473.93
+      },
+      {
+        "nombre": "Prive cerradura 204 angosta doble perno bisagra tipo municion 2",
+        "cantidad": 1,
+        "precio": 17036.57
+      },
+      {
+        "nombre": "Alas cortas reforzadas",
+        "cantidad": 3,
+        "precio": 1202.86
+      }
+    ],
+    "subtotal": 151184.91,
+    "iva": 31748.83,
+    "total": 182933.74
+  },
+  {
+    "id": "1767110368164",
+    "fecha": "2025-12-12",
+    "numero": "2 - 2241",
+    "cliente": "Flaltia S.A.",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Materiales colocacion durlock *Placa placo std 12.5 mm 1.20x2.40",
+        "cantidad": 6,
+        "precio": 13055.61
+      },
+      {
+        "nombre": "Omega perfil x 2.60m",
+        "cantidad": 12,
+        "precio": 3828.29
+      },
+      {
+        "nombre": "Aguja tornillo x 100",
+        "cantidad": 2,
+        "precio": 1562.35
+      },
+      {
+        "nombre": "Mansilla placo x 15kg",
+        "cantidad": 1,
+        "precio": 19317.99
+      },
+      {
+        "nombre": "Angulo de ajuste X 2.60m",
+        "cantidad": 4,
+        "precio": 1591.88
+      }
+    ],
+    "subtotal": 153083.35,
+    "iva": 32147.5,
+    "total": 185230.85
+  },
+  {
+    "id": "1767103488148",
+    "fecha": "2025-12-01",
+    "numero": "2 - 2224",
     "cliente": "VTV CORDOBA SA",
     "tipo": "A",
     "items": [
       {
-        "nombre": "Toallas rollo p/ manos  REM 1-2166 03/04/2025  Suc: Carcano",
-        "cantidad": 12,
-        "precio": 10179
+        "nombre": "Toallas Rollo p/manos REM 1-2698 17/11/25 Carcano",
+        "cantidad": 1,
+        "precio": 15193.88
       },
       {
-        "nombre": " Toalla rollo p/ manos  REM 1-2231 25/04/2025  Suc: Carcano",
+        "nombre": "Papel Higienico Jumbo REM 1-2698 17/11/25 Carcano",
         "cantidad": 8,
-        "precio": 10179
+        "precio": 1819.97
       },
       {
-        "nombre": "Papel higienico jumbo  REM 1-2231 25/04/2025  Suc: Carcano",
-        "cantidad": 24,
-        "precio": 1690.08
-      },
-      {
-        "nombre": "Papel higienico jumbo  REM 1-2167 09/04/2025  Suc: Japon",
-        "cantidad": 24,
-        "precio": 1690.08
-      },
-      {
-        "nombre": " Jabon Liquido p/ manos  REM 1-2167 09/04/2025  Suc: Japon",
+        "nombre": "Jabon Liquido REM 1-2698 17/11/25 Carcano",
         "cantidad": 1,
         "precio": 5850
       },
       {
-        "nombre": " Toalla Rollo p/ manos  REM 1-2167 09/04/2025  Suc: Japon",
-        "cantidad": 8,
-        "precio": 10179
+        "nombre": "Bolsas Compactadoras REM 1-2702 20/11/25 Carcano",
+        "cantidad": 100,
+        "precio": 102.85
       },
       {
-        "nombre": " Toallas rollo p/ manos  REM 1-2224 21/04/2025  Suc: Japon",
-        "cantidad": 8,
-        "precio": 10179
+        "nombre": "Toallas Rollo p/manos REM 1-2662 3/11/25 Japon",
+        "cantidad": 3,
+        "precio": 15193.88
       },
       {
-        "nombre": " Papel higienico jumbo  REM 1-2180 09/04/2025  Suc: Sur",
+        "nombre": "Papel Higienico Jumbo REM 1-2662 3/11/25 Japon",
         "cantidad": 24,
-        "precio": 1690.08
+        "precio": 1819.97
       },
       {
-        "nombre": "Toallas rollo p/ manos  REM 1-2180 09/04/2025  Suc: Sur",
-        "cantidad": 12,
-        "precio": 10179
+        "nombre": "Toallas Rollo p/manos REM 1-2699 17/11/25 Japon",
+        "cantidad": 2,
+        "precio": 15193.88
       },
       {
-        "nombre": "Jabon liquido p/ manos  REM 1-2180 09/04/2025  Suc: Sur",
-        "cantidad": 1,
-        "precio": 5850
+        "nombre": "Toallas Rollo p/manos REM 1-2647 3/11/25 Sur",
+        "cantidad": 3,
+        "precio": 15193.88
       },
       {
-        "nombre": " Rollo industrial 25cm  REM 1-2241 30/04/2025  Suc: Sur",
-        "cantidad": 1,
-        "precio": 10179
+        "nombre": "Papel Higienico Jumbo REM 1-2647 3/11/25 Sur",
+        "cantidad": 24,
+        "precio": 1819.97
+      },
+      {
+        "nombre": "Toallas Rollo p/manos REM 1-2697 17/11/25 Sur",
+        "cantidad": 3,
+        "precio": 15193.88
       }
     ],
-    "subtotal": 632156.76,
-    "iva": 132752.92,
-    "total": 764909.68
+    "subtotal": 300379.88,
+    "iva": 63079.77,
+    "total": 363459.65
+  },
+  {
+    "id": "1767103659193",
+    "fecha": "2025-12-01",
+    "numero": "2 - 2225",
+    "cliente": "Viale-pinto Automotores S.A.S.",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Papel Higienico Jumbo (1 paq x 8u.) REM 1-2696 13/11/25",
+        "cantidad": 2,
+        "precio": 20415.2
+      },
+      {
+        "nombre": "Toallas Intercaladas Beige REM 1-2696 13/11/25",
+        "cantidad": 2,
+        "precio": 11173
+      },
+      {
+        "nombre": "Rollo Industrial (1 paq x 2u.) REM 1-2696 13/11/25",
+        "cantidad": 1,
+        "precio": 1898
+      }
+    ],
+    "subtotal": 65074.4,
+    "iva": 13665.62,
+    "total": 78740.02
+  },
+  {
+    "id": "1767104323098",
+    "fecha": "2025-12-01",
+    "numero": "2 - 2230",
+    "cliente": "PANHEL SRL",
+    "tipo": "A",
+    "items": [
+      {
+        "nombre": "Papel Higienico (4un x 30mt) REM 1-2679 5/11/25 Sabattini",
+        "cantidad": 12,
+        "precio": 1962.74
+      },
+      {
+        "nombre": "Papel Higienico (4un x 30mt) REM 1-2676 4/11/25 Lopez y Planes",
+        "cantidad": 12,
+        "precio": 1962.74
+      }
+    ],
+    "subtotal": 47105.76,
+    "iva": 9892.21,
+    "total": 56997.97
+  },
+  {
+    "id": "1767381696166",
+    "fecha": "2025-12-01",
+    "numero": "13 - 087",
+    "cliente": "VIVERO ALEJANDRO",
+    "tipo": "C",
+    "items": [
+      {
+        "nombre": "Papel higienico (4un X30mt) REM 1- 2648 3/11/25",
+        "cantidad": 5,
+        "precio": 1962.75
+      },
+      {
+        "nombre": "Toallas intercaladas Blancas (Caja - 2500un) REM 1-2648 9/ 11/25",
+        "cantidad": 2,
+        "precio": 15795
+      },
+      {
+        "nombre": "Papel Hiegienico (4un X 30mt) REM 1- 2648 255/11/25",
+        "cantidad": 5,
+        "precio": 1962.75
+      },
+      {
+        "nombre": "Toallas intercaladas Blancas (Caja - 2500un) REM 1- 2648 25/11/25",
+        "cantidad": 2,
+        "precio": 15795
+      }
+    ],
+    "subtotal": 82807.5,
+    "iva": 0,
+    "total": 82807.5
   }
 ]

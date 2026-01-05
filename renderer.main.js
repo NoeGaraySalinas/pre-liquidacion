@@ -1,6 +1,4 @@
-const { ipcRenderer } = require('electron');
-const path = require("path");
-const fs = require("fs");
+
 
 // Hacer ipcRenderer disponible globalmente para otros scripts
 window.ipcRenderer = ipcRenderer;
@@ -26,7 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeFacturantesBtn();
   initializeGestionFacturacionBtn();
   initializeReporteGeneralBtn();
+  initializeGastosInternosBtn();
   setupFacturacionListeners();
+  initGastosInternos();
+  initializeAumentoBtn();
 });
 
 // Inicializar el botón "Gestionar Clientes"
@@ -119,6 +120,39 @@ function initializeReporteGeneralBtn() {
   });
 }
 
+// Inicializar el botón "Gastos Internos"
+function initializeGastosInternosBtn() {
+  const btn = document.getElementById("btnGastosInternos");
+  if (!btn) {
+    console.error("Botón 'Gastos Internos' no encontrado");
+    return;
+  }
+  btn.addEventListener("click", () => {
+    console.log("Botón 'Gastos Internos' presionado");
+    loadExternalModule('renderer-gastosI', () => {
+      if (typeof loadGastosInternosForm === 'function') {
+        loadGastosInternosForm();
+      }
+    });
+  } );
+}
+
+function initializeAumentoBtn() {
+  const btn = document.getElementById("btnAumento");
+  if (!btn) {
+    console.error("Botón 'Aumento' no encontrado");
+    return;
+  }
+  btn.addEventListener("click", () => {
+    console.log("Botón 'Aumento' presionado");
+    loadExternalModule('renderer-aumento', () => {
+      if (typeof loadAumentoForm === 'function') {
+        loadAumentoForm();
+      }
+    });
+  } );
+}
+
 // Configuración de listeners para facturación
 function setupFacturacionListeners() {
   ipcRenderer.removeAllListeners(['factura-guardada', 'error-factura']);
@@ -139,5 +173,16 @@ function clearContentArea() {
   const contentDiv = document.getElementById("div3");
   if (contentDiv) {
     contentDiv.innerHTML = "";
+  }
+}
+
+
+
+// Inicializar Gastos Internos
+function initGastosInternos() {
+  if (window.loadGastosInternosForm) { 
+    window.loadGastosInternosForm();
+  } else {
+    console.error("loadGastosInternosForm no está definido");
   }
 }

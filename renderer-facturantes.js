@@ -75,7 +75,21 @@ function loadFacturantesTable() {
         <input type="text" id="cuilCuit" placeholder="CUIL/CUIT">
       </div>
 
+      <div class="form-group">
+        <label for="topeMensual">Tope mensual:</label>
+        <input type="number" id="topeMensual" placeholder="Tope mensual" step="0.01" min="0">
+      </div>
+
+      <div class="form-group">
+        <label for="topeAnual">Tope anual:</label>
+        <input type="number" id="topeAnual" placeholder="Tope anual" step="0.01" min="0">
+      </div>
+
+<input type="hidden" id="facturanteIdEdit">
+
+
       <div class="form-actions">
+        <button type="button" id="guardarEdicionFacturante" style="display:none;">Guardar Cambios</button>
         <button type="submit" id="guardarFacturante">Guardar Facturante</button>
         <button type="button" id="cancelarFacturante">Cancelar</button>
       </div>
@@ -86,6 +100,8 @@ function loadFacturantesTable() {
         <tr>
           <th>Nombre</th>
           <th>CUIL/CUIT</th>
+          <th>Tope Mensual</th>
+          <th>Tope Anual</th>
           <th>Acciones</th>
         </tr>
       </thead>
@@ -120,6 +136,31 @@ function setupFacturanteButtonHandlers() {
       saveNewFacturante(event);
     });
   }
+  document.getElementById("guardarEdicionFacturante").addEventListener("click", () => {
+  const id = Number(document.getElementById("facturanteIdEdit").value);
+  const nombre = document.getElementById("nombreFacturante").value.trim();
+  const cuilCuit = document.getElementById("cuilCuit").value.trim() || null;
+  const topeMensual = parseFloat(document.getElementById("topeMensual").value);
+  const topeAnual = parseFloat(document.getElementById("topeAnual").value);
+
+  if (!nombre) {
+    alert("El nombre es obligatorio.");
+    return;
+  }
+
+  const actualizado = { id, nombre, cuilCuit, topeMensual, topeAnual };
+  ipcRenderer.send("actualizar-facturante", actualizado);
+
+  ipcRenderer.once("facturante-actualizado", () => {
+    alert("Facturante actualizado correctamente.");
+    document.getElementById("facturanteForm").reset();
+    document.getElementById("facturanteForm").style.display = "none";
+    document.getElementById("guardarFacturante").style.display = "inline-block";
+    document.getElementById("guardarEdicionFacturante").style.display = "none";
+    loadFacturantesData();
+  });
+});
+
 }
 
 function showFacturanteForm() {
@@ -152,7 +193,7 @@ function saveNewFacturante(event) {
   ipcRenderer.once("facturante-guardado", () => {
     console.log("Facturante guardado correctamente");
     loadFacturantesData();
-    hideFacturanteForm({ preventDefault: () => {} });
+    hideFacturanteForm({ preventDefault: () => { } });
   });
 }
 
@@ -182,12 +223,15 @@ function populateFacturantesTable(facturantes) {
   facturantes.forEach((facturante) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td>${facturante.nombre}</td>
-      <td>${facturante.cuilCuit || "-"}</td>
-      <td>
-        <button class="delete-btn" data-id="${facturante.id}" title="Eliminar">🗑️</button>
-      </td>
-    `;
+    <td>${facturante.nombre}</td>
+    <td>${facturante.cuilCuit || "-"}</td>
+    <td>${facturante.topeMensual?.toFixed(2) || "-"}</td>
+    <td>${facturante.topeAnual?.toFixed(2) || "-"}</td>
+    <td>
+    <button class="edit-facturante-btn" data-id="${facturante.id}" title="Editar">✏️</button>
+    <button class="delete-btn" data-id="${facturante.id}" title="Eliminar">🗑️</button>
+  </td>
+`;
     lista.appendChild(tr);
   });
 
@@ -196,6 +240,33 @@ function populateFacturantesTable(facturantes) {
     btn.addEventListener("click", (event) => {
       const facturanteId = event.target.dataset.id;
       deleteFacturante(facturanteId);
+    });
+  });
+
+  document.querySelectorAll(".edit-facturante-btn").forEach(btn => {
+    btn.addEventListener("click", (event) => {
+      console.log("Botón ✏️ presionado"); // 👈 agregá esto
+
+      const facturanteId = Number(event.target.dataset.id);
+      ipcRenderer.send("obtener-facturantes");
+
+      ipcRenderer.once("facturantes-data", (event, facturantes) => {
+        const facturante = facturantes.find(f => f.id === facturanteId);
+        if (!facturante) {
+          console.warn("No se encontró el facturante con ID:", facturanteId);
+          return;
+        }
+
+        document.getElementById("facturanteIdEdit").value = facturante.id;
+        document.getElementById("nombreFacturante").value = facturante.nombre;
+        document.getElementById("cuilCuit").value = facturante.cuilCuit || "";
+        document.getElementById("topeMensual").value = facturante.topeMensual || "";
+        document.getElementById("topeAnual").value = facturante.topeAnual || "";
+
+        document.getElementById("facturanteForm").style.display = "block";
+        document.getElementById("guardarFacturante").style.display = "none";
+        document.getElementById("guardarEdicionFacturante").style.display = "inline-block";
+      });
     });
   });
 }

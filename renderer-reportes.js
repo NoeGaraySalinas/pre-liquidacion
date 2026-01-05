@@ -15,7 +15,33 @@ let clientes = [];
 let servicios = [];
 let facturacionesActuales = [];
 let filtrosAplicados = {};
+
+// === CARGA DE INSUMOS PARA REPORTES ===
+const rutaInsumosReportes = path.join(__dirname, 'insumos.json');
+let insumos = [];
+
+function cargarInsumosParaReportes() {
+  if (!fs.existsSync(rutaInsumosReportes)) {
+    console.warn('insumos.json no existe, creando vacío...');
+    insumos = [];
+    return;
+  }
+
+  try {
+    const data = fs.readFileSync(rutaInsumosReportes, 'utf8');
+    insumos = JSON.parse(data);
+    console.log(`Insumos cargados en Reportes: ${insumos.length}`);
+  } catch (err) {
+    console.error("Error cargando insumos:", err);
+    insumos = [];
+  }
+}
+
+// Ejecutar al inicio del módulo
+cargarInsumosParaReportes();
+
 const XLSX = require('xlsx');
+
 
 console.log("renderer.js cargado correctamente");
 
@@ -55,6 +81,7 @@ function initializeReporteGeneralBtn() {
     console.warn("El botón #reporteGeneral no se encontró en el DOM.");
   }
 }
+
 
 async function cargarServicios() {
   try {
@@ -322,6 +349,7 @@ async function mostrarResultados(facturaciones, filtros) {
     // Solo si es filtro por periodo, mostrar gastos internos
     if (filtroPrincipal === 'periodo' && filtros.periodo) {
       await mostrarGastosInternosPorPeriodo(filtros.periodo);
+      await mostrarInsumosPorPeriodo(filtros.periodo, "resultadoReporte");
     }
 
     filtrosAplicados = filtros; // Guardar los filtros actuales para PDF
@@ -510,7 +538,7 @@ async function buscarCuitPorNombre(nombreCliente) {
 }
 
 console.log("Clientes cargados:", clientes);
-console.log("Facturaciones recibidas:", facturaciones.map(f => f.cliente));
+
 console.log("Clientes disponibles:", clientes.map(c => c.nombre));
 
 function normalizarTexto(texto) {
@@ -532,11 +560,14 @@ console.log("Ejemplo de búsqueda - Servicio 'Dycsa':", {
   )
 });
 
-const periodoSeleccionado = filtro.periodo;
+const selectPeriodo = document.getElementById('filtroPeriodo');
+const periodoSeleccionado = selectPeriodo ? selectPeriodo.value : null;
+
 mostrarGastosInternosPorPeriodo(periodoSeleccionado);
 
 // Llamar esta función al inicio
 cargarDatosIniciales();
+
 
 // Cargar servicios.json una sola vez
 try {
@@ -576,6 +607,15 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
   // 2. Generar filas de la tabla
   const rows = await Promise.all(facturaciones.map(async (fact) => {
     // Buscar el servicio correspondiente (comparación insensible a mayúsculas/acentos)
+
+    const valorHoraBase = parseFloat(fact.valores.hora || 0);
+    const porcentajeAumento = parseFloat(fact.valores.aumento || 0) / 100;
+
+    const valorAumentado = valorHoraBase * (1 + porcentajeAumento);
+    // Usamos toFixed(2) y parseFloat para asegurar precisión monetaria
+    const valorHoraAumentado = parseFloat(valorAumentado.toFixed(2));
+
+
     const servicio = servicios.find(s =>
       normalizarTexto(s.nombre) === normalizarTexto(fact.servicio)
     );
@@ -598,6 +638,10 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
         <td class="number">${fact.horas.trabajadas}</td>
         <td class="number">${fact.horas.liquidadas}</td>
         <td class="currency">${formatoMonetario(fact.valores.hora)}</td>
+        <td class="currency">${fact.valores.aumento ?? 0}%</td>
+        <td class="currency">${valorHoraAumentado ? formatoMonetario(valorHoraAumentado) : '0.00'}</td>
+        <td class="currency">${formatoMonetario(fact.valores.neto ?? 0)}</td>
+        <td class="currency">${formatoMonetario(fact.valores.iva ?? 0)}</td>
         <td class="currency">${formatoMonetario(fact.valores.total)}</td>
       </tr>
     `;
@@ -605,6 +649,8 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
 
   // 3. Calcular totales
   const totalFacturado = facturaciones.reduce((sum, f) => sum + (f.valores?.total || 0), 0);
+  const totalNeto = facturaciones.reduce((sum, f) => sum + (f.valores?.neto || 0), 0);
+  const totalIVA = facturaciones.reduce((sum, f) => sum + (f.valores?.iva || 0), 0);
 
   // 4. Generar la tabla HTML
   return `
@@ -619,13 +665,19 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
           <th>Hs. Trabajadas</th>
           <th>Hs. Liquidadas</th>
           <th>Valor Hora</th>
+          <th>Aumento</th>
+          <th>Valor H. Aum.</th>
+          <th>Neto</th>
+          <th>IVA</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody>${rows.join('')}</tbody>
       <tfoot>
         <tr class="total-row">
-          <td colspan="7">TOTAL FACTURADO</td>
+          <td colspan="8">TOTAL NETO</td>
+          <td class="currency">${formatoMonetario(totalNeto)}</td>
+          <td class="currency">${formatoMonetario(totalIVA)}</td>
           <td class="currency">${formatoMonetario(totalFacturado)}</td>
         </tr>
       </tfoot>
@@ -633,7 +685,9 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
   `;
 }
 
-mostrarGastosInternosPorPeriodo(periodoFiltrado);
+mostrarGastosInternosPorPeriodo(periodoSeleccionado);
+mostrarInsumosPorPeriodo(periodoSeleccionado);
+
 
 // Función para renderizar gastos internos del período
 function mostrarGastosInternosPorPeriodo(periodo, contenedorDestinoId = 'div3') {
@@ -706,6 +760,60 @@ function mostrarGastosInternosPorPeriodo(periodo, contenedorDestinoId = 'div3') 
     });
 }
 
+const insumosPeriodo = insumos.filter(i => {
+  if (!i.fecha) return false;
+  const fecha = new Date(i.fecha);
+  const periodoItem = `${fecha.getFullYear()}-${String(fecha.getMonth() + 1).padStart(2, '0')}`;
+  return periodoItem === periodo;
+});
+
+function mostrarInsumosPorPeriodo(periodo, contenedorDestinoId = 'div3') {
+  fetch('insumos.json')
+    .then(res => res.json())
+    .then(insumos => {
+      const insumosPeriodo = insumos.filter(i => i.fecha?.slice(0, 7) === periodo);
+      const totalInsumos = insumosPeriodo.reduce((sum, i) => sum + (i.total || 0), 0);
+
+      const tabla = document.createElement('table');
+      tabla.className = 'styled-table tabla-insumos';
+      tabla.innerHTML = `
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Tipo de Factura</th>
+            <th>N° Factura</th>
+            <th>Total ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${insumosPeriodo.map(i => `
+            <tr>
+              <td>${i.fecha || '-'}</td>
+              <td>${i.cliente || '-'}</td>
+              <td>${i.tipo || '-'}</td>
+              <td>${i.numero || '-'}</td>
+              <td><strong>$${i.total?.toFixed(2) || '0.00'}</strong></td>
+            </tr>
+          `).join('')}
+          <tr class="total-row">
+            <td colspan="4"><strong>Total Insumos</strong></td>
+            <td><strong>$${totalInsumos.toFixed(2)}</strong></td>
+          </tr>
+        </tbody>
+      `;
+
+      const contenedor = document.getElementById(contenedorDestinoId);
+      contenedor.appendChild(document.createElement('hr'));
+      const subtitulo = document.createElement('h3');
+      subtitulo.textContent = `🧂 Insumos facturados en el período ${periodo}`;
+      contenedor.appendChild(subtitulo);
+      contenedor.appendChild(tabla);
+    })
+    .catch(err => {
+      console.error('Error al cargar insumos.json:', err);
+    });
+}
 
 function generarTablaGeneral(facturaciones, filtros) {
   // Aquí puedes usar los filtros para ajustar la tabla si es necesario
@@ -788,7 +896,7 @@ function formatoMonetario(valor) {
 async function exportarPDF() {
   try {
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+    const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
     const fechaHoy = new Date().toLocaleDateString();
 
     const tabla = document.querySelector(".reporte-table");
@@ -798,8 +906,9 @@ async function exportarPDF() {
     }
 
     const tituloReporte = obtenerTituloReporte();
-
     const logoData = await cargarImagenComoBase64('assets/logorrss.jpg');
+
+    // Encabezado
     doc.addImage(logoData, 'JPEG', 10, 10, 20, 20);
     doc.setFontSize(16);
     doc.text("Reporte de Facturación", 35, 20);
@@ -810,65 +919,131 @@ async function exportarPDF() {
 
     const startY = tituloReporte.length > 40 ? 45 : 40;
 
-    // Tabla de facturaciones
+    // Obtener la fila del total sin modificar el DOM
+    const filaTotal = tabla.querySelector("tfoot tr");
+    let totalGlobal = "";
+    if (filaTotal) {
+      const celdas = filaTotal.querySelectorAll("td");
+      if (celdas.length > 1) {
+        totalGlobal = celdas[celdas.length - 1].textContent.trim(); // Última celda
+      } else if (celdas.length === 1) {
+        totalGlobal = celdas[0].textContent.trim(); // Solo una celda
+      }
+    }
+
+
+    // Leer encabezados
+    const encabezados = Array.from(tabla.querySelectorAll("thead th")).map(th => th.textContent.trim());
+
+    // Leer filas del tbody (sin incluir tfoot)
+    const filas = Array.from(tabla.querySelectorAll("tbody tr")).map(tr => {
+      return Array.from(tr.querySelectorAll("td")).map(td => td.textContent.trim());
+    });
+
     doc.autoTable({
-      html: tabla,
+      head: [encabezados],
+      body: filas,
       startY: startY,
       theme: 'grid',
       headStyles: { fillColor: [255, 140, 74] },
       styles: { fontSize: 10, cellPadding: 3 },
-      columnStyles: {
-        4: { cellWidth: 'auto' },
-        7: { cellWidth: 'auto' }
-      },
       margin: { top: startY + 5 }
     });
 
-    // 🚩 Paso nuevo: agregar gastos internos si el filtro es por periodo
+    if (totalGlobal) {
+      const finalY = doc.lastAutoTable.finalY + 5;
+      doc.setFontSize(11);
+      doc.setFont(undefined, 'bold');
+      doc.text(`TOTAL FACTURADO: ${totalGlobal}`, 150, finalY, { align: 'right' });
+    }
+
+    // 🧠 2. Leer gastos internos si el filtro es por periodo
     if (filtrosAplicados?.periodo) {
       const periodoSeleccionado = filtrosAplicados.periodo;
-
-      const fs = require('fs').promises;
-      const path = require('path');
-      const rutaGastos = path.join(__dirname, "data", "gastosInternos.json");
 
       let gastosDelPeriodo = [];
 
       try {
-        const datosGastos = await fs.readFile(rutaGastos, "utf-8");
-        const todosLosGastos = JSON.parse(datosGastos);
+        const response = await fetch('gastosInternos.json');
+        if (!response.ok) throw new Error("No se pudo cargar gastosInternos.json");
+
+        const todosLosGastos = await response.json();
         gastosDelPeriodo = todosLosGastos.filter(g => g.periodo === periodoSeleccionado);
       } catch (err) {
         console.error("Error al leer gastosInternos.json:", err);
       }
 
       if (gastosDelPeriodo.length > 0) {
-        if (gastosDelPeriodo.length > 0) {
-          doc.text("Gastos Internos del Periodo", 14, doc.lastAutoTable.finalY + 10);
+        doc.setFontSize(12);
+        doc.setFont(undefined, 'normal');
+        doc.text("Gastos Internos del Periodo", 14, doc.lastAutoTable.finalY + 15);
 
-          const tablaGastos = gastosDelPeriodo.map(gasto => [
-            gasto.sector || "Sin sector",
-            gasto.servicio || "Sin servicio",
-            gasto.hsLiquidadas ?? 0,
-            `$${gasto.valorHora?.toFixed(2) || "0.00"}`,
-            `${gasto.aumento?.toFixed(2) || 0}%`,
-            `$${gasto.total?.toFixed(2) || "0.00"}`
-          ]);
+        const tablaGastos = gastosDelPeriodo.map(gasto => [
+          gasto.sector || "Sin sector",
+          gasto.servicio || "Sin servicio",
+          gasto.hsLiquidadas ?? 0,
+          `$${gasto.valorHora?.toFixed(2) || "0.00"}`,
+          `${gasto.aumento?.toFixed(2) || 0}%`,
+          `$${gasto.total?.toFixed(2) || "0.00"}`
+        ]);
 
-          doc.autoTable({
-            head: [["Sector", "Servicio", "Hs Liquidadas", "Valor Hora", "Aumento", "Total"]],
-            body: tablaGastos,
-            startY: doc.lastAutoTable.finalY + 15,
-            styles: { fontSize: 10 },
-            headStyles: { fillColor: [200, 200, 200] },
-          });
-        }
+        const totalGastos = gastosDelPeriodo.reduce((sum, g) => sum + (g.total || 0), 0);
+        tablaGastos.push([
+          { content: "Total General", colSpan: 5, styles: { halign: 'right', fontStyle: 'bold' } },
+          { content: `$${totalGastos.toFixed(2)}`, styles: { fontStyle: 'bold' } }
+        ]);
+
+        doc.autoTable({
+          head: [["Sector", "Servicio", "Hs Liquidadas", "Valor Hora", "Aumento", "Total"]],
+          body: tablaGastos,
+          startY: doc.lastAutoTable.finalY + 20,
+          styles: { fontSize: 10, cellPadding: 3 },
+          headStyles: { fillColor: [255, 140, 74] },
+        });
       }
     }
 
+    // 🧠 Leer insumos si hay filtro por periodo y mostrar tabla resumida
+    try {
+      const responseInsumos = await fetch('insumos.json');
+      if (!responseInsumos.ok) throw new Error("No se pudo cargar insumos.json");
+
+      const todosLosInsumos = await responseInsumos.json();
+      const insumosDelPeriodo = todosLosInsumos.filter(ins => ins.fecha?.slice(0, 7) === filtrosAplicados?.periodo);
+
+      if (insumosDelPeriodo.length > 0) {
+        doc.setFontSize(12);
+        doc.text("Insumos del Periodo", 14, doc.lastAutoTable.finalY + 15);
+
+        const tablaInsumos = insumosDelPeriodo.map(ins => [
+          ins.fecha || "Sin fecha",
+          ins.cliente || "Sin cliente",
+          ins.tipo || "Sin tipo",
+          ins.numero || "Sin número",
+          `$${(ins.total?.toFixed(2) || "0.00")}`
+        ]);
+
+        const totalInsumos = insumosDelPeriodo.reduce((sum, ins) => sum + (ins.total || 0), 0);
+        tablaInsumos.push([
+          { content: "Total General", colSpan: 4, styles: { halign: 'right', fontStyle: 'bold' } },
+          { content: `$${totalInsumos.toFixed(2)}`, styles: { fontStyle: 'bold' } }
+        ]);
+
+        doc.autoTable({
+          head: [["Fecha", "Cliente", "Tipo de Factura", "N° de Factura", "Total"]],
+          body: tablaInsumos,
+          startY: doc.lastAutoTable.finalY + 20,
+          styles: { fontSize: 10, cellPadding: 3 },
+          headStyles: { fillColor: [255, 140, 74] },
+        });
+      }
+    } catch (err) {
+      console.error("Error al leer insumos.json:", err);
+    }
+
+    // 📥 Exportar archivo
     const blob = doc.output('blob');
     const url = URL.createObjectURL(blob);
-
     const link = document.createElement('a');
     link.href = url;
     link.download = 'reporte_facturacion.pdf';
@@ -1034,6 +1209,15 @@ ${base64}
   }
 }
 
+const limitesMensuales = {
+  "Felipe Nogales": 4441534.77,
+  "Aylen Nogales": 2447891.32,
+  "Maximiliano Nogales": 1953265.86,
+  "Sandra Cordoba": 2447891.32,
+  "Omar Nogales": 651088.62
+  // SAS y los demás no tienen límite
+};
+
 async function exportarExcel() {
   try {
     const tabla = document.querySelector(".reporte-table");
@@ -1042,27 +1226,118 @@ async function exportarExcel() {
       return;
     }
 
-    // Convertir la tabla HTML a un libro de trabajo de Excel
     const workbook = XLSX.utils.table_to_book(tabla);
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
-    // Mostrar diálogo de guardado nativo del navegador
-    const fileName = 'reporte_facturacion.xlsx';
+    // Detecta si una cadena parece un número local (puntos/commas/dólar)
+    const looksLikeNumber = s => {
+      if (!s) return false;
+      const str = s.toString().trim();
+      // debe tener al menos un dígito y contener coma o punto o $
+      return /\d/.test(str) && /[.,$]/.test(str);
+    };
 
-    // Usar XLSX.writeFile que maneja su propio diálogo de guardado
-    XLSX.writeFile(workbook, fileName, {
-      bookType: 'xlsx',
-      compression: true
+    const parseLocaleNumber = raw => {
+      if (raw == null) return null;
+      let s = raw.toString().trim();
+      s = s.replace(/\u00A0/g, ""); // quitar NBSP
+      s = s.replace(/\s+/g, ""); // quitar espacios internos
+      s = s.replace(/\$/g, ""); // quitar $
+      if (s === "" || /[A-Za-z]/.test(s)) return null; // texto con letras -> ignorar
+
+      // STRATEGY 1: si tiene puntos y comas -> asumimos puntos = miles, coma = decimal
+      if (s.includes(".") && s.includes(",")) {
+        let cand = s.replace(/\./g, "").replace(/,/g, ".");
+        cand = cand.replace(/[^0-9.-]/g, "");
+        if (cand !== "" && !isNaN(cand)) return Number(cand);
+      }
+
+      // STRATEGY 2: solo coma -> coma decimal
+      if (!s.includes(".") && s.includes(",")) {
+        let cand = s.replace(/,/g, ".");
+        cand = cand.replace(/[^0-9.-]/g, "");
+        if (cand !== "" && !isNaN(cand)) return Number(cand);
+      }
+
+      // STRATEGY 3: solo punto(s)
+      if (s.includes(".") && !s.includes(",")) {
+        const dotCount = (s.match(/\./g) || []).length;
+        if (dotCount > 1) {
+          // varios puntos -> prob. separador de miles -> quitarlos
+          let cand = s.replace(/\./g, "");
+          cand = cand.replace(/[^0-9.-]/g, "");
+          if (cand !== "" && !isNaN(cand)) return Number(cand);
+        } else {
+          // un solo punto -> ambiguous: si hay 3 dígitos detrás, puede ser miles; si no, decimal
+          const parts = s.split(".");
+          if (parts[1] && parts[1].length === 3) {
+            let cand = s.replace(/\./g, "");
+            cand = cand.replace(/[^0-9.-]/g, "");
+            if (cand !== "" && !isNaN(cand)) return Number(cand);
+          } else {
+            // considerarlo decimal con punto
+            let cand = s.replace(/[^0-9.-]/g, "");
+            if (cand !== "" && !isNaN(cand)) return Number(cand);
+          }
+        }
+      }
+
+      // STRATEGY 4: fallback — eliminar todo lo no numérico excepto punto y guión
+      let cand = s.replace(/[^0-9.-]/g, "");
+      if (cand !== "" && !isNaN(cand)) return Number(cand);
+
+      return null;
+    };
+
+    // Recorrer todas las celdas (excepto metadatos)
+    for (const addr in sheet) {
+      if (!Object.prototype.hasOwnProperty.call(sheet, addr)) continue;
+      if (addr[0] === "!") continue;
+
+      const cell = sheet[addr];
+      if (!cell) continue;
+
+      // --- Si ya es número: redondear a 2 decimales y aplicar formato/alineación
+      if (cell.t === "n") {
+        // redondear a 2 decimales para evitar ver demasiados decimales
+        const rounded = Math.round((cell.v + Number.EPSILON) * 100) / 100;
+        cell.v = rounded;
+        cell.t = "n";
+        cell.z = "#.##0,00"; // formato con punto miles y coma decimales
+        // estilo opcional: alinear a la derecha si la librería lo permite
+        if (!cell.s) cell.s = {};
+        cell.s.alignment = Object.assign({}, cell.s.alignment, { horizontal: "right" });
+        continue;
+      }
+
+      // --- Si es string y parece número, intentar parsear
+      if ((cell.t === "s" || cell.t === "str") && looksLikeNumber(cell.v)) {
+        const n = parseLocaleNumber(cell.v);
+        if (n !== null && !isNaN(n)) {
+          const rounded = Math.round((n + Number.EPSILON) * 100) / 100;
+          cell.t = "n";
+          cell.v = rounded;
+          cell.z = "#.##0,00";
+          if (!cell.s) cell.s = {};
+          cell.s.alignment = Object.assign({}, cell.s.alignment, { horizontal: "right" });
+        }
+      }
+    }
+
+    // Guardar archivo
+    XLSX.writeFile(workbook, "reporte_facturacion.xlsx", {
+      bookType: "xlsx",
+      compression: true,
     });
 
-    // No hay forma directa de detectar cuando el usuario guarda, pero podemos
-    // asumir que si no hay error, el archivo se guardó
-    mostrarNotificacion("Archivo Excel guardado en Descargas", "success");
-
+    mostrarNotificacion("Archivo Excel guardado correctamente", "success");
   } catch (error) {
     console.error("Error al exportar a Excel:", error);
     mostrarNotificacion("Ocurrió un error al exportar a Excel", "error");
   }
 }
+
+
 
 // Función para mostrar notificaciones estilizadas
 function mostrarNotificacion(mensaje, tipo = "info") {
@@ -1176,7 +1451,8 @@ const botonExportarPDF = document.getElementById("botonExportarPDF");
 
 if (botonExportarPDF) {  // Verificamos que el botón exista antes de agregar el evento
   botonExportarPDF.addEventListener("click", async () => {
-    const doc = new jsPDF();
+    const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+
     const fechaHoy = new Date().toLocaleDateString();
 
     autoTable(doc, {

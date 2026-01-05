@@ -4,24 +4,11 @@ const fs = require('fs');
 
 // Configuración inicial
 const clientesPath = path.join(__dirname, 'clientes.json');
+const FACTURANTES_PATH = path.join(__dirname, 'facturantes.json');
 
 let mainWindow;
 
-function createWindow() {
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-      enableRemoteModule: false,
-    }
-  });
 
-  mainWindow.loadFile('index.html'); // Cargamos la ventana principal
-}
-
-app.whenReady().then(createWindow);
 
 // main.js
 ipcMain.handle('get-clientes', () => {
@@ -34,20 +21,7 @@ ipcMain.handle('get-clientes', () => {
   }
 });
 
-ipcMain.handle('get-servicios', async () => {
-  try {
-    const data = await fs.promises.readFile(
-      path.join(__dirname, 'servicios.json'), 
-      'utf-8'
-    );
-    const servicios = JSON.parse(data);
-    console.log("Servicios cargados en main process:", servicios.length);
-    return servicios;
-  } catch (error) {
-    console.error("Error en get-servicios:", error);
-    return [];
-  }
-});
+
 
 // Clientes
 
@@ -101,7 +75,7 @@ ipcMain.on("save-client", (event, nuevoCliente) => {
 ipcMain.on("update-client", (event, updatedClient) => {
   const clientes = JSON.parse(fs.readFileSync('clientes.json', 'utf-8'));
   const clienteIndex = clientes.findIndex(cliente => cliente.cuit === updatedClient.cuit);
-  
+
   if (clienteIndex !== -1) {
     clientes[clienteIndex] = updatedClient;
     fs.writeFileSync('clientes.json', JSON.stringify(clientes, null, 2), 'utf-8');
@@ -115,7 +89,7 @@ ipcMain.on("delete-client", (event, cuit) => {
     let clientes = JSON.parse(fs.readFileSync(clientesPath, "utf8"));
     const nuevoClientes = clientes.filter(cliente => cliente.cuit !== cuit);
     fs.writeFileSync(clientesPath, JSON.stringify(nuevoClientes, null, 2), "utf8");
-    
+
     event.sender.send("clients-data", nuevoClientes);
   }
 });
@@ -124,89 +98,89 @@ ipcMain.on("delete-client", (event, cuit) => {
 
 // Servicios
 
-const serviciosFilePath = path.join(__dirname, 'servicios.json');
+const serviciosPath = path.join(__dirname, "servicios.json");
 
-// Función para leer los servicios desde el archivo
-function readServicios() {
+// Guardar servicio nuevo
+ipcMain.on("guardar-servicio", (event, servicio) => {
   try {
-    if (fs.existsSync(serviciosFilePath)) {
-      const data = fs.readFileSync(serviciosFilePath, 'utf-8');
-      return JSON.parse(data); // Retorna los servicios almacenados
+    let servicios = [];
+    if (fs.existsSync(serviciosPath)) {
+      const data = fs.readFileSync(serviciosPath, "utf8");
+      servicios = JSON.parse(data);
     }
-    return []; // Si el archivo no existe, retorna un array vacío
+
+    // Asignar ID único simple
+    servicio.id = Date.now();
+    servicios.push(servicio);
+
+    fs.writeFileSync(serviciosPath, JSON.stringify(servicios, null, 2));
+    event.reply("servicio-guardado");
   } catch (err) {
-    console.error("Error leyendo el archivo de servicios:", err);
-    return []; // Si ocurre un error, retorna un array vacío
+    console.error("Error guardando servicio:", err);
+    event.reply("error-servicio", "No se pudo guardar el servicio.");
   }
-}
+});
 
-// Función para escribir los servicios en el archivo
-function writeServicios(servicios) {
+// Obtener servicios
+ipcMain.handle('get-servicios', async () => {
   try {
-    fs.writeFileSync(serviciosFilePath, JSON.stringify(servicios, null, 2), 'utf-8');
-  } catch (err) {
-    console.error("Error escribiendo el archivo de servicios:", err);
-  }
-}
+    if (!fs.existsSync(serviciosPath)) return [];
 
-// Escuchar solicitud para guardar un servicio
-ipcMain.on('guardar-servicio', (event, nuevoServicio) => {
-  console.log("Datos recibidos para guardar servicio:", nuevoServicio);
-
-  // Verificar si se está enviando la propiedad "descripcion" inesperadamente
-  if ("descripcion" in nuevoServicio) {
-    console.error("Error: Se recibió un dato inesperado 'descripcion' en el servicio.");
-    event.reply('error-servicio', 'El servicio no debe contener el campo descripción.');
-    return;
-  }
-
-  if (!nuevoServicio || !nuevoServicio.nombre) {
-    console.error("Error: El servicio debe tener un nombre.");
-    event.reply('error-servicio', 'El servicio debe tener un nombre.');
-    return;
-  }
-
-  const servicios = readServicios();
-  
-  // Generar un ID único si no existe en el servicio
-  nuevoServicio.id = Date.now();  
-
-  servicios.push(nuevoServicio); // Agregar el nuevo servicio al array
-
-  console.log("Servicios después de agregar:", servicios); // Depuración
-
-  try {
-    writeServicios(servicios); // Guardar los servicios en el archivo
-    event.reply('servicio-guardado'); // Notificar que el servicio fue guardado
+    const data = await fs.promises.readFile(serviciosPath, 'utf-8');
+    return JSON.parse(data);
   } catch (error) {
-    console.error("Error al guardar el servicio:", error);
-    event.reply('error-servicio', 'Hubo un error al guardar el servicio.');
+    console.error("Error en get-servicios:", error);
+    return [];
   }
 });
 
-// Escuchar solicitud para obtener los servicios
-ipcMain.on('obtener-servicios', (event) => {
-  const servicios = readServicios(); // Leer los servicios desde el archivo
-  event.reply('servicios-data', servicios); // Enviar los servicios al renderer
+// Actualizar servicio
+ipcMain.on("actualizar-servicio", (event, servicioEditado) => {
+  try {
+    if (!fs.existsSync(serviciosPath)) {
+      return event.reply("error-servicio", "Archivo de servicios no existe");
+    }
+
+    const data = fs.readFileSync(serviciosPath, "utf-8");
+    const servicios = JSON.parse(data);
+
+    const index = servicios.findIndex(s => s.id.toString() === servicioEditado.id.toString());
+
+    if (index === -1) {
+      return event.reply("error-servicio", "Servicio no encontrado");
+    }
+
+    servicios[index] = servicioEditado;
+    fs.writeFileSync(serviciosPath, JSON.stringify(servicios, null, 2));
+    event.reply("servicio-actualizado");
+  } catch (err) {
+    console.error("Error actualizando servicio:", err);
+    event.reply("error-servicio", "Error al actualizar servicio");
+  }
 });
 
-// Eliminar un servicio por ID
+// Eliminar servicio
 ipcMain.on("eliminar-servicio", (event, servicioId) => {
-  console.log("Intentando eliminar servicio con ID:", servicioId);
+  try {
+    if (!fs.existsSync(serviciosPath)) {
+      return event.reply("error-servicio", "Archivo de servicios no existe");
+    }
 
-  let servicios = readServicios();
-  const serviciosActualizados = servicios.filter(servicio => servicio.id !== parseInt(servicioId, 10));
+    const data = fs.readFileSync(serviciosPath, "utf-8");
+    const servicios = JSON.parse(data);
 
-  if (servicios.length === serviciosActualizados.length) {
-    console.warn("⚠️ No se encontró el servicio a eliminar.");
-  } else {
-    console.log("✅ Servicio eliminado correctamente.");
-    writeServicios(serviciosActualizados);
+    const nuevosServicios = servicios.filter(s => s.id.toString() !== servicioId.toString());
+
+    if (nuevosServicios.length === servicios.length) {
+      return event.reply("error-servicio", "Servicio no encontrado");
+    }
+
+    fs.writeFileSync(serviciosPath, JSON.stringify(nuevosServicios, null, 2));
+    event.reply("servicio-eliminado");
+  } catch (err) {
+    console.error("Error eliminando servicio:", err);
+    event.reply("error-servicio", "Error al eliminar servicio");
   }
-
-  console.log("📂 Estado actual de servicios.json:", JSON.stringify(serviciosActualizados, null, 2));
-
-  event.reply('servicio-eliminado');
 });
 
 
@@ -241,6 +215,22 @@ ipcMain.on("obtener-facturantes", (event) => {
   event.reply("facturantes-data", getFacturantes());
 });
 
+ipcMain.on("actualizar-facturante", (event, actualizado) => {
+  const facturantesPath = path.join(__dirname, "facturantes.json");
+  let facturantes = [];
+
+  if (fs.existsSync(facturantesPath)) {
+    facturantes = JSON.parse(fs.readFileSync(facturantesPath, "utf-8"));
+  }
+
+  const index = facturantes.findIndex(f => f.id === actualizado.id);
+  if (index !== -1) {
+    facturantes[index] = actualizado;
+    fs.writeFileSync(facturantesPath, JSON.stringify(facturantes, null, 2), "utf-8");
+    event.reply("facturante-actualizado");
+  }
+});
+
 // Manejar evento de eliminar facturante
 ipcMain.on("eliminar-facturante", (event, facturanteId) => {
   let facturantes = getFacturantes();
@@ -260,6 +250,32 @@ ipcMain.on('obtener-clientes-lista', (event) => {
     event.sender.send("clientes-data", clientes); // Enviar los datos de clientes al renderer
   });
 });
+
+ipcMain.on('actualizar-facturante', (event, datosActualizados) => {
+  try {
+    const raw = fs.readFileSync(FACTURANTES_PATH, 'utf-8');
+    const facturantes = JSON.parse(raw);
+
+    const index = facturantes.findIndex(f => f.id === datosActualizados.id);
+    if (index === -1) {
+      event.reply('error-facturante', 'No se encontró el facturante a actualizar.');
+      return;
+    }
+
+    // Actualizamos los campos
+    facturantes[index] = {
+      ...facturantes[index],
+      ...datosActualizados
+    };
+
+    fs.writeFileSync(FACTURANTES_PATH, JSON.stringify(facturantes, null, 2), 'utf-8');
+    event.reply('facturante-actualizado');
+  } catch (error) {
+    console.error('Error al actualizar facturante:', error);
+    event.reply('error-facturante', 'Ocurrió un error al actualizar el facturante.');
+  }
+});
+
 
 
 //Facturacion
@@ -296,7 +312,7 @@ function guardarFacturaciones(facturaciones) {
       JSON.stringify(facturaciones, null, 2),
       'utf8'
     );
-    
+
     console.log('Facturaciones guardadas correctamente en:', facturacionesPath);
     return true;
   } catch (error) {
@@ -309,12 +325,12 @@ function guardarFacturaciones(facturaciones) {
 ipcMain.handle('guardar-facturacion', async (event, nuevaFacturacion) => {
   try {
     let facturaciones = [];
-    
+
     // Leer archivo existente si existe
     if (fs.existsSync(facturacionesPath)) {
       const data = fs.readFileSync(facturacionesPath, 'utf8');
       facturaciones = JSON.parse(data);
-      
+
       // Verificar si es un array válido
       if (!Array.isArray(facturaciones)) {
         throw new Error('El archivo no contiene un array válido');
@@ -323,7 +339,7 @@ ipcMain.handle('guardar-facturacion', async (event, nuevaFacturacion) => {
 
     // Buscar si ya existe una facturación con el mismo ID
     const index = facturaciones.findIndex(f => f.id === nuevaFacturacion.id);
-    
+
     if (index >= 0) {
       // Actualizar existente
       facturaciones[index] = nuevaFacturacion;
@@ -334,29 +350,73 @@ ipcMain.handle('guardar-facturacion', async (event, nuevaFacturacion) => {
 
     // Guardar los cambios
     guardarFacturaciones(facturaciones);
-    
+
     return { success: true };
   } catch (error) {
     console.error('Error en el proceso de guardado:', error);
-    return { 
+    return {
       success: false,
       error: error.message
     };
   }
 });
 
+// Handler para actualizar facturación existente
+ipcMain.handle('actualizar-facturacion', async (event, facturacionActualizada) => {
+  try {
+    const facturacionPath = path.join(__dirname, 'facturacion.json');
+
+    // Leer facturaciones existentes
+    let facturaciones = [];
+    if (fs.existsSync(facturacionPath)) {
+      const data = fs.readFileSync(facturacionPath, 'utf8');
+      facturaciones = JSON.parse(data);
+    }
+
+    console.log('🔄 Actualizando facturación:', {
+      id: facturacionActualizada.id,
+      totalFacturaciones: facturaciones.length
+    });
+
+    // Buscar la facturación por ID
+    const index = facturaciones.findIndex(f => f.id == facturacionActualizada.id);
+
+    if (index !== -1) {
+      // Actualizar la facturación existente
+      facturaciones[index] = {
+        ...facturaciones[index], // Mantener propiedades existentes
+        ...facturacionActualizada, // Aplicar cambios
+        fechaActualizacion: new Date().toISOString() // Agregar timestamp de actualización
+      };
+
+      // Guardar cambios
+      fs.writeFileSync(facturacionPath, JSON.stringify(facturaciones, null, 2));
+
+      console.log('✅ Facturación actualizada correctamente');
+      return { success: true };
+    } else {
+      console.error('❌ Facturación no encontrada para actualizar:', facturacionActualizada.id);
+      return { success: false, error: 'Facturación no encontrada' };
+    }
+
+  } catch (error) {
+    console.error('❌ Error actualizando facturación:', error);
+    return { success: false, error: error.message };
+  }
+});
+
 // Handler principal con parámetro de tipo de búsqueda
-ipcMain.handle('get-facturacion', (event, {month = '', exactMatch = false} = {}) => {
+ipcMain.handle('get-facturacion', (event, { month = '', exactMatch = false } = {}) => {
   const facturaciones = cargarFacturaciones();
-  
+
   if (month) {
-    return facturaciones.filter(f => 
-      f.periodo && (exactMatch ? 
-        f.periodo === month : 
+    return facturaciones.filter(f =>
+      f.periodo && (exactMatch ?
+        f.periodo === month :
         f.periodo.startsWith(month))
     );
   }
-  
+
   return facturaciones;
 });
 
@@ -384,12 +444,12 @@ ipcMain.handle('diagnostico-archivo', async () => {
         return false;
       }
     })();
-    
+
     let content = '';
     if (exists) {
       content = fs.readFileSync(facturacionesPath, 'utf8');
     }
-    
+
     return {
       exists,
       canWrite,
@@ -435,17 +495,11 @@ function cargarFacturaciones() {
   }
 }
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
 // Handler mejorado para eliminar facturación
 ipcMain.handle('eliminar-facturacion', async (event, id) => {
   try {
     const filePath = path.join(__dirname, 'facturacion.json');
-    
+
     // Verificar si el archivo existe
     if (!fs.existsSync(filePath)) {
       return { success: false, error: 'El archivo facturacion.json no existe' };
@@ -453,10 +507,10 @@ ipcMain.handle('eliminar-facturacion', async (event, id) => {
 
     // Leer datos actuales
     const facturaciones = await getJsonData('facturacion');
-    
+
     // Convertir id a número si es string (para comparación consistente)
     const idToDelete = typeof id === 'string' ? parseInt(id, 10) : id;
-    
+
     // Verificar si la facturación existe
     const factExistente = facturaciones.find(f => {
       // Asegurarse de comparar tipos iguales
@@ -468,7 +522,7 @@ ipcMain.handle('eliminar-facturacion', async (event, id) => {
       console.log('Facturación no encontrada. ID buscado:', idToDelete, 'Tipo:', typeof idToDelete);
       console.log('IDs existentes:', facturaciones.map(f => {
         const factId = typeof f.id === 'string' ? parseInt(f.id, 10) : f.id;
-        return {id: factId, tipo: typeof factId};
+        return { id: factId, tipo: typeof factId };
       }));
       return { success: false, error: `Facturación con ID ${id} no encontrada` };
     }
@@ -478,24 +532,24 @@ ipcMain.handle('eliminar-facturacion', async (event, id) => {
       const factId = typeof f.id === 'string' ? parseInt(f.id, 10) : f.id;
       return factId !== idToDelete;
     });
-    
+
     // Guardar los cambios
     await saveJsonData('facturacion', nuevasFacturaciones);
-    
+
     // Notificar a todos los clientes sobre la actualización
     event.sender.send('facturaciones-actualizadas');
-    
-    return { 
-      success: true, 
+
+    return {
+      success: true,
       message: 'Facturación eliminada correctamente',
       deletedId: id
     };
   } catch (error) {
     console.error('Error en eliminar-facturacion:', error);
-    return { 
-      success: false, 
+    return {
+      success: false,
       error: 'Error al eliminar la facturación',
-      details: error.message 
+      details: error.message
     };
   }
 });
@@ -505,11 +559,19 @@ ipcMain.handle('get-facturacion-data', async () => {
   return await getJsonData('facturacion');
 });
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
+// Handler para obtener facturantes.json
+ipcMain.handle('get-facturantes', () => {
+  const filePath = path.join(__dirname, 'facturantes.json');
+  try {
+    const data = fs.readFileSync(filePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (err) {
+    console.error("Error al leer facturantes.json:", err);
+    return [];
   }
 });
+
+
 
 // Reportes
 
@@ -530,9 +592,9 @@ ipcMain.handle('get-facturacion-filtered', async (event, filtros) => {
 
   return facturaciones.filter(f => {
     return (!filtros.cliente || f.cliente === filtros.cliente) &&
-           (!filtros.servicio || f.servicio === filtros.servicio) &&
-           (!filtros.facturante || f.facturante === filtros.facturante) &&
-           (!filtros.periodo || f.periodo === filtros.periodo);
+      (!filtros.servicio || f.servicio === filtros.servicio) &&
+      (!filtros.facturante || f.facturante === filtros.facturante) &&
+      (!filtros.periodo || f.periodo === filtros.periodo);
   });
 });
 
@@ -553,7 +615,7 @@ ipcMain.handle('obtener-datos-reporte', async (event, filtros) => {
 ipcMain.handle('get-gastos-internos', async () => {
   try {
     const filePath = path.join(__dirname, 'gastosInternos.json');
-    
+
     // Verificar si el archivo existe
     if (!fs.existsSync(filePath)) {
       console.warn('El archivo gastosInternos.json no existe');
@@ -561,13 +623,146 @@ ipcMain.handle('get-gastos-internos', async () => {
     }
 
     const data = await fs.promises.readFile(filePath, 'utf-8');
-    
+
     // Manejar tanto array como objeto individual
     const parsedData = JSON.parse(data);
     return Array.isArray(parsedData) ? parsedData : [parsedData];
-    
+
   } catch (error) {
     console.error('Error al leer gastosInternos.json:', error);
     return [];
   }
 });
+
+
+
+//Aumento
+
+const rutaAumentos = path.join(__dirname, 'aumentos.json');
+
+// Asegurar archivo
+if (!fs.existsSync(rutaAumentos)) {
+  fs.writeFileSync(rutaAumentos, '[]', 'utf8');
+}
+
+// Obtener aumentos
+ipcMain.handle("get-aumentos", async () => {
+  const data = JSON.parse(fs.readFileSync(rutaAumentos, "utf8"));
+  return data;
+});
+
+// Guardar aumento nuevo
+ipcMain.handle("guardar-aumento", async (event, aumento) => {
+  const data = JSON.parse(fs.readFileSync(rutaAumentos, "utf8"));
+  data.push(aumento);
+  fs.writeFileSync(rutaAumentos, JSON.stringify(data, null, 2));
+  return true;
+});
+
+// Actualizar aumento existente
+ipcMain.handle("actualizar-aumento", async (event, aumentoEditado) => {
+  let data = JSON.parse(fs.readFileSync(rutaAumentos, "utf8"));
+
+  data = data.map(a =>
+    a.id.toString() === aumentoEditado.id.toString()
+      ? { ...a, ...aumentoEditado }
+      : a
+  );
+
+  fs.writeFileSync(rutaAumentos, JSON.stringify(data, null, 2));
+  return true;
+});
+
+// Eliminar aumento
+ipcMain.handle("eliminar-aumento", async (event, id) => {
+  let data = JSON.parse(fs.readFileSync(rutaAumentos, "utf8"));
+
+  data = data.filter(a => a.id.toString() !== id.toString());
+
+  fs.writeFileSync(rutaAumentos, JSON.stringify(data, null, 2));
+  return true;
+});
+
+
+ipcMain.handle('actualizar-valor-hora-servicio', async (event, { nombre, nuevoValorHora, gremio, periodo }) => {
+  try {
+    const serviciosPath = path.join(__dirname, 'servicios.json');
+
+    // Leer servicios existentes
+    let servicios = [];
+    if (fs.existsSync(serviciosPath)) {
+      const data = await fs.promises.readFile(serviciosPath, 'utf8');
+      servicios = JSON.parse(data);
+    }
+
+    // Encontrar y actualizar el servicio
+    const servicioIndex = servicios.findIndex(s => s.nombre === nombre);
+    if (servicioIndex !== -1) {
+      servicios[servicioIndex].valorHora = nuevoValorHora;
+      servicios[servicioIndex].ultimaActualizacion = new Date().toISOString();
+      servicios[servicioIndex].periodoActualizacion = periodo;
+
+      // Guardar cambios
+      await fs.promises.writeFile(serviciosPath, JSON.stringify(servicios, null, 2));
+      return { success: true };
+    }
+
+    return { success: false, error: 'Servicio no encontrado' };
+  } catch (error) {
+    console.error('Error actualizando valor hora:', error);
+    return { success: false, error: error.message };
+  }
+});
+
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: false,
+    }
+  });
+
+  mainWindow.loadFile('index.html'); // Cargamos la ventana principal
+}
+
+app.whenReady().then(createWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+// Carpeta donde se van a guardar los datos en producción
+const dataDir = app.getPath("documents");
+const archivos = ["clientes.json", "servicios.json", "facturacion.json"];
+
+function inicializarArchivos() {
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+
+  archivos.forEach(nombre => {
+    const destino = path.join(dataDir, nombre);
+
+    if (!fs.existsSync(destino)) {
+      // 👇 ahora el origen lo tomamos desde la raíz del proyecto / asar
+      const origen = path.join(process.resourcesPath, nombre);
+
+      if (fs.existsSync(origen)) {
+        fs.copyFileSync(origen, destino);
+      } else {
+        // fallback para cuando corrés en desarrollo
+        const origenDev = path.join(__dirname, nombre);
+        if (fs.existsSync(origenDev)) {
+          fs.copyFileSync(origenDev, destino);
+        } else {
+          fs.writeFileSync(destino, "[]", "utf-8");
+        }
+      }
+    }
+  });
+}

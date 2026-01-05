@@ -1,6 +1,4 @@
-// Importaciones y constantes al inicio
-const fs = require('fs');
-const path = require('path');
+
 
 // Rutas de archivos
 const rutaServicios = path.join(__dirname, 'servicios.json');
@@ -30,7 +28,7 @@ function formatPesos(valor) {
 }
 
 // Inicialización cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initGastosInternos();
     cargarServiciosGI();
     setupGlobalEventListeners();
@@ -45,9 +43,11 @@ function initGastosInternos() {
         const btnGastosInternos = document.getElementById('btnGastosInternos');
 
         if (btnGastosInternos) {
-            btnGastosInternos.addEventListener('click', function() {
+            btnGastosInternos.addEventListener('click', function () {
+                console.log("Click en botón Gastos Internos detectado");
                 try {
                     loadGastosInternosForm();
+                    console.log("loadGastosInternosForm ejecutado");
                 } catch (e) {
                     console.error('Error al cargar formulario de gastos internos:', e);
                     alert('Error al cargar el formulario');
@@ -65,14 +65,15 @@ function initGastosInternos() {
     intentarInicializar();
 }
 
+
 // Configurar listeners globales
 function setupGlobalEventListeners() {
     document.addEventListener("click", (e) => {
         const sugerenciasDivGI = document.getElementById("sugerenciasServicioGI");
         const inputServicioGI = document.getElementById("inputServicioGI");
-        
-        if (sugerenciasDivGI && inputServicioGI && 
-            !sugerenciasDivGI.contains(e.target) && 
+
+        if (sugerenciasDivGI && inputServicioGI &&
+            !sugerenciasDivGI.contains(e.target) &&
             e.target !== inputServicioGI) {
             sugerenciasDivGI.innerHTML = "";
         }
@@ -249,22 +250,23 @@ function loadGastosInternosForm() {
 
         <!-- Tabla resumen -->
         <table id="gastosInternosTable" class="styled-table">
-            <thead>
-                <tr>
-                    <th>Período</th>
-                    <th>Sector</th>
-                    <th>Servicio</th>
-                    <th>Hs. trabajadas</th>
-                    <th>Hs. liquidadas</th>
-                    <th>Valor hora</th>
-                    <th>Aumento</th>
-                    <th>Neto</th>
-                    <th>Total</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="gastosInternosTableBody"></tbody>
-        </table>
+    <thead>
+        <tr>
+            <th>Período</th>
+            <th>Sector</th>
+            <th>Servicio</th>
+            <th>Hs. trabajadas</th>
+            <th>Hs. liquidadas</th>
+            <th>Valor hora</th>
+            <th>Aumento</th>
+            <th>Neto</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="gastosInternosTableBody"></tbody>
+</table>
+
     `;
 
     // Configurar eventos del formulario
@@ -361,6 +363,7 @@ function calcularGastoInterno() {
 function guardarGastoInterno(e) {
     e.preventDefault();
 
+    // Obtener datos del formulario
     const periodo = document.getElementById('inputPeriodoGI')?.value;
     const sector = document.getElementById('inputSectorGI')?.value;
     const servicio = document.getElementById('inputServicioGI')?.value;
@@ -371,11 +374,13 @@ function guardarGastoInterno(e) {
     const neto = parseFloat(document.getElementById('inputNetoGI')?.value) || 0;
     const total = parseFloat(document.getElementById('inputTotalGI')?.value) || 0;
 
+    // Validación
     if (!periodo || !sector || !servicio) {
         alert('Por favor complete todos los campos obligatorios');
         return;
     }
 
+    // Crear objeto gasto temporal
     const gasto = {
         id: generarIDGasto(),
         periodo,
@@ -389,7 +394,7 @@ function guardarGastoInterno(e) {
         total
     };
 
-    // Cargar gastos existentes
+    // Leer archivo
     let gastos = [];
     if (fs.existsSync(filePathGI)) {
         try {
@@ -399,7 +404,40 @@ function guardarGastoInterno(e) {
         }
     }
 
-    // Verificar duplicados
+    // Obtener referencia del formulario
+    const form = document.getElementById('gastoInternoForm');
+    const idEditar = form?.dataset?.editing || null;
+
+    // ---------------------------
+    // 🔥 MODO EDICIÓN
+    // ---------------------------
+    if (idEditar) {
+        const index = gastos.findIndex(g => g.id === idEditar);
+
+        if (index !== -1) {
+            // Mantener el ID original
+            gastos[index] = { ...gasto, id: idEditar };
+        }
+
+        // Guardar archivo
+        fs.writeFileSync(filePathGI, JSON.stringify(gastos, null, 2));
+
+        alert("Gasto actualizado correctamente");
+
+        // Limpiar estado edición
+        delete form.dataset.editing;
+        form.reset();
+        form.style.display = "none";
+
+        renderGastosInternos();
+        return;
+    }
+
+    // ---------------------------
+    // 🔥 NUEVO REGISTRO (NO EDICIÓN)
+    // ---------------------------
+
+    // Validar duplicados SOLO en creación
     const yaExiste = gastos.some(g =>
         g.periodo === gasto.periodo &&
         g.sector === gasto.sector &&
@@ -413,21 +451,21 @@ function guardarGastoInterno(e) {
 
     // Guardar nuevo gasto
     gastos.push(gasto);
+
     try {
         fs.writeFileSync(filePathGI, JSON.stringify(gastos, null, 2));
         alert('Gasto guardado con éxito.');
         renderGastosInternos();
 
-        const form = document.getElementById('gastoInternoForm');
-        if (form) {
-            form.reset();
-            form.style.display = 'none';
-        }
+        form.reset();
+        form.style.display = 'none';
+
     } catch (error) {
         console.error('Error al guardar el gasto:', error);
         alert('Error al guardar el gasto');
     }
 }
+
 
 // Generar ID único para el gasto
 function generarIDGasto() {
@@ -464,13 +502,89 @@ function renderGastosInternos() {
                 <td>${g.aumento}%</td>
                 <td>${formatPesos(g.neto)}</td>
                 <td>${formatPesos(g.total)}</td>
-                <td><button class="btn-secondary" onclick="eliminarGastoInterno('${g.id}')">Eliminar</button></td>
+                <td>
+                 <button class="btn-secondary" onclick="editarGastoInterno('${g.id}')">Editar</button>
+                <button class="btn-danger" onclick="eliminarGastoInterno('${g.id}')">Eliminar</button>
+                </td>
+
             `;
             tbody.appendChild(row);
         });
     } catch (error) {
         console.error('Error al renderizar gastos internos:', error);
     }
+}
+
+function filtrarGastosInternosPorMes() {
+    const mes = document.getElementById("filterMonthGastosI")?.value;
+    const tbody = document.getElementById('gastosInternosTableBody');
+
+    if (!mes) {
+        renderGastosInternos();
+        return;
+    }
+
+    const gastos = JSON.parse(fs.readFileSync(filePathGI, 'utf8'));
+
+    const filtrados = gastos.filter(g => g.periodo === mes);
+
+    tbody.innerHTML = '';
+
+    filtrados.forEach((g) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${g.periodo}</td>
+            <td>${g.sector}</td>
+            <td>${g.servicio}</td>
+            <td>${g.hsTrabajadas}</td>
+            <td>${g.hsLiquidadas}</td>
+            <td>${formatPesos(g.valorHora)}</td>
+            <td>${g.aumento}%</td>
+            <td>${formatPesos(g.neto)}</td>
+            <td>${formatPesos(g.total)}</td>
+            <td>
+                <button class="btn-secondary" onclick="editarGastoInterno('${g.id}')">Editar</button>
+                <button class="btn-danger" onclick="eliminarGastoInterno('${g.id}')">Eliminar</button>
+            </td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+document.addEventListener("click", (e) => {
+    if (e.target.id === "applyFiltersGastosI") {
+        filtrarGastosInternosPorMes();
+    }
+});
+
+
+function editarGastoInterno(id) {
+    if (!fs.existsSync(filePathGI)) return;
+
+    const gastos = JSON.parse(fs.readFileSync(filePathGI, 'utf8'));
+    const gasto = gastos.find(g => g.id === id);
+
+    if (!gasto) {
+        alert("No se encontró el gasto interno.");
+        return;
+    }
+
+    // Mostrar formulario y cargar datos
+    const form = document.getElementById('gastoInternoForm');
+    form.style.display = 'block';
+
+    document.getElementById('inputPeriodoGI').value = gasto.periodo;
+    document.getElementById('inputSectorGI').value = gasto.sector;
+    document.getElementById('inputServicioGI').value = gasto.servicio;
+    document.getElementById('inputHsTrabajadasGI').value = gasto.hsTrabajadas;
+    document.getElementById('inputHsLiquidadasGI').value = gasto.hsLiquidadas;
+    document.getElementById('inputValorHoraGI').value = gasto.valorHora;
+    document.getElementById('inputAumentoGI').value = gasto.aumento;
+    document.getElementById('inputNetoGI').value = gasto.neto;
+    document.getElementById('inputTotalGI').value = gasto.total;
+    
+
+    form.dataset.editing = id;
 }
 
 // Eliminar gasto interno
