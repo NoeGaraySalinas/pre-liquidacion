@@ -1,3 +1,62 @@
 [
-  
+  {
+    "id": "2025-12_sas_arcos_del_cerro_-_limpieza",
+    "periodo": "2025-12",
+    "sector": "SAS",
+    "servicio": "Arcos del Cerro - Limpieza",
+    "hsTrabajadas": 2,
+    "hsLiquidadas": 2,
+    "valorHora": 10700.91,
+    "aumento": 2.62,
+    "neto": 21962.55,
+    "total": 21962.55
+  },
+  {
+    "id": "2025-12_sas_optica_clarylent",
+    "periodo": "2025-12",
+    "sector": "SAS",
+    "servicio": "Optica Clarylent",
+    "hsTrabajadas": 1,
+    "hsLiquidadas": 1,
+    "valorHora": 9862.08,
+    "aumento": 2.62,
+    "neto": 10120.47,
+    "total": 10120.47
+  },
+  {
+    "id": "2025-12_sas_quo_estrategia",
+    "periodo": "2025-12",
+    "sector": "SAS",
+    "servicio": "Quo Estrategia",
+    "hsTrabajadas": 1,
+    "hsLiquidadas": 1,
+    "valorHora": 12308.77,
+    "aumento": 2.62,
+    "neto": 12631.26,
+    "total": 12631.26
+  },
+  {
+    "id": "2025-12_sas_tru_motos_-_suc_olmos",
+    "periodo": "2025-12",
+    "sector": "SAS",
+    "servicio": "Tru Motos - Suc Olmos",
+    "hsTrabajadas": 3,
+    "hsLiquidadas": 3,
+    "valorHora": 12341.19,
+    "aumento": 2.62,
+    "neto": 37993.59,
+    "total": 37993.59
+  },
+  {
+    "id": "2025-12_sas_tru_motos_-_suc_sarmiento",
+    "periodo": "2025-12",
+    "sector": "SAS",
+    "servicio": "Tru Motos - Suc Sarmiento",
+    "hsTrabajadas": 1,
+    "hsLiquidadas": 1,
+    "valorHora": 12341.19,
+    "aumento": 2.62,
+    "neto": 12664.53,
+    "total": 12664.53
+  }
 ]

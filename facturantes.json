@@ -8,15 +8,15 @@
     "id": 1744642999038,
     "nombre": "Sandra Cordoba",
     "cuilCuit": "27213961751",
-    "topeMensual": 2447891.32,
-    "topeAnual": 29374695.9
+    "topeMensual": 2817448.3,
+    "topeAnual": 33809379.57
   },
   {
+    "id": 1744643335002,
     "nombre": "Felipe Nogales",
     "cuilCuit": "20167440585",
-    "id": 1744643335002,
-    "topeMensual": 4441534.77,
-    "topeAnual": 53298417.3
+    "topeMensual": 5112071.14,
+    "topeAnual": 61344853.64
   },
   {
     "nombre": "No se factura",
@@ -24,25 +24,25 @@
     "id": 1744643373213
   },
   {
+    "id": 1744643441060,
     "nombre": "Maximiliano Nogales",
     "cuilCuit": "20467653769",
-    "id": 1744643441060,
-    "topeMensual": 1953265.86,
-    "topeAnual": 23439190.34
+    "topeMensual": 2817448.3,
+    "topeAnual": 33809379.57
   },
   {
+    "id": 1744643532677,
     "nombre": "Aylen Nogales",
     "cuilCuit": "27456912171",
-    "id": 1744643532677,
-    "topeMensual": 2447891.32,
-    "topeAnual": 29374695.9
+    "topeMensual": 2817448.3,
+    "topeAnual": 33809379.57
   },
   {
+    "id": 1744644185428,
     "nombre": "Omar Nogales",
     "cuilCuit": "20184087295",
-    "id": 1744644185428,
-    "topeMensual": 651088.62,
-    "topeAnual": 7813063.45
+    "topeMensual": 749383.15,
+    "topeAnual": 8992597.87
   },
   {
     "nombre": "Sin Factura",

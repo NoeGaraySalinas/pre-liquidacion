@@ -1,6 +1,13 @@
 // renderer-aumento.js
 console.log("renderer-aumento.js cargado ✅");
 
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
+
 // =====================
 //   CARGAR FORMULARIO
 // =====================

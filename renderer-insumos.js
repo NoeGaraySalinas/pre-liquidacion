@@ -1,5 +1,13 @@
 // Rutas de archivos
 const rutaInsumos = path.join(__dirname, 'insumos.json');
+let facturaInsumoEnEdicion = null;
+
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
 
 // Función para cargar insumos desde archivo
 function cargarInsumos() {
@@ -44,7 +52,7 @@ function formatPesos(valor) {
 }
 
 // Función principal para cargar el formulario de insumos
-function loadInsumosForm() {
+async function loadInsumosForm() {
     console.log('Cargando formulario de insumos...');
 
     const div3 = document.getElementById('div3');
@@ -60,42 +68,55 @@ function loadInsumosForm() {
     const formularioInsumos = document.createElement('div');
     formularioInsumos.id = 'formularioInsumos';
     formularioInsumos.innerHTML = `
-        <h2>Registro de Facturas de Insumos</h2>
+        <h2 id="tituloInsumos">Registro de Facturas de Insumos</h2>
         <br>
+
         <div class="filtros-insumos">
             <input type="month" id="filterMonthInsumos" class="input-filtro">
             <input type="text" id="filterClienteInsumos" placeholder="Filtrar por cliente" class="input-filtro">
             <button id="btnFiltrarInsumos" class="btn-filtrar">Filtrar</button>
             <button id="btnLimpiarFiltrosInsumos" class="btn-secundario">Limpiar</button>
         </div>
-        <br>
-        <br>
+
+        <br><br>
+
         <button id="btnNuevaFacturaInsumo" class="btn-primario">+ Nueva Factura</button>
         
         <form id="facturaInsumoForm" class="formulario-delimitado oculto" style="display:none;">
+            
             <div class="seccion-formulario">
                 <h3>Datos de la Factura</h3>
+
                 <div class="fila-formulario">
                     <div class="grupo-formulario">
                         <label for="fechaFacturaInsumo">Fecha*</label>
                         <input type="date" id="fechaFacturaInsumo" required class="input-form">
                     </div>
+
                     <div class="grupo-formulario">
                         <label for="clienteFacturaInsumo">Cliente*</label>
                         <input type="text" id="clienteFacturaInsumo" list="listaClientes" required class="input-form">
                         <datalist id="listaClientes"></datalist>
                     </div>
+
+                    <div class="grupo-formulario">
+                        <label for="facturanteFacturaInsumo">Facturante*</label>
+                        <select id="facturanteFacturaInsumo" required class="input-form">
+                            <option value="">Seleccionar</option>
+                        </select>
+                    </div>
+
                     <div class="grupo-formulario">
                         <label for="tipoFacturaInsumo">Tipo de Factura*</label>
                         <select id="tipoFacturaInsumo" required class="input-form">
-                        <option value="">Seleccionar</option>
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="Fce-A">Fce-A</option>
-                        <option value="Fce-B">Fce-B</option>
-                        <option value="Sin factura">Sin factura</option>
-                      </select>
+                            <option value="">Seleccionar</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="Fce-A">Fce-A</option>
+                            <option value="Fce-B">Fce-B</option>
+                            <option value="Sin factura">Sin factura</option>
+                        </select>
                     </div>
 
                     <div class="grupo-formulario">
@@ -107,6 +128,7 @@ function loadInsumosForm() {
             
             <div class="seccion-formulario">
                 <h3>Detalle de Insumos</h3>
+
                 <div id="detalleInsumos">
                     <div class="item-insumo">
                         <input type="text" class="nombreInsumo input-form" placeholder="Nombre del insumo" required>
@@ -115,20 +137,24 @@ function loadInsumosForm() {
                         <button type="button" class="btn-eliminar-item">×</button>
                     </div>
                 </div>
+
                 <button type="button" id="btnAgregarItemInsumo" class="btn-secundario">+ Agregar Item</button>
             </div>
             
             <div class="seccion-formulario">
                 <h3>Totales</h3>
+
                 <div class="fila-formulario">
                     <div class="grupo-formulario">
                         <label for="subtotalFacturaInsumo">Subtotal</label>
                         <input type="text" id="subtotalFacturaInsumo" readonly class="input-form">
                     </div>
+
                     <div class="grupo-formulario">
                         <label for="ivaFacturaInsumo">IVA (21%)</label>
                         <input type="text" id="ivaFacturaInsumo" readonly class="input-form">
                     </div>
+
                     <div class="grupo-formulario">
                         <label for="totalFacturaInsumo">Total</label>
                         <input type="text" id="totalFacturaInsumo" readonly class="input-form">
@@ -147,7 +173,8 @@ function loadInsumosForm() {
                 <thead>
                     <tr>
                         <th>Fecha</th>
-                        <th>Tipo de Factura</th>
+                        <th>Facturante</th>
+                        <th>Tipo</th>
                         <th>N° Factura</th>
                         <th>Cliente</th>
                         <th>Cantidad Items</th>
@@ -160,21 +187,53 @@ function loadInsumosForm() {
         </div>
     `;
 
-    // Agregamos el formulario al div3
+    // Render en pantalla
     div3.appendChild(formularioInsumos);
+
+    // Cargas iniciales
     cargarClientesEnDatalist();
+    cargarFacturantesEnSelect(); // 👈 NUEVO (desde facturantes.json)
 
     setTimeout(() => {
         configurarEventosInsumos();
         renderizarFacturasInsumos();
 
-        // Disparar cálculo cuando cambia el tipo de factura
         const tipoFacturaSelect = document.getElementById('tipoFacturaInsumo');
         if (tipoFacturaSelect) {
             tipoFacturaSelect.addEventListener('change', calcularTotalesFacturaInsumo);
         }
     }, 50);
 }
+
+async function cargarFacturantesEnSelect() {
+    const select = document.getElementById("facturanteFacturaInsumo");
+    if (!select) return;
+
+    select.innerHTML = '<option value="">Seleccionar</option>';
+
+    let facturantes;
+
+    try {
+        facturantes = await ipcRenderer.invoke("get-facturantes");
+    } catch (error) {
+        console.error("Error obteniendo facturantes:", error);
+        return;
+    }
+
+    if (!Array.isArray(facturantes)) {
+        console.error("Facturantes no es un array:", facturantes);
+        return;
+    }
+
+    facturantes.forEach(f => {
+        const option = document.createElement("option");
+        option.value = f.nombre;
+        option.textContent = f.nombre;
+        select.appendChild(option);
+    });
+}
+
+
 
 function configurarEventosInsumos() {
     // Mostrar/ocultar formulario
@@ -183,6 +242,7 @@ function configurarEventosInsumos() {
         btnNuevaFactura.addEventListener('click', () => {
             const form = document.getElementById('facturaInsumoForm');
             if (form) {
+                facturaInsumoEnEdicion = null; // 🔑 CLAVE: salir del modo edición
                 form.reset();
                 form.style.display = 'block';
                 document.getElementById('fechaFacturaInsumo').valueAsDate = new Date();
@@ -214,6 +274,7 @@ function configurarEventosInsumos() {
         btnCancelar.addEventListener('click', () => {
             const form = document.getElementById('facturaInsumoForm');
             if (form) {
+                facturaInsumoEnEdicion = null; // 🔑 también al cancelar
                 form.style.display = 'none';
             }
         });
@@ -230,6 +291,7 @@ function configurarEventosInsumos() {
         btnLimpiar.addEventListener('click', limpiarFiltrosInsumos);
     }
 }
+
 
 function agregarItemInsumo() {
     const detalle = document.getElementById('detalleInsumos');
@@ -312,8 +374,9 @@ function guardarFacturaInsumo(e) {
     const cliente = document.getElementById('clienteFacturaInsumo').value;
     const numero = document.getElementById('numeroFacturaInsumo').value;
     const tipo = document.getElementById('tipoFacturaInsumo').value;
+    const facturante = document.getElementById('facturanteFacturaInsumo').value;
 
-    if (!fecha || !cliente || !numero || !tipo) {
+    if (!fecha || !cliente || !numero || !tipo || !facturante) {
         alert('Complete todos los campos obligatorios');
         return;
     }
@@ -332,29 +395,91 @@ function guardarFacturaInsumo(e) {
         return;
     }
 
-    const parseImporte = (valor) => parseFloat(valor.replace(/\./g, '').replace(',', '.')) || 0;
+    const subtotal = parseFloat(document.getElementById('subtotalFacturaInsumo').dataset.valor) || 0;
+    const iva = parseFloat(document.getElementById('ivaFacturaInsumo').dataset.valor) || 0;
+    const total = parseFloat(document.getElementById('totalFacturaInsumo').dataset.valor) || 0;
 
-    const subtotal = parseFloat(document.getElementById('subtotalFacturaInsumo').getAttribute('data-valor')) || 0;
-    const iva = parseFloat(document.getElementById('ivaFacturaInsumo').getAttribute('data-valor')) || 0;
-    const total = parseFloat(document.getElementById('totalFacturaInsumo').getAttribute('data-valor')) || 0;
+    if (facturaInsumoEnEdicion) {
+        const index = insumos.findIndex(f => f.id === facturaInsumoEnEdicion);
+        if (index === -1) return;
 
-    const factura = {
-        id: Date.now().toString(),
-        fecha,
-        numero,
-        cliente,
-        tipo,
-        items,
-        subtotal,
-        iva,
-        total
-    };
+        insumos[index] = {
+            ...insumos[index],
+            fecha,
+            numero,
+            cliente,
+            facturante,
+            tipo,
+            items,
+            subtotal,
+            iva,
+            total
+        };
 
-    insumos.push(factura);
+        facturaInsumoEnEdicion = null;
+    } else {
+        insumos.push({
+            id: Date.now().toString(),
+            fecha,
+            numero,
+            cliente,
+            facturante,
+            tipo,
+            items,
+            subtotal,
+            iva,
+            total
+        });
+    }
+
     guardarInsumos();
-
     document.getElementById('facturaInsumoForm').style.display = 'none';
     renderizarFacturasInsumos();
+}
+
+
+function editarFacturaInsumo(id) {
+    const factura = insumos.find(f => f.id === id);
+    if (!factura) {
+        console.warn("No se encontró la factura a editar:", id);
+        return;
+    }
+
+    facturaInsumoEnEdicion = id;
+
+    const form = document.getElementById('facturaInsumoForm');
+    form.style.display = 'block';
+
+    document.getElementById('tituloInsumos').textContent = 'Editar Factura de Insumos';
+    document.getElementById('fechaFacturaInsumo').value = factura.fecha;
+    document.getElementById('clienteFacturaInsumo').value = factura.cliente;
+    document.getElementById('facturanteFacturaInsumo').value = factura.facturante || '';
+    document.getElementById('tipoFacturaInsumo').value = factura.tipo;
+    document.getElementById('numeroFacturaInsumo').value = factura.numero;
+
+    const detalle = document.getElementById('detalleInsumos');
+    detalle.innerHTML = '';
+
+    factura.items.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'item-insumo';
+
+        div.innerHTML = `
+      <input type="text" class="nombreInsumo input-form" value="${item.nombre}" required>
+      <input type="number" class="cantidadInsumo input-form" value="${item.cantidad}" min="1" required>
+      <input type="text" class="precioInsumo input-form" value="${item.precio}" required>
+      <button type="button" class="btn-eliminar-item">×</button>
+    `;
+
+        div.querySelector('.btn-eliminar-item').addEventListener('click', () => {
+            detalle.removeChild(div);
+            calcularTotalesFacturaInsumo();
+        });
+
+        detalle.appendChild(div);
+    });
+
+    calcularTotalesFacturaInsumo();
 }
 
 function renderizarFacturasInsumos(facturasFiltradas = null) {
@@ -374,15 +499,17 @@ function renderizarFacturasInsumos(facturasFiltradas = null) {
         const fila = document.createElement('tr');
 
         fila.innerHTML = `
-            <td>${new Date(factura.fecha).toLocaleDateString()}</td>
-            <td>${factura.tipo}</td>
-            <td>${factura.numero}</td>
-            <td>${factura.cliente}</td>
-            <td>${factura.items.length}</td>
-            <td>${formatPesos(factura.total)}</td>
+          <td>${new Date(factura.fecha).toLocaleDateString()}</td>
+          <td>${factura.facturante || '—'}</td>
+          <td>${factura.tipo}</td>
+          <td>${factura.numero}</td>
+          <td>${factura.cliente}</td>
+          <td>${factura.items.length}</td>
+          <td>${formatPesos(factura.total)}</td>
             <td>
-                <button class="btn-accion" onclick="verDetalleFacturaInsumo('${factura.id}')">👁️</button>
-                <button class="btn-accion btn-peligro" onclick="eliminarFacturaInsumo('${factura.id}')">🗑️</button>
+              <button class="btn-accion" onclick="verDetalleFacturaInsumo('${factura.id}')">👁️</button>
+              <button class="btn-accion" onclick="editarFacturaInsumo('${factura.id}')">✏️</button>
+              <button class="btn-accion btn-peligro" onclick="eliminarFacturaInsumo('${factura.id}')">🗑️</button>
             </td>
         `;
 

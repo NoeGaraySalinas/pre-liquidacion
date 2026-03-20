@@ -13,6 +13,12 @@ if (!window.fs) {
 
 console.log("Renderer de Clientes cargado correctamente");
 
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
 
 
 // Inicializar solo lo relacionado con clientes cuando el DOM esté listo

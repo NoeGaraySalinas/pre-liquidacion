@@ -1,103 +1,122 @@
-const fs = require('fs'); // Módulo de Node.js para manejar archivos
+const fs = require('fs');
+const path = require('path');
+const { app } = require('electron');
 
-const clientesFile = './clientes.json'; // Ruta al archivo donde se almacenarán los clientes
+/* ===============================
+   RUTA SEGURA PARA DATOS
+================================ */
 
-// Verifica si el archivo de clientes existe, si no, lo crea vacío
+// Ruta segura fuera del asar
+const dataDir = app.getPath('userData');
+const clientesFile = path.join(dataDir, 'clientes.json');
+
+// LOG DESPUÉS de definirla
+console.log('Clientes JSON:', clientesFile);
+
+// Crear archivo si no existe
 if (!fs.existsSync(clientesFile)) {
-    fs.writeFileSync(clientesFile, JSON.stringify([])); // Crea un archivo vacío con un array
+  fs.writeFileSync(clientesFile, JSON.stringify([], null, 2));
 }
 
-/**
- * Función para agregar un cliente.
- * @param {string} nombre Nombre o razón social del cliente.
- * @param {string} alias Alias del cliente.
- * @param {string} cuit CUIT del cliente.
- * @param {string} domicilioFisico Domicilio físico del cliente.
- * @param {string} domicilioFacturacion Domicilio de facturación del cliente.
- * @param {string} iva IVA del cliente.
- * @param {string} condVenta Condición de venta del cliente.
- * @param {function} callback Función de callback con los resultados.
- */
-const agregarCliente = (nombre, alias, cuit, domicilioFisico, domicilioFacturacion, iva, condVenta, callback) => {
-  // Lee el archivo de clientes
+/* ===============================
+   AGREGAR CLIENTE
+================================ */
+
+const agregarCliente = (
+  nombre,
+  alias,
+  cuit,
+  domicilioFisico,
+  domicilioFacturacion,
+  iva,
+  condVenta,
+  callback
+) => {
   fs.readFile(clientesFile, 'utf8', (err, data) => {
-      if (err) {
-          return callback(err);
+    if (err) return callback(err);
+
+    const clientes = JSON.parse(data);
+
+    const nuevoCliente = {
+      id: clientes.length ? Math.max(...clientes.map(c => c.id)) + 1 : 1,
+      nombre,
+      alias,
+      cuit,
+      domicilioFisico,
+      domicilioFacturacion,
+      iva,
+      condVenta
+    };
+
+    clientes.push(nuevoCliente);
+
+    fs.writeFile(
+      clientesFile,
+      JSON.stringify(clientes, null, 2),
+      (err) => {
+        if (err) return callback(err);
+        callback(null, nuevoCliente.id);
       }
-
-      const clientes = JSON.parse(data); // Convierte el contenido JSON a un array de objetos
-
-      // Crear un nuevo objeto cliente con los nuevos campos
-      const nuevoCliente = {
-          id: clientes.length + 1, // Generamos un ID simple
-          nombre: nombre,
-          alias: alias,
-          cuit: cuit,
-          domicilioFisico: domicilioFisico,
-          domicilioFacturacion: domicilioFacturacion,
-          iva: iva,
-          condVenta: condVenta
-      };
-
-      // Agregar el nuevo cliente al array de clientes
-      clientes.push(nuevoCliente);
-
-      // Guardar el array actualizado de clientes en el archivo
-      fs.writeFile(clientesFile, JSON.stringify(clientes, null, 2), (err) => {
-          if (err) {
-              return callback(err);
-          }
-          callback(null, nuevoCliente.id); // Llama al callback con el ID del nuevo cliente
-      });
+    );
   });
 };
 
-// Actualizar Cliente
-function actualizarCliente(clienteEditado, callback) {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) return callback(err);
-  
-      let clientes = JSON.parse(data);
-      const index = clientes.findIndex(c => c.id == clienteEditado.id);
-  
-      if (index !== -1) {
-        clientes[index] = clienteEditado;
-  
-        fs.writeFile(filePath, JSON.stringify(clientes, null, 2), (err) => {
-          if (err) return callback(err);
-          callback(null);
-        });
-      } else {
-        callback(new Error('Cliente no encontrado'));
-      }
-    });
-  }
+/* ===============================
+   ACTUALIZAR CLIENTE
+================================ */
 
-  // Borrar Cliente
-function borrarCliente(id, callback) {
-    fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) return callback(err);
-  
-      let clientes = JSON.parse(data);
-      clientes = clientes.filter(c => c.id != id);
-  
-      fs.writeFile(filePath, JSON.stringify(clientes, null, 2), (err) => {
+function actualizarCliente(clienteEditado, callback) {
+  fs.readFile(clientesFile, 'utf8', (err, data) => {
+    if (err) return callback(err);
+
+    let clientes = JSON.parse(data);
+    const index = clientes.findIndex(c => c.id == clienteEditado.id);
+
+    if (index === -1) {
+      return callback(new Error('Cliente no encontrado'));
+    }
+
+    clientes[index] = clienteEditado;
+
+    fs.writeFile(
+      clientesFile,
+      JSON.stringify(clientes, null, 2),
+      (err) => {
         if (err) return callback(err);
         callback(null);
-      });
-    });
-  }
-
-function eliminarCliente(id) {
-  return new Promise((resolve, reject) => {
-      db.run('DELETE FROM clientes WHERE id = ?', [id], function (err) {
-          if (err) {
-              reject(err);
-          } else {
-              resolve();
-          }
-      });
+      }
+    );
   });
 }
 
-module.exports = { agregarCliente, eliminarCliente, borrarCliente, actualizarCliente };
+/* ===============================
+   BORRAR CLIENTE
+================================ */
+
+function borrarCliente(id, callback) {
+  fs.readFile(clientesFile, 'utf8', (err, data) => {
+    if (err) return callback(err);
+
+    let clientes = JSON.parse(data);
+    clientes = clientes.filter(c => c.id != id);
+
+    fs.writeFile(
+      clientesFile,
+      JSON.stringify(clientes, null, 2),
+      (err) => {
+        if (err) return callback(err);
+        callback(null);
+      }
+    );
+  });
+}
+
+/* ===============================
+   EXPORTS
+================================ */
+
+module.exports = {
+  agregarCliente,
+  actualizarCliente,
+  borrarCliente
+};

@@ -6,6 +6,15 @@ const fs = require('fs');
 console.log("renderer-servicios.js cargado correctamente");
 console.log("ipcRenderer real?", ipcRenderer.send ? "✅ sí" : "❌ no");
 
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
+
+let serviciosCache = [];
+
 // Mover estas funciones fuera para que no se redefinan
 function formatDecimal(num) {
   return parseFloat(num).toFixed(2);
@@ -82,6 +91,15 @@ function loadServiciosTable() {
     <h2>Gestión de Servicios</h2>
     <button id="agregarServicioBtn">Agregar Servicio</button>
 
+    <div class="form-group">
+    <input
+      type="text"
+      id="filtroServicios"
+      placeholder="Buscar servicio..."
+      autocomplete="off"
+     />
+    </div>
+
     <form id="serviceForm" style="display: none; margin-top: 10px;">
       <div class="form-group">
         <label for="nombre">Nombre:</label>
@@ -96,6 +114,13 @@ function loadServiciosTable() {
       <div class="form-group">
         <label for="horasAutorizadas">Horas autorizadas:</label>
         <input type="number" id="horasAutorizadas" placeholder="Horas autorizadas" step="0.01" min="0.01" required>
+      </div>
+
+      <div class="form-group">
+         <label>
+         <input type="checkbox" id="facturacionFija">
+        Facturación fija
+       </label>
       </div>
 
       <div class="form-group">
@@ -151,6 +176,21 @@ function loadServiciosTable() {
 
   setupServicioButtonHandlers();
   loadServiciosData();
+
+  // 🔍 Filtro de servicios
+  const filtroInput = document.getElementById("filtroServicios");
+  if (filtroInput) {
+    filtroInput.addEventListener("input", () => {
+      const texto = filtroInput.value.toLowerCase().trim();
+
+      const serviciosFiltrados = serviciosCache.filter(servicio =>
+        servicio.nombre.toLowerCase().includes(texto)
+      );
+
+      populateServiciosTable(serviciosFiltrados);
+    });
+  }
+
 }
 
 function setupServicioButtonHandlers() {
@@ -177,6 +217,7 @@ function hideServicioForm() {
   document.getElementById("serviceForm").reset();
   document.getElementById("serviceForm").style.display = "none";
   document.getElementById("servicioIdEdit").value = "";
+  document.getElementById("facturacionFija").checked = false;
 }
 
 function saveNewServicio() {
@@ -186,7 +227,8 @@ function saveNewServicio() {
     horasAutorizadas: parseFloat(document.getElementById('horasAutorizadas').value),
     categoria: document.getElementById('categoria').value,
     valorHora: parseFloat(document.getElementById('valorHora').value),
-    gremio: document.getElementById('gremio').value   //  <-- NUEVO
+    gremio: document.getElementById('gremio').value,
+    facturacionFija: document.getElementById('facturacionFija').checked
   };
 
 
@@ -214,7 +256,8 @@ function saveServicioEditado(event) {
     horasAutorizadas: parseFloat(document.getElementById("horasAutorizadas").value),
     categoria: document.getElementById("categoria").value,
     valorHora: parseFloat(document.getElementById("valorHora").value),
-    gremio: document.getElementById("gremio").value   // <-- agregado
+    gremio: document.getElementById("gremio").value,
+    facturacionFija: document.getElementById('facturacionFija').checked
   };
 
 
@@ -254,9 +297,11 @@ async function loadServiciosData() {
 
     if (!servicios || servicios.length === 0) {
       tableBody.innerHTML = "<tr><td colspan='7'>No hay servicios registrados.</td></tr>";
+      serviciosCache = [];            // 👈 opcional, pero prolijo
       return;
     }
 
+    serviciosCache = servicios;       // 👈 ESTE ES EL PASO CLAVE
     populateServiciosTable(servicios);
   } catch (error) {
     console.error("Error al obtener servicios:", error);
@@ -303,6 +348,7 @@ function populateServiciosTable(servicios) {
       document.getElementById("nombre").value = servicio.nombre;
       document.getElementById("operarios").value = servicio.operarios;
       document.getElementById("horasAutorizadas").value = servicio.horasAutorizadas;
+      document.getElementById("facturacionFija").checked = servicio.facturacionFija === true;
       document.getElementById("categoria").value = servicio.categoria;
       document.getElementById("valorHora").value = servicio.valorHora;
       document.getElementById("gremio").value = servicio.gremio ?? "";

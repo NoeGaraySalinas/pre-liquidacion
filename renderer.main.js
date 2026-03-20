@@ -1,4 +1,10 @@
-
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
+  
 
 // Hacer ipcRenderer disponible globalmente para otros scripts
 window.ipcRenderer = ipcRenderer;

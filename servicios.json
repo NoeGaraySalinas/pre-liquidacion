@@ -14,8 +14,10 @@
     "operarios": 1,
     "horasAutorizadas": 32,
     "categoria": "mensual",
-    "valorHora": 17246.49,
-    "gremio": "SOELSAC"
+    "valorHora": 18596.05,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:23:52.517Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1743083669431",
@@ -23,8 +25,10 @@
     "operarios": 2,
     "horasAutorizadas": 12,
     "categoria": "mensual",
-    "valorHora": 17246.49,
-    "gremio": "SOELSAC"
+    "valorHora": 18596.05,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:25:11.667Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1743083684997",
@@ -32,8 +36,10 @@
     "operarios": 1,
     "horasAutorizadas": 8,
     "categoria": "mensual",
-    "valorHora": 17246.49,
-    "gremio": "SOELSAC"
+    "valorHora": 18596.05,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:26:01.491Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1743084188824",
@@ -41,8 +47,10 @@
     "operarios": 1,
     "horasAutorizadas": 12,
     "categoria": "mensual",
-    "valorHora": 17246.49,
-    "gremio": "SOELSAC"
+    "valorHora": 18596.05,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:26:49.734Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1743084215707",
@@ -50,8 +58,10 @@
     "operarios": 1,
     "horasAutorizadas": 4,
     "categoria": "mensual",
-    "valorHora": 17246.49,
-    "gremio": "SOELSAC"
+    "valorHora": 18596.05,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:27:34.412Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746734491434",
@@ -68,8 +78,10 @@
     "operarios": 1,
     "horasAutorizadas": 160,
     "categoria": "mensual",
-    "valorHora": 13915.53,
-    "gremio": "SOELSAC"
+    "valorHora": 15004.44,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:28:29.903Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744206969976",
@@ -77,8 +89,10 @@
     "operarios": 3,
     "horasAutorizadas": 192,
     "categoria": "mensual",
-    "valorHora": 10416.54,
-    "gremio": "SOELSAC"
+    "valorHora": 12017.53,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:29:26.271Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744644323705",
@@ -102,10 +116,13 @@
     "id": "1744644844861",
     "nombre": "Boixados",
     "operarios": 1,
-    "horasAutorizadas": 32,
+    "horasAutorizadas": 80,
     "categoria": "mensual",
-    "valorHora": 11410.47,
-    "gremio": "SOELSAC"
+    "valorHora": 12303.36,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:13:43.946Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744644895623",
@@ -113,8 +130,11 @@
     "operarios": 2,
     "horasAutorizadas": 160,
     "categoria": "mensual",
-    "valorHora": 15146,
-    "gremio": "SOELSAC"
+    "valorHora": 16331.2,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:20:12.698Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744644910685",
@@ -122,17 +142,23 @@
     "operarios": 1,
     "horasAutorizadas": 40,
     "categoria": "mensual",
-    "valorHora": 15146,
-    "gremio": "SOELSAC"
+    "valorHora": 16331.2,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:23:06.639Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744644925921",
     "nombre": "Boreal (Cordoba)",
-    "operarios": 2,
-    "horasAutorizadas": 160,
+    "operarios": 1,
+    "horasAutorizadas": 175,
     "categoria": "mensual",
-    "valorHora": 11662.09,
-    "gremio": "SOELSAC"
+    "valorHora": 12574.67,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:24:01.978Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746730141544",
@@ -140,10 +166,9 @@
     "operarios": 1,
     "horasAutorizadas": 180,
     "categoria": "mensual",
-    "valorHora": 15203.55,
+    "valorHora": 15880.48,
     "gremio": "SUVICO",
-    "ultimaActualizacion": "2025-12-30T14:10:57.716Z",
-    "periodoActualizacion": "2025-11"
+    "facturacionFija": false
   },
   {
     "id": "1744644925920",
@@ -196,8 +221,10 @@
     "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 11845.76,
-    "gremio": "SOELSAC"
+    "valorHora": 12772.71,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:36:03.145Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744645798404",
@@ -211,11 +238,14 @@
   {
     "id": "1744645798405",
     "nombre": "Consorcio Arruabarrena",
-    "operarios": 3,
+    "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 12101.85,
-    "gremio": "SOELSAC"
+    "valorHora": 13048.83,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:27:51.346Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746647027949",
@@ -241,8 +271,9 @@
     "operarios": 1,
     "horasAutorizadas": 80,
     "categoria": "mensual",
-    "valorHora": 13070.93,
-    "gremio": "SOELSAC"
+    "valorHora": 13779.58,
+    "gremio": "SOELSAC",
+    "facturacionFija": true
   },
   {
     "id": "1744648693086",
@@ -259,8 +290,11 @@
     "operarios": 1,
     "horasAutorizadas": 80,
     "categoria": "mensual",
-    "valorHora": 8497.63,
-    "gremio": "SOELSAC"
+    "valorHora": 9162.59,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:28:52.466Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646088798",
@@ -268,8 +302,10 @@
     "operarios": 1,
     "horasAutorizadas": 80,
     "categoria": "mensual",
-    "valorHora": 8497.63,
-    "gremio": "SOELSAC"
+    "valorHora": 9162.59,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:37:45.442Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646057167",
@@ -277,8 +313,11 @@
     "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 13443.57,
-    "gremio": "SOELSAC"
+    "valorHora": 14495.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:30:02.381Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646072548",
@@ -286,8 +325,11 @@
     "operarios": 1,
     "horasAutorizadas": 36,
     "categoria": "mensual",
-    "valorHora": 13443.57,
-    "gremio": "SOELSAC"
+    "valorHora": 14495.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:32:50.564Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646109763",
@@ -295,8 +337,11 @@
     "operarios": 3,
     "horasAutorizadas": 72,
     "categoria": "mensual",
-    "valorHora": 8766.5,
-    "gremio": "SOELSAC"
+    "valorHora": 9668.01,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-02-03T14:39:06.879Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646145260",
@@ -304,8 +349,10 @@
     "operarios": 2,
     "horasAutorizadas": 15,
     "categoria": "mensual",
-    "valorHora": 8766.5,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.49,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:40:28.405Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646165040",
@@ -313,8 +360,11 @@
     "operarios": 1,
     "horasAutorizadas": 2,
     "categoria": "mensual",
-    "valorHora": 8766.5,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.49,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T14:42:19.479Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646181679",
@@ -331,8 +381,11 @@
     "operarios": 3,
     "horasAutorizadas": 72,
     "categoria": "mensual",
-    "valorHora": 8766.5,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.49,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:43:05.593Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646225252",
@@ -340,17 +393,21 @@
     "operarios": 2,
     "horasAutorizadas": 8,
     "categoria": "mensual",
-    "valorHora": 8766.5,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.49,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:43:14.518Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646238713",
     "nombre": "Edificio Florida Park (Vidrios)",
     "operarios": 1,
     "horasAutorizadas": 2,
-    "categoria": "FO",
-    "valorHora": 8766.5,
-    "gremio": "FO"
+    "categoria": "mensual",
+    "valorHora": 9241.78,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-01-06T14:37:00.105Z",
+    "periodoActualizacion": "2025-12"
   },
   {
     "id": "1744646250981",
@@ -358,8 +415,11 @@
     "operarios": 1,
     "horasAutorizadas": 2,
     "categoria": "mensual",
-    "valorHora": 8766.5,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.49,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T14:44:43.067Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646267563",
@@ -367,8 +427,11 @@
     "operarios": 3,
     "horasAutorizadas": 72,
     "categoria": "mensual",
-    "valorHora": 8766.5,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.49,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T12:45:20.761Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746708221588",
@@ -376,7 +439,7 @@
     "operarios": 1,
     "horasAutorizadas": 3,
     "categoria": "mensual",
-    "valorHora": 8766.5,
+    "valorHora": 9005.83,
     "gremio": "SOELSAC"
   },
   {
@@ -385,8 +448,10 @@
     "operarios": 1,
     "horasAutorizadas": 176,
     "categoria": "mensual",
-    "valorHora": 8651.74,
-    "gremio": "SOELSAC"
+    "valorHora": 9328.74,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:45:40.727Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646634478",
@@ -394,8 +459,11 @@
     "operarios": 1,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 14857.27,
-    "gremio": "SOELSAC"
+    "valorHora": 16019.87,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:04:24.055Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646654235",
@@ -403,17 +471,23 @@
     "operarios": 1,
     "horasAutorizadas": 116,
     "categoria": "mensual",
-    "valorHora": 10148.78,
-    "gremio": "SOELSAC"
+    "valorHora": 10942.94,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:05:54.603Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646673064",
     "nombre": "Edificio Lisandro",
-    "operarios": 2,
+    "operarios": 1,
     "horasAutorizadas": 32,
     "categoria": "mensual",
-    "valorHora": 8411.35,
-    "gremio": "SOELSAC"
+    "valorHora": 9069.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:06:53.038Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646697062",
@@ -421,8 +495,11 @@
     "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 8411.35,
-    "gremio": "SOELSAC"
+    "valorHora": 9069.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:08:49.090Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646713813",
@@ -439,8 +516,11 @@
     "operarios": 1,
     "horasAutorizadas": 48,
     "categoria": "mensual",
-    "valorHora": 8411.35,
-    "gremio": "SOELSAC"
+    "valorHora": 9069.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:10:40.140Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646725596",
@@ -448,8 +528,11 @@
     "operarios": 2,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 7751.3,
-    "gremio": "SOELSAC"
+    "valorHora": 8357.85,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:12:09.983Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646742944",
@@ -457,8 +540,11 @@
     "operarios": 4,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 7751.3,
-    "gremio": "SOELSAC"
+    "valorHora": 8357.85,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:14:17.012Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646760782",
@@ -466,8 +552,11 @@
     "operarios": 2,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 9124.35,
-    "gremio": "SOELSAC"
+    "valorHora": 9838.33,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:15:16.213Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648708270",
@@ -475,8 +564,10 @@
     "operarios": 1,
     "horasAutorizadas": 48,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10318.55,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:51:41.018Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646811532",
@@ -484,8 +575,10 @@
     "operarios": 1,
     "horasAutorizadas": 8,
     "categoria": "mensual",
-    "valorHora": 13632.73,
-    "gremio": "SOELSAC"
+    "valorHora": 14699.51,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:52:36.215Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646830964",
@@ -493,8 +586,10 @@
     "operarios": 3,
     "horasAutorizadas": 176,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10318.55,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:53:41.438Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646847317",
@@ -508,11 +603,14 @@
   {
     "id": "1744646866319",
     "nombre": "Edificio Valentina I",
-    "operarios": 2,
+    "operarios": 1,
     "horasAutorizadas": 12,
     "categoria": "mensual",
-    "valorHora": 12582.32,
-    "gremio": "SOELSAC"
+    "valorHora": 13566.91,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:16:37.324Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646881146",
@@ -520,26 +618,34 @@
     "operarios": 2,
     "horasAutorizadas": 32,
     "categoria": "mensual",
-    "valorHora": 14208.29,
-    "gremio": "SOELSAC"
+    "valorHora": 15320.11,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:56:25.538Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646893116",
     "nombre": "Etiqueta Negra",
-    "operarios": 2,
+    "operarios": 1,
     "horasAutorizadas": 40,
     "categoria": "mensual",
-    "valorHora": 13450.96,
-    "gremio": "SOELSAC"
+    "valorHora": 14503.52,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:22:41.119Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646908544",
     "nombre": "Fiumiccino III",
-    "operarios": 6,
+    "operarios": 1,
     "horasAutorizadas": 96,
     "categoria": "mensual",
-    "valorHora": 9185.06,
-    "gremio": "SOELSAC"
+    "valorHora": 9903.8,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-02-10T12:30:18.141Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646933061",
@@ -547,8 +653,11 @@
     "operarios": 6,
     "horasAutorizadas": 96,
     "categoria": "mensual",
-    "valorHora": 8495.25,
-    "gremio": "SOELSAC"
+    "valorHora": 8688.94,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:28:55.687Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744646959448",
@@ -556,8 +665,10 @@
     "operarios": 1,
     "horasAutorizadas": 32,
     "categoria": "mensual",
-    "valorHora": 9258.51,
-    "gremio": "SOELSAC"
+    "valorHora": 9983.01,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:02:03.984Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647012655",
@@ -583,17 +694,21 @@
     "operarios": 1,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 14321.67,
-    "gremio": "SOELSAC"
+    "valorHora": 15442.36,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:02:54.355Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647062613",
     "nombre": "Grupo Pilar JM",
-    "operarios": 2,
+    "operarios": 1,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 12117.99,
-    "gremio": "SOELSAC"
+    "valorHora": 13066.24,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:03:43.945Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647078025",
@@ -601,8 +716,11 @@
     "operarios": 1,
     "horasAutorizadas": 12,
     "categoria": "mensual",
-    "valorHora": 13467.97,
-    "gremio": "SOELSAC"
+    "valorHora": 14521.86,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:30:47.617Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647095497",
@@ -610,8 +728,11 @@
     "operarios": 2,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 13734.11,
-    "gremio": "SOELSAC"
+    "valorHora": 14808.82,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:31:36.312Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647110287",
@@ -619,8 +740,11 @@
     "operarios": 1,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 9638.28,
-    "gremio": "SOELSAC"
+    "valorHora": 10392.5,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:32:44.431Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647125388",
@@ -628,8 +752,11 @@
     "operarios": 1,
     "horasAutorizadas": 136,
     "categoria": "mensual",
-    "valorHora": 9118.29,
-    "gremio": "SOELSAC"
+    "valorHora": 9831.81,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:40:23.813Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647141286",
@@ -637,8 +764,11 @@
     "operarios": 4,
     "horasAutorizadas": 136,
     "categoria": "mensual",
-    "valorHora": 9118.29,
-    "gremio": "SOELSAC"
+    "valorHora": 9831.81,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:41:23.037Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647153406",
@@ -646,8 +776,11 @@
     "operarios": 2,
     "horasAutorizadas": 136,
     "categoria": "mensual",
-    "valorHora": 9118.29,
-    "gremio": "SOELSAC"
+    "valorHora": 9831.81,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:42:46.880Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647163741",
@@ -655,17 +788,22 @@
     "operarios": 1,
     "horasAutorizadas": 80,
     "categoria": "mensual",
-    "valorHora": 12267.07,
-    "gremio": "SOELSAC"
+    "valorHora": 13226.98,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:04:35.930Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647708763",
     "nombre": "LH Parking",
-    "operarios": 3,
+    "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 9611.72,
-    "gremio": "SOELSAC"
+    "valorHora": 10363.85,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:46:41.834Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647924931",
@@ -691,8 +829,11 @@
     "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 13110.22,
-    "gremio": "SOELSAC"
+    "valorHora": 13760.44,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:59:49.865Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1751036757352",
@@ -700,8 +841,10 @@
     "operarios": 1,
     "horasAutorizadas": 80,
     "categoria": "mensual",
-    "valorHora": 8965.41,
-    "gremio": "SOELSAC"
+    "valorHora": 9666.97,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:07:21.038Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647749661",
@@ -709,8 +852,10 @@
     "operarios": 1,
     "horasAutorizadas": 80,
     "categoria": "mensual",
-    "valorHora": 11162.34,
-    "gremio": "SOELSAC"
+    "valorHora": 12035.81,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:08:47.807Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746714778474",
@@ -718,7 +863,7 @@
     "operarios": 1,
     "horasAutorizadas": 4,
     "categoria": "mensual",
-    "valorHora": 11162.34,
+    "valorHora": 11467.07,
     "gremio": "SOELSAC"
   },
   {
@@ -736,8 +881,11 @@
     "operarios": 1,
     "horasAutorizadas": 48,
     "categoria": "mensual",
-    "valorHora": 11162.34,
-    "gremio": "SOELSAC"
+    "valorHora": 12035.81,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T15:10:36.069Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746730573676",
@@ -756,8 +904,10 @@
     "operarios": 3,
     "horasAutorizadas": 40,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10318.55,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:11:30.014Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647822480",
@@ -783,8 +933,10 @@
     "operarios": 1,
     "horasAutorizadas": 88,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10318.55,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:12:19.559Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647867169",
@@ -792,17 +944,20 @@
     "operarios": 5,
     "horasAutorizadas": 7.5,
     "categoria": "mensual",
-    "valorHora": 8851.01,
+    "valorHora": 9830.96,
     "gremio": "SOELSAC"
   },
   {
     "id": "1744647882203",
     "nombre": "PM Rivera Indarte 529",
-    "operarios": 2,
+    "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10318.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T15:15:20.311Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746715374771",
@@ -810,7 +965,7 @@
     "operarios": 3,
     "horasAutorizadas": 3.5,
     "categoria": "mensual",
-    "valorHora": 8851.01,
+    "valorHora": 9830.96,
     "gremio": "SOELSAC"
   },
   {
@@ -819,8 +974,11 @@
     "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10318.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T15:16:47.836Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746715526837",
@@ -828,7 +986,7 @@
     "operarios": 3,
     "horasAutorizadas": 2.25,
     "categoria": "mensual",
-    "valorHora": 9569.71,
+    "valorHora": 9830.96,
     "gremio": "SOELSAC"
   },
   {
@@ -837,7 +995,7 @@
     "operarios": 1,
     "horasAutorizadas": 2.5,
     "categoria": "mensual",
-    "valorHora": 9569.71,
+    "valorHora": 9830.96,
     "gremio": "SOELSAC"
   },
   {
@@ -846,8 +1004,10 @@
     "operarios": 2,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10088.53,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-01-06T19:50:45.363Z",
+    "periodoActualizacion": "2025-12"
   },
   {
     "id": "1746716263083",
@@ -855,7 +1015,7 @@
     "operarios": 1,
     "horasAutorizadas": 1,
     "categoria": "mensual",
-    "valorHora": 9569.71,
+    "valorHora": 9830.96,
     "gremio": "SOELSAC"
   },
   {
@@ -864,17 +1024,22 @@
     "operarios": 1,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 20340.63,
-    "gremio": "SOELSAC"
+    "valorHora": 21932.31,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:17:38.416Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648326648",
     "nombre": "Quo Estrategia",
     "operarios": 2,
-    "horasAutorizadas": 63,
+    "horasAutorizadas": 60,
     "categoria": "mensual",
-    "valorHora": 11981.67,
-    "gremio": "SOELSAC"
+    "valorHora": 12919.25,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T14:06:11.811Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648338330",
@@ -882,8 +1047,10 @@
     "operarios": 2,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 13502.72,
-    "gremio": "SOELSAC"
+    "valorHora": 14559.32,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:18:29.060Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648369055",
@@ -891,8 +1058,10 @@
     "operarios": 3,
     "horasAutorizadas": 32,
     "categoria": "mensual",
-    "valorHora": 11647.69,
-    "gremio": "SOELSAC"
+    "valorHora": 12559.14,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:19:15.213Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1751920034087",
@@ -909,17 +1078,22 @@
     "operarios": 1,
     "horasAutorizadas": 12,
     "categoria": "mensual",
-    "valorHora": 24510.48,
-    "gremio": "SOELSAC"
+    "valorHora": 25839.33,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-01-06T20:03:25.774Z",
+    "periodoActualizacion": "2025-12"
   },
   {
     "id": "1744648397698",
     "nombre": "Smart Tienda Tecno",
-    "operarios": 2,
+    "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 10416.54,
-    "gremio": "SOELSAC"
+    "valorHora": 11231.64,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T14:07:00.269Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648458966",
@@ -927,8 +1101,10 @@
     "operarios": 1,
     "horasAutorizadas": 12,
     "categoria": "mensual",
-    "valorHora": 16209.26,
-    "gremio": "SOELSAC"
+    "valorHora": 17477.66,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:21:19.353Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1746718387765",
@@ -936,7 +1112,7 @@
     "operarios": 1,
     "horasAutorizadas": 10,
     "categoria": "mensual",
-    "valorHora": 9653.36,
+    "valorHora": 12341.19,
     "gremio": "SOELSAC"
   },
   {
@@ -945,8 +1121,10 @@
     "operarios": 1,
     "horasAutorizadas": 20,
     "categoria": "mensual",
-    "valorHora": 12013.23,
-    "gremio": "SOELSAC"
+    "valorHora": 12953.28,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:26:14.768Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647180835",
@@ -954,7 +1132,7 @@
     "operarios": 1,
     "horasAutorizadas": 39.16,
     "categoria": "FO",
-    "valorHora": 11111.02,
+    "valorHora": 12341.19,
     "gremio": "FO"
   },
   {
@@ -963,8 +1141,10 @@
     "operarios": 2,
     "horasAutorizadas": 32,
     "categoria": "mensual",
-    "valorHora": 12013.23,
-    "gremio": "SOELSAC"
+    "valorHora": 12953.28,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:22:12.850Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647609818",
@@ -972,8 +1152,10 @@
     "operarios": 3,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 12013.23,
-    "gremio": "SOELSAC"
+    "valorHora": 12953.28,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:22:59.063Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647629250",
@@ -981,8 +1163,10 @@
     "operarios": 3,
     "horasAutorizadas": 72,
     "categoria": "mensual",
-    "valorHora": 12013.23,
-    "gremio": "SOELSAC"
+    "valorHora": 12953.28,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:24:32.342Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744647657300",
@@ -990,8 +1174,10 @@
     "operarios": 2,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 12013.23,
-    "gremio": "SOELSAC"
+    "valorHora": 12953.28,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:25:18.528Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648477164",
@@ -999,8 +1185,11 @@
     "operarios": 3,
     "horasAutorizadas": 180,
     "categoria": "mensual",
-    "valorHora": 8766.51,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.5,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T14:08:20.779Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1749658335239",
@@ -1008,17 +1197,22 @@
     "operarios": 1,
     "horasAutorizadas": 3,
     "categoria": "mensual",
-    "valorHora": 8766.51,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.5,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:27:13.289Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648503937",
     "nombre": "UTHGRA (Rio Ceballos)",
-    "operarios": 2,
+    "operarios": 1,
     "horasAutorizadas": 48,
     "categoria": "mensual",
-    "valorHora": 8766.51,
-    "gremio": "SOELSAC"
+    "valorHora": 9452.5,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T14:09:13.471Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648514660",
@@ -1026,8 +1220,11 @@
     "operarios": 2,
     "horasAutorizadas": 48,
     "categoria": "mensual",
-    "valorHora": 8859.17,
-    "gremio": "SOELSAC"
+    "valorHora": 9552.42,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T14:09:55.594Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648525563",
@@ -1035,8 +1232,10 @@
     "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 11959.68,
-    "gremio": "SOELSAC"
+    "valorHora": 12895.54,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T16:06:31.534Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648543601",
@@ -1044,10 +1243,11 @@
     "operarios": 7,
     "horasAutorizadas": 288,
     "categoria": "mensual",
-    "valorHora": 10307.08,
+    "valorHora": 11064.94,
     "gremio": "SOELSAC",
-    "ultimaActualizacion": "2025-12-30T15:00:06.448Z",
-    "periodoActualizacion": "2025-11"
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T16:11:26.844Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1744648574748",
@@ -1064,17 +1264,21 @@
     "operarios": 1,
     "horasAutorizadas": 16,
     "categoria": "mensual",
-    "valorHora": 14015.98,
-    "gremio": "SOELSAC"
+    "valorHora": 15112.75,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T16:12:18.486Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1757347623055",
     "nombre": "Boixados (Corte de Cesped)",
     "operarios": 1,
     "horasAutorizadas": 15.75,
-    "categoria": "FO",
-    "valorHora": 11410.47,
-    "gremio": "FO"
+    "categoria": "mensual",
+    "valorHora": 12029.1,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-01-06T13:03:39.015Z",
+    "periodoActualizacion": "2025-12"
   },
   {
     "id": "1757429942182",
@@ -1082,7 +1286,7 @@
     "operarios": 1,
     "horasAutorizadas": 3,
     "categoria": "mensual",
-    "valorHora": 12013.23,
+    "valorHora": 12341.19,
     "gremio": "SOELSAC"
   },
   {
@@ -1091,8 +1295,10 @@
     "operarios": 1,
     "horasAutorizadas": 1,
     "categoria": "mensual",
-    "valorHora": 12013.23,
-    "gremio": "SOELSAC"
+    "valorHora": 12664.53,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-01-07T12:21:13.626Z",
+    "periodoActualizacion": "2025-12"
   },
   {
     "id": "1757433628560",
@@ -1109,8 +1315,10 @@
     "operarios": 1,
     "horasAutorizadas": 32,
     "categoria": "mensual",
-    "valorHora": 1792500,
-    "gremio": "SOELSAC"
+    "valorHora": 13226.98,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:05:31.128Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1759434969205",
@@ -1118,7 +1326,7 @@
     "operarios": 3,
     "horasAutorizadas": 260,
     "categoria": "mensual",
-    "valorHora": 9632.58,
+    "valorHora": 9629.72,
     "gremio": "SUVICO",
     "ultimaActualizacion": "2025-12-30T14:15:20.630Z",
     "periodoActualizacion": "2025-11"
@@ -1129,10 +1337,9 @@
     "operarios": 3,
     "horasAutorizadas": 472,
     "categoria": "mensual",
-    "valorHora": 10474.77,
+    "valorHora": 10837.48,
     "gremio": "SUVICO",
-    "ultimaActualizacion": "2025-12-30T14:53:27.724Z",
-    "periodoActualizacion": "2025-11"
+    "facturacionFija": false
   },
   {
     "id": "1761757107450",
@@ -1158,17 +1365,23 @@
     "operarios": 1,
     "horasAutorizadas": 24,
     "categoria": "mensual",
-    "valorHora": 10440,
-    "gremio": "SOELSAC"
+    "valorHora": 11256.95,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T14:03:38.120Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1761762873887",
     "nombre": "Optica Clarylent",
     "operarios": 1,
-    "horasAutorizadas": 18,
+    "horasAutorizadas": 72,
     "categoria": "mensual",
-    "valorHora": 9600,
-    "gremio": "SOELSAC"
+    "valorHora": 10351.22,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T14:05:19.303Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1761763014294",
@@ -1185,8 +1398,11 @@
     "operarios": 1,
     "horasAutorizadas": 11,
     "categoria": "mensual",
-    "valorHora": 9569.71,
-    "gremio": "SOELSAC"
+    "valorHora": 10318.55,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T15:13:38.087Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1761763352641",
@@ -1194,7 +1410,7 @@
     "operarios": 1,
     "horasAutorizadas": 3.5,
     "categoria": "mensual",
-    "valorHora": 9569.71,
+    "valorHora": 9830.96,
     "gremio": "SOELSAC"
   },
   {
@@ -1203,7 +1419,7 @@
     "operarios": 1,
     "horasAutorizadas": 3.25,
     "categoria": "mensual",
-    "valorHora": 9569.71,
+    "valorHora": 9830.96,
     "gremio": "SOELSAC"
   },
   {
@@ -1212,8 +1428,10 @@
     "operarios": 1,
     "horasAutorizadas": 12,
     "categoria": "mensual",
-    "valorHora": 9975.86,
-    "gremio": "SOELSAC"
+    "valorHora": 10756.48,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T15:20:27.755Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1761766395710",
@@ -1221,7 +1439,7 @@
     "operarios": 1,
     "horasAutorizadas": 3,
     "categoria": "mensual",
-    "valorHora": 12013.23,
+    "valorHora": 12341.19,
     "gremio": "SOELSAC"
   },
   {
@@ -1239,8 +1457,11 @@
     "operarios": 1,
     "horasAutorizadas": 64,
     "categoria": "mensual",
-    "valorHora": 11060.05,
-    "gremio": "SOELSAC"
+    "valorHora": 11481.05,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "ultimaActualizacion": "2026-02-03T14:50:32.903Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1761924274275",
@@ -1266,8 +1487,10 @@
     "operarios": 1,
     "horasAutorizadas": 8,
     "categoria": "mensual",
-    "valorHora": 10600,
-    "gremio": "SOELSAC"
+    "valorHora": 11429.46,
+    "gremio": "SOELSAC",
+    "ultimaActualizacion": "2026-02-03T14:35:04.119Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1763470582051",
@@ -1284,9 +1507,9 @@
     "operarios": 1,
     "horasAutorizadas": 10,
     "categoria": "mensual",
-    "valorHora": 10763,
+    "valorHora": 13043.12,
     "gremio": "SOELSAC",
-    "ultimaActualizacion": "2025-11-28T15:18:10.630Z",
+    "ultimaActualizacion": "2026-02-11T12:17:09.633Z",
     "periodoActualizacion": "2026-01"
   },
   {
@@ -1308,31 +1531,28 @@
     "id": 1764186709053
   },
   {
-    "nombre": "Boreal (Salta)",
-    "operarios": 1,
-    "horasAutorizadas": 48,
-    "categoria": "mensual",
-    "valorHora": 9736.36,
-    "gremio": "SOELSAC",
-    "id": 1764773725895
-  },
-  {
+    "id": "1764773784157",
     "nombre": "Boreal (Chaco)",
     "operarios": 1,
     "horasAutorizadas": 48,
     "categoria": "mensual",
-    "valorHora": 10814,
+    "valorHora": 11609.14,
     "gremio": "SOELSAC",
-    "id": 1764773784157
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-02-10T12:23:12.099Z",
+    "periodoActualizacion": "2026-01"
   },
   {
+    "id": "1764773826409",
     "nombre": "Boreal (Corrientes)",
     "operarios": 1,
     "horasAutorizadas": 48,
     "categoria": "mensual",
-    "valorHora": 10814,
+    "valorHora": 11609.14,
     "gremio": "SOELSAC",
-    "id": 1764773826409
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-02-10T12:22:50.525Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "id": "1764773864505",
@@ -1348,9 +1568,11 @@
     "operarios": 1,
     "horasAutorizadas": 60,
     "categoria": "mensual",
-    "valorHora": 10600,
+    "valorHora": 11125.73,
     "gremio": "SOELSAC",
-    "id": 1764773900818
+    "id": 1764773900818,
+    "ultimaActualizacion": "2026-02-03T14:36:57.077Z",
+    "periodoActualizacion": "2026-01"
   },
   {
     "nombre": "Boreal (Cordoba) Limpieza de Pileta",
@@ -1425,15 +1647,14 @@
     "id": 1767100686746
   },
   {
+    "id": "1767105278764",
     "nombre": "Expreso Biletta",
     "operarios": 1,
     "horasAutorizadas": 518,
     "categoria": "mensual",
-    "valorHora": 10880.62,
+    "valorHora": 11257.01,
     "gremio": "SUVICO",
-    "id": 1767105278764,
-    "ultimaActualizacion": "2025-12-30T14:36:16.042Z",
-    "periodoActualizacion": "2025-11"
+    "facturacionFija": false
   },
   {
     "nombre": "Cordiez O'Higgins FO",
@@ -1913,7 +2134,7 @@
     "id": 1767194273477
   },
   {
-    "nombre": "Boreal (Chaco)",
+    "nombre": "Boreal (Chaco FO)",
     "operarios": 1,
     "horasAutorizadas": 1,
     "categoria": "FO",
@@ -2190,5 +2411,341 @@
     "categoria": "FO",
     "valorHora": 11250,
     "gremio": "FO"
+  },
+  {
+    "nombre": "Clinica Hair y Beauty (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "mensual",
+    "valorHora": 10877.72,
+    "gremio": "SOELSAC",
+    "id": 1767707226219,
+    "ultimaActualizacion": "2026-01-06T13:49:42.985Z",
+    "periodoActualizacion": "2025-12"
+  },
+  {
+    "nombre": "Edificio Pablo 1 (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "mensual",
+    "valorHora": 10088.53,
+    "gremio": "SOELSAC",
+    "id": 1767712426149,
+    "ultimaActualizacion": "2026-01-06T15:14:48.014Z",
+    "periodoActualizacion": "2025-12"
+  },
+  {
+    "id": "1767713333294",
+    "nombre": "Edificio 9 de Julio 1191",
+    "operarios": 1,
+    "horasAutorizadas": 48,
+    "categoria": "mensual",
+    "valorHora": 10351.22,
+    "gremio": "SOELSAC",
+    "facturacionFija": true,
+    "ultimaActualizacion": "2026-01-20T13:21:42.265Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "id": "1767876061123",
+    "nombre": "IL MOLINO",
+    "operarios": 1,
+    "horasAutorizadas": 348,
+    "categoria": "mensual",
+    "valorHora": 15421.59,
+    "gremio": "SUVICO",
+    "facturacionFija": false
+  },
+  {
+    "id": "1767884677675",
+    "nombre": "NOELIA",
+    "operarios": 1,
+    "horasAutorizadas": 10,
+    "categoria": "mensual",
+    "valorHora": 10000,
+    "gremio": "SOELSAC",
+    "facturacionFija": true
+  },
+  {
+    "nombre": "FO Ayacucho",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 3850000,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767903828789
+  },
+  {
+    "nombre": "Cis Group",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 277200,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767903867628
+  },
+  {
+    "nombre": "FO Carlos Paz",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 500000,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767903907369
+  },
+  {
+    "id": "1767903968048",
+    "nombre": "Colegio Corazon de Maria FO 2",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 491028,
+    "gremio": "FO",
+    "facturacionFija": false
+  },
+  {
+    "nombre": "Cordiez Central FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 828000,
+    "gremio": "FO",
+    "facturacionFija": true,
+    "id": 1767904021270
+  },
+  {
+    "id": "1767904095429",
+    "nombre": "Cordiez - Camino San Carlos FO",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 300000,
+    "gremio": "FO",
+    "facturacionFija": true
+  },
+  {
+    "nombre": "FO Cubano (Corte de Cesped)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 320000,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767961777436
+  },
+  {
+    "nombre": "FO Depto Carlos Paz",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 315000,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767961820769
+  },
+  {
+    "nombre": "FO Faustino Allende",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 290000,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767961853090
+  },
+  {
+    "id": "1767961881963",
+    "nombre": "FO Flaltia (Ituzaingó 235)",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 3865000,
+    "gremio": "FO",
+    "facturacionFija": false
+  },
+  {
+    "nombre": "FO Mitre 35",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 384000,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767961908847
+  },
+  {
+    "nombre": "Ayacucho Palomas",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 1169489.87,
+    "gremio": "FO",
+    "facturacionFija": false,
+    "id": 1767961944740
+  },
+  {
+    "nombre": "Bar Fino (Jose Filis)",
+    "operarios": 1,
+    "horasAutorizadas": 16,
+    "categoria": "mensual",
+    "valorHora": 11600,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770129081986
+  },
+  {
+    "nombre": "Edificio 9 de Julio 1191 (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 5,
+    "categoria": "mensual",
+    "valorHora": 10351.22,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770130487471,
+    "ultimaActualizacion": "2026-02-03T14:55:33.973Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "nombre": "Estetica Santo Cuore (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 2.5,
+    "categoria": "mensual",
+    "valorHora": 15320.11,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770130627559,
+    "ultimaActualizacion": "2026-02-03T14:57:46.989Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "nombre": "Estudio Juridico Yanzi",
+    "operarios": 1,
+    "horasAutorizadas": 2,
+    "categoria": "mensual",
+    "valorHora": 12887.28,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770130705504,
+    "ultimaActualizacion": "2026-02-03T14:59:23.336Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "nombre": "Etiqueta Negra (Adicional)",
+    "operarios": 1,
+    "horasAutorizadas": 2,
+    "categoria": "mensual",
+    "valorHora": 14503.52,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770130799312,
+    "ultimaActualizacion": "2026-02-03T15:00:46.221Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "nombre": "LAC (Colonia Caroya)",
+    "operarios": 1,
+    "horasAutorizadas": 195,
+    "categoria": "mensual",
+    "valorHora": 13226.98,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770131159107,
+    "ultimaActualizacion": "2026-02-03T15:06:40.177Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "nombre": "FO Ayacucho",
+    "operarios": 1,
+    "horasAutorizadas": 9,
+    "categoria": "FO",
+    "valorHora": 427777.77,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770135268564
+  },
+  {
+    "nombre": "Cis Group",
+    "operarios": 1,
+    "horasAutorizadas": 6,
+    "categoria": "FO",
+    "valorHora": 277200,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770135391508
+  },
+  {
+    "nombre": "FO Country Las Cascadas",
+    "operarios": 1,
+    "horasAutorizadas": 1,
+    "categoria": "FO",
+    "valorHora": 329527.75,
+    "gremio": "SOELSAC",
+    "facturacionFija": false,
+    "id": 1770135697083,
+    "ultimaActualizacion": "2026-02-10T12:13:34.006Z",
+    "periodoActualizacion": "2026-01"
+  },
+  {
+    "nombre": "Benedetti - Obra Agustín Garzón",
+    "operarios": 4,
+    "horasAutorizadas": 330,
+    "categoria": "mensual",
+    "valorHora": 10837.48,
+    "gremio": "SUVICO",
+    "facturacionFija": false,
+    "id": 1770748191267
+  },
+  {
+    "nombre": "Benedetti - Obra Centro Vecinal JLC",
+    "operarios": 6,
+    "horasAutorizadas": 564,
+    "categoria": "mensual",
+    "valorHora": 10837.48,
+    "gremio": "SUVICO",
+    "facturacionFija": false,
+    "id": 1770748244048
+  },
+  {
+    "nombre": "ITV- Av. Japon (Vigilancia)",
+    "operarios": 1,
+    "horasAutorizadas": 213,
+    "categoria": "mensual",
+    "valorHora": 12490.57,
+    "gremio": "SUVICO",
+    "facturacionFija": false,
+    "id": 1770750557611
+  },
+  {
+    "nombre": "ITV - Cárcano (Vigilancia)",
+    "operarios": 3,
+    "horasAutorizadas": 213,
+    "categoria": "mensual",
+    "valorHora": 12490.57,
+    "gremio": "SUVICO",
+    "facturacionFija": false,
+    "id": 1770750602602
+  },
+  {
+    "nombre": "ITV - Deposito (Vigilancia)",
+    "operarios": 1,
+    "horasAutorizadas": 193,
+    "categoria": "mensual",
+    "valorHora": 12490.57,
+    "gremio": "SUVICO",
+    "facturacionFija": false,
+    "id": 1770750637803
+  },
+  {
+    "nombre": "ITV - Sur (Vigilancia)",
+    "operarios": 5,
+    "horasAutorizadas": 212.67,
+    "categoria": "mensual",
+    "valorHora": 12490.57,
+    "gremio": "SUVICO",
+    "facturacionFija": false,
+    "id": 1770750706020
   }
 ]

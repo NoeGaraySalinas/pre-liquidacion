@@ -12,6 +12,13 @@ if (!window.fs) {
 
 console.log("renderer.js cargado correctamente");
 
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
+
 // Inicializar los eventos del DOM cuando esté listo
 document.addEventListener("DOMContentLoaded", () => {
   initializeGestionServiciosBtn();
@@ -179,6 +186,8 @@ function saveNewFacturante(event) {
   const facturante = {
     nombre: document.getElementById("nombreFacturante").value.trim(),
     cuilCuit: document.getElementById("cuilCuit").value.trim() || null,
+    topeMensual: parseFloat(document.getElementById("topeMensual").value) || null,
+    topeAnual: parseFloat(document.getElementById("topeAnual").value) || null
   };
 
   if (!facturante.nombre) {
@@ -189,11 +198,10 @@ function saveNewFacturante(event) {
   console.log("Facturante a enviar:", facturante);
   ipcRenderer.send("guardar-facturante", facturante);
 
-  // Configurar el listener para cuando se guarde el facturante
   ipcRenderer.once("facturante-guardado", () => {
     console.log("Facturante guardado correctamente");
     loadFacturantesData();
-    hideFacturanteForm({ preventDefault: () => { } });
+    hideFacturanteForm({ preventDefault: () => {} });
   });
 }
 

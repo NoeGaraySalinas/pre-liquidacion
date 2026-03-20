@@ -8,15 +8,18 @@
   "type": "commonjs",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "clean": "rm -rf dist node_modules/.cache"
   },
   "dependencies": {
-    "sqlite3": "^5.1.7",
+    "docx": "^9.5.1",
+    "file-saver": "^2.0.5",
+    "html-to-docx": "^1.8.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "electron": "^35.0.1",
-    "electron-builder": "^25.1.8"
+    "electron-builder": "^24.13.3"
   },
   "build": {
     "appId": "com.corsacor.preliquidacion",
@@ -27,22 +30,30 @@
     },
     "files": [
       "**/*",
-      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
-      "!**/.*",
+      "!**/*.json",
       "!**/*.map",
       "!**/*.md",
-      "!package-lock.json"
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}"
+    ],
+    "extraResources": [
+      "clientes.json",
+      "servicios.json",
+      "facturantes.json",
+      "facturacion.json",
+      "gastosInternos.json",
+      "insumos.json",
+      "aumentos.json"
     ],
     "win": {
-      "target": [
-        "nsis"
-      ]
+      "target": "nsis"
     },
     "nsis": {
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
-      "deleteAppDataOnUninstall": true
+      "deleteAppDataOnUninstall": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
     }
   }
 }

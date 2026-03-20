@@ -4,6 +4,7 @@
     "fecha": "2025-12-21",
     "numero": "2 - 2288",
     "cliente": "CYRE SA",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -21,6 +22,7 @@
     "fecha": "2025-12-18",
     "numero": "2 - 2286",
     "cliente": "CYRE SA",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -38,6 +40,7 @@
     "fecha": "2025-12-12",
     "numero": "2 - 2238",
     "cliente": "Flaltia S.A.",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -100,6 +103,7 @@
     "fecha": "2025-12-12",
     "numero": "2 - 2239",
     "cliente": "Flaltia S.A.",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -157,6 +161,7 @@
     "fecha": "2025-12-12",
     "numero": "2 - 2240",
     "cliente": "Flaltia S.A.",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -194,6 +199,7 @@
     "fecha": "2025-12-12",
     "numero": "2 - 2241",
     "cliente": "Flaltia S.A.",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -231,6 +237,7 @@
     "fecha": "2025-12-01",
     "numero": "2 - 2224",
     "cliente": "VTV CORDOBA SA",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -293,6 +300,7 @@
     "fecha": "2025-12-01",
     "numero": "2 - 2225",
     "cliente": "Viale-pinto Automotores S.A.S.",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -320,6 +328,7 @@
     "fecha": "2025-12-01",
     "numero": "2 - 2230",
     "cliente": "PANHEL SRL",
+    "facturante": "SAS",
     "tipo": "A",
     "items": [
       {
@@ -342,6 +351,7 @@
     "fecha": "2025-12-01",
     "numero": "13 - 087",
     "cliente": "VIVERO ALEJANDRO",
+    "facturante": "Maximiliano Nogales",
     "tipo": "C",
     "items": [
       {

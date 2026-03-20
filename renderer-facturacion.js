@@ -15,6 +15,13 @@ let valorHoraBaseGlobal = null;
 
 console.log("renderer-facturacion.js cargado correctamente");
 
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
+
 window._facturacionInitialized = false;
 
 // Inicializar los eventos del DOM cuando esté listo
@@ -529,6 +536,18 @@ function setupFacturacionEvents() {
         console.warn("⚠️ Servicio no encontrado:", servicioSeleccionado);
         return;
       }
+      // 🧾 FACTURACIÓN FIJA → autocompletar horas
+      if (servicioActualizado.facturacionFija === true) {
+        const horasFijas = Number(servicioActualizado.horasAutorizadas) || 0;
+
+        const inputHsTrabajadas = document.getElementById("inputHsTrabajadas");
+        const inputHsMes = document.getElementById("inputHsMes");
+        const inputHsLiquidadas = document.getElementById("inputHsLiquidadas");
+
+        if (inputHsTrabajadas) inputHsTrabajadas.value = horasFijas;
+        if (inputHsMes) inputHsMes.value = horasFijas;
+        if (inputHsLiquidadas) inputHsLiquidadas.value = horasFijas;
+      }
 
       const inputValorHora = document.getElementById("inputValorHora");
       const valorHoraBase = servicioActualizado.valorHora || 0; // ✅ Usa el valor ACTUALIZADO
@@ -807,11 +826,11 @@ async function guardarFacturacion() {
   if (!submitBtn) return;
 
   const originalBtnText = submitBtn.textContent;
-  
+
   // ✅ CORRECCIÓN: Verificar correctamente si es edición
-  const esEdicion = window._facturacionEditando !== null && 
-                    window._facturacionEditando !== undefined && 
-                    window._facturacionEditando !== '';
+  const esEdicion = window._facturacionEditando !== null &&
+    window._facturacionEditando !== undefined &&
+    window._facturacionEditando !== '';
 
   console.log('🔍 Estado de edición:', {
     esEdicion: esEdicion,
@@ -895,20 +914,20 @@ async function guardarFacturacion() {
             nuevo_valor: valorHoraAumentado,
             periodo: facturacion.periodo
           });
-          
+
           const resultadoActualizacion = await ipcRenderer.invoke('actualizar-valor-hora-servicio', {
             nombre: servicioNombre,
             nuevoValorHora: valorHoraAumentado,
             gremio: aumentoAplicado.gremio,
             periodo: facturacion.periodo
           });
-          
+
           if (resultadoActualizacion.success) {
             console.log('✅ Valor hora del servicio actualizado (sobre saldos)');
           } else {
             console.error('❌ Error actualizando servicio:', resultadoActualizacion.error);
           }
-          
+
         } else if (aumentoAplicado.tipo === "acumulativo" && aumentoAplicado.esUltimoMes) {
           // ACUMULATIVO: Actualizar SOLO en el ÚLTIMO mes de la paritaria
           console.log("🎯 Actualizando servicio (acumulativo - último mes):", {
@@ -918,20 +937,20 @@ async function guardarFacturacion() {
             periodo: facturacion.periodo,
             es_ultimo_mes: true
           });
-          
+
           const resultadoActualizacion = await ipcRenderer.invoke('actualizar-valor-hora-servicio', {
             nombre: servicioNombre,
             nuevoValorHora: valorHoraAumentado,
             gremio: aumentoAplicado.gremio,
             periodo: facturacion.periodo
           });
-          
+
           if (resultadoActualizacion.success) {
             console.log('✅ Valor hora del servicio actualizado (acumulativo - último mes)');
           } else {
             console.error('❌ Error actualizando servicio:', resultadoActualizacion.error);
           }
-          
+
         } else if (aumentoAplicado.tipo === "acumulativo") {
           console.log("ℹ️  Servicio NO actualizado (acumulativo - no es último mes)");
         }
@@ -948,10 +967,10 @@ async function guardarFacturacion() {
 
     if (resultado.success) {
       showNotification(esEdicion ? '✅ Facturación actualizada correctamente' : '✅ Facturación guardada correctamente');
-      
+
       // Resetear formulario y limpiar edición
       cancelarEdicion();
-      
+
       await loadFacturacionData();
       await verificarTopeFacturante(facturacion);
       await verificarTopeAnualFacturante(facturacion);

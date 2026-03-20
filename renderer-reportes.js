@@ -1,4 +1,67 @@
 // renderer-reportes.js
+
+const htmlToDocx = require("html-to-docx");
+const { saveAs } = require("file-saver");
+const os = require("os");
+
+// ============================================
+// VERIFICAR ENTORNO
+// ============================================
+console.log(`📄 ${document.currentScript?.src?.split('/').pop() || 'renderer'} - Entorno:`, 
+  window.APP_ENV?.isDevelopment ? 'Desarrollo 🛠️' : 
+  (window.APP_ENV?.ready ? 'Producción 🚀' : 'No inicializado'));
+
+const {
+  Document,
+  Packer,
+  Paragraph,
+  TextRun,
+  Table,
+  TableRow,
+  TableCell,
+  WidthType,
+  HeadingLevel,
+  SectionType,
+  ImageRun,
+} = require("docx");
+
+let filtroPeriodoSeleccionado = null;
+let filtroClienteSeleccionado = null;
+let filtroServicioSeleccionado = null;
+let filtroFacturanteSeleccionado = null;
+
+function mostrarNotificacion(mensaje, tipo = "info") {
+  console.log(`[${tipo.toUpperCase()}] ${mensaje}`);
+  alert(mensaje);
+}
+
+function cargarImagenComoBase64(ruta) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement("canvas");
+      canvas.width = img.width;
+      canvas.height = img.height;
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0);
+
+      resolve(canvas.toDataURL("image/jpeg"));
+    };
+    img.onerror = reject;
+    img.src = ruta;
+  });
+}
+
+
+// Función para cargar imagen como ArrayBuffer (para que Word no diga que está corrupta)
+async function cargarImagen(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("No se pudo cargar la imagen");
+  return await response.arrayBuffer();
+}
+
+
 if (!window.ipcRenderer) {
   window.ipcRenderer = require('electron').ipcRenderer;
 }
@@ -272,7 +335,6 @@ async function aplicarFiltros() {
       ocultarBotonesExportacion();
     } else {
       mostrarResultados(facturaciones, filtros); // Pasamos los filtros también
-      mostrarBotonesExportacion();
     }
   } catch (error) {
     console.error("Error al aplicar filtros:", error);
@@ -305,6 +367,7 @@ function mostrarCargando() {
   `;
 }
 
+
 // Función para mostrar mensajes al usuario
 function mostrarMensaje(mensaje, tipo = "info") {
   const contenedor = document.getElementById("resultadoReporte");
@@ -316,93 +379,247 @@ async function mostrarResultados(facturaciones, filtros) {
   facturacionesActuales = facturaciones;
   const contenedor = document.getElementById("resultadoReporte");
 
+  // 🧹 Limpieza inicial
+  contenedor.innerHTML = "";
+  ocultarBotonesExportacion();
+
   if (!facturaciones || facturaciones.length === 0) {
     contenedor.innerHTML = '<p class="message info">No se encontraron resultados</p>';
     return;
   }
 
-  // Determinar qué tipo de filtro se aplicó
   const filtroPrincipal = determinarFiltroPrincipal(filtros);
 
   try {
-    // Generar tabla según el filtro
-    let tablaHTML = '';
+    let tablaHTML = "";
+
     switch (filtroPrincipal) {
-      case 'servicio':
-        tablaHTML = generarTablaPorServicio(facturaciones);
+      case "servicio":
+        tablaHTML = await generarTablaPorServicio(facturaciones);
         break;
-      case 'periodo':
-        tablaHTML = await generarTablaPorPeriodo(facturaciones, filtros.periodo); // Ahora es async
+
+      case "periodo":
+        tablaHTML = await generarTablaPorPeriodo(facturaciones, filtros.periodo);
         break;
-      case 'facturante':
+
+      case "facturante":
         tablaHTML = generarTablaPorFacturante(facturaciones);
         break;
-      case 'cliente':
-        tablaHTML = generarTablaPorCliente(facturaciones);
+
+      case "cliente":
+        tablaHTML = generarTablaPorCliente(facturaciones, filtros);
         break;
+
       default:
-        tablaHTML = generarTablaGeneral(facturaciones, filtros); // Pasamos filtros por si acaso
+        tablaHTML = generarTablaGeneral(facturaciones, filtros);
     }
 
+    // 🖨 Render principal (una sola vez, siempre)
     contenedor.innerHTML = tablaHTML;
 
-    // Solo si es filtro por periodo, mostrar gastos internos
-    if (filtroPrincipal === 'periodo' && filtros.periodo) {
+    // ➕ Extras SOLO donde corresponde
+
+    // Periodo → gastos + insumos
+    if (filtroPrincipal === "periodo" && filtros.periodo) {
       await mostrarGastosInternosPorPeriodo(filtros.periodo);
       await mostrarInsumosPorPeriodo(filtros.periodo, "resultadoReporte");
     }
 
-    filtrosAplicados = filtros; // Guardar los filtros actuales para PDF
+    // Cliente → insumos
+    if (filtroPrincipal === "cliente" && filtros.cliente) {
+      await mostrarInsumosPorCliente(filtros.cliente, "resultadoReporte");
+    }
+
+    // Servicio → gastos internos
+    if (filtroPrincipal === "servicio" && filtros.servicio) {
+      await mostrarGastosInternosPorServicio(filtros.servicio, "resultadoReporte");
+    }
+
+    if (filtroPrincipal === 'facturante') {
+      await mostrarInsumosPorFacturante(facturaciones[0].facturante, "resultadoReporte");
+
+    }
+
+
+    filtrosAplicados = filtros;
+    mostrarBotonesExportacion();
+
   } catch (error) {
     console.error("Error al mostrar resultados:", error);
-    contenedor.innerHTML = '<p class="message error">Error al generar el reporte</p>';
+    contenedor.innerHTML =
+      '<p class="message error">Error al generar el reporte</p>';
+    ocultarBotonesExportacion();
   }
 }
+
+async function mostrarInsumosPorFacturante(facturante, contenedorId) {
+  let insumos = [];
+
+  try {
+    insumos = await ipcRenderer.invoke('get-insumos');
+  } catch (e) {
+    console.error("Error cargando insumos:", e);
+    return;
+  }
+
+  const filtrados = insumos.filter(
+    i => i.facturante === facturante
+  );
+
+  const contenedor = document.getElementById(contenedorId);
+
+  if (filtrados.length === 0) {
+    contenedor.innerHTML +=
+      '<p class="message info">No hay insumos facturados por este facturante</p>';
+    return;
+  }
+
+  const total = filtrados.reduce((s, i) => s + i.total, 0);
+
+  contenedor.innerHTML += `
+    <h4>Insumos facturados</h4>
+    <table class="reporte-table">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Cliente</th>
+          <th>Tipo</th>
+          <th>N° Factura</th>
+          <th>Items</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${filtrados.map(i => `
+          <tr>
+            <td>${new Date(i.fecha).toLocaleDateString()}</td>
+            <td>${i.cliente}</td>
+            <td>${i.tipo}</td>
+            <td>${i.numero}</td>
+            <td class="number">${i.items.length}</td>
+            <td class="currency">${formatoMonetario(i.total)}</td>
+          </tr>
+        `).join('')}
+        <tr class="total-row">
+          <td colspan="5">TOTAL INSUMOS</td>
+          <td class="currency">${formatoMonetario(total)}</td>
+        </tr>
+      </tbody>
+    </table>
+  `;
+}
+
 
 
 // Filtros
 
-function generarTablaPorCliente(facturaciones) {
-  const primerRegistro = facturaciones[0];
-  const cuitCliente = primerRegistro.clienteData?.cuit || primerRegistro.cuit;
+function generarTablaPorCliente(facturaciones, filtros) {
+  if (!facturaciones || facturaciones.length === 0) {
+    return '<p class="message info">No hay facturaciones para este cliente</p>';
+  }
+
+  const nombreCliente =
+    filtros?.cliente ||
+    facturaciones[0]?.cliente ||
+    "Cliente";
+
+  const cuit =
+    facturaciones[0]?.clienteData?.cuit ||
+    facturaciones[0]?.cuit ||
+    "";
+
+  // 🔹 Insumos del cliente
+  const insumosCliente = Array.isArray(insumos)
+    ? insumos.filter(i => i.cliente === nombreCliente)
+    : [];
+
+  const totalFacturado = facturaciones.reduce(
+    (sum, f) => sum + (f.valores?.total || 0),
+    0
+  );
+
+  const totalInsumos = insumosCliente.reduce(
+    (sum, i) => sum + (i.total || 0),
+    0
+  );
 
   return `
-    <h3>Reporte del Cliente: ${primerRegistro.cliente}</h3>
-    ${primerRegistro.cuit ? `<p><strong>CUIT:</strong> ${formatearCUIT(primerRegistro.cuit)}</p>` : ''}
+    <h3>Reporte del Cliente: ${nombreCliente}</h3>
+    ${cuit ? `<p><strong>CUIT:</strong> ${formatearCUIT(cuit)}</p>` : ""}
+
+    <!-- ================= FACTURACIONES ================= -->
+    <h4>Facturaciones</h4>
     <table class="reporte-table">
       <thead>
         <tr>
           <th>Periodo</th>
           <th>Servicio</th>
-          <th>Horas Trabajadas</th>
-          <th>Horas Liquidadas</th>
+          <th>Hs. Trabajadas</th>
+          <th>Hs. Liquidadas</th>
           <th>Valor Hora</th>
           <th>Facturante</th>
-          <th>Tipo Factura</th>
+          <th>Tipo</th>
           <th>N° Factura</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody>
-        ${facturaciones.map(fact => `
+        ${facturaciones.map(f => `
           <tr>
-            <td>${formatMonth(fact.periodo)}</td>
-            <td>${fact.servicio}</td>
-            <td class="number">${fact.horas.trabajadas}</td>
-            <td class="number">${fact.horas.liquidadas}</td>
-            <td class="currency">${formatoMonetario(fact.valores.hora)}</td>
-            <td>${fact.facturante}</td>
-            <td>${fact.factura.tipo}</td>
-            <td>${fact.factura.numero || 'N/A'}</td>
-            <td class="currency">${formatoMonetario(fact.valores.total)}</td>
+            <td>${formatMonth(f.periodo)}</td>
+            <td>${f.servicio}</td>
+            <td class="number">${f.horas.trabajadas}</td>
+            <td class="number">${f.horas.liquidadas}</td>
+            <td class="currency">${formatoMonetario(f.valores.hora)}</td>
+            <td>${f.facturante}</td>
+            <td>${f.factura.tipo}</td>
+            <td>${f.factura.numero || "N/A"}</td>
+            <td class="currency">${formatoMonetario(f.valores.total)}</td>
           </tr>
-        `).join('')}
+        `).join("")}
         <tr class="total-row">
-          <td colspan="8">TOTAL</td>
-          <td class="currency">${formatoMonetario(facturaciones.reduce((sum, f) => sum + f.valores.total, 0))}</td>
+          <td colspan="8">TOTAL FACTURADO</td>
+          <td class="currency">${formatoMonetario(totalFacturado)}</td>
         </tr>
       </tbody>
     </table>
+
+    <!-- ================= INSUMOS ================= -->
+    <h4>Insumos facturados</h4>
+
+    ${insumosCliente.length === 0
+      ? '<p class="message info">No hay insumos facturados para este cliente</p>'
+      : `
+          <table class="reporte-table">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Facturante</th>
+                <th>Tipo</th>
+                <th>N° Factura</th>
+                <th>Items</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${insumosCliente.map(i => `
+                <tr>
+                  <td>${new Date(i.fecha).toLocaleDateString()}</td>
+                  <td>${i.facturante}</td>
+                  <td>${i.tipo}</td>
+                  <td>${i.numero}</td>
+                  <td class="number">${i.items.length}</td>
+                  <td class="currency">${formatoMonetario(i.total)}</td>
+                </tr>
+              `).join("")}
+              <tr class="total-row">
+                <td colspan="5">TOTAL INSUMOS</td>
+                <td class="currency">${formatoMonetario(totalInsumos)}</td>
+              </tr>
+            </tbody>
+          </table>
+        `
+    }
   `;
 }
 
@@ -416,8 +633,7 @@ function formatearCUIT(cuit) {
   return `${soloNumeros.substring(0, 2)}-${soloNumeros.substring(2, 10)}-${soloNumeros.substring(10, 11)}`;
 }
 
-function generarTablaPorServicio(facturaciones) {
-  // Agrupar por periodo ya que es el mismo servicio
+async function generarTablaPorServicio(facturaciones) {
   const agrupadoPorPeriodo = facturaciones.reduce((acc, fact) => {
     if (!acc[fact.periodo]) {
       acc[fact.periodo] = {
@@ -433,6 +649,14 @@ function generarTablaPorServicio(facturaciones) {
 
   const datosAgrupados = Object.values(agrupadoPorPeriodo);
   const primerRegistro = facturaciones[0];
+
+  // ✅ BUSCAR SERVICIO REAL
+  const servicio = await ipcRenderer.invoke(
+    "get-servicio-por-nombre",
+    primerRegistro.servicio
+  );
+
+  const horasAutorizadas = servicio?.horasAutorizadas ?? "—";
 
   return `
     <h3>Reporte del Servicio: ${primerRegistro.servicio}</h3>
@@ -451,63 +675,81 @@ function generarTablaPorServicio(facturaciones) {
         ${datosAgrupados.map(fact => `
           <tr>
             <td>${formatMonth(fact.periodo)}</td>
-            <td class="number">${fact.horas.autorizadas}</td>
+            <td class="number">${horasAutorizadas}</td>
             <td class="number">${fact.horas_trabajadas_total}</td>
             <td class="currency">${formatoMonetario(fact.valores.hora)}</td>
             <td>${fact.facturante}</td>
             <td class="currency">${formatoMonetario(fact.total_general)}</td>
           </tr>
-        `).join('')}
+        `).join("")}
+
         <tr class="total-row">
           <td colspan="5">TOTAL</td>
-          <td class="currency">${formatoMonetario(datosAgrupados.reduce((sum, f) => sum + f.total_general, 0))}</td>
+          <td class="currency">
+            ${formatoMonetario(
+    datosAgrupados.reduce((sum, f) => sum + f.total_general, 0)
+  )}
+          </td>
         </tr>
       </tbody>
     </table>
   `;
 }
 
+
 function generarTablaPorFacturante(facturaciones) {
-  const primerRegistro = facturaciones[0];
+  if (!facturaciones || facturaciones.length === 0) {
+    return '<p class="message info">No hay facturaciones para este facturante</p>';
+  }
+
+  const facturante = facturaciones[0].facturante;
+
+  const totalFacturado = facturaciones.reduce(
+    (sum, f) => sum + (f.valores?.total || 0),
+    0
+  );
 
   return `
-    <h3>Reporte del Facturante: ${primerRegistro.facturante}</h3>
+    <h3>Reporte del Facturante: ${facturante}</h3>
+
     <table class="reporte-table">
       <thead>
         <tr>
           <th>Cliente</th>
           <th>Servicio</th>
           <th>Periodo</th>
-          <th>Tipo Factura</th>
+          <th>Tipo</th>
           <th>N° Factura</th>
-          <th>Horas Trabajadas</th>
+          <th>Horas</th>
           <th>Neto</th>
           <th>IVA</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody>
-        ${facturaciones.map(fact => `
+        ${facturaciones.map(f => `
           <tr>
-            <td>${fact.cliente}</td>
-            <td>${fact.servicio}</td>
-            <td>${formatMonth(fact.periodo)}</td>
-            <td>${fact.factura.tipo}</td>
-            <td>${fact.factura.numero || 'N/A'}</td>
-            <td class="number">${fact.horas.trabajadas}</td>
-            <td class="currency">${formatoMonetario(fact.valores.neto)}</td>
-            <td class="currency">${formatoMonetario(fact.valores.iva)}</td>
-            <td class="currency">${formatoMonetario(fact.valores.total)}</td>
+            <td>${f.cliente}</td>
+            <td>${f.servicio}</td>
+            <td>${formatMonth(f.periodo)}</td>
+            <td>${f.factura.tipo}</td>
+            <td>${f.factura.numero || 'N/A'}</td>
+            <td class="number">${f.horas.trabajadas}</td>
+            <td class="currency">${formatoMonetario(f.valores.neto)}</td>
+            <td class="currency">${formatoMonetario(f.valores.iva)}</td>
+            <td class="currency">${formatoMonetario(f.valores.total)}</td>
           </tr>
         `).join('')}
         <tr class="total-row">
           <td colspan="8">TOTAL</td>
-          <td class="currency">${formatoMonetario(facturaciones.reduce((sum, f) => sum + f.valores.total, 0))}</td>
+          <td class="currency">${formatoMonetario(totalFacturado)}</td>
         </tr>
       </tbody>
     </table>
   `;
 }
+
+
 
 try {
   // Lee el archivo clientes.json ubicado en la raíz del proyecto
@@ -552,13 +794,6 @@ function normalizarTexto(texto) {
     .trim()
     .toLowerCase();
 }
-
-console.log("Ejemplo de búsqueda - Servicio 'Dycsa':", {
-  existe: servicios.some(s => s.nombre === 'Dycsa'),
-  serviciosSimilares: servicios.filter(s =>
-    s.nombre.toLowerCase().includes('dycsa')
-  )
-});
 
 const selectPeriodo = document.getElementById('filtroPeriodo');
 const periodoSeleccionado = selectPeriodo ? selectPeriodo.value : null;
@@ -675,7 +910,7 @@ async function generarTablaPorPeriodo(facturaciones, periodo) {
       <tbody>${rows.join('')}</tbody>
       <tfoot>
         <tr class="total-row">
-          <td colspan="8">TOTAL NETO</td>
+          <td colspan="9">TOTALES</td>
           <td class="currency">${formatoMonetario(totalNeto)}</td>
           <td class="currency">${formatoMonetario(totalIVA)}</td>
           <td class="currency">${formatoMonetario(totalFacturado)}</td>
@@ -689,7 +924,6 @@ mostrarGastosInternosPorPeriodo(periodoSeleccionado);
 mostrarInsumosPorPeriodo(periodoSeleccionado);
 
 
-// Función para renderizar gastos internos del período
 function mostrarGastosInternosPorPeriodo(periodo, contenedorDestinoId = 'div3') {
   fetch('gastosInternos.json')
     .then(res => res.json())
@@ -726,46 +960,117 @@ function mostrarGastosInternosPorPeriodo(periodo, contenedorDestinoId = 'div3') 
             </tr>
           `).join('')}
           <tr class="total-row">
-            <td colspan="7"><strong>Total de gastos</strong></td>
+            <td colspan="7"><strong>TOTAL DE GASTOS</strong></td>
             <td><strong>$${totalGastos.toFixed(2)}</strong></td>
           </tr>
         </tbody>
       `;
 
-      // Insertar tabla en el contenedor destino
       const contenedor = document.getElementById(contenedorDestinoId);
       contenedor.appendChild(document.createElement('hr'));
+
       const subtitulo = document.createElement('h3');
       subtitulo.textContent = `🧾 Gastos Internos del período ${periodo}`;
       contenedor.appendChild(subtitulo);
       contenedor.appendChild(tabla);
 
-      // Solo agregar el resultado neto si aún no existe
-      const EXISTE_RESULTADO = document.getElementById('resultadoNetoGlobal');
-      if (!EXISTE_RESULTADO) {
-        const totalFacturadoElement = document.getElementById('totalFacturadoPeriodo');
-        const totalFacturado = totalFacturadoElement ? parseFloat(totalFacturadoElement.dataset.total || 0) : 0;
+      // Resultado neto (solo si hay facturación)
+      const totalFacturadoElement = document.getElementById('totalFacturadoPeriodo');
+      const totalFacturado = totalFacturadoElement
+        ? parseFloat(totalFacturadoElement.dataset.total || 0)
+        : 0;
+
+      if (totalFacturado > 0) {
         const diferencia = totalFacturado - totalGastos;
 
-        const resultado = document.createElement('p');
-        resultado.id = 'resultadoNetoGlobal'; // clave para no repetirlo
-        resultado.innerHTML = `<strong>💼 Resultado Neto: $${diferencia.toFixed(2)}</strong>`;
-        resultado.style.marginTop = '1em';
-        resultado.style.fontSize = '1.2em';
-        contenedor.appendChild(resultado);
+        if (!document.getElementById('resultadoNetoGlobal')) {
+          const resultado = document.createElement('p');
+          resultado.id = 'resultadoNetoGlobal';
+          resultado.innerHTML = `<strong>💼 Resultado Neto: $${diferencia.toFixed(2)}</strong>`;
+          resultado.style.marginTop = '1em';
+          resultado.style.fontSize = '1.2em';
+          contenedor.appendChild(resultado);
+        }
       }
+
+      // ✅ SIEMPRE AL FINAL DEL RENDER COMPLETO
+      mostrarBotonesExportacion();
     })
-    .catch(err => {
-      console.error('Error al cargar gastosInternos.json:', err);
-    });
+    .catch(err => console.error('Error al cargar gastosInternos.json:', err));
 }
 
-const insumosPeriodo = insumos.filter(i => {
-  if (!i.fecha) return false;
-  const fecha = new Date(i.fecha);
-  const periodoItem = `${fecha.getFullYear()}-${String(fecha.getMonth() + 1).padStart(2, '0')}`;
-  return periodoItem === periodo;
-});
+function mostrarGastosInternosPorServicio(servicio, contenedorDestinoId = "resultadoReporte") {
+  fetch("gastosInternos.json")
+    .then(res => res.json())
+    .then(gastos => {
+      const gastosServicio = gastos.filter(
+        g => g.servicio?.toLowerCase() === servicio.toLowerCase()
+      );
+
+      if (gastosServicio.length === 0) return;
+
+      const totalGastos = gastosServicio.reduce(
+        (sum, g) => sum + parseFloat(g.total || 0),
+        0
+      );
+
+      const contenedor = document.getElementById(contenedorDestinoId);
+
+      const tablaHTML = `
+        <hr>
+        <h3>🧾 Gastos Internos del Servicio: ${servicio}</h3>
+        <table class="reporte-table">
+          <thead>
+            <tr>
+              <th>Periodo</th>
+              <th>Sector</th>
+              <th>Hs Trabajadas</th>
+              <th>Hs Liquidadas</th>
+              <th>Valor Hora</th>
+              <th>Aumento</th>
+              <th>Neto</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${gastosServicio.map(g => `
+              <tr>
+                <td>${formatMonth(g.periodo)}</td>
+                <td>${g.sector || "-"}</td>
+                <td class="number">${g.hsTrabajadas ?? 0}</td>
+                <td class="number">${g.hsLiquidadas ?? 0}</td>
+                <td class="currency">${formatoMonetario(g.valorHora)}</td>
+                <td class="number">${g.aumento ?? 0}%</td>
+                <td class="currency">${formatoMonetario(g.neto)}</td>
+                <td class="currency">${formatoMonetario(g.total)}</td>
+              </tr>
+            `).join("")}
+
+            <tr class="total-row">
+              <td colspan="7">TOTAL GASTOS</td>
+              <td class="currency">${formatoMonetario(totalGastos)}</td>
+            </tr>
+          </tbody>
+        </table>
+      `;
+
+      contenedor.insertAdjacentHTML("beforeend", tablaHTML);
+    })
+    .catch(err =>
+      console.error("Error al cargar gastos internos por servicio:", err)
+    );
+}
+
+
+function mostrarBotonesExportacion() {
+  const botones = document.querySelector('.export-buttons');
+  const contenedor = document.getElementById('div3');
+
+  if (!botones || !contenedor) return;
+
+  contenedor.appendChild(botones); // 👈 mueve el nodo
+  botones.style.display = 'flex';
+}
 
 function mostrarInsumosPorPeriodo(periodo, contenedorDestinoId = 'div3') {
   fetch('insumos.json')
@@ -797,7 +1102,7 @@ function mostrarInsumosPorPeriodo(periodo, contenedorDestinoId = 'div3') {
             </tr>
           `).join('')}
           <tr class="total-row">
-            <td colspan="4"><strong>Total Insumos</strong></td>
+            <td colspan="4"><strong>TOTAL INSUMOS</strong></td>
             <td><strong>$${totalInsumos.toFixed(2)}</strong></td>
           </tr>
         </tbody>
@@ -814,6 +1119,71 @@ function mostrarInsumosPorPeriodo(periodo, contenedorDestinoId = 'div3') {
       console.error('Error al cargar insumos.json:', err);
     });
 }
+
+async function mostrarInsumosPorCliente(cliente) {
+  try {
+    const facturas = await ipcRenderer.invoke(
+      'get-insumos-por-cliente',
+      cliente
+    );
+
+    if (!facturas || facturas.length === 0) return;
+
+    const contenedor = document.getElementById("resultadoReporte");
+
+    let totalGeneral = 0;
+
+    const tablaHTML = `
+      <h4>Insumos facturados</h4>
+      <table class="reporte-table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Factura</th>
+            <th>Tipo</th>
+            <th>Detalle</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${facturas.map(f => {
+      totalGeneral += f.total;
+
+      return `
+              <tr>
+                <td>${formatearFecha(f.fecha)}</td>
+                <td>${f.numero}</td>
+                <td>${f.tipo}</td>
+                <td>
+                  <ul>
+                    ${f.items.map(i => `
+                      <li>
+                        ${i.nombre} — ${i.cantidad} × ${formatoMonetario(i.precio)}
+                      </li>
+                    `).join("")}
+                  </ul>
+                </td>
+                <td class="currency">${formatoMonetario(f.total)}</td>
+              </tr>
+            `;
+    }).join("")}
+
+          <tr class="total-row">
+            <td colspan="4">TOTAL INSUMOS</td>
+            <td class="currency">${formatoMonetario(totalGeneral)}</td>
+          </tr>
+        </tbody>
+      </table>
+    `;
+
+    contenedor.insertAdjacentHTML("beforeend", tablaHTML);
+
+  } catch (error) {
+    console.error("Error al mostrar insumos por cliente:", error);
+  }
+}
+
+
 
 function generarTablaGeneral(facturaciones, filtros) {
   // Aquí puedes usar los filtros para ajustar la tabla si es necesario
@@ -854,23 +1224,32 @@ function generarTablaGeneral(facturaciones, filtros) {
   `;
 }
 
-
-// Función para limpiar filtros
 function limpiarFiltros() {
+  filtroPeriodoSeleccionado = null;
+  filtroClienteSeleccionado = null;
+  filtroServicioSeleccionado = null;
+  filtroFacturanteSeleccionado = null;
+
+  // limpiar inputs
+  document.getElementById("filtroPeriodo").value = "";
   document.getElementById("filtroCliente").value = "";
   document.getElementById("filtroServicio").value = "";
   document.getElementById("filtroFacturante").value = "";
-  document.getElementById("filtroPeriodo").value = "";
 
-  document.getElementById("resultadoReporte").innerHTML =
-    '<p class="placeholder-text">Aplique los filtros para generar el reporte</p>';
-
-  ocultarBotonesExportacion();
+  limpiarPantallaReportes();
 }
 
-// Función para mostrar/ocultar botones de exportación
-function mostrarBotonesExportacion() {
-  document.querySelector(".export-buttons").style.display = "block";
+
+function mostrarFacturacionesPorServicio() {
+  // Aquí va tu lógica real de facturaciones por servicios
+  const resultado = document.getElementById("resultadoReporte");
+  resultado.innerHTML = '<p>Tabla inicial de facturaciones por servicios</p>';
+}
+
+function mostrarInsumosIniciales() {
+  // Aquí va tu lógica real de insumos
+  const resultado = document.getElementById("resultadoReporte");
+  resultado.innerHTML += '<p>Tabla inicial de insumos</p>';
 }
 
 function ocultarBotonesExportacion() {
@@ -896,20 +1275,29 @@ function formatoMonetario(valor) {
 async function exportarPDF() {
   try {
     const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
-    const fechaHoy = new Date().toLocaleDateString();
+    const doc = new jsPDF({
+      orientation: "landscape",
+      unit: "mm",
+      format: "a4"
+    });
 
-    const tabla = document.querySelector(".reporte-table");
-    if (!tabla) {
-      mostrarNotificacion("No hay datos para exportar. Genere un reporte primero.", "error");
+    const fechaHoy = new Date().toLocaleDateString();
+    const tablas = document.querySelectorAll(".reporte-table");
+
+    if (!tablas.length) {
+      mostrarNotificacion(
+        "No hay datos para exportar. Genere un reporte primero.",
+        "error"
+      );
       return;
     }
 
     const tituloReporte = obtenerTituloReporte();
-    const logoData = await cargarImagenComoBase64('assets/logorrss.jpg');
+    const logoData = await cargarImagenComoBase64("assets/logorrss.jpg");
 
-    // Encabezado
-    doc.addImage(logoData, 'JPEG', 10, 10, 20, 20);
+    /* ================= ENCABEZADO (SOLO 1° HOJA) ================= */
+
+    doc.addImage(logoData, "JPEG", 10, 10, 20, 20);
     doc.setFontSize(16);
     doc.text("Reporte de Facturación", 35, 20);
     doc.setFontSize(12);
@@ -917,154 +1305,94 @@ async function exportarPDF() {
     doc.setFontSize(10);
     doc.text(`Generado el: ${fechaHoy}`, 10, 35);
 
-    const startY = tituloReporte.length > 40 ? 45 : 40;
+    let currentY = tituloReporte.length > 40 ? 45 : 40;
 
-    // Obtener la fila del total sin modificar el DOM
-    const filaTotal = tabla.querySelector("tfoot tr");
-    let totalGlobal = "";
-    if (filaTotal) {
-      const celdas = filaTotal.querySelectorAll("td");
-      if (celdas.length > 1) {
-        totalGlobal = celdas[celdas.length - 1].textContent.trim(); // Última celda
-      } else if (celdas.length === 1) {
-        totalGlobal = celdas[0].textContent.trim(); // Solo una celda
-      }
+    /* ================= TABLAS ================= */
+
+    for (const tabla of tablas) {
+      const encabezados = Array.from(
+        tabla.querySelectorAll("thead th")
+      ).map(th => th.textContent.trim());
+
+      const filas = Array.from(
+  tabla.querySelectorAll("tbody tr")
+).map(tr =>
+  Array.from(tr.querySelectorAll("td")).map(td =>
+    td.textContent.trim()
+  )
+);
+
+// ================= TOTAL FACTURADO =================
+
+// Índice de la columna de importe (última columna)
+const indexImporte = encabezados.length - 1;
+
+const totalFacturado = filas.reduce((acc, fila) => {
+  const valor = fila[indexImporte]
+    .replace(/\$/g, "")
+    .replace(/\./g, "")
+    .replace(",", ".");
+
+  const numero = parseFloat(valor);
+  return acc + (isNaN(numero) ? 0 : numero);
+}, 0);
+
+// Fila TOTAL
+const filaTotal = Array(encabezados.length).fill("");
+filaTotal[0] = "TOTAL";
+filaTotal[indexImporte] = `$ ${totalFacturado.toLocaleString("es-AR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+})}`;
+
+filas.push(filaTotal);
+
+      if (!encabezados.length || !filas.length) continue;
+
+      doc.autoTable({
+        head: [encabezados],
+        body: filas,
+        startY: currentY,
+        theme: "grid",
+        headStyles: { fillColor: [255, 140, 74] },
+        styles: {
+          fontSize: 10,
+          cellPadding: 3
+        }
+      });
+
+      currentY = doc.lastAutoTable.finalY + 15;
     }
 
+    /* ================= EXPORTAR ================= */
 
-    // Leer encabezados
-    const encabezados = Array.from(tabla.querySelectorAll("thead th")).map(th => th.textContent.trim());
-
-    // Leer filas del tbody (sin incluir tfoot)
-    const filas = Array.from(tabla.querySelectorAll("tbody tr")).map(tr => {
-      return Array.from(tr.querySelectorAll("td")).map(td => td.textContent.trim());
-    });
-
-    doc.autoTable({
-      head: [encabezados],
-      body: filas,
-      startY: startY,
-      theme: 'grid',
-      headStyles: { fillColor: [255, 140, 74] },
-      styles: { fontSize: 10, cellPadding: 3 },
-      margin: { top: startY + 5 }
-    });
-
-    if (totalGlobal) {
-      const finalY = doc.lastAutoTable.finalY + 5;
-      doc.setFontSize(11);
-      doc.setFont(undefined, 'bold');
-      doc.text(`TOTAL FACTURADO: ${totalGlobal}`, 150, finalY, { align: 'right' });
-    }
-
-    // 🧠 2. Leer gastos internos si el filtro es por periodo
-    if (filtrosAplicados?.periodo) {
-      const periodoSeleccionado = filtrosAplicados.periodo;
-
-      let gastosDelPeriodo = [];
-
-      try {
-        const response = await fetch('gastosInternos.json');
-        if (!response.ok) throw new Error("No se pudo cargar gastosInternos.json");
-
-        const todosLosGastos = await response.json();
-        gastosDelPeriodo = todosLosGastos.filter(g => g.periodo === periodoSeleccionado);
-      } catch (err) {
-        console.error("Error al leer gastosInternos.json:", err);
-      }
-
-      if (gastosDelPeriodo.length > 0) {
-        doc.setFontSize(12);
-        doc.setFont(undefined, 'normal');
-        doc.text("Gastos Internos del Periodo", 14, doc.lastAutoTable.finalY + 15);
-
-        const tablaGastos = gastosDelPeriodo.map(gasto => [
-          gasto.sector || "Sin sector",
-          gasto.servicio || "Sin servicio",
-          gasto.hsLiquidadas ?? 0,
-          `$${gasto.valorHora?.toFixed(2) || "0.00"}`,
-          `${gasto.aumento?.toFixed(2) || 0}%`,
-          `$${gasto.total?.toFixed(2) || "0.00"}`
-        ]);
-
-        const totalGastos = gastosDelPeriodo.reduce((sum, g) => sum + (g.total || 0), 0);
-        tablaGastos.push([
-          { content: "Total General", colSpan: 5, styles: { halign: 'right', fontStyle: 'bold' } },
-          { content: `$${totalGastos.toFixed(2)}`, styles: { fontStyle: 'bold' } }
-        ]);
-
-        doc.autoTable({
-          head: [["Sector", "Servicio", "Hs Liquidadas", "Valor Hora", "Aumento", "Total"]],
-          body: tablaGastos,
-          startY: doc.lastAutoTable.finalY + 20,
-          styles: { fontSize: 10, cellPadding: 3 },
-          headStyles: { fillColor: [255, 140, 74] },
-        });
-      }
-    }
-
-    // 🧠 Leer insumos si hay filtro por periodo y mostrar tabla resumida
-    try {
-      const responseInsumos = await fetch('insumos.json');
-      if (!responseInsumos.ok) throw new Error("No se pudo cargar insumos.json");
-
-      const todosLosInsumos = await responseInsumos.json();
-      const insumosDelPeriodo = todosLosInsumos.filter(ins => ins.fecha?.slice(0, 7) === filtrosAplicados?.periodo);
-
-      if (insumosDelPeriodo.length > 0) {
-        doc.setFontSize(12);
-        doc.text("Insumos del Periodo", 14, doc.lastAutoTable.finalY + 15);
-
-        const tablaInsumos = insumosDelPeriodo.map(ins => [
-          ins.fecha || "Sin fecha",
-          ins.cliente || "Sin cliente",
-          ins.tipo || "Sin tipo",
-          ins.numero || "Sin número",
-          `$${(ins.total?.toFixed(2) || "0.00")}`
-        ]);
-
-        const totalInsumos = insumosDelPeriodo.reduce((sum, ins) => sum + (ins.total || 0), 0);
-        tablaInsumos.push([
-          { content: "Total General", colSpan: 4, styles: { halign: 'right', fontStyle: 'bold' } },
-          { content: `$${totalInsumos.toFixed(2)}`, styles: { fontStyle: 'bold' } }
-        ]);
-
-        doc.autoTable({
-          head: [["Fecha", "Cliente", "Tipo de Factura", "N° de Factura", "Total"]],
-          body: tablaInsumos,
-          startY: doc.lastAutoTable.finalY + 20,
-          styles: { fontSize: 10, cellPadding: 3 },
-          headStyles: { fillColor: [255, 140, 74] },
-        });
-      }
-    } catch (err) {
-      console.error("Error al leer insumos.json:", err);
-    }
-
-    // 📥 Exportar archivo
-    const blob = doc.output('blob');
+    const blob = doc.output("blob");
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+
+    const link = document.createElement("a");
     link.href = url;
-    link.download = 'reporte_facturacion.pdf';
-    link.style.display = 'none';
+    link.download = "reporte_facturacion.pdf";
+    link.style.display = "none";
+
     document.body.appendChild(link);
-
-    link.addEventListener('click', () => {
-      setTimeout(() => {
-        mostrarNotificacion("PDF guardado con éxito", "success");
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-      }, 1000);
-    });
-
     link.click();
+
+    setTimeout(() => {
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      mostrarNotificacion("PDF guardado con éxito", "success");
+    }, 500);
 
   } catch (error) {
     console.error("Error al exportar a PDF:", error);
-    mostrarNotificacion("Ocurrió un error al generar el PDF", "error");
+    mostrarNotificacion(
+      "Ocurrió un error al generar el PDF",
+      "error"
+    );
   }
 }
+
+
 
 function obtenerFiltroActual() {
   const selectFiltro = document.getElementById("filtro-select"); // Asegurate de tener este ID
@@ -1077,26 +1405,27 @@ function obtenerValorFiltro() {
 }
 
 
-// Función para determinar el título según el filtro aplicado
-function obtenerTituloReporte() {
-  const filtros = obtenerValoresFiltros();
+function obtenerTituloReporte(filtros = filtrosAplicados || obtenerValoresFiltros()) {
   const filtroPrincipal = determinarFiltroPrincipal(filtros);
 
   switch (filtroPrincipal) {
+    case 'cliente':
+      return `Filtrado por Cliente: ${filtros.cliente}`;
+
     case 'servicio':
       return `Filtrado por Servicio: ${filtros.servicio}`;
-    case 'periodo':
-      return `Filtrado por Período: ${formatMonth(filtros.periodo)}`;
+
     case 'facturante':
       return `Filtrado por Facturante: ${filtros.facturante}`;
-    case 'cliente':
-      // Obtener nombre cliente del primer registro (si está visible)
-      const nombreCliente = document.querySelector(".reporte-table td:nth-child(2)")?.textContent || filtros.cliente;
-      return `Filtrado por Cliente: ${nombreCliente}`;
+
+    case 'periodo':
+      return `Filtrado por Período: ${formatMonth(filtros.periodo)}`;
+
     default:
       return "Reporte General";
   }
 }
+
 
 // Función auxiliar para determinar el filtro principal
 function determinarFiltroPrincipal(filtros) {
@@ -1108,106 +1437,181 @@ function determinarFiltroPrincipal(filtros) {
 }
 
 // Función auxiliar para cargar imágenes como base64
-function cargarImagenComoBase64(url) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.crossOrigin = 'Anonymous';
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(img, 0, 0);
-      resolve(canvas.toDataURL('image/jpeg'));
-    };
-    img.onerror = (err) => {
-      console.error("Error cargando imagen:", err);
-      reject(err);
-    };
-    img.src = url;
-  });
+// ---------------------------
+// Función para cargar imagen
+// ---------------------------
+async function cargarImagen(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error("No se pudo cargar la imagen");
+  return await response.arrayBuffer();
 }
 
+// ---------------------------
+// Función principal exportar Word
+// ---------------------------
 async function exportarWord() {
-  const tabla = document.querySelector(".reporte-table");
-  if (!tabla) return alert("No hay tabla para exportar");
-
   try {
-    // Cargar la imagen y convertir a base64
-    const response = await fetch("assets/logorrss.jpg");
-    if (!response.ok) throw new Error("No se pudo cargar el logo");
-    const blob = await response.blob();
+    const contenedor = document.getElementById("resultadoReporte");
+    if (!contenedor || !contenedor.innerText.trim()) {
+      mostrarNotificacion("No hay datos para exportar", "error");
+      return;
+    }
 
-    const base64 = await new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64data = reader.result.split(',')[1];
-        // Cortar cada 76 caracteres (requisito MIME)
-        const formattedBase64 = base64data.match(/.{1,76}/g).join('\r\n');
-        resolve(formattedBase64);
-      };
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
+    // Cargar logo como ArrayBuffer
+    const logoBuffer = await cargarImagen("assets/logorrss.jpg");
+
+    // Construir todos los elementos antes de crear el documento
+    const children = [];
+
+    // Encabezado con logo + título
+    const logoImageRun = new ImageRun({
+      data: logoBuffer,
+      transformation: { width: 80, height: 80 },
     });
 
-    const contentType = blob.type; // por ejemplo, image/jpeg
+    children.push(
+      new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [
+          new TableRow({
+            children: [
+              new TableCell({
+                width: { size: 12, type: WidthType.PERCENTAGE },
+                children: [new Paragraph({ children: [logoImageRun] })],
+              }),
+              new TableCell({
+                width: { size: 88, type: WidthType.PERCENTAGE },
+                children: [
+                  new Paragraph({
+                    text: "Reporte de Facturación",
+                    heading: HeadingLevel.HEADING_2,
+                  }),
+                ],
+              }),
+            ],
+          }),
+        ],
+      })
+    );
 
-    // Contenido HTML embebido en el MHTML
-    const html = `
-      <html xmlns:o='urn:schemas-microsoft-com:office:office' 
-            xmlns:w='urn:schemas-microsoft-com:office:word' 
-            xmlns='http://www.w3.org/TR/REC-html40'>
-        <head><meta charset="utf-8"></head>
-        <body style="font-family: Arial, sans-serif;">
-          <table style="margin-bottom: 20px;">
-            <tr>
-              <td><img src="cid:logoImage" width="80" height="80" /></td>
-              <td style="vertical-align: middle; padding-left: 10px;">
-                <h2>Reporte de Facturación</h2>
-              </td>
-            </tr>
-          </table>
-          ${tabla.outerHTML}
-        </body>
-      </html>
-    `;
+    children.push(new Paragraph("")); // espaciado
 
-    // Armar el documento MHTML
-    const mhtml =
-      `MIME-Version: 1.0
-Content-Type: multipart/related; boundary="----=_NextPart_000_0000"; type="text/html"
+    // Procesar nodos del contenedor
+    const nodos = Array.from(contenedor.childNodes);
 
-------=_NextPart_000_0000
-Content-Type: text/html; charset="utf-8"
-Content-Location: file:///document.html
+    for (const nodo of nodos) {
+      if (nodo.nodeType === Node.ELEMENT_NODE && /^H[1-6]$/.test(nodo.tagName)) {
+        children.push(
+          new Paragraph({
+            text: nodo.innerText,
+            heading: HeadingLevel.HEADING_3,
+          })
+        );
+        continue;
+      }
 
-${html}
+      if (nodo.nodeType === Node.ELEMENT_NODE && nodo.tagName === "P") {
+        children.push(
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: nodo.innerText,
+                bold: nodo.innerText.toLowerCase().includes("total"),
+                size: 20,
+              }),
+            ],
+          })
+        );
+        continue;
+      }
 
-------=_NextPart_000_0000
-Content-Location: logoImage
-Content-Type: ${contentType}
-Content-Transfer-Encoding: base64
+      if (nodo.nodeType === Node.ELEMENT_NODE && nodo.tagName === "TABLE") {
+        const filas = [];
 
-${base64}
-------=_NextPart_000_0000--`;
+        const ths = nodo.querySelectorAll("thead th");
+        if (ths.length) {
+          filas.push(
+            new TableRow({
+              children: Array.from(ths).map(th =>
+                new TableCell({
+                  children: [
+                    new Paragraph({
+                      children: [
+                        new TextRun({ text: th.innerText, bold: true, size: 20 }),
+                      ],
+                    }),
+                  ],
+                })
+              ),
+            })
+          );
+        }
 
-    // Crear y descargar el archivo
-    const blobDoc = new Blob([mhtml], {
-      type: "application/msword;charset=utf-8",
+        const trs = nodo.querySelectorAll("tbody tr");
+        trs.forEach(tr => {
+          filas.push(
+            new TableRow({
+              children: Array.from(tr.querySelectorAll("td")).map(td =>
+                new TableCell({
+                  children: [
+                    new Paragraph({
+                      children: [new TextRun({ text: td.innerText, size: 20 })],
+                    }),
+                  ],
+                })
+              ),
+            })
+          );
+        });
+
+        children.push(
+          new Table({
+            width: { size: 100, type: WidthType.PERCENTAGE },
+            rows: filas,
+          })
+        );
+
+        children.push(new Paragraph(""));
+      }
+    }
+
+    // Crear documento pasando children completo
+    const doc = new Document({
+      sections: [
+        {
+          properties: {
+            type: SectionType.CONTINUOUS,
+            page: {
+              margin: { top: 720, bottom: 720, left: 720, right: 720 },
+              size: { orientation: "landscape" },
+            },
+          },
+          children: children,
+        },
+      ],
+    });
+
+    // Generar Word y descargar
+    const buffer = await Packer.toBuffer(doc);
+    const blob = new Blob([buffer], {
+      type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     });
 
     const link = document.createElement("a");
-    link.href = URL.createObjectURL(blobDoc);
-    link.download = "reporte_facturacion.doc";
+    link.href = URL.createObjectURL(blob);
+    link.download = "reporte_facturacion.docx";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
-  } catch (err) {
-    console.error("Error exportando Word con logo:", err);
-    alert("Ocurrió un error al generar el archivo Word.");
+    mostrarNotificacion("Word generado con éxito", "success");
+
+  } catch (error) {
+    console.error("Error al exportar Word:", error);
+    mostrarNotificacion("Error al generar Word", "error");
   }
 }
+
 
 const limitesMensuales = {
   "Felipe Nogales": 4441534.77,
@@ -1218,167 +1622,211 @@ const limitesMensuales = {
   // SAS y los demás no tienen límite
 };
 
+function obtenerNombreArchivoReporte() {
+  if (filtroPeriodoSeleccionado) {
+    return `Reporte_facturacion (${filtroPeriodoSeleccionado})`;
+  }
+  if (filtroClienteSeleccionado) {
+    return `Reporte_facturacion (${filtroClienteSeleccionado})`;
+  }
+  if (filtroServicioSeleccionado) {
+    return `Reporte_facturacion (${filtroServicioSeleccionado})`;
+  }
+  if (filtroFacturanteSeleccionado) {
+    return `Reporte_facturacion (${filtroFacturanteSeleccionado})`;
+  }
+  return "Reporte_facturacion";
+}
+
+const parseNumero = (valor) => {
+  if (valor == null) return null;
+
+  let s = valor.toString().trim();
+  const esPorcentaje = s.includes("%");
+
+  s = s.replace("%", "");
+
+  // 👉 SOLO si tiene coma, es formato AR
+  if (s.includes(",")) {
+    s = s.replace(/\./g, "").replace(",", ".");
+  }
+
+  s = s.replace(/[^0-9.-]/g, "");
+  if (s === "" || isNaN(s)) return null;
+
+  let n = Number(s);
+
+  // 👉 porcentaje Excel necesita 0.xx
+  if (esPorcentaje) n = n / 100;
+
+  return n;
+};
+
 async function exportarExcel() {
   try {
-    const tabla = document.querySelector(".reporte-table");
-    if (!tabla) {
-      mostrarNotificacion("No hay datos para exportar. Genere un reporte primero.", "error");
-      return;
-    }
+    const continuar = confirm(
+      "Se generará un archivo Excel y se guardará en la carpeta Descargas.\n\n" +
+      "⚠️ Advertencia:\n" +
+      "Este reporte se encuentra en desarrollo y puede contener errores en los valores o formatos.\n\n" +
+      "¿Desea continuar?"
+    );
 
-    const workbook = XLSX.utils.table_to_book(tabla);
+    if (!continuar) return;
+
+    const contenedor = document.getElementById("resultadoReporte");
+    if (!contenedor) return;
+
+    const tabla = contenedor.querySelector("table");
+    if (!tabla) return;
+
+    const workbook = XLSX.utils.table_to_book(tabla, {
+      raw: false
+    });
+
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
 
-    // Detecta si una cadena parece un número local (puntos/commas/dólar)
-    const looksLikeNumber = s => {
-      if (!s) return false;
-      const str = s.toString().trim();
-      // debe tener al menos un dígito y contener coma o punto o $
-      return /\d/.test(str) && /[.,$]/.test(str);
+    const columnasHoras = [3, 4, 5];
+    const columnaPorcentaje = 7;
+    const columnasMoneda = [6, 8, 9, 10, 11];
+
+    const parseNumero = (valor) => {
+      if (!valor) return null;
+
+      let s = valor.toString().trim();
+      const esPorcentaje = s.includes("%");
+
+      s = s.replace("%", "");
+
+      if (s.includes(",")) {
+        s = s.replace(/\./g, "").replace(",", ".");
+      }
+
+      s = s.replace(/[^0-9.-]/g, "");
+      if (s === "" || isNaN(s)) return null;
+
+      let n = Number(s);
+      if (esPorcentaje) n /= 100;
+
+      return n;
     };
 
-    const parseLocaleNumber = raw => {
-      if (raw == null) return null;
-      let s = raw.toString().trim();
-      s = s.replace(/\u00A0/g, ""); // quitar NBSP
-      s = s.replace(/\s+/g, ""); // quitar espacios internos
-      s = s.replace(/\$/g, ""); // quitar $
-      if (s === "" || /[A-Za-z]/.test(s)) return null; // texto con letras -> ignorar
-
-      // STRATEGY 1: si tiene puntos y comas -> asumimos puntos = miles, coma = decimal
-      if (s.includes(".") && s.includes(",")) {
-        let cand = s.replace(/\./g, "").replace(/,/g, ".");
-        cand = cand.replace(/[^0-9.-]/g, "");
-        if (cand !== "" && !isNaN(cand)) return Number(cand);
-      }
-
-      // STRATEGY 2: solo coma -> coma decimal
-      if (!s.includes(".") && s.includes(",")) {
-        let cand = s.replace(/,/g, ".");
-        cand = cand.replace(/[^0-9.-]/g, "");
-        if (cand !== "" && !isNaN(cand)) return Number(cand);
-      }
-
-      // STRATEGY 3: solo punto(s)
-      if (s.includes(".") && !s.includes(",")) {
-        const dotCount = (s.match(/\./g) || []).length;
-        if (dotCount > 1) {
-          // varios puntos -> prob. separador de miles -> quitarlos
-          let cand = s.replace(/\./g, "");
-          cand = cand.replace(/[^0-9.-]/g, "");
-          if (cand !== "" && !isNaN(cand)) return Number(cand);
-        } else {
-          // un solo punto -> ambiguous: si hay 3 dígitos detrás, puede ser miles; si no, decimal
-          const parts = s.split(".");
-          if (parts[1] && parts[1].length === 3) {
-            let cand = s.replace(/\./g, "");
-            cand = cand.replace(/[^0-9.-]/g, "");
-            if (cand !== "" && !isNaN(cand)) return Number(cand);
-          } else {
-            // considerarlo decimal con punto
-            let cand = s.replace(/[^0-9.-]/g, "");
-            if (cand !== "" && !isNaN(cand)) return Number(cand);
-          }
-        }
-      }
-
-      // STRATEGY 4: fallback — eliminar todo lo no numérico excepto punto y guión
-      let cand = s.replace(/[^0-9.-]/g, "");
-      if (cand !== "" && !isNaN(cand)) return Number(cand);
-
-      return null;
-    };
-
-    // Recorrer todas las celdas (excepto metadatos)
     for (const addr in sheet) {
-      if (!Object.prototype.hasOwnProperty.call(sheet, addr)) continue;
       if (addr[0] === "!") continue;
 
       const cell = sheet[addr];
-      if (!cell) continue;
+      if (!cell || !cell.w) continue;
 
-      // --- Si ya es número: redondear a 2 decimales y aplicar formato/alineación
-      if (cell.t === "n") {
-        // redondear a 2 decimales para evitar ver demasiados decimales
-        const rounded = Math.round((cell.v + Number.EPSILON) * 100) / 100;
-        cell.v = rounded;
+      const col = XLSX.utils.decode_cell(addr).c;
+      const num = parseNumero(cell.w);
+      if (num === null) continue;
+
+      if (columnasHoras.includes(col)) {
         cell.t = "n";
-        cell.z = "#.##0,00"; // formato con punto miles y coma decimales
-        // estilo opcional: alinear a la derecha si la librería lo permite
-        if (!cell.s) cell.s = {};
-        cell.s.alignment = Object.assign({}, cell.s.alignment, { horizontal: "right" });
+        cell.v = Math.round(num);
+        cell.z = "0";
         continue;
       }
 
-      // --- Si es string y parece número, intentar parsear
-      if ((cell.t === "s" || cell.t === "str") && looksLikeNumber(cell.v)) {
-        const n = parseLocaleNumber(cell.v);
-        if (n !== null && !isNaN(n)) {
-          const rounded = Math.round((n + Number.EPSILON) * 100) / 100;
-          cell.t = "n";
-          cell.v = rounded;
-          cell.z = "#.##0,00";
-          if (!cell.s) cell.s = {};
-          cell.s.alignment = Object.assign({}, cell.s.alignment, { horizontal: "right" });
-        }
+      if (col === columnaPorcentaje) {
+        cell.t = "n";
+        cell.v = num;
+        cell.z = "0,00%";
+        continue;
+      }
+
+      if (columnasMoneda.includes(col)) {
+        cell.t = "n";
+        cell.v = Math.round(num * 100) / 100;
+        cell.z = "#.##0,00";
       }
     }
 
-    // Guardar archivo
-    XLSX.writeFile(workbook, "reporte_facturacion.xlsx", {
+    const nombre = "reporte_facturacion";
+    const ruta = `${os.homedir()}/Downloads/${nombre}.xlsx`;
+
+    XLSX.writeFile(workbook, ruta, {
       bookType: "xlsx",
       compression: true,
     });
 
-    mostrarNotificacion("Archivo Excel guardado correctamente", "success");
-  } catch (error) {
-    console.error("Error al exportar a Excel:", error);
-    mostrarNotificacion("Ocurrió un error al exportar a Excel", "error");
+    alert(
+      "Archivo Excel generado correctamente.\n\n" +
+      "Ubicación:\n" +
+      "Carpeta Descargas\n\n" +
+      "ℹ️ Recuerde que este reporte está en desarrollo y puede contener inconsistencias."
+    );
+
+  } catch (e) {
+    console.error("Error exportando Excel:", e);
+    alert(
+      "Ocurrió un error al generar el archivo Excel.\n\n" +
+      "El reporte se encuentra en desarrollo."
+    );
   }
 }
 
 
 
-// Función para mostrar notificaciones estilizadas
-function mostrarNotificacion(mensaje, tipo = "info") {
-  // Eliminar notificaciones previas si existen
-  const notificacionesPrevias = document.querySelectorAll('.custom-notification');
-  notificacionesPrevias.forEach(notif => notif.remove());
+// Si necesitas acceder a los datos, aquí hay una función de ejemplo
+function obtenerDatosReporte() {
+  // Esta función debería devolver los datos que ya tienes en memoria
+  // Por ejemplo, si los datos están en una variable global o en el DOM
 
-  // Crear elemento de notificación
-  const notificacion = document.createElement('div');
-  notificacion.className = `custom-notification ${tipo}`;
-  notificacion.textContent = mensaje;
+  // Opción 1: Buscar en window
+  if (window.datosFacturacion) {
+    return window.datosFacturacion;
+  }
 
-  // Estilos básicos para la notificación
-  notificacion.style.position = 'fixed';
-  notificacion.style.bottom = '20px';
-  notificacion.style.right = '20px';
-  notificacion.style.padding = '15px';
-  notificacion.style.borderRadius = '5px';
-  notificacion.style.color = 'white';
-  notificacion.style.zIndex = '1000';
-  notificacion.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-  notificacion.style.transition = 'opacity 0.5s ease-in-out';
+  // Opción 2: Buscar en el DOM (si tienes un script con los datos)
+  const scriptElement = document.querySelector('script[data-facturacion]');
+  if (scriptElement && scriptElement.textContent) {
+    try {
+      return JSON.parse(scriptElement.textContent);
+    } catch (e) {
+      console.error("Error parseando datos del DOM:", e);
+    }
+  }
 
-  // Colores según el tipo
-  const colores = {
-    success: '#4CAF50',
-    error: '#F44336',
-    info: '#2196F3',
-    warning: '#FF9800'
-  };
+  // Opción 3: Extraer de la tabla HTML (como última opción)
+  const contenedor = document.getElementById("resultadoReporte");
+  if (!contenedor) return [];
 
-  notificacion.style.backgroundColor = colores[tipo] || colores.info;
+  const tabla = contenedor.querySelector("table");
+  if (!tabla) return [];
 
-  // Agregar al DOM
-  document.body.appendChild(notificacion);
+  const datos = [];
+  const filas = tabla.querySelectorAll("tbody tr");
 
-  // Desvanecer después de 5 segundos
-  setTimeout(() => {
-    notificacion.style.opacity = '0';
-    setTimeout(() => notificacion.remove(), 500);
-  }, 5000);
+  filas.forEach(fila => {
+    const celdas = fila.querySelectorAll("td");
+    if (celdas.length >= 11) {
+      // Aquí debes mapear las celdas a la estructura de datos
+      // Esto dependerá de cómo esté estructurada tu tabla
+      const dato = {
+        cuit: celdas[0].textContent.trim(),
+        cliente: celdas[1].textContent.trim(),
+        servicio: celdas[2].textContent.trim(),
+        horas: {
+          trabajadas: parseInt(celdas[3].textContent) || 0,
+          mes: parseInt(celdas[4].textContent) || 0,
+          liquidadas: parseInt(celdas[5].textContent) || 0
+        },
+        valores: {
+          hora: celdas[6].textContent.trim(),
+          horaAumentada: celdas[8].textContent.trim(),
+          neto: parseFloat(celdas[9].textContent.replace(/\./g, '').replace(',', '.')) || 0,
+          iva: parseFloat(celdas[10].textContent.replace(/\./g, '').replace(',', '.')) || 0,
+          total: parseFloat(celdas[11].textContent.replace(/\./g, '').replace(',', '.')) || 0
+        },
+        aumentoAplicado: {
+          porcentaje: parseFloat(celdas[7].textContent.replace('%', '').replace(',', '.')) || 0
+        }
+      };
+      datos.push(dato);
+    }
+  });
+
+  return datos;
 }
 
 function asegurarCanvasResumen() {

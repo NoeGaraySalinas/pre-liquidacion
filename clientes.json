@@ -27,12 +27,7 @@
   {
     "cuit": "30-71481709-0",
     "lugar": "LA RIOJA",
-    "nombre": "COBERTURA DE SALUD S.A. (La Rioja)"
-  },
-  {
-    "cuit": "30-71481709-0",
-    "lugar": "CORDOBA",
-    "nombre": "COBERTURA DE SALUD S.A. (Córdoba)"
+    "nombre": "COBERTURA DE SALUD S.A."
   },
   {
     "cuit": "30-71073853-6",
@@ -167,7 +162,7 @@
   {
     "cuit": "30-70992372-9",
     "lugar": "CORDOBA",
-    "nombre": "SISCADAT S.A.S."
+    "nombre": "SISCADAT S.A."
   },
   {
     "cuit": "30-70710102-0",
@@ -570,16 +565,6 @@
     "nombre": "Sind.Arg.Tel.,Telecom.,Serv.Audiovis.,Interact."
   },
   {
-    "cuit": "2737821090",
-    "lugar": "CORDOBA",
-    "nombre": "Noelia"
-  },
-  {
-    "cuit": "30-71481709-0",
-    "lugar": "SALTA",
-    "nombre": "COBERTURA DE SALUD S.A. (Salta)"
-  },
-  {
     "cuit": "30-71831516-2",
     "lugar": "CORDOBA",
     "nombre": "FJG S.A.S."
@@ -613,5 +598,40 @@
     "cuit": "30-71206982-8",
     "lugar": "CORDOBA",
     "nombre": "Emintex SA"
+  },
+  {
+    "cuit": "30-123456789-0",
+    "lugar": "CORDOBA",
+    "nombre": "PRUEBA"
+  },
+  {
+    "cuit": "30-71635197-8",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIO 9 DE JULIO 1191"
+  },
+  {
+    "cuit": "30-71904309-3",
+    "lugar": "CORDOBA",
+    "nombre": "FINO GROUP S.A.S"
+  },
+  {
+    "cuit": "00 - 000000000 - 0",
+    "lugar": "CORDOBA",
+    "nombre": "No se factura"
+  },
+  {
+    "cuit": "30-71557992-4",
+    "lugar": "CHACO Y CORRIENTES",
+    "nombre": "PARANA SALUD SA"
+  },
+  {
+    "cuit": "30-71885858-1",
+    "lugar": "CORDOBA",
+    "nombre": "CONSORCIOS COOPERACION GRUPO BENEDETTI COMPAGNO-SOCON"
+  },
+  {
+    "cuit": "30-71481044-4",
+    "lugar": "CORDOBA",
+    "nombre": "IL MOLINO SRL"
   }
 ]
